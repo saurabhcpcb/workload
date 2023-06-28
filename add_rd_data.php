@@ -5,8 +5,8 @@ date_default_timezone_set('Asia/Kolkata');
 ?>
 <?php
 
-$getUserData=mysql_query("SELECT * FROM tbl_user where board='".$_GET['rd']."'");
-$user=mysql_fetch_array($getUserData);  
+$getUserData=mysqli_query("SELECT * FROM tbl_user where board='".$_GET['rd']."'");
+$user=mysqli_fetch_array($getUserData);  
 
 
 $month= date("m", strtotime($_GET['cid']));
@@ -105,7 +105,7 @@ for($i=0; $i<$countUnit_Name; $i++)
 if(!empty($_POST['Unit_Name'][$i])){
 
 $strquery0="insert into  $rdTable(user_id,Unit_Name,month) values (".$_POST['user_id'].",'".$_POST['Unit_Name'][$i]."','".$_POST['month']."')";
-$updateQuery=mysql_query($strquery0);
+$updateQuery=mysqli_query($strquery0);
 
 if($updateQuery)
 {

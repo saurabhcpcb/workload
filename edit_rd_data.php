@@ -5,8 +5,8 @@ date_default_timezone_set('Asia/Kolkata');
 ?>
 <?php
 
-$getUserData=mysql_query("SELECT * FROM tbl_user where board='".$_GET['rd']."'");
-$user=mysql_fetch_array($getUserData);  
+$getUserData=mysqli_query("SELECT * FROM tbl_user where board='".$_GET['rd']."'");
+$user=mysqli_fetch_array($getUserData);  
 
 
 $month= date("m", strtotime($_GET['cid']));
@@ -92,14 +92,14 @@ switch ($_GET['eid'])
 <?php
 
 
-$query=mysql_query("select * from $rdTable where rdid=".$_GET['cid']."");
+$query=mysqli_query("select * from $rdTable where rdid=".$_GET['cid']."");
 
-$data=mysql_fetch_array($query);
+$data=mysqli_fetch_array($query);
 
 if(isset($_POST['submit']) && $_POST['submit']=="Submit"){
  
  
-$updateQuery=mysql_query("UPDATE $rdTable SET Unit_Name='".addslashes($_POST['Unit_Name'])."' WHERE  rdid = '".$_POST['rdid']."'");
+$updateQuery=mysqli_query("UPDATE $rdTable SET Unit_Name='".addslashes($_POST['Unit_Name'])."' WHERE  rdid = '".$_POST['rdid']."'");
  
 
 if($updateQuery)

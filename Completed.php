@@ -194,8 +194,8 @@ display: none !important;
 $i=1;
 
 $descriptionQuery="SELECT * FROM $dhTable where id = ".$_GET['id']."";
-$getDescriptionQuery=mysql_query($descriptionQuery);
-$activities=mysql_fetch_array($getDescriptionQuery,MYSQL_ASSOC);
+$getDescriptionQuery=mysqli_query($descriptionQuery);
+$activities=mysqli_fetch_array($getDescriptionQuery,mysqli_ASSOC);
  
 ?>
  

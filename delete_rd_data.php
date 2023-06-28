@@ -5,8 +5,8 @@ date_default_timezone_set('Asia/Kolkata');
 ?>
 <?php
 
-$getUserData=mysql_query("SELECT * FROM tbl_user where board='".$_GET['rd']."'");
-$user=mysql_fetch_array($getUserData);  
+$getUserData=mysqli_query("SELECT * FROM tbl_user where board='".$_GET['rd']."'");
+$user=mysqli_fetch_array($getUserData);  
 
 
 $month= date("m", strtotime($_GET['cid']));
@@ -92,7 +92,7 @@ switch ($_GET['eid'])
 <?php
 
  
-$updateQuery=mysql_query("delete from $rdTable WHERE  rdid = '".$_GET['cid']."'");
+$updateQuery=mysqli_query("delete from $rdTable WHERE  rdid = '".$_GET['cid']."'");
  
 
 if($updateQuery)

@@ -87,24 +87,24 @@ $month= date("m");
 $year= date("Y");
 
 
-$queryByCPCB0=mysql_num_rows(mysql_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
-$queryByCPCB1=mysql_num_rows(mysql_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
-$queryByCPCB2=mysql_num_rows(mysql_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
-$queryByCPCB3=mysql_num_rows(mysql_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
-$queryByCPCB4=mysql_num_rows(mysql_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
-$queryByCPCB5=mysql_num_rows(mysql_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
-$queryByCPCB6=mysql_num_rows(mysql_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
-$queryByCPCB7=mysql_num_rows(mysql_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
-$queryByCPCB8=mysql_num_rows(mysql_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
-$queryByCPCB9=mysql_num_rows(mysql_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
-$queryByCPCB10=mysql_num_rows(mysql_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
-$queryByCPCB11=mysql_num_rows(mysql_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
-$queryByCPCB12=mysql_num_rows(mysql_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
-$queryByCPCB13=mysql_num_rows(mysql_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
-$queryByCPCB14=mysql_num_rows(mysql_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
-$queryByCPCB15=mysql_num_rows(mysql_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
-$queryByCPCB16=mysql_num_rows(mysql_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
-$queryByCPCB17=mysql_num_rows(mysql_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
+$queryByCPCB0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
+$queryByCPCB1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
+$queryByCPCB2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
+$queryByCPCB3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
+$queryByCPCB4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
+$queryByCPCB5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
+$queryByCPCB6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
+$queryByCPCB7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
+$queryByCPCB8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
+$queryByCPCB9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
+$queryByCPCB10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
+$queryByCPCB11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
+$queryByCPCB12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
+$queryByCPCB13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
+$queryByCPCB14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
+$queryByCPCB15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
+$queryByCPCB16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
+$queryByCPCB17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND user_id='".$_SESSION['userId']['id']."'"));
 
 
 $totalqueryByCPCB=$queryByCPCB0+$queryByCPCB1+$queryByCPCB2+$queryByCPCB3+$queryByCPCB4+$queryByCPCB5+$queryByCPCB6+$queryByCPCB7+$queryByCPCB8+$queryByCPCB9+$queryByCPCB10+$queryByCPCB11+$queryByCPCB12+$queryByCPCB13+$queryByCPCB14+$queryByCPCB15+$queryByCPCB16+$queryByCPCB17;
@@ -207,39 +207,39 @@ $month= date("m");
 $year= date("Y");
 
 
-$proposedQuery0=mysql_num_rows(mysql_query("select * from tbl_activities0 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
-$proposedQuery1=mysql_num_rows(mysql_query("select * from tbl_activities1 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
+$proposedQuery0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
+$proposedQuery1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
 
-$proposedQuery2=mysql_num_rows(mysql_query("select * from tbl_activities2 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
+$proposedQuery2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
 
-$proposedQuery3=mysql_num_rows(mysql_query("select * from tbl_activities3 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
+$proposedQuery3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
 
-$proposedQuery4=mysql_num_rows(mysql_query("select * from tbl_activities4 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
+$proposedQuery4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
 
-$proposedQuery5=mysql_num_rows(mysql_query("select * from tbl_activities5 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
+$proposedQuery5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
 
-$proposedQuery6=mysql_num_rows(mysql_query("select * from tbl_activities6 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
+$proposedQuery6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
 
-$proposedQuery7=mysql_num_rows(mysql_query("select * from tbl_activities7 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
+$proposedQuery7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
 
-$proposedQuery8=mysql_num_rows(mysql_query("select * from tbl_activities8 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
-$proposedQuery9=mysql_num_rows(mysql_query("select * from tbl_activities9 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
+$proposedQuery8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
+$proposedQuery9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
 
-$proposedQuery10=mysql_num_rows(mysql_query("select * from tbl_activities10 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
+$proposedQuery10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
 
-$proposedQuery11=mysql_num_rows(mysql_query("select * from tbl_activities11 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
+$proposedQuery11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
 
-$proposedQuery12=mysql_num_rows(mysql_query("select * from tbl_activities12 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
+$proposedQuery12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
 
-$proposedQuery13=mysql_num_rows(mysql_query("select * from tbl_activities13 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
+$proposedQuery13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
 
-$proposedQuery14=mysql_num_rows(mysql_query("select * from tbl_activities14 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
+$proposedQuery14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
 
-$proposedQuery15=mysql_num_rows(mysql_query("select * from tbl_activities15 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
+$proposedQuery15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
 
-$proposedQuery16=mysql_num_rows(mysql_query("select * from tbl_activities16 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
+$proposedQuery16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
 
-$proposedQuery17=mysql_num_rows(mysql_query("select * from tbl_activities17 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
+$proposedQuery17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'"));
 
 
 $totalProposed=$proposedQuery0+$proposedQuery1+$proposedQuery2+$proposedQuery3+$proposedQuery4+$proposedQuery5+$proposedQuery6+$proposedQuery7+$proposedQuery8+$proposedQuery9+$proposedQuery10+$proposedQuery11+$proposedQuery12+$proposedQuery13+$proposedQuery14+$proposedQuery15+$proposedQuery16+$proposedQuery17;

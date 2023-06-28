@@ -139,8 +139,8 @@ if(isset($_POST['submit'])){
   </tr>
 <?php 
 
-$getActivitis=mysql_query("select * from tbl_user_activities_list where user_id=".$_SESSION['userId']['id']."");
-while($row=mysql_fetch_array($getActivitis))
+$getActivitis=mysqli_query("select * from tbl_user_activities_list where user_id=".$_SESSION['userId']['id']."");
+while($row=mysqli_fetch_array($getActivitis))
 {
 $dataList[]=$row['activities_id'];
 }
@@ -154,17 +154,17 @@ $dataList[]=$row['activities_id'];
 
 <td colspan="5"> 
 <?php
-$queryByDate=mysql_query("SELECT * FROM tbl_activities0 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate=mysqli_query("SELECT * FROM tbl_activities0 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
 
-while($dateRow=mysql_fetch_array($queryByDate)){
+while($dateRow=mysqli_fetch_array($queryByDate)){
 ?>
  <table width="100%" border="1" style="margin:6px 0px;">
 <?php
 $i=1;
 
 
-$activities0=mysql_query("SELECT * FROM  tbl_activities0 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow['main_id']."");
-while($activitiesList0=mysql_fetch_array($activities0)){
+$activities0=mysqli_query("SELECT * FROM  tbl_activities0 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow['main_id']."");
+while($activitiesList0=mysqli_fetch_array($activities0)){
 ?>
 
   <tr>
@@ -186,8 +186,8 @@ while($activitiesList0=mysql_fetch_array($activities0)){
 </table>
 <table width="100%" border="1" style="margin:6px 0px;">
 <?php
-$activitiesFile0=mysql_query("SELECT * FROM  tbl_activities0 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow['main_id']."");
-$activitiesFileList0=mysql_fetch_array($activitiesFile0);
+$activitiesFile0=mysqli_query("SELECT * FROM  tbl_activities0 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow['main_id']."");
+$activitiesFileList0=mysqli_fetch_array($activitiesFile0);
 ?>
   <tr>
     <td colspan="2">Upload Document : <?php if(isset($activitiesFileList0['file'])){?><a href="upload/<?=$activitiesFileList0['file']?>" target="_blank">View File</a><?php } else { echo"No File"; } ?></td>
@@ -208,15 +208,15 @@ $activitiesFileList0=mysql_fetch_array($activitiesFile0);
 
 <td colspan="5">
 <?php
-$queryByDate1=mysql_query("SELECT * FROM tbl_activities1 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate1=mysqli_query("SELECT * FROM tbl_activities1 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
 
-while($dateRow1=mysql_fetch_array($queryByDate1)){
+while($dateRow1=mysqli_fetch_array($queryByDate1)){
 ?> 
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities1=mysql_query("SELECT * FROM  tbl_activities1 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow1['main_id']."");
-while($activitiesList1=mysql_fetch_array($activities1)){
+$activities1=mysqli_query("SELECT * FROM  tbl_activities1 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow1['main_id']."");
+while($activitiesList1=mysqli_fetch_array($activities1)){
 ?>
 
   <tr>
@@ -238,8 +238,8 @@ while($activitiesList1=mysql_fetch_array($activities1)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile1=mysql_query("SELECT * FROM  tbl_activities1 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow1['main_id']."");
-$activitiesFileList1=mysql_fetch_array($activitiesFile1);
+$activitiesFile1=mysqli_query("SELECT * FROM  tbl_activities1 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow1['main_id']."");
+$activitiesFileList1=mysqli_fetch_array($activitiesFile1);
 ?>
   <tr>
     <td colspan="2">Upload Document : <?php if(isset($activitiesFileList1['file'])){?><a href="upload/<?=$activitiesFileList1['file']?>" target="_blank">View File</a><?php } else { echo"No File"; } ?></td>
@@ -260,15 +260,15 @@ $activitiesFileList1=mysql_fetch_array($activitiesFile1);
 
 <td colspan="5">
 <?php
-$queryByDate2=mysql_query("SELECT * FROM tbl_activities2 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate2=mysqli_query("SELECT * FROM tbl_activities2 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
 
-while($dateRow2=mysql_fetch_array($queryByDate2)){
+while($dateRow2=mysqli_fetch_array($queryByDate2)){
 ?> 
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities2=mysql_query("SELECT * FROM  tbl_activities2 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow2['main_id']."");
-while($activitiesList2=mysql_fetch_array($activities2)){
+$activities2=mysqli_query("SELECT * FROM  tbl_activities2 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow2['main_id']."");
+while($activitiesList2=mysqli_fetch_array($activities2)){
 ?>
 
   <tr>
@@ -290,8 +290,8 @@ while($activitiesList2=mysql_fetch_array($activities2)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile2=mysql_query("SELECT * FROM  tbl_activities2 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow2['main_id']."");
-$activitiesFileList2=mysql_fetch_array($activitiesFile2);
+$activitiesFile2=mysqli_query("SELECT * FROM  tbl_activities2 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow2['main_id']."");
+$activitiesFileList2=mysqli_fetch_array($activitiesFile2);
 ?>
   <tr>
     <td colspan="2">Upload Document : <?php if(isset($activitiesFileList2['file'])){?><a href="upload/<?=$activitiesFileList2['file']?>" target="_blank">View File</a><?php } else { echo"No File"; } ?></td>
@@ -311,15 +311,15 @@ $activitiesFileList2=mysql_fetch_array($activitiesFile2);
 
 <td colspan="5"> 
 <?php
-$queryByDate3=mysql_query("SELECT * FROM tbl_activities3 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate3=mysqli_query("SELECT * FROM tbl_activities3 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
 
-while($dateRow3=mysql_fetch_array($queryByDate3)){
+while($dateRow3=mysqli_fetch_array($queryByDate3)){
 ?>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities3=mysql_query("SELECT * FROM  tbl_activities3 where user_id=".$_SESSION['userId']['id']." AND  main_id=".$dateRow3['main_id']."");
-while($activitiesList3=mysql_fetch_array($activities3)){
+$activities3=mysqli_query("SELECT * FROM  tbl_activities3 where user_id=".$_SESSION['userId']['id']." AND  main_id=".$dateRow3['main_id']."");
+while($activitiesList3=mysqli_fetch_array($activities3)){
 ?>
 
   <tr>
@@ -341,8 +341,8 @@ while($activitiesList3=mysql_fetch_array($activities3)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile3=mysql_query("SELECT * FROM  tbl_activities3 where user_id=".$_SESSION['userId']['id']." AND  main_id=".$dateRow3['main_id']."");
-$activitiesFileList3=mysql_fetch_array($activitiesFile3);
+$activitiesFile3=mysqli_query("SELECT * FROM  tbl_activities3 where user_id=".$_SESSION['userId']['id']." AND  main_id=".$dateRow3['main_id']."");
+$activitiesFileList3=mysqli_fetch_array($activitiesFile3);
 ?>
   <tr>
     <td colspan="2">Upload Document : <?php if(isset($activitiesFileList3['file'])){?><a href="upload/<?=$activitiesFileList3['file']?>" target="_blank">View File</a><?php } else { echo"No File"; } ?></td>
@@ -363,15 +363,15 @@ $activitiesFileList3=mysql_fetch_array($activitiesFile3);
 
 <td colspan="5"> 
 <?php
-$queryByDate4=mysql_query("SELECT * FROM tbl_activities4 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate4=mysqli_query("SELECT * FROM tbl_activities4 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
 
-while($dateRow4=mysql_fetch_array($queryByDate4)){
+while($dateRow4=mysqli_fetch_array($queryByDate4)){
 ?>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities4=mysql_query("SELECT * FROM  tbl_activities4 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow4['main_id']."");
-while($activitiesList4=mysql_fetch_array($activities4)){
+$activities4=mysqli_query("SELECT * FROM  tbl_activities4 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow4['main_id']."");
+while($activitiesList4=mysqli_fetch_array($activities4)){
 ?>
 
   <tr>
@@ -391,8 +391,8 @@ while($activitiesList4=mysql_fetch_array($activities4)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile4=mysql_query("SELECT * FROM  tbl_activities4 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow4['main_id']."");
-$activitiesFileList4=mysql_fetch_array($activitiesFile4);
+$activitiesFile4=mysqli_query("SELECT * FROM  tbl_activities4 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow4['main_id']."");
+$activitiesFileList4=mysqli_fetch_array($activitiesFile4);
 ?>
   <tr>
     <td width="29%">Upload Document : <?php if(isset($activitiesFileList4['file'])){?><a href="upload/<?=$activitiesFileList4['file']?>" target="_blank">View File</a><?php } else { echo"No File"; } ?></td>
@@ -412,15 +412,15 @@ $activitiesFileList4=mysql_fetch_array($activitiesFile4);
 
 <td colspan="5"> 
 <?php
-$queryByDate5=mysql_query("SELECT * FROM tbl_activities5 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate5=mysqli_query("SELECT * FROM tbl_activities5 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
 
-while($dateRow5=mysql_fetch_array($queryByDate5)){
+while($dateRow5=mysqli_fetch_array($queryByDate5)){
 ?>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities5=mysql_query("SELECT * FROM  tbl_activities5 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow5['main_id']."");
-while($activitiesList5=mysql_fetch_array($activities5)){
+$activities5=mysqli_query("SELECT * FROM  tbl_activities5 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow5['main_id']."");
+while($activitiesList5=mysqli_fetch_array($activities5)){
 ?>
 
   <tr>
@@ -442,8 +442,8 @@ while($activitiesList5=mysql_fetch_array($activities5)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile5=mysql_query("SELECT * FROM  tbl_activities5 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow5['main_id']."");
-$activitiesFileList5=mysql_fetch_array($activitiesFile5);
+$activitiesFile5=mysqli_query("SELECT * FROM  tbl_activities5 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow5['main_id']."");
+$activitiesFileList5=mysqli_fetch_array($activitiesFile5);
 ?>
   <tr>
     <td colspan="2">Upload Document : <?php if(isset($activitiesFileList5['file'])){?><a href="upload/<?=$activitiesFileList5['file']?>" target="_blank">View File</a><?php } else { echo"No File"; } ?></td>
@@ -463,15 +463,15 @@ $activitiesFileList5=mysql_fetch_array($activitiesFile5);
 
 <td colspan="5">
 <?php
-$queryByDate6=mysql_query("SELECT * FROM tbl_activities6 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate6=mysqli_query("SELECT * FROM tbl_activities6 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
 
-while($dateRow6=mysql_fetch_array($queryByDate6)){
+while($dateRow6=mysqli_fetch_array($queryByDate6)){
 ?> 
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities6=mysql_query("SELECT * FROM  tbl_activities6 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow6['main_id']."");
-while($activitiesList6=mysql_fetch_array($activities6)){
+$activities6=mysqli_query("SELECT * FROM  tbl_activities6 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow6['main_id']."");
+while($activitiesList6=mysqli_fetch_array($activities6)){
 ?>
 
   <tr>
@@ -493,8 +493,8 @@ while($activitiesList6=mysql_fetch_array($activities6)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile6=mysql_query("SELECT * FROM  tbl_activities6 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow6['main_id']."");
-$activitiesFileList6=mysql_fetch_array($activitiesFile6);
+$activitiesFile6=mysqli_query("SELECT * FROM  tbl_activities6 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow6['main_id']."");
+$activitiesFileList6=mysqli_fetch_array($activitiesFile6);
 ?>
   <tr>
     <td colspan="2">Upload Document : <?php if(isset($activitiesFileList6['file'])){?><a href="upload/<?=$activitiesFileList6['file']?>" target="_blank">View File</a><?php } else { echo"No File"; } ?></td>
@@ -515,15 +515,15 @@ $activitiesFileList6=mysql_fetch_array($activitiesFile6);
 
 <td colspan="5"> 
 <?php
-$queryByDate7=mysql_query("SELECT * FROM tbl_activities7 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate7=mysqli_query("SELECT * FROM tbl_activities7 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
 
-while($dateRow7=mysql_fetch_array($queryByDate7)){
+while($dateRow7=mysqli_fetch_array($queryByDate7)){
 ?>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities7=mysql_query("SELECT * FROM  tbl_activities7 where  user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow7['main_id']."");
-while($activitiesList7=mysql_fetch_array($activities7)){
+$activities7=mysqli_query("SELECT * FROM  tbl_activities7 where  user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow7['main_id']."");
+while($activitiesList7=mysqli_fetch_array($activities7)){
 ?>
 
   <tr>
@@ -544,8 +544,8 @@ while($activitiesList7=mysql_fetch_array($activities7)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile7=mysql_query("SELECT * FROM  tbl_activities7 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow7['main_id']."");
-$activitiesFileList7=mysql_fetch_array($activitiesFile7);
+$activitiesFile7=mysqli_query("SELECT * FROM  tbl_activities7 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow7['main_id']."");
+$activitiesFileList7=mysqli_fetch_array($activitiesFile7);
 ?>
   <tr>
     <td colspan="2">Upload Document : <?php if(isset($activitiesFileList7['file'])){?><a href="upload/<?=$activitiesFileList7['file']?>" target="_blank">View File</a><?php } else { echo"No File"; } ?></td>
@@ -566,15 +566,15 @@ $activitiesFileList7=mysql_fetch_array($activitiesFile7);
 
 <td colspan="5"> 
 <?php
-$queryByDate8=mysql_query("SELECT * FROM tbl_activities8 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate8=mysqli_query("SELECT * FROM tbl_activities8 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
 
-while($dateRow8=mysql_fetch_array($queryByDate8)){
+while($dateRow8=mysqli_fetch_array($queryByDate8)){
 ?>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities8=mysql_query("SELECT * FROM  tbl_activities8 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow8['main_id']."");
-while($activitiesList8=mysql_fetch_array($activities8)){
+$activities8=mysqli_query("SELECT * FROM  tbl_activities8 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow8['main_id']."");
+while($activitiesList8=mysqli_fetch_array($activities8)){
 ?>
 
   <tr>
@@ -596,8 +596,8 @@ while($activitiesList8=mysql_fetch_array($activities8)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile8=mysql_query("SELECT * FROM  tbl_activities8 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow8['main_id']."");
-$activitiesFileList8=mysql_fetch_array($activitiesFile8);
+$activitiesFile8=mysqli_query("SELECT * FROM  tbl_activities8 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow8['main_id']."");
+$activitiesFileList8=mysqli_fetch_array($activitiesFile8);
 ?>
   <tr>
     <td colspan="2">Upload Document : <?php if(isset($activitiesFileList8['file'])){?><a href="upload/<?=$activitiesFileList8['file']?>" target="_blank">View File</a><?php } else { echo"No File"; } ?></td>
@@ -618,15 +618,15 @@ $activitiesFileList8=mysql_fetch_array($activitiesFile8);
 
 <td colspan="5"> 
 <?php
-$queryByDate9=mysql_query("SELECT * FROM tbl_activities9 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate9=mysqli_query("SELECT * FROM tbl_activities9 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
 
-while($dateRow9=mysql_fetch_array($queryByDate9)){
+while($dateRow9=mysqli_fetch_array($queryByDate9)){
 ?>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities9=mysql_query("SELECT * FROM  tbl_activities9 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow9['main_id']."");
-while($activitiesList9=mysql_fetch_array($activities9)){
+$activities9=mysqli_query("SELECT * FROM  tbl_activities9 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow9['main_id']."");
+while($activitiesList9=mysqli_fetch_array($activities9)){
 ?>
 
   <tr>
@@ -648,8 +648,8 @@ while($activitiesList9=mysql_fetch_array($activities9)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile9=mysql_query("SELECT * FROM  tbl_activities9 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow9['main_id']."");
-$activitiesFileList9=mysql_fetch_array($activitiesFile9);
+$activitiesFile9=mysqli_query("SELECT * FROM  tbl_activities9 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow9['main_id']."");
+$activitiesFileList9=mysqli_fetch_array($activitiesFile9);
 ?>
   <tr>
     <td colspan="2">Upload Document : <?php if(isset($activitiesFileList9['file'])){?><a href="upload/<?=$activitiesFileList9['file']?>" target="_blank">View File</a><?php } else { echo"No File"; } ?></td>
@@ -670,15 +670,15 @@ $activitiesFileList9=mysql_fetch_array($activitiesFile9);
 
 <td colspan="5"> 
 <?php
-$queryByDate10=mysql_query("SELECT * FROM tbl_activities10 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate10=mysqli_query("SELECT * FROM tbl_activities10 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
 
-while($dateRow10=mysql_fetch_array($queryByDate10)){
+while($dateRow10=mysqli_fetch_array($queryByDate10)){
 ?>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities10=mysql_query("SELECT * FROM  tbl_activities10 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow10['main_id']."");
-while($activitiesList10=mysql_fetch_array($activities10)){
+$activities10=mysqli_query("SELECT * FROM  tbl_activities10 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow10['main_id']."");
+while($activitiesList10=mysqli_fetch_array($activities10)){
 ?>
 
   <tr>
@@ -699,8 +699,8 @@ while($activitiesList10=mysql_fetch_array($activities10)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile10=mysql_query("SELECT * FROM  tbl_activities10 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow10['main_id']."");
-$activitiesFileList10=mysql_fetch_array($activitiesFile10);
+$activitiesFile10=mysqli_query("SELECT * FROM  tbl_activities10 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow10['main_id']."");
+$activitiesFileList10=mysqli_fetch_array($activitiesFile10);
 ?>
   <tr>
     <td colspan="2">Upload Document : <?php if(isset($activitiesFileList10['file'])){?><a href="upload/<?=$activitiesFileList10['file']?>" target="_blank">View File</a><?php } else { echo"No File"; } ?></td>
@@ -721,15 +721,15 @@ $activitiesFileList10=mysql_fetch_array($activitiesFile10);
 
 <td colspan="5"> 
 <?php
-$queryByDate11=mysql_query("SELECT * FROM tbl_activities11 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate11=mysqli_query("SELECT * FROM tbl_activities11 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
 
-while($dateRow11=mysql_fetch_array($queryByDate11)){
+while($dateRow11=mysqli_fetch_array($queryByDate11)){
 ?>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities11=mysql_query("SELECT * FROM  tbl_activities11 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow11['main_id']."");
-while($activitiesList11=mysql_fetch_array($activities11)){
+$activities11=mysqli_query("SELECT * FROM  tbl_activities11 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow11['main_id']."");
+while($activitiesList11=mysqli_fetch_array($activities11)){
 ?>
 
   <tr>
@@ -747,8 +747,8 @@ while($activitiesList11=mysql_fetch_array($activities11)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile11=mysql_query("SELECT * FROM  tbl_activities11 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow11['main_id']."");
-$activitiesFileList11=mysql_fetch_array($activitiesFile11);
+$activitiesFile11=mysqli_query("SELECT * FROM  tbl_activities11 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow11['main_id']."");
+$activitiesFileList11=mysqli_fetch_array($activitiesFile11);
 ?>
   <tr>
     <td colspan="2">Upload Document : <?php if(isset($activitiesFileList11['file'])){?><a href="upload/<?=$activitiesFileList11['file']?>" target="_blank">View File</a><?php } else { echo"No File"; } ?></td>
@@ -768,15 +768,15 @@ $activitiesFileList11=mysql_fetch_array($activitiesFile11);
 
 <td colspan="5">
 <?php
-$queryByDate12=mysql_query("SELECT * FROM tbl_activities12 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate12=mysqli_query("SELECT * FROM tbl_activities12 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
 
-while($dateRow12=mysql_fetch_array($queryByDate12)){
+while($dateRow12=mysqli_fetch_array($queryByDate12)){
 ?> 
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities12=mysql_query("SELECT * FROM  tbl_activities12 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow12['main_id']."");
-while($activitiesList12=mysql_fetch_array($activities12)){
+$activities12=mysqli_query("SELECT * FROM  tbl_activities12 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow12['main_id']."");
+while($activitiesList12=mysqli_fetch_array($activities12)){
 ?>
 
   <tr>
@@ -798,8 +798,8 @@ while($activitiesList12=mysql_fetch_array($activities12)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile12=mysql_query("SELECT * FROM  tbl_activities12 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow12['main_id']."");
-$activitiesFileList12=mysql_fetch_array($activitiesFile12);
+$activitiesFile12=mysqli_query("SELECT * FROM  tbl_activities12 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow12['main_id']."");
+$activitiesFileList12=mysqli_fetch_array($activitiesFile12);
 ?>
   <tr>
     <td colspan="2">Upload Document : <?php if(isset($activitiesFileList12['file'])){?><a href="upload/<?=$activitiesFileList12['file']?>" target="_blank">View File</a><?php } else { echo"No File"; } ?></td>
@@ -819,15 +819,15 @@ $activitiesFileList12=mysql_fetch_array($activitiesFile12);
 
 <td colspan="5"> 
 <?php
-$queryByDate13=mysql_query("SELECT * FROM tbl_activities13 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate13=mysqli_query("SELECT * FROM tbl_activities13 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
 
-while($dateRow13=mysql_fetch_array($queryByDate13)){
+while($dateRow13=mysqli_fetch_array($queryByDate13)){
 ?>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities13=mysql_query("SELECT * FROM  tbl_activities13 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow13['main_id']."");
-while($activitiesList13=mysql_fetch_array($activities13)){
+$activities13=mysqli_query("SELECT * FROM  tbl_activities13 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow13['main_id']."");
+while($activitiesList13=mysqli_fetch_array($activities13)){
 ?>
 
   <tr>
@@ -851,8 +851,8 @@ while($activitiesList13=mysql_fetch_array($activities13)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile13=mysql_query("SELECT * FROM  tbl_activities13 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow13['main_id']."");
-$activitiesFileList13=mysql_fetch_array($activitiesFile13);
+$activitiesFile13=mysqli_query("SELECT * FROM  tbl_activities13 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow13['main_id']."");
+$activitiesFileList13=mysqli_fetch_array($activitiesFile13);
 ?>
   <tr>
     <td colspan="2">Upload Document : <?php if(isset($activitiesFileList13['file'])){?><a href="upload/<?=$activitiesFileList13['file']?>" target="_blank">View File</a><?php } else { echo"No File"; } ?></td>
@@ -873,15 +873,15 @@ $activitiesFileList13=mysql_fetch_array($activitiesFile13);
 
 <td colspan="5"> 
 <?php
-$queryByDate14=mysql_query("SELECT * FROM tbl_activities14 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate14=mysqli_query("SELECT * FROM tbl_activities14 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
 
-while($dateRow14=mysql_fetch_array($queryByDate14)){
+while($dateRow14=mysqli_fetch_array($queryByDate14)){
 ?>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities14=mysql_query("SELECT * FROM  tbl_activities14 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow14['main_id']."");
-while($activitiesList14=mysql_fetch_array($activities14)){
+$activities14=mysqli_query("SELECT * FROM  tbl_activities14 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow14['main_id']."");
+while($activitiesList14=mysqli_fetch_array($activities14)){
 ?>
 
   <tr>
@@ -904,8 +904,8 @@ while($activitiesList14=mysql_fetch_array($activities14)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile14=mysql_query("SELECT * FROM  tbl_activities14 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow14['main_id']."");
-$activitiesFileList14=mysql_fetch_array($activitiesFile14);
+$activitiesFile14=mysqli_query("SELECT * FROM  tbl_activities14 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow14['main_id']."");
+$activitiesFileList14=mysqli_fetch_array($activitiesFile14);
 ?>
   <tr>
     <td colspan="2">Upload Document : <?php if(isset($activitiesFileList14['file'])){?><a href="upload/<?=$activitiesFileList14['file']?>" target="_blank">View File</a><?php } else { echo"No File"; } ?></td>
@@ -927,15 +927,15 @@ $activitiesFileList14=mysql_fetch_array($activitiesFile14);
 
 <td colspan="5"> 
 <?php
-$queryByDate15=mysql_query("SELECT * FROM tbl_activities15 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate15=mysqli_query("SELECT * FROM tbl_activities15 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
 
-while($dateRow15=mysql_fetch_array($queryByDate15)){
+while($dateRow15=mysqli_fetch_array($queryByDate15)){
 ?>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities15=mysql_query("SELECT * FROM  tbl_activities15 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow15['main_id']."");
-while($activitiesList15=mysql_fetch_array($activities15)){
+$activities15=mysqli_query("SELECT * FROM  tbl_activities15 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow15['main_id']."");
+while($activitiesList15=mysqli_fetch_array($activities15)){
 ?>
 
   <tr>
@@ -962,8 +962,8 @@ while($activitiesList15=mysql_fetch_array($activities15)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile15=mysql_query("SELECT * FROM  tbl_activities15 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow15['main_id']."");
-$activitiesFileList15=mysql_fetch_array($activitiesFile15);
+$activitiesFile15=mysqli_query("SELECT * FROM  tbl_activities15 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow15['main_id']."");
+$activitiesFileList15=mysqli_fetch_array($activitiesFile15);
 ?>
   <tr>
     <td colspan="2">Upload Document : <?php if(isset($activitiesFileList15['file'])){?><a href="upload/<?=$activitiesFileList15['file']?>" target="_blank">View File</a><?php } else { echo"No File"; } ?></td>
@@ -984,15 +984,15 @@ $activitiesFileList15=mysql_fetch_array($activitiesFile15);
 
 <td colspan="5"> 
 <?php
-$queryByDate16=mysql_query("SELECT * FROM tbl_activities16 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate16=mysqli_query("SELECT * FROM tbl_activities16 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
 
-while($dateRow16=mysql_fetch_array($queryByDate16)){
+while($dateRow16=mysqli_fetch_array($queryByDate16)){
 ?>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities16=mysql_query("SELECT * FROM  tbl_activities16 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow16['main_id']."");
-while($activitiesList16=mysql_fetch_array($activities16)){
+$activities16=mysqli_query("SELECT * FROM  tbl_activities16 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow16['main_id']."");
+while($activitiesList16=mysqli_fetch_array($activities16)){
 ?>
 
   <tr>
@@ -1014,8 +1014,8 @@ while($activitiesList16=mysql_fetch_array($activities16)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile16=mysql_query("SELECT * FROM  tbl_activities16 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow16['main_id']."");
-$activitiesFileList16=mysql_fetch_array($activitiesFile16);
+$activitiesFile16=mysqli_query("SELECT * FROM  tbl_activities16 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow16['main_id']."");
+$activitiesFileList16=mysqli_fetch_array($activitiesFile16);
 ?>
   <tr>
     <td colspan="2">Upload Document : <?php if(isset($activitiesFileList16['file'])){?><a href="upload/<?=$activitiesFileList16['file']?>" target="_blank">View File</a><?php } else { echo"No File"; } ?></td>
@@ -1036,15 +1036,15 @@ $activitiesFileList16=mysql_fetch_array($activitiesFile16);
 
 <td colspan="5"> 
 <?php
-$queryByDate17=mysql_query("SELECT * FROM tbl_activities17 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate17=mysqli_query("SELECT * FROM tbl_activities17 where user_id=".$_SESSION['userId']['id']." AND Proposed_on between '".date("Y-m-d", strtotime($_POST['fromDate']))."' AND '".date("Y-m-d", strtotime($_POST['toDate']))."' GROUP BY main_id ORDER BY main_id DESC");  
 
-while($dateRow17=mysql_fetch_array($queryByDate17)){
+while($dateRow17=mysqli_fetch_array($queryByDate17)){
 ?>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities17=mysql_query("SELECT * FROM  tbl_activities17 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow17['main_id']."");
-while($activitiesList17=mysql_fetch_array($activities17)){
+$activities17=mysqli_query("SELECT * FROM  tbl_activities17 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow17['main_id']."");
+while($activitiesList17=mysqli_fetch_array($activities17)){
 ?>
 
   <tr>
@@ -1069,8 +1069,8 @@ while($activitiesList17=mysql_fetch_array($activities17)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile17=mysql_query("SELECT * FROM  tbl_activities17 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow17['main_id']."");
-$activitiesFileList17=mysql_fetch_array($activitiesFile17);
+$activitiesFile17=mysqli_query("SELECT * FROM  tbl_activities17 where user_id=".$_SESSION['userId']['id']." AND main_id=".$dateRow17['main_id']."");
+$activitiesFileList17=mysqli_fetch_array($activitiesFile17);
 ?>
   <tr>
     <td colspan="2">Upload Document : <?php if(isset($activitiesFileList17['file'])){?><a href="upload/<?=$activitiesFileList17['file']?>" target="_blank">View File</a><?php } else { echo"No File"; } ?></td>

@@ -5,15 +5,15 @@ ini_set('display_errors','0');
 include_once'includes/connect.php';
 include_once'includes/session.php';
 date_default_timezone_set('Asia/Kolkata');
-$getQuery=mysql_query("SELECT * FROM tbl_monthly_report WHERE month='".date("M-Y")."' AND monthly_user_id='".$_SESSION['userId']['id']."'");
+$getQuery=mysqli_query("SELECT * FROM tbl_monthly_report WHERE month='".date("M-Y")."' AND monthly_user_id='".$_SESSION['userId']['id']."'");
 
-$data=mysql_fetch_array($getQuery);
+$data=mysqli_fetch_array($getQuery);
 ?>
 <?php
 $ActivitiesList = array();
 $descriptionQuery="select * from tbl_activities_description where month_data='".date("M-Y")."' AND act_id='".$_SESSION['userId']['id']."'";
-$getDescriptionQuery=mysql_query($descriptionQuery);
-while ($activities=mysql_fetch_array($getDescriptionQuery,MYSQL_ASSOC)){
+$getDescriptionQuery=mysqli_query($descriptionQuery);
+while ($activities=mysqli_fetch_array($getDescriptionQuery,mysqli_ASSOC)){
 
 
 $ActivitiesList[]=$activities;

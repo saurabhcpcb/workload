@@ -6,8 +6,8 @@ include_once'includes/connect.php';
 include_once'includes/session.php';
 date_default_timezone_set('Asia/Kolkata');
 //echo "select * from tbl_user where username='".$_SESSION['userId']['username']."'";
-$ses_sql1= mysql_query("select * from tbl_user where username='".$_SESSION['userId']['username']."'");
-$row5 = mysql_fetch_array($ses_sql1);
+$ses_sql1= mysqli_query("select * from tbl_user where username='".$_SESSION['userId']['username']."'");
+$row5 = mysqli_fetch_array($ses_sql1);
 
 
 ?>
@@ -157,8 +157,8 @@ $_SESSION['errors']="";
 					  $i=1;
 				  $query="select * from tbl_agenda where user_id='".$row5['id']."' ORDER BY id DESC";
 					  
-					  $res=mysql_query($query);
-					  while($row=mysql_fetch_array($res)){
+					  $res=mysqli_query($query);
+					  while($row=mysqli_fetch_array($res)){
 					  ?> 
                         <tr>
                         <td><?=$i?></td>

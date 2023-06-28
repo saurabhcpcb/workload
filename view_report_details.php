@@ -114,7 +114,7 @@ $dhId=count($_POST['dhId']);
 for($i=0;$i<$dhId;$i++){
 if(!empty($_POST['dhId'][$i])){
  
-$updateQuery=mysql_query("UPDATE $dhTable SET status=1, priority='".$_POST['type'][$i]."',target_date='".date("Y-m-d", strtotime($_POST['target_date'][$i]))."' WHERE id ='".$_POST['dhId'][$i]."'  AND  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd']."'");
+$updateQuery=mysqli_query("UPDATE $dhTable SET status=1, priority='".$_POST['type'][$i]."',target_date='".date("Y-m-d", strtotime($_POST['target_date'][$i]))."' WHERE id ='".$_POST['dhId'][$i]."'  AND  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd']."'");
 
 }
 }
@@ -305,8 +305,8 @@ display: none !important;
 $i=1;
 
 $descriptionQuery="SELECT * FROM $dhTable where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd']."'";
-$getDescriptionQuery=mysql_query($descriptionQuery);
-while ($activities=mysql_fetch_array($getDescriptionQuery,MYSQL_ASSOC)){
+$getDescriptionQuery=mysqli_query($descriptionQuery);
+while ($activities=mysqli_fetch_array($getDescriptionQuery,mysqli_ASSOC)){
  
 ?>
 <tr>
@@ -319,9 +319,9 @@ while ($activities=mysql_fetch_array($getDescriptionQuery,MYSQL_ASSOC)){
 </td>
 <td>
 <?php
-$userQuery1=mysql_query("select * from tbl_user where id=".$activities['user_id']."");
+$userQuery1=mysqli_query("select * from tbl_user where id=".$activities['user_id']."");
 
-$userData1=mysql_fetch_array($userQuery1); 
+$userData1=mysqli_fetch_array($userQuery1); 
 
 echo $userData1['Division']; 
 ?>

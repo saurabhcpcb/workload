@@ -111,20 +111,20 @@ display: none !important;
  
  
  <?php 
- $proposedQuery0=mysql_query("select * from tbl_activities0 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."'  AND final_Status=1 AND priority='".$_GET['priority']."'");
+ $proposedQuery0=mysqli_query("select * from tbl_activities0 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."'  AND final_Status=1 AND priority='".$_GET['priority']."'");
 
 ?>
 <?php
 
-while ($activities0=mysql_fetch_array($proposedQuery0,MYSQL_ASSOC)){
+while ($activities0=mysqli_fetch_array($proposedQuery0,mysqli_ASSOC)){
  
 ?>
 <tr>
 
 
 <?php
-$userQuery0=mysql_query("select * from tbl_user where id=".$activities0['user_id']."");
-$userData0=mysql_fetch_array($userQuery0);
+$userQuery0=mysqli_query("select * from tbl_user where id=".$activities0['user_id']."");
+$userData0=mysqli_fetch_array($userQuery0);
 ?>
 
 <td valign="top" align="left"> <?=$userData0['Division']?></td>
@@ -161,17 +161,17 @@ $i++;
  
 <?php
 $j=1;
-$proposedQuery1=mysql_query("select * from tbl_activities1 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
+$proposedQuery1=mysqli_query("select * from tbl_activities1 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
 
 
-while ($activities1=mysql_fetch_array($proposedQuery1,MYSQL_ASSOC)){
+while ($activities1=mysqli_fetch_array($proposedQuery1,mysqli_ASSOC)){
  
 ?>
 <tr>
 <?php
 
-$userQuery1=mysql_query("select * from tbl_user where id=".$activities1['user_id']."");
-$userData1=mysql_fetch_array($userQuery1);
+$userQuery1=mysqli_query("select * from tbl_user where id=".$activities1['user_id']."");
+$userData1=mysqli_fetch_array($userQuery1);
 ?>
 <td valign="top" align="left"> <?=$userData1['Division']?></td>
  <td valign="top" align="left"> 
@@ -204,17 +204,17 @@ echo "date: ". date("d-m-Y", strtotime($activities1['completed_date_by_rd']));
  
 <?php
 $k=1;
-$proposedQuery2=mysql_query("select * from tbl_activities2 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
+$proposedQuery2=mysqli_query("select * from tbl_activities2 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
 
 
-while ($activities2=mysql_fetch_array($proposedQuery2,MYSQL_ASSOC)){
+while ($activities2=mysqli_fetch_array($proposedQuery2,mysqli_ASSOC)){
  
 ?>
 <tr>
 <?php
  
-$userQuery2=mysql_query("select * from tbl_user where id=".$activities2['user_id']."");
-$userData2=mysql_fetch_array($userQuery2);
+$userQuery2=mysqli_query("select * from tbl_user where id=".$activities2['user_id']."");
+$userData2=mysqli_fetch_array($userQuery2);
 ?>
 <td valign="top" align="left"> <?=$userData2['Division']?></td>
  <td valign="top" align="left"> 
@@ -246,17 +246,17 @@ echo "date: ". date("d-m-Y", strtotime($activities2['completed_date_by_rd']));
 
 <?php
 $l=1;
-$proposedQuery3=mysql_query("select * from tbl_activities3 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
+$proposedQuery3=mysqli_query("select * from tbl_activities3 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
 
 
-while ($activities3=mysql_fetch_array($proposedQuery3,MYSQL_ASSOC)){
+while ($activities3=mysqli_fetch_array($proposedQuery3,mysqli_ASSOC)){
  
 ?>
 <tr>
 <?php
 
-$userQuery3=mysql_query("select * from tbl_user where id=".$activities3['user_id']."");
-$userData3=mysql_fetch_array($userQuery3);
+$userQuery3=mysqli_query("select * from tbl_user where id=".$activities3['user_id']."");
+$userData3=mysqli_fetch_array($userQuery3);
 ?>
 
 <td valign="top" align="left"> <?=$userData3['Division']?></td>
@@ -289,16 +289,16 @@ echo "date: ". date("d-m-Y", strtotime($activities3['completed_date_by_rd']));
 
 <?php
 $m=1;
-$proposedQuery4=mysql_query("select * from tbl_activities4 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
+$proposedQuery4=mysqli_query("select * from tbl_activities4 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
 
 
-while ($activities4=mysql_fetch_array($proposedQuery4,MYSQL_ASSOC)){
+while ($activities4=mysqli_fetch_array($proposedQuery4,mysqli_ASSOC)){
  
 ?>
 <tr>
 <?php
-$userQuery4=mysql_query("select * from tbl_user where id=".$activities4['user_id']."");
-$userData4=mysql_fetch_array($userQuery4);
+$userQuery4=mysqli_query("select * from tbl_user where id=".$activities4['user_id']."");
+$userData4=mysqli_fetch_array($userQuery4);
 ?>
 <td valign="top" align="left"> <?=$userData4['Division']?></td>
  <td valign="top" align="left"> 
@@ -331,16 +331,16 @@ echo "date: ". date("d-m-Y", strtotime($activities4['completed_date_by_rd']));
 <?php
 
 $n=1;
-$proposedQuery5=mysql_query("select * from tbl_activities5 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
+$proposedQuery5=mysqli_query("select * from tbl_activities5 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
 
 
-while ($activities5=mysql_fetch_array($proposedQuery5,MYSQL_ASSOC)){
+while ($activities5=mysqli_fetch_array($proposedQuery5,mysqli_ASSOC)){
  
 ?>
 <tr>
 <?php
-$userQuery5=mysql_query("select * from tbl_user where id=".$activities5['user_id']."");
-$userData5=mysql_fetch_array($userQuery5);
+$userQuery5=mysqli_query("select * from tbl_user where id=".$activities5['user_id']."");
+$userData5=mysqli_fetch_array($userQuery5);
 ?>
 <td valign="top" align="left"> <?=$userData5['Division']?></td>
  <td valign="top" align="left"> 
@@ -375,16 +375,16 @@ echo "date: ". date("d-m-Y", strtotime($activities5['completed_date_by_rd']));
  
 <?php
 $o=1;
-$proposedQuery6=mysql_query("select * from tbl_activities6 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
+$proposedQuery6=mysqli_query("select * from tbl_activities6 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
 
 
-while ($activities6=mysql_fetch_array($proposedQuery6,MYSQL_ASSOC)){
+while ($activities6=mysqli_fetch_array($proposedQuery6,mysqli_ASSOC)){
  
 ?>
 <tr>
 <?php
-$userQuery6=mysql_query("select * from tbl_user where id=".$activities6['user_id']."");
-$userData6=mysql_fetch_array($userQuery6);
+$userQuery6=mysqli_query("select * from tbl_user where id=".$activities6['user_id']."");
+$userData6=mysqli_fetch_array($userQuery6);
 ?>
 <td valign="top" align="left"> <?=$userData6['Division']?></td>
  <td valign="top" align="left"> 
@@ -420,16 +420,16 @@ echo "date: ". date("d-m-Y", strtotime($activities6['completed_date_by_rd']));
 <?php
 
 $p=1;
-$proposedQuery7=mysql_query("select * from tbl_activities7 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
+$proposedQuery7=mysqli_query("select * from tbl_activities7 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
 
 
-while ($activities7=mysql_fetch_array($proposedQuery7,MYSQL_ASSOC)){
+while ($activities7=mysqli_fetch_array($proposedQuery7,mysqli_ASSOC)){
  
 ?>
 <tr>
 <?php
-$userQuery7=mysql_query("select * from tbl_user where id=".$activities7['user_id']."");
-$userData7=mysql_fetch_array($userQuery7);
+$userQuery7=mysqli_query("select * from tbl_user where id=".$activities7['user_id']."");
+$userData7=mysqli_fetch_array($userQuery7);
 ?>
 <td valign="top" align="left"> <?=$userData7['Division']?></td>
  <td valign="top" align="left"> 
@@ -463,15 +463,15 @@ echo "date: ". date("d-m-Y", strtotime($activities7['completed_date_by_rd']));
  
 <?php
 $q=1;
-$proposedQuery8=mysql_query("select * from tbl_activities8 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
+$proposedQuery8=mysqli_query("select * from tbl_activities8 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
 
-while ($activities8=mysql_fetch_array($proposedQuery8,MYSQL_ASSOC)){
+while ($activities8=mysqli_fetch_array($proposedQuery8,mysqli_ASSOC)){
  
 ?>
 <tr>
 <?php
-$userQuery8=mysql_query("select * from tbl_user where id=".$activities8['user_id']."");
-$userData8=mysql_fetch_array($userQuery8);
+$userQuery8=mysqli_query("select * from tbl_user where id=".$activities8['user_id']."");
+$userData8=mysqli_fetch_array($userQuery8);
 ?>
 <td valign="top" align="left"> <?=$userData8['Division']?></td>
  <td valign="top" align="left"> 
@@ -508,16 +508,16 @@ echo "date: ". date("d-m-Y", strtotime($activities8['completed_date_by_rd']));
 
 <?php
 $r=1;
-$proposedQuery9=mysql_query("select * from tbl_activities9 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
+$proposedQuery9=mysqli_query("select * from tbl_activities9 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
 
 
-while ($activities9=mysql_fetch_array($proposedQuery9,MYSQL_ASSOC)){
+while ($activities9=mysqli_fetch_array($proposedQuery9,mysqli_ASSOC)){
  
 ?>
 <tr>
 <?php
-$userQuery9=mysql_query("select * from tbl_user where id=".$activities9['user_id']."");
-$userData9=mysql_fetch_array($userQuery9);
+$userQuery9=mysqli_query("select * from tbl_user where id=".$activities9['user_id']."");
+$userData9=mysqli_fetch_array($userQuery9);
 ?>
 <td valign="top" align="left"> <?=$userData9['Division']?></td>
  <td valign="top" align="left"> 
@@ -554,16 +554,16 @@ echo "date: ". date("d-m-Y", strtotime($activities9['completed_date_by_rd']));
 
 <?php
 $s=1;
-$proposedQuery10=mysql_query("select * from tbl_activities10 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
+$proposedQuery10=mysqli_query("select * from tbl_activities10 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
 
 
-while ($activities10=mysql_fetch_array($proposedQuery10,MYSQL_ASSOC)){
+while ($activities10=mysqli_fetch_array($proposedQuery10,mysqli_ASSOC)){
  
 ?>
 <tr>
 <?php
-$userQuery10=mysql_query("select * from tbl_user where id=".$activities10['user_id']."");
-$userData10=mysql_fetch_array($userQuery10);
+$userQuery10=mysqli_query("select * from tbl_user where id=".$activities10['user_id']."");
+$userData10=mysqli_fetch_array($userQuery10);
 ?>
 <td valign="top" align="left"> <?=$userData10['Division']?></td>
   <td valign="top" align="left"> 
@@ -600,16 +600,16 @@ echo "date: ". date("d-m-Y", strtotime($activities10['completed_date_by_rd']));
 <?php
 $t=1;
 
-$proposedQuery11=mysql_query("select * from tbl_activities11 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
+$proposedQuery11=mysqli_query("select * from tbl_activities11 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
 
 
-while ($activities11=mysql_fetch_array($proposedQuery11,MYSQL_ASSOC)){
+while ($activities11=mysqli_fetch_array($proposedQuery11,mysqli_ASSOC)){
  
 ?>
 <tr>
 <?php
-$userQuery11=mysql_query("select * from tbl_user where id=".$activities11['user_id']."");
-$userData11=mysql_fetch_array($userQuery11);
+$userQuery11=mysqli_query("select * from tbl_user where id=".$activities11['user_id']."");
+$userData11=mysqli_fetch_array($userQuery11);
 ?>
 <td valign="top" align="left"> <?=$userData11['Division']?></td>
  <td valign="top" align="left"> 
@@ -646,9 +646,9 @@ echo "date: ". date("d-m-Y", strtotime($activities11['completed_date_by_rd']));
 
 <?php
 $u=1;
-$proposedQuery12=mysql_query("select * from tbl_activities12 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
+$proposedQuery12=mysqli_query("select * from tbl_activities12 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
 
-while ($activities12=mysql_fetch_array($proposedQuery12,MYSQL_ASSOC)){
+while ($activities12=mysqli_fetch_array($proposedQuery12,mysqli_ASSOC)){
  
 ?>
 <tr>
@@ -656,8 +656,8 @@ while ($activities12=mysql_fetch_array($proposedQuery12,MYSQL_ASSOC)){
 
 
 
-$userQuery12=mysql_query("select * from tbl_user where id=".$activities12['user_id']."");
-$userData12=mysql_fetch_array($userQuery12);
+$userQuery12=mysqli_query("select * from tbl_user where id=".$activities12['user_id']."");
+$userData12=mysqli_fetch_array($userQuery12);
 ?>
 <td valign="top" align="left"> <?=$userData12['Division']?></td>
  <td valign="top" align="left"> 
@@ -694,16 +694,16 @@ echo "date: ". date("d-m-Y", strtotime($activities12['completed_date_by_rd']));
 
 <?php
 $v=1;
-$proposedQuery13=mysql_query("select * from tbl_activities13 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
+$proposedQuery13=mysqli_query("select * from tbl_activities13 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
 
 
-while ($activities13=mysql_fetch_array($proposedQuery13,MYSQL_ASSOC)){
+while ($activities13=mysqli_fetch_array($proposedQuery13,mysqli_ASSOC)){
  
 ?>
 <tr>
 <?php
-$userQuery13=mysql_query("select * from tbl_user where id=".$activities13['user_id']."");
-$userData13=mysql_fetch_array($userQuery13);
+$userQuery13=mysqli_query("select * from tbl_user where id=".$activities13['user_id']."");
+$userData13=mysqli_fetch_array($userQuery13);
 ?>
 <td valign="top" align="left"> <?=$userData13['Division']?></td>
  <td valign="top" align="left"> 
@@ -738,16 +738,16 @@ echo "date: ". date("d-m-Y", strtotime($activities13['completed_date_by_rd']));
 
 <?php
 $w=1;
-$proposedQuery14=mysql_query("select * from tbl_activities14 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
+$proposedQuery14=mysqli_query("select * from tbl_activities14 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
 
 
-while ($activities14=mysql_fetch_array($proposedQuery14,MYSQL_ASSOC)){
+while ($activities14=mysqli_fetch_array($proposedQuery14,mysqli_ASSOC)){
  
 ?>
 <tr>
 <?php
-$userQuery14=mysql_query("select * from tbl_user where id=".$activities14['user_id']."");
-$userData14=mysql_fetch_array($userQuery14);
+$userQuery14=mysqli_query("select * from tbl_user where id=".$activities14['user_id']."");
+$userData14=mysqli_fetch_array($userQuery14);
 ?>
 <td valign="top" align="left"> <?=$userData14['Division']?></td>
  <td valign="top" align="left"> 
@@ -784,16 +784,16 @@ echo "date: ". date("d-m-Y", strtotime($activities14['completed_date_by_rd']));
 
 <?php
 $v=1;
-$proposedQuery15=mysql_query("select * from tbl_activities15 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
+$proposedQuery15=mysqli_query("select * from tbl_activities15 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
 
 
-while ($activities15=mysql_fetch_array($proposedQuery15,MYSQL_ASSOC)){
+while ($activities15=mysqli_fetch_array($proposedQuery15,mysqli_ASSOC)){
  
 ?>
 <tr>
 <?php
-$userQuery15=mysql_query("select * from tbl_user where id=".$activities15['user_id']."");
-$userData15=mysql_fetch_array($userQuery15);
+$userQuery15=mysqli_query("select * from tbl_user where id=".$activities15['user_id']."");
+$userData15=mysqli_fetch_array($userQuery15);
 ?>
 <td valign="top" align="left"> <?=$userData15['Division']?></td>
  <td valign="top" align="left"> 
@@ -831,16 +831,16 @@ echo "date: ". date("d-m-Y", strtotime($activities15['completed_date_by_rd']));
 
 <?php
 $u=1;
-$proposedQuery16=mysql_query("select * from tbl_activities16 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND 
+$proposedQuery16=mysqli_query("select * from tbl_activities16 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND 
 priority='".$_GET['priority']."'");
 
-while ($activities16=mysql_fetch_array($proposedQuery16,MYSQL_ASSOC)){
+while ($activities16=mysqli_fetch_array($proposedQuery16,mysqli_ASSOC)){
  
 ?>
 <tr>
 <?php
-$userQuery16=mysql_query("select * from tbl_user where id=".$activities16['user_id']."");
-$userData16=mysql_fetch_array($userQuery16);
+$userQuery16=mysqli_query("select * from tbl_user where id=".$activities16['user_id']."");
+$userData16=mysqli_fetch_array($userQuery16);
 ?>
 <td valign="top" align="left"> <?=$userData16['Division']?></td>
  <td valign="top" align="left"> 
@@ -878,14 +878,14 @@ echo "date: ". date("d-m-Y", strtotime($activities16['completed_date_by_rd']));
 
 <?php
 $z=1;
-$proposedQuery17=mysql_query("select * from tbl_activities17 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
-while ($activities17=mysql_fetch_array($proposedQuery17,MYSQL_ASSOC)){
+$proposedQuery17=mysqli_query("select * from tbl_activities17 where  target_date between '".date("Y-m-d",strtotime($_GET['fromDate']))."' AND '".date("Y-m-d",strtotime($_GET['toDate']))."' AND  final_Status=1 AND priority='".$_GET['priority']."'");
+while ($activities17=mysqli_fetch_array($proposedQuery17,mysqli_ASSOC)){
  
 ?>
 <tr>
 <?php
-$userQuery17=mysql_query("select * from tbl_user where id=".$activities0['user_id']."");
-$userData17=mysql_fetch_array($userQuery17);
+$userQuery17=mysqli_query("select * from tbl_user where id=".$activities0['user_id']."");
+$userData17=mysqli_fetch_array($userQuery17);
 ?>
 <td valign="top" align="left"> <?=$userData17['Division']?></td>
  <td valign="top" align="left"> 

@@ -6,8 +6,8 @@ include_once'includes/connect.php';
 include_once'includes/session.php';
 date_default_timezone_set('Asia/Kolkata');
 //echo "select * from tbl_user where username='".$_SESSION['userId']['username']."'";
-$ses_sql1= mysql_query("select * from tbl_user where username='".$_SESSION['userId']['username']."'");
-$row1 = mysql_fetch_array($ses_sql1);
+$ses_sql1= mysqli_query("select * from tbl_user where username='".$_SESSION['userId']['username']."'");
+$row1 = mysqli_fetch_array($ses_sql1);
 
 ?>
 
@@ -26,7 +26,7 @@ $insetUserQuery="INSERT INTO tbl_agenda_rd (user_id,name_of_board, subject, divi
   '".addslashes($_POST['division'])."', 
   '".date("Y-m-d")."')";
   
-if(mysql_query($insetUserQuery))
+if(mysqli_query($insetUserQuery))
 {
 $_SESSION['message']="Agenda added in the list.";
 header("location:view_agenda_rd.php");

@@ -94,45 +94,45 @@ display: none !important;
  <?php 
 $i=0;
 
-$proposedQuery0=mysql_query("select * from tbl_activities0 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."' GROUP BY  activities_name");
-$proposedQuery1=mysql_query("select * from tbl_activities1 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."' GROUP BY  activities_name");
+$proposedQuery0=mysqli_query("select * from tbl_activities0 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."' GROUP BY  activities_name");
+$proposedQuery1=mysqli_query("select * from tbl_activities1 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."' GROUP BY  activities_name");
 
-$proposedQuery2=mysql_query("select * from tbl_activities2 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
+$proposedQuery2=mysqli_query("select * from tbl_activities2 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
 
-$proposedQuery3=mysql_query("select * from tbl_activities3 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
+$proposedQuery3=mysqli_query("select * from tbl_activities3 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
 
-$proposedQuery4=mysql_query("select * from tbl_activities4 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
+$proposedQuery4=mysqli_query("select * from tbl_activities4 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
 
-$proposedQuery5=mysql_query("select * from tbl_activities5 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
+$proposedQuery5=mysqli_query("select * from tbl_activities5 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
 
-$proposedQuery6=mysql_query("select * from tbl_activities6 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."' GROUP BY  activities_name");
+$proposedQuery6=mysqli_query("select * from tbl_activities6 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."' GROUP BY  activities_name");
 
-$proposedQuery7=mysql_query("select * from tbl_activities7 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
+$proposedQuery7=mysqli_query("select * from tbl_activities7 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
 
-$proposedQuery8=mysql_query("select * from tbl_activities8 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
+$proposedQuery8=mysqli_query("select * from tbl_activities8 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
 
-$proposedQuery9=mysql_query("select * from tbl_activities9 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
+$proposedQuery9=mysqli_query("select * from tbl_activities9 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
 
-$proposedQuery10=mysql_query("select * from tbl_activities10 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
+$proposedQuery10=mysqli_query("select * from tbl_activities10 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
 
-$proposedQuery11=mysql_query("select * from tbl_activities11 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
+$proposedQuery11=mysqli_query("select * from tbl_activities11 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
 
-$proposedQuery12=mysql_query("select * from tbl_activities12 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
+$proposedQuery12=mysqli_query("select * from tbl_activities12 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
 
-$proposedQuery13=mysql_query("select * from tbl_activities13 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
+$proposedQuery13=mysqli_query("select * from tbl_activities13 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
 
-$proposedQuery14=mysql_query("select * from tbl_activities14 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
+$proposedQuery14=mysqli_query("select * from tbl_activities14 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
 
-$proposedQuery15=mysql_query("select * from tbl_activities15 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
+$proposedQuery15=mysqli_query("select * from tbl_activities15 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
 
-$proposedQuery16=mysql_query("select * from tbl_activities16 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND 
+$proposedQuery16=mysqli_query("select * from tbl_activities16 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND 
 priority='".$_GET['activities']."'  GROUP BY  activities_name");
 
-$proposedQuery17=mysql_query("select * from tbl_activities17 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
+$proposedQuery17=mysqli_query("select * from tbl_activities17 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
 ?>
 <?php
 
-while ($activities0=mysql_fetch_array($proposedQuery0,MYSQL_ASSOC)){
+while ($activities0=mysqli_fetch_array($proposedQuery0,mysqli_ASSOC)){
  
 ?>
 <tr>
@@ -146,7 +146,7 @@ while ($activities0=mysql_fetch_array($proposedQuery0,MYSQL_ASSOC)){
 
 <?php
 
-while ($activities1=mysql_fetch_array($proposedQuery1,MYSQL_ASSOC)){
+while ($activities1=mysqli_fetch_array($proposedQuery1,mysqli_ASSOC)){
  
 ?>
 <tr>
@@ -159,7 +159,7 @@ while ($activities1=mysql_fetch_array($proposedQuery1,MYSQL_ASSOC)){
 
 <?php
 
-while ($activities2=mysql_fetch_array($proposedQuery2,MYSQL_ASSOC)){
+while ($activities2=mysqli_fetch_array($proposedQuery2,mysqli_ASSOC)){
  
 ?>
 <tr>
@@ -172,7 +172,7 @@ while ($activities2=mysql_fetch_array($proposedQuery2,MYSQL_ASSOC)){
 
 <?php
 
-while ($activities3=mysql_fetch_array($proposedQuery3,MYSQL_ASSOC)){
+while ($activities3=mysqli_fetch_array($proposedQuery3,mysqli_ASSOC)){
  
 ?>
 <tr>
@@ -184,7 +184,7 @@ while ($activities3=mysql_fetch_array($proposedQuery3,MYSQL_ASSOC)){
 <?php } ?>
 <?php
 
-while ($activities4=mysql_fetch_array($proposedQuery4,MYSQL_ASSOC)){
+while ($activities4=mysqli_fetch_array($proposedQuery4,mysqli_ASSOC)){
  
 ?>
 <tr>
@@ -197,7 +197,7 @@ while ($activities4=mysql_fetch_array($proposedQuery4,MYSQL_ASSOC)){
  
 <?php
 
-while ($activities5=mysql_fetch_array($proposedQuery5,MYSQL_ASSOC)){
+while ($activities5=mysqli_fetch_array($proposedQuery5,mysqli_ASSOC)){
  
 ?>
 <tr>
@@ -211,7 +211,7 @@ while ($activities5=mysql_fetch_array($proposedQuery5,MYSQL_ASSOC)){
 
 <?php
 
-while ($activities6=mysql_fetch_array($proposedQuery6,MYSQL_ASSOC)){
+while ($activities6=mysqli_fetch_array($proposedQuery6,mysqli_ASSOC)){
  
 ?>
 <tr>
@@ -225,7 +225,7 @@ while ($activities6=mysql_fetch_array($proposedQuery6,MYSQL_ASSOC)){
 
 <?php
 
-while ($activities7=mysql_fetch_array($proposedQuery7,MYSQL_ASSOC)){
+while ($activities7=mysqli_fetch_array($proposedQuery7,mysqli_ASSOC)){
  
 ?>
 <tr>
@@ -239,7 +239,7 @@ while ($activities7=mysql_fetch_array($proposedQuery7,MYSQL_ASSOC)){
 
 <?php
 
-while ($activities8=mysql_fetch_array($proposedQuery8,MYSQL_ASSOC)){
+while ($activities8=mysqli_fetch_array($proposedQuery8,mysqli_ASSOC)){
  
 ?>
 <tr>
@@ -253,7 +253,7 @@ while ($activities8=mysql_fetch_array($proposedQuery8,MYSQL_ASSOC)){
 
 <?php
 
-while ($activities9=mysql_fetch_array($proposedQuery9,MYSQL_ASSOC)){
+while ($activities9=mysqli_fetch_array($proposedQuery9,mysqli_ASSOC)){
  
 ?>
 <tr>
@@ -266,7 +266,7 @@ while ($activities9=mysql_fetch_array($proposedQuery9,MYSQL_ASSOC)){
 
 <?php
 
-while ($activities10=mysql_fetch_array($proposedQuery10,MYSQL_ASSOC)){
+while ($activities10=mysqli_fetch_array($proposedQuery10,mysqli_ASSOC)){
  
 ?>
 <tr>
@@ -279,7 +279,7 @@ while ($activities10=mysql_fetch_array($proposedQuery10,MYSQL_ASSOC)){
 
 <?php
 
-while ($activities11=mysql_fetch_array($proposedQuery11,MYSQL_ASSOC)){
+while ($activities11=mysqli_fetch_array($proposedQuery11,mysqli_ASSOC)){
  
 ?>
 <tr>
@@ -292,7 +292,7 @@ while ($activities11=mysql_fetch_array($proposedQuery11,MYSQL_ASSOC)){
 
 <?php
 
-while ($activities12=mysql_fetch_array($proposedQuery12,MYSQL_ASSOC)){
+while ($activities12=mysqli_fetch_array($proposedQuery12,mysqli_ASSOC)){
  
 ?>
 <tr>
@@ -305,7 +305,7 @@ while ($activities12=mysql_fetch_array($proposedQuery12,MYSQL_ASSOC)){
 
 <?php
 
-while ($activities13=mysql_fetch_array($proposedQuery13,MYSQL_ASSOC)){
+while ($activities13=mysqli_fetch_array($proposedQuery13,mysqli_ASSOC)){
  
 ?>
 <tr>
@@ -318,7 +318,7 @@ while ($activities13=mysql_fetch_array($proposedQuery13,MYSQL_ASSOC)){
 
 <?php
 
-while ($activities14=mysql_fetch_array($proposedQuery14,MYSQL_ASSOC)){
+while ($activities14=mysqli_fetch_array($proposedQuery14,mysqli_ASSOC)){
  
 ?>
 <tr>
@@ -331,7 +331,7 @@ while ($activities14=mysql_fetch_array($proposedQuery14,MYSQL_ASSOC)){
 
 <?php
 
-while ($activities15=mysql_fetch_array($proposedQuery15,MYSQL_ASSOC)){
+while ($activities15=mysqli_fetch_array($proposedQuery15,mysqli_ASSOC)){
  
 ?>
 <tr>
@@ -344,7 +344,7 @@ while ($activities15=mysql_fetch_array($proposedQuery15,MYSQL_ASSOC)){
 
 <?php
 
-while ($activities16=mysql_fetch_array($proposedQuery16,MYSQL_ASSOC)){
+while ($activities16=mysqli_fetch_array($proposedQuery16,mysqli_ASSOC)){
  
 ?>
 <tr>
@@ -357,7 +357,7 @@ while ($activities16=mysql_fetch_array($proposedQuery16,MYSQL_ASSOC)){
 
 <?php
 
-while ($activities17=mysql_fetch_array($proposedQuery17,MYSQL_ASSOC)){
+while ($activities17=mysqli_fetch_array($proposedQuery17,mysqli_ASSOC)){
  
 ?>
 <tr>

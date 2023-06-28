@@ -13,12 +13,12 @@ if(isset($_POST['submit']) && $_POST['submit']=="Save")
 {
 
 $main="INSERT INTO tbl_activities_main_rd(user_id,month) VALUES (".$_SESSION['userId']['id']." ,'".date("M-Y")."')";
-$mainQuery=mysql_query($main);
+$mainQuery=mysqli_query($main);
 
 
 if($main){
 
-$id = mysql_insert_id();
+$id = mysqli_insert_id();
  
 /*--------------------------------------------------------------*/
 
@@ -31,7 +31,7 @@ for($i=0; $i<$countUnit_Name0; $i++)
 if(!empty($_POST['Unit_Name0'][$i])){
 
 $strquery0="insert into  tbl_activities_rd0(main_id,user_id,activities_id,Unit_Name,month) values (".$id.",'".$_SESSION['userId']['id']."','18','".$_POST['Unit_Name0'][$i]."','".date("M-Y")."')";
-mysql_query($strquery0);
+mysqli_query($strquery0);
 }
 }
 /*------------------------------------------------------------------------------------------------------------------*/
@@ -47,7 +47,7 @@ for($i=0; $i<$countUnit_Name1; $i++)
 if(!empty($_POST['Unit_Name1'][$i])){
 
 $strquery1="insert into  tbl_activities_rd1(main_id,user_id,activities_id,Unit_Name,month) values (".$id.",'".$_SESSION['userId']['id']."','17','".$_POST['Unit_Name1'][$i]."','".date("M-Y")."')";
-mysql_query($strquery1);
+mysqli_query($strquery1);
 }
 }
 /*------------------------------------------------------------------------------------------------------------------*/
@@ -65,7 +65,7 @@ for($i=0; $i<$countUnit_Name2; $i++)
 if(!empty($_POST['Unit_Name2'][$i])){
 
 $strquery2="insert into  tbl_activities_rd2(main_id,user_id,activities_id,Unit_Name,month) values (".$id.",'".$_SESSION['userId']['id']."','16','".$_POST['Unit_Name2'][$i]."','".date("M-Y")."')";
-mysql_query($strquery2);
+mysqli_query($strquery2);
 }
 }
 /*------------------------------------------------------------------------------------------------------------------*/
@@ -80,7 +80,7 @@ for($i=0; $i<$countUnit_Name3; $i++)
 if(!empty($_POST['Unit_Name3'][$i])){
 
 $strquery3="insert into  tbl_activities_rd3(main_id,user_id,activities_id,Unit_Name,month) values (".$id.",'".$_SESSION['userId']['id']."','15','".$_POST['Unit_Name3'][$i]."','".date("M-Y")."')";
-mysql_query($strquery3);
+mysqli_query($strquery3);
 }
 }
 /*------------------------------------------------------------------------------------------------------------------*/
@@ -96,7 +96,7 @@ for($i=0; $i<$countUnit_Name4; $i++)
 if(!empty($_POST['Unit_Name4'][$i])){
 
 $strquery4="insert into  tbl_activities_rd4(main_id,user_id,activities_id,Unit_Name,month) values (".$id.",'".$_SESSION['userId']['id']."','8','".$_POST['Unit_Name4'][$i]."','".date("M-Y")."')";
-mysql_query($strquery4);
+mysqli_query($strquery4);
 }
 }
 /*------------------------------------------------------------------------------------------------------------------*/
@@ -112,7 +112,7 @@ for($i=0; $i<$countUnit_Name5; $i++)
 if(!empty($_POST['Unit_Name5'][$i])){
 
 $strquery5="insert into  tbl_activities_rd5(main_id,user_id,activities_id,Unit_Name,month) values (".$id.",'".$_SESSION['userId']['id']."','9','".$_POST['Unit_Name5'][$i]."','".date("M-Y")."')";
-mysql_query($strquery5);
+mysqli_query($strquery5);
 }
 }
 /*------------------------------------------------------------------------------------------------------------------*/
@@ -127,7 +127,7 @@ for($i=0; $i<$countUnit_Name6; $i++)
 if(!empty($_POST['Unit_Name6'][$i])){
 
 $strquery6="insert into  tbl_activities_rd6(main_id,user_id,activities_id,Unit_Name,month) values (".$id.",'".$_SESSION['userId']['id']."','10','".$_POST['Unit_Name6'][$i]."','".date("M-Y")."')";
-mysql_query($strquery6);
+mysqli_query($strquery6);
 }
 }
 /*------------------------------------------------------------------------------------------------------------------*/
@@ -142,7 +142,7 @@ for($i=0; $i<$countUnit_Name7; $i++)
 if(!empty($_POST['Unit_Name7'][$i])){
 
 $strquery7="insert into  tbl_activities_rd7(main_id,user_id,activities_id,Unit_Name,month) values (".$id.",'".$_SESSION['userId']['id']."','11','".$_POST['Unit_Name7'][$i]."','".date("M-Y")."')";
-mysql_query($strquery7);
+mysqli_query($strquery7);
 }
 }
 /*------------------------------------------------------------------------------------------------------------------*/
@@ -157,7 +157,7 @@ for($i=0; $i<$countUnit_Name8; $i++)
 if(!empty($_POST['Unit_Name8'][$i])){
 
 $strquery8="insert into  tbl_activities_rd8(main_id,user_id,activities_id,Unit_Name,month) values (".$id.",'".$_SESSION['userId']['id']."','12','".$_POST['Unit_Name8'][$i]."','".date("M-Y")."')";
-mysql_query($strquery8);
+mysqli_query($strquery8);
 }
 }
 /*------------------------------------------------------------------------------------------------------------------*/
@@ -173,7 +173,7 @@ for($i=0; $i<$countUnit_Name9; $i++)
 if(!empty($_POST['Unit_Name9'][$i])){
 
 $strquery9="insert into  tbl_activities_rd9(main_id,user_id,activities_id,Unit_Name,month) values (".$id.",'".$_SESSION['userId']['id']."','3','".$_POST['Unit_Name9'][$i]."','".date("M-Y")."')";
-mysql_query($strquery9);
+mysqli_query($strquery9);
 }
 }
 /*------------------------------------------------------------------------------------------------------------------*/
@@ -191,7 +191,7 @@ for($i=0; $i<$countUnit_Name10; $i++)
 if(!empty($_POST['Unit_Name10'][$i])){
 
 $strquery10="insert into  tbl_activities_rd10(main_id,user_id,activities_id,Unit_Name,month) values (".$id.",'".$_SESSION['userId']['id']."','6','".$_POST['Unit_Name10'][$i]."','".date("M-Y")."')";
-mysql_query($strquery10);
+mysqli_query($strquery10);
 }
 }
 /*------------------------------------------------------------------------------------------------------------------*/
@@ -207,7 +207,7 @@ for($i=0; $i<$countUnit_Name11; $i++)
 if(!empty($_POST['Unit_Name11'][$i])){
 
 $strquery11="insert into  tbl_activities_rd11(main_id,user_id,activities_id,Unit_Name,month) values (".$id.",'".$_SESSION['userId']['id']."','1','".$_POST['Unit_Name11'][$i]."','".date("M-Y")."')";
-mysql_query($strquery11);
+mysqli_query($strquery11);
 }
 }
 /*------------------------------------------------------------------------------------------------------------------*/
@@ -222,7 +222,7 @@ for($i=0; $i<$countUnit_Name12; $i++)
 if(!empty($_POST['Unit_Name12'][$i])){
 
 $strquery12="insert into  tbl_activities_rd12(main_id,user_id,activities_id,Unit_Name,month) values (".$id.",'".$_SESSION['userId']['id']."','2','".$_POST['Unit_Name12'][$i]."','".date("M-Y")."')";
-mysql_query($strquery12);
+mysqli_query($strquery12);
 }
 }
 /*------------------------------------------------------------------------------------------------------------------*/
@@ -237,7 +237,7 @@ for($i=0; $i<$countUnit_Name13; $i++)
 if(!empty($_POST['Unit_Name13'][$i])){
 
 $strquery13="insert into  tbl_activities_rd13(main_id,user_id,activities_id,Unit_Name,month) values (".$id.",'".$_SESSION['userId']['id']."','14','".$_POST['Unit_Name13'][$i]."','".date("M-Y")."')";
-mysql_query($strquery13);
+mysqli_query($strquery13);
 }
 }
 /*------------------------------------------------------------------------------------------------------------------*/
@@ -252,7 +252,7 @@ for($i=0; $i<$countUnit_Name14; $i++)
 if(!empty($_POST['Unit_Name14'][$i])){
 
 $strquery14="insert into  tbl_activities_rd14(main_id,user_id,activities_id,Unit_Name,month) values (".$id.",'".$_SESSION['userId']['id']."','13','".$_POST['Unit_Name14'][$i]."','".date("M-Y")."')";
-mysql_query($strquery14);
+mysqli_query($strquery14);
 }
 }
 /*------------------------------------------------------------------------------------------------------------------*/
@@ -267,7 +267,7 @@ for($i=0; $i<$countUnit_Name15; $i++)
 if(!empty($_POST['Unit_Name15'][$i])){
 
 $strquery15="insert into  tbl_activities_rd15(main_id,user_id,activities_id,Unit_Name,month) values (".$id.",'".$_SESSION['userId']['id']."','7','".$_POST['Unit_Name15'][$i]."','".date("M-Y")."')";
-mysql_query($strquery15);
+mysqli_query($strquery15);
 }
 }
 /*------------------------------------------------------------------------------------------------------------------*/
@@ -282,7 +282,7 @@ for($i=0; $i<$countUnit_Name16; $i++)
 if(!empty($_POST['Unit_Name16'][$i])){
 
 $strquery16="insert into  tbl_activities_rd16(main_id,user_id,activities_id,Unit_Name,month) values (".$id.",'".$_SESSION['userId']['id']."','5','".$_POST['Unit_Name16'][$i]."','".date("M-Y")."')";
-mysql_query($strquery16);
+mysqli_query($strquery16);
 }
 }
 /*------------------------------------------------------------------------------------------------------------------*/
@@ -297,7 +297,7 @@ for($i=0; $i<$countUnit_Name17; $i++)
 if(!empty($_POST['Unit_Name17'][$i])){
 
 $strquery17="insert into  tbl_activities_rd17(main_id,user_id,activities_id,Unit_Name,month) values (".$id.",'".$_SESSION['userId']['id']."','5','".$_POST['Unit_Name17'][$i]."','".date("M-Y")."')";
-mysql_query($strquery17);
+mysqli_query($strquery17);
 }
 }
 /*------------------------------------------------------------------------------------------------------------------*/
@@ -314,7 +314,7 @@ for($i=0; $i<$countOtherActivities; $i++)
 if(!empty($_POST['Other_Activities'][$i])){
 
 $OtherActivities="insert into  tbl_other_activities(main_id,user_id,activities,month) values (".$id.",'".$_SESSION['userId']['id']."','".$_POST['Other_Activities'][$i]."','".date("M-Y")."')";
-mysql_query($OtherActivities);
+mysqli_query($OtherActivities);
 }
 }
 /*------------------------------------------------------------------------------------------------------------------*/
@@ -935,40 +935,40 @@ default:
                               <?php
   
  
-$checkQuery=mysql_num_rows(mysql_query("select * from  tbl_activities_rd0 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd0 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
-$checkQuery1=mysql_num_rows(mysql_query("select * from  tbl_activities_rd1 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
-$checkQuery2=mysql_num_rows(mysql_query("select * from  tbl_activities_rd2 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery1=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd1 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery2=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd2 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
-$checkQuery3=mysql_num_rows(mysql_query("select * from  tbl_activities_rd3 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery3=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd3 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
-$checkQuery4=mysql_num_rows(mysql_query("select * from  tbl_activities_rd4 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery4=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd4 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
 
-$checkQuery5=mysql_num_rows(mysql_query("select * from  tbl_activities_rd5 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery5=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd5 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
-$checkQuery6=mysql_num_rows(mysql_query("select * from  tbl_activities_rd6 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery6=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd6 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
-$checkQuery7=mysql_num_rows(mysql_query("select * from  tbl_activities_rd7 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery7=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd7 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
-$checkQuery8=mysql_num_rows(mysql_query("select * from  tbl_activities_rd8 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery8=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd8 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
-$checkQuery9=mysql_num_rows(mysql_query("select * from  tbl_activities_rd9 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery9=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd9 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
-$checkQuery10=mysql_num_rows(mysql_query("select * from  tbl_activities_rd10 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery10=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd10 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
-$checkQuery11=mysql_num_rows(mysql_query("select * from  tbl_activities_rd11 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery11=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd11 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
-$checkQuery12=mysql_num_rows(mysql_query("select * from  tbl_activities_rd12 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery12=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd12 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
-$checkQuery13=mysql_num_rows(mysql_query("select * from  tbl_activities_rd13 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery13=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd13 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
-$checkQuery14=mysql_num_rows(mysql_query("select * from  tbl_activities_rd14 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery14=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd14 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
-$checkQuery15=mysql_num_rows(mysql_query("select * from  tbl_activities_rd15 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery15=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd15 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
-$checkQuery16=mysql_num_rows(mysql_query("select * from  tbl_activities_rd16 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
-$checkQuery17=mysql_num_rows(mysql_query("select * from  tbl_activities_rd17 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery16=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd16 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery17=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd17 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
 if($checkQuery > 0 ||  $checkQuery1 > 0 ||  $checkQuery2 > 0 ||  $checkQuery3 > 0 ||  $checkQuery4 > 0 ||  $checkQuery5 > 0||  $checkQuery6 > 0||  $checkQuery7 > 0||  $checkQuery8 > 0||  $checkQuery9 > 0||  $checkQuery10 > 0||  $checkQuery11 > 0||  $checkQuery12 > 0||  $checkQuery13 > 0 ||  $checkQuery14 > 0 ||  $checkQuery15 > 0 ||  $checkQuery16 > 0 ||  $checkQuery17 > 0){
 

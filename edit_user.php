@@ -6,19 +6,19 @@ include_once'includes/connect.php';
 include_once'includes/session.php';
 date_default_timezone_set('Asia/Kolkata');
 
-$getQuery=mysql_query("select * from tbl_user where id=".$_GET['id']."");
-$user=mysql_fetch_array($getQuery);
+$getQuery=mysqli_query("select * from tbl_user where id=".$_GET['id']."");
+$user=mysqli_fetch_array($getQuery);
 ?>
 <?php
 if($_POST['process']=="editData" && $_POST['process']!="") 
 {
 $insetQuery="update tbl_user set username='".addslashes($_POST['username'])."',password='".addslashes($_POST['password'])."',user_type='".addslashes($_POST['user_type'])."',Officer='".addslashes($_POST['Officer'])."', emailid='".addslashes($_POST['emailid'])."',phone='".addslashes($_POST['phone'])."',board='".addslashes($_POST['board'])."',Division='".addslashes($_POST['division'])."' where id=".$_POST['editId']."";
 
-if(mysql_query($insetQuery)){
+if(mysqli_query($insetQuery)){
 
 
 $deleteActivitis="delete from tbl_user_activities_list where user_id=".$_POST['editId']."";
-if(mysql_query($deleteActivitis)){
+if(mysqli_query($deleteActivitis)){
 $activities=$_POST['activities'] ;
 $countActivities = count($activities); 
  
@@ -27,7 +27,7 @@ for($i=0; $i<$countActivities; $i++)
 if(!empty($_POST['activities'][$i])){
 
 $strquery1="insert into  tbl_user_activities_list(user_id,activities_id) values ('".$_POST['editId']."','".$_POST['activities'][$i]."')"; 
-mysql_query($strquery1);
+mysqli_query($strquery1);
 }
 }
 }
@@ -187,8 +187,8 @@ $_SESSION['errors']="";
 				   <?php 
 				   
 				  $getdiv="select * from tbl_division ORDER BY division ASC";
-				  $getdivdata=mysql_query($getdiv);
-				while($row3=mysql_fetch_array($getdivdata)){
+				  $getdivdata=mysqli_query($getdiv);
+				while($row3=mysqli_fetch_array($getdivdata)){
 				  ?> 
                     <option value="<?=$row3['division']?>"<?=($row3['division']==$user['Division'])?'selected':''?>><?=$row3['division']?></option>
 				<?php }
@@ -218,8 +218,8 @@ $_SESSION['errors']="";
                    <select name="board" class="form-control">
                     <option value="">Select Zone</option>
                  <?php 
-				 $rdQuery=mysql_query("SELECT * FROM tbl_rd ORDER BY RD ASC ");
-				 while($rd=mysql_fetch_array($rdQuery)){
+				 $rdQuery=mysqli_query("SELECT * FROM tbl_rd ORDER BY RD ASC ");
+				 while($rd=mysqli_fetch_array($rdQuery)){
 				 ?>
                    <option  value="<?=$rd['RD']?>" <?=($rd['RD']==$user['board'])?'selected':''?> ><?=$rd['RD']?></option>
                     
@@ -233,15 +233,15 @@ $_SESSION['errors']="";
                 
 				<?php
 				$i=1;
-				 $getActivities=mysql_query("select * from tbl_user_activities_list where user_id=".$_GET['id']."");
-				 while($data=mysql_fetch_array($getActivities))
+				 $getActivities=mysqli_query("select * from tbl_user_activities_list where user_id=".$_GET['id']."");
+				 while($data=mysqli_fetch_array($getActivities))
 				 {
 				 $dataList[]=$data['activities_id'];
 				 }
 				 
-                $activitiesQueryResult=mysql_query("select * from tbl_user_activities  ORDER BY Activities ASC" );
+                $activitiesQueryResult=mysqli_query("select * from tbl_user_activities  ORDER BY Activities ASC" );
                 
-                while($activities=mysql_fetch_array($activitiesQueryResult)){
+                while($activities=mysqli_fetch_array($activitiesQueryResult)){
 				
 				
                 ?> 

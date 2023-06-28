@@ -11,7 +11,7 @@ date_default_timezone_set('Asia/Kolkata');
 if($_POST['process']=="daleteData" && $_POST['process']!="") 
 {
 
-$deleteData=mysql_query("delete from tbl_user where id=".$_POST['deleteId']."");
+$deleteData=mysqli_query("delete from tbl_user where id=".$_POST['deleteId']."");
 
 if($deleteData)
 {
@@ -161,8 +161,8 @@ $_SESSION['errors']="";
                 
                 <?php
 				$i=1;
-				$getQuery=mysql_query("SELECT * FROM tbl_user ORDER BY Officer ASC"); 
-				while($team=mysql_fetch_array($getQuery)){
+				$getQuery=mysqli_query("SELECT * FROM tbl_user ORDER BY Officer ASC"); 
+				while($team=mysqli_fetch_array($getQuery)){
 				?>
                 <tr>
                   <td><?=$i?></td>

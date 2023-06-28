@@ -185,8 +185,8 @@ $_SESSION['messageData']="";
 					  $i=1;
 			  $query="select * from tbl_agenda where created BETWEEN '".$date_from."' AND '".$date_to."'   ORDER BY id DESC ";
 					  
-					  $res=mysql_query($query);
-					  while($row=mysql_fetch_array($res)){
+					  $res=mysqli_query($query);
+					  while($row=mysqli_fetch_array($res)){
 					  ?> 
                         <tr>
                         <td><?=$i?></td>
@@ -276,8 +276,8 @@ $_SESSION['messageData']="";
 					  $i=1;
 			  $query="select * from tbl_agenda_rd where created BETWEEN '".$date_from."' AND '".$date_to."'   ORDER BY id DESC ";
 					  
-					  $res=mysql_query($query);
-					  while($row=mysql_fetch_array($res)){
+					  $res=mysqli_query($query);
+					  while($row=mysqli_fetch_array($res)){
 					  ?> 
                         <tr>
                         <td><?=$i?></td>

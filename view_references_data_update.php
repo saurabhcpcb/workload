@@ -6,16 +6,16 @@ ini_set('display_errors','0');
 include_once'includes/session.php';
 date_default_timezone_set('Asia/Kolkata');
  
-$mysql_hostname = "localhost";
-$mysql_user ="root";
-$mysql_password = "";
-$mysql_database = "project_management";
-@mysql_connect($mysql_hostname, $mysql_user, $mysql_password)or die("Opps some thing went wrong");
-mysql_select_db($mysql_database) or die("Opps some thing went wrong");
+$mysqli_hostname = "localhost";
+$mysqli_user ="root";
+$mysqli_password = "";
+$mysqli_database = "project_management";
+@mysqli_connect($mysqli_hostname, $mysqli_user, $mysqli_password)or die("Opps some thing went wrong");
+mysqli_select_db($mysqli_database) or die("Opps some thing went wrong");
  
  
-$getQuery=mysql_query("SELECT * FROM projects where id ='".$_GET['id']."'"); 
-$row=mysql_fetch_array($getQuery);
+$getQuery=mysqli_query("SELECT * FROM projects where id ='".$_GET['id']."'"); 
+$row=mysqli_fetch_array($getQuery);
 
 
 
@@ -25,13 +25,13 @@ $row=mysql_fetch_array($getQuery);
 if($_POST['submit'] && $_POST['submit']=="Submit")
 {
  
-$updateQuery=mysql_query("UPDATE projects SET Action_Taken='".addslashes($_POST['Action_Taken'])."',Facts_Case='".addslashes($_POST['Facts_Case'])."',Action_Required_Future='".addslashes($_POST['Action_Required_Future'])."',Recieved_Date='".addslashes($_POST['Recieved_Date'])."',status='".addslashes($_POST['status'])."' where id=".$_POST['dataId']."");
+$updateQuery=mysqli_query("UPDATE projects SET Action_Taken='".addslashes($_POST['Action_Taken'])."',Facts_Case='".addslashes($_POST['Facts_Case'])."',Action_Required_Future='".addslashes($_POST['Action_Required_Future'])."',Recieved_Date='".addslashes($_POST['Recieved_Date'])."',status='".addslashes($_POST['status'])."' where id=".$_POST['dataId']."");
 
 if($updateQuery){
 
 $insertQuery="INSERT INTO comments_table(activity_id, Action_Taken, Facts_Case, Action_Future, Target_date, user_id, Comment_Added_By, created) VALUES (".$_POST['dataId'].",'".addslashes($_POST['Action_Taken'])."','".addslashes($_POST['Facts_Case'])."','".addslashes($_POST['Action_Required_Future'])."','".addslashes($_POST['Target_Date'])."','".addslashes($_POST['username'])."','".addslashes($_POST['Officer'])."','".date("Y-m-d H:i:s")."')";
 
-mysql_query($insertQuery);
+mysqli_query($insertQuery);
 
 $_SESSION['message']="Successfully update";
 header('location:view_references_data.php');

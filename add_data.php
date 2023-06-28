@@ -107,7 +107,7 @@ $fileName="";
 $queryByAdmin="INSERT INTO $dhTable (user_id, activities_name, priority, Unit_Name, rd_id, file, target_date) VALUES (".$_POST['user_id'].", '".addslashes($_POST['activities'])."', 
 '".addslashes($_POST['Priority'])."','".addslashes($_POST['Unit_Name'])."','".addslashes($_POST['rd_id12'])."','".$fileName."','".date("Y-m-d",strtotime($_POST['target_date']))."')";
  
-$addQuery=mysql_query($queryByAdmin);
+$addQuery=mysqli_query($queryByAdmin);
 if($addQuery)
 move_uploaded_file($_FILES['upload_file']['tmp_name'],$location.$fileName);
 {
@@ -216,8 +216,8 @@ display: none !important;
 
 <td valign="top" align="left"><select name="rd_id12" class="form-control" style="width:40%; float:left;" required>
 
-<?php $getQuery12=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); 
-while($rd12=mysql_fetch_array($getQuery12)){?>
+<?php $getQuery12=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); 
+while($rd12=mysqli_fetch_array($getQuery12)){?>
 <option value="<?=$rd12['board']?>"  <?=($rd12['board']==$_POST['rd_id12'])?'selected':''?> ><?=$rd12['board']?></option><?php }?>
 </select></td>
 </tr>

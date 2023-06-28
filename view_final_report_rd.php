@@ -13,7 +13,7 @@
  
 $sqlQuery="UPDATE tbl_activities SET type='".$_POST['type']."'  WHERE Activities='".$_POST['Activities']."' AND state=".$_POST['state']." AND month='".$_POST['month']."'"; 
 
-if(mysql_query($sqlQuery))
+if(mysqli_query($sqlQuery))
 {
 $_SESSION['messageData']="Activities Update";
 header('location:'.$_SERVER['REQUEST_URI']); 
@@ -179,8 +179,8 @@ $_SESSION['success']="";
   
 <tr>
 <?php
-$queryByPriority0=mysql_query("SELECT * FROM tbl_activities0 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
-$priorityData0=mysql_fetch_array($queryByPriority0);
+$queryByPriority0=mysqli_query("SELECT * FROM tbl_activities0 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
+$priorityData0=mysqli_fetch_array($queryByPriority0);
 
 ?>
 <td valign="top"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priorityData0['priority'])){ echo "P1";} else{echo $priorityData0['priority'];}?></span></td>
@@ -190,11 +190,11 @@ $priorityData0=mysql_fetch_array($queryByPriority0);
 <td colspan="5"> 
 <?php
  
-$queryByDate=mysql_query("SELECT * FROM tbl_activities0 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDate=mysqli_query("SELECT * FROM tbl_activities0 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
 
 
 
-$dateRow=mysql_num_rows($queryByDate);
+$dateRow=mysqli_num_rows($queryByDate);
  
  ?>
  
@@ -207,9 +207,9 @@ $dateRow=mysql_num_rows($queryByDate);
     
    <?php
  
-$queryByDateFinal=mysql_query("SELECT * FROM tbl_activities0 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDateFinal=mysqli_query("SELECT * FROM tbl_activities0 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRowFinal=mysql_num_rows($queryByDateFinal);
+$dateRowFinal=mysqli_num_rows($queryByDateFinal);
 
 
 
@@ -223,9 +223,9 @@ $dateRowFinal=mysql_num_rows($queryByDateFinal);
     
     
 	<?php
- $queryByDateData=mysql_query("SELECT * FROM tbl_activities0 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month."  AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
+ $queryByDateData=mysqli_query("SELECT * FROM tbl_activities0 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month."  AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
 
-while($dateRowData=mysql_fetch_array($queryByDateData)){
+while($dateRowData=mysqli_fetch_array($queryByDateData)){
  ?>
 	<div style="width:98%; padding:6px; border:1px solid #CCCCCC; margin:4px;"><?=date("d-M-Y",strtotime($dateRowData['target_date']))?> </div>
     <?php
@@ -243,8 +243,8 @@ while($dateRowData=mysql_fetch_array($queryByDateData)){
 
  <tr>
 <?php
-$queryByPriority11=mysql_query("SELECT * FROM tbl_activities11 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
-$priorityData11=mysql_fetch_array($queryByPriority11);
+$queryByPriority11=mysqli_query("SELECT * FROM tbl_activities11 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
+$priorityData11=mysqli_fetch_array($queryByPriority11);
 
 ?>
 <td valign="top"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priorityData11['priority'])){ echo "P1";} else{echo $priorityData11['priority'];}?></span></td>
@@ -253,9 +253,9 @@ $priorityData11=mysql_fetch_array($queryByPriority11);
 
 <td colspan="5"> 
 <?php
-$queryByDate11=mysql_query("SELECT * FROM tbl_activities11 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDate11=mysqli_query("SELECT * FROM tbl_activities11 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRow11=mysql_num_rows($queryByDate11);
+$dateRow11=mysqli_num_rows($queryByDate11);
  ?>
  
  <table width="100%" border="1" style="margin:6px 0px;">
@@ -267,9 +267,9 @@ $dateRow11=mysql_num_rows($queryByDate11);
     
  	<?php
  
-$queryByDateFinal11=mysql_query("SELECT * FROM tbl_activities11 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDateFinal11=mysqli_query("SELECT * FROM tbl_activities11 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRowFinal11=mysql_num_rows($queryByDateFinal11);
+$dateRowFinal11=mysqli_num_rows($queryByDateFinal11);
 
  
  ?> 
@@ -278,9 +278,9 @@ $dateRowFinal11=mysql_num_rows($queryByDateFinal11);
  
     <td width="25%">
 	<?php
- $queryByDateData11=mysql_query("SELECT * FROM tbl_activities11 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
+ $queryByDateData11=mysqli_query("SELECT * FROM tbl_activities11 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
 
-while($dateRowData11=mysql_fetch_array($queryByDateData11)){
+while($dateRowData11=mysqli_fetch_array($queryByDateData11)){
  ?>
 	<div style="width:98%; padding:6px; border:1px solid #CCCCCC; margin:4px;"><?=date("d-M-Y",strtotime($dateRowData11['target_date']))?> </div>
     <?php
@@ -299,8 +299,8 @@ while($dateRowData11=mysql_fetch_array($queryByDateData11)){
 
 <tr>
 <?php
-$queryByPriority9=mysql_query("SELECT * FROM tbl_activities9 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
-$priorityData9=mysql_fetch_array($queryByPriority9);
+$queryByPriority9=mysqli_query("SELECT * FROM tbl_activities9 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
+$priorityData9=mysqli_fetch_array($queryByPriority9);
 
 ?>
 <td valign="top"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priorityData9['priority'])){ echo "P2";} else{echo $priorityData9['priority'];}?></span></td>
@@ -309,9 +309,9 @@ $priorityData9=mysql_fetch_array($queryByPriority9);
 
 <td colspan="5"> 
 <?php
-$queryByDate9=mysql_query("SELECT * FROM tbl_activities9 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDate9=mysqli_query("SELECT * FROM tbl_activities9 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRow9=mysql_num_rows($queryByDate9);
+$dateRow9=mysqli_num_rows($queryByDate9);
  ?>
  
  <table width="100%" border="1" style="margin:6px 0px;">
@@ -323,9 +323,9 @@ $dateRow9=mysql_num_rows($queryByDate9);
     
                     <?php
  
-$queryByDateFinal9=mysql_query("SELECT * FROM tbl_activities9 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDateFinal9=mysqli_query("SELECT * FROM tbl_activities9 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRowFinal9=mysql_num_rows($queryByDateFinal9);
+$dateRowFinal9=mysqli_num_rows($queryByDateFinal9);
 
  
  ?> 
@@ -334,9 +334,9 @@ $dateRowFinal9=mysql_num_rows($queryByDateFinal9);
  
     <td width="25%">
 	<?php
- $queryByDateData9=mysql_query("SELECT * FROM tbl_activities9 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
+ $queryByDateData9=mysqli_query("SELECT * FROM tbl_activities9 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
 
-while($dateRowData9=mysql_fetch_array($queryByDateData9)){
+while($dateRowData9=mysqli_fetch_array($queryByDateData9)){
  ?>
 	<div style="width:98%; padding:6px; border:1px solid #CCCCCC; margin:4px;"><?=date("d-M-Y",strtotime($dateRowData9['target_date']))?> </div>
     <?php
@@ -354,8 +354,8 @@ while($dateRowData9=mysql_fetch_array($queryByDateData9)){
 </tr>
 <tr>
 <?php
-$queryByPriority12=mysql_query("SELECT * FROM tbl_activities12 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
-$priorityData12=mysql_fetch_array($queryByPriority12);
+$queryByPriority12=mysqli_query("SELECT * FROM tbl_activities12 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
+$priorityData12=mysqli_fetch_array($queryByPriority12);
 
 ?>
 <td valign="top"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priorityData12['priority'])){ echo "P2";} else{echo $priorityData12['priority'];}?></span></td>
@@ -364,9 +364,9 @@ $priorityData12=mysql_fetch_array($queryByPriority12);
 
 <td colspan="5"> 
 <?php
-$queryByDate12=mysql_query("SELECT * FROM tbl_activities12 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND  final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDate12=mysqli_query("SELECT * FROM tbl_activities12 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND  final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRow12=mysql_num_rows($queryByDate12);
+$dateRow12=mysqli_num_rows($queryByDate12);
  ?>
  
  <table width="100%" border="1" style="margin:6px 0px;">
@@ -378,9 +378,9 @@ $dateRow12=mysql_num_rows($queryByDate12);
     
     	<?php
  
-$queryByDateFinal12=mysql_query("SELECT * FROM tbl_activities12 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDateFinal12=mysqli_query("SELECT * FROM tbl_activities12 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRowFinal12=mysql_num_rows($queryByDateFinal12);
+$dateRowFinal12=mysqli_num_rows($queryByDateFinal12);
  
  ?> 
     <span style="float:right; cursor:pointer; font-size:10px; color:#006633;" onClick="window.open('final_report.php?eid=activities12&cid=<?=$_GET['month']?>','','width=1100,height=500,scrollbar=yes');"><i class="fa fa-fw fa-long-arrow-right"></i>View Complete Report<span style="color:#FF0000; border:1px solid #FF0000; padding:0px 5px; border-radius:100px; font-size:12px;"><?=$dateRowFinal12?></span></span>     
@@ -388,9 +388,9 @@ $dateRowFinal12=mysql_num_rows($queryByDateFinal12);
  
     <td width="25%">
 	<?php
- $queryByDateData12=mysql_query("SELECT * FROM tbl_activities12 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
+ $queryByDateData12=mysqli_query("SELECT * FROM tbl_activities12 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
 
-while($dateRowData12=mysql_fetch_array($queryByDateData12)){
+while($dateRowData12=mysqli_fetch_array($queryByDateData12)){
  ?>
 	<div style="width:98%; padding:6px; border:1px solid #CCCCCC; margin:4px;"><?=date("d-M-Y",strtotime($dateRowData12['target_date']))?> </div>
     <?php
@@ -408,8 +408,8 @@ while($dateRowData12=mysql_fetch_array($queryByDateData12)){
 </tr>
 <tr>
 <?php
-$queryByPriority10=mysql_query("SELECT * FROM tbl_activities10 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
-$priorityData10=mysql_fetch_array($queryByPriority10);
+$queryByPriority10=mysqli_query("SELECT * FROM tbl_activities10 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
+$priorityData10=mysqli_fetch_array($queryByPriority10);
 
 ?>
 <td valign="top"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priorityData10['priority'])){ echo "P3";} else{echo $priorityData10['priority'];}?></span></td>
@@ -418,9 +418,9 @@ $priorityData10=mysql_fetch_array($queryByPriority10);
 
 <td colspan="5"> 
 <?php
-$queryByDate10=mysql_query("SELECT * FROM tbl_activities10 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDate10=mysqli_query("SELECT * FROM tbl_activities10 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRow10=mysql_num_rows($queryByDate10);
+$dateRow10=mysqli_num_rows($queryByDate10);
  ?>
  
  <table width="100%" border="1" style="margin:6px 0px;">
@@ -432,9 +432,9 @@ $dateRow10=mysql_num_rows($queryByDate10);
 	
 	<?php
  
-$queryByDateFinal10=mysql_query("SELECT * FROM tbl_activities10 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDateFinal10=mysqli_query("SELECT * FROM tbl_activities10 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRowFinal10=mysql_num_rows($queryByDateFinal10);
+$dateRowFinal10=mysqli_num_rows($queryByDateFinal10);
 
  
  ?> 
@@ -442,9 +442,9 @@ $dateRowFinal10=mysql_num_rows($queryByDateFinal10);
  
     <td width="25%">
 	<?php
- $queryByDateData10=mysql_query("SELECT * FROM tbl_activities10 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
+ $queryByDateData10=mysqli_query("SELECT * FROM tbl_activities10 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
 
-while($dateRowData10=mysql_fetch_array($queryByDateData10)){
+while($dateRowData10=mysqli_fetch_array($queryByDateData10)){
  ?>
 	<div style="width:98%; padding:6px; border:1px solid #CCCCCC; margin:4px;"><?=date("d-M-Y",strtotime($dateRowData10['target_date']))?> </div>
     <?php
@@ -462,8 +462,8 @@ while($dateRowData10=mysql_fetch_array($queryByDateData10)){
 </tr>
 <tr>
 <?php
-$queryByPriority16=mysql_query("SELECT * FROM tbl_activities16 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
-$priorityData16=mysql_fetch_array($queryByPriority16);
+$queryByPriority16=mysqli_query("SELECT * FROM tbl_activities16 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
+$priorityData16=mysqli_fetch_array($queryByPriority16);
 
 ?>
 <td valign="top"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priorityData16['priority'])){ echo "P3";} else{echo $priorityData16['priority'];}?></span></td>
@@ -473,9 +473,9 @@ $priorityData16=mysql_fetch_array($queryByPriority16);
 
 <td colspan="5"> 
 <?php
-$queryByDate16=mysql_query("SELECT * FROM tbl_activities16 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDate16=mysqli_query("SELECT * FROM tbl_activities16 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRow16=mysql_num_rows($queryByDate16);
+$dateRow16=mysqli_num_rows($queryByDate16);
  ?>
  
  <table width="100%" border="1" style="margin:6px 0px;">
@@ -487,9 +487,9 @@ $dateRow16=mysql_num_rows($queryByDate16);
     
               	<?php
  
-$queryByDateFinal16=mysql_query("SELECT * FROM tbl_activities16 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDateFinal16=mysqli_query("SELECT * FROM tbl_activities16 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRowFinal16=mysql_num_rows($queryByDateFinal16);
+$dateRowFinal16=mysqli_num_rows($queryByDateFinal16);
  
  ?> 
     <span style="float:right; cursor:pointer; font-size:10px; color:#006633;" onClick="window.open('final_report.php?eid=activities16&cid=<?=$_GET['month']?>','','width=1100,height=500,scrollbar=yes');"><i class="fa fa-fw fa-long-arrow-right"></i>View Complete Report<span style="color:#FF0000; border:1px solid #FF0000; padding:0px 5px; border-radius:100px; font-size:12px;"><?=$dateRowFinal16?></span></span>      
@@ -497,9 +497,9 @@ $dateRowFinal16=mysql_num_rows($queryByDateFinal16);
 
     <td width="25%">
 	<?php
- $queryByDateData16=mysql_query("SELECT * FROM tbl_activities16 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
+ $queryByDateData16=mysqli_query("SELECT * FROM tbl_activities16 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
 
-while($dateRowData16=mysql_fetch_array($queryByDateData16)){
+while($dateRowData16=mysqli_fetch_array($queryByDateData16)){
  ?>
 	<div style="width:98%; padding:6px; border:1px solid #CCCCCC; margin:4px;"><?=date("d-M-Y",strtotime($dateRowData16['target_date']))?> </div>
     <?php
@@ -516,8 +516,8 @@ while($dateRowData16=mysql_fetch_array($queryByDateData16)){
 </tr>
 <tr>
 <?php
-$queryByPriority1=mysql_query("SELECT * FROM tbl_activities1 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name ");
-$priorityData1=mysql_fetch_array($queryByPriority1);
+$queryByPriority1=mysqli_query("SELECT * FROM tbl_activities1 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name ");
+$priorityData1=mysqli_fetch_array($queryByPriority1);
 
 ?>
 <td valign="top"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priorityData1['priority'])){ echo "P4";} else{echo $priorityData1['priority'];}?></span></td>
@@ -526,9 +526,9 @@ $priorityData1=mysql_fetch_array($queryByPriority1);
 
 <td colspan="5"> 
 <?php
-$queryByDate1=mysql_query("SELECT * FROM tbl_activities1 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDate1=mysqli_query("SELECT * FROM tbl_activities1 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRow1=mysql_num_rows($queryByDate1);
+$dateRow1=mysqli_num_rows($queryByDate1);
  ?>
  
  <table width="100%" border="1" style="margin:6px 0px;">
@@ -540,18 +540,18 @@ $dateRow1=mysql_num_rows($queryByDate1);
     
       <?php
  
-$queryByDateFinal1=mysql_query("SELECT * FROM tbl_activities1 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDateFinal1=mysqli_query("SELECT * FROM tbl_activities1 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRowFinal1=mysql_num_rows($queryByDateFinal1);
+$dateRowFinal1=mysqli_num_rows($queryByDateFinal1);
  
  ?> 
     <span style="float:right; cursor:pointer; font-size:10px; color:#006633;" onClick="window.open('final_report.php?eid=activities1&cid=<?=$_GET['month']?>','','width=1100,height=500,scrollbar=yes');"><i class="fa fa-fw fa-long-arrow-right"></i>View Complete Report<span style="color:#FF0000; border:1px solid #FF0000; padding:0px 5px; border-radius:100px; font-size:12px;"><?=$dateRowFinal1?></span></span></td>
  
     <td width="25%">
 	<?php
- $queryByDateData1=mysql_query("SELECT * FROM tbl_activities1 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
+ $queryByDateData1=mysqli_query("SELECT * FROM tbl_activities1 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
 
-while($dateRowData1=mysql_fetch_array($queryByDateData1)){
+while($dateRowData1=mysqli_fetch_array($queryByDateData1)){
  ?>
 	<div style="width:98%; padding:6px; border:1px solid #CCCCCC; margin:4px;"><?=date("d-M-Y",strtotime($dateRowData1['target_date']))?> </div>
     <?php
@@ -569,8 +569,8 @@ while($dateRowData1=mysql_fetch_array($queryByDateData1)){
  
 <tr>
 <?php
-$queryByPriority2=mysql_query("SELECT * FROM tbl_activities2 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name ");
-$priorityData2=mysql_fetch_array($queryByPriority2);
+$queryByPriority2=mysqli_query("SELECT * FROM tbl_activities2 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name ");
+$priorityData2=mysqli_fetch_array($queryByPriority2);
 
 ?>
 <td valign="top"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priorityData2['priority'])){ echo "P4";} else{echo $priorityData2['priority'];}?></span></td>
@@ -579,9 +579,9 @@ $priorityData2=mysql_fetch_array($queryByPriority2);
 
 <td colspan="5"> 
 <?php
-$queryByDate2=mysql_query("SELECT * FROM tbl_activities2 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDate2=mysqli_query("SELECT * FROM tbl_activities2 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRow2=mysql_num_rows($queryByDate2);
+$dateRow2=mysqli_num_rows($queryByDate2);
  ?>
  
  <table width="100%" border="1" style="margin:6px 0px;">
@@ -592,9 +592,9 @@ $dateRow2=mysql_num_rows($queryByDate2);
     <td width="20%"><span class="btn bg-<?php if($dateRow2>0){echo"orange";} else { echo"purple";}?> btn-flat margin" onClick="window.open('view_report_details_by_rd.php?eid=activities2&cid=<?=$_GET['month']?>','','width=1100,height=500,scrollbar=yes');"><i class="fa fa-fw fa-long-arrow-right"></i> <?=$dateRow2?></span>
      <?php
  
-$queryByDateFinal2=mysql_query("SELECT * FROM tbl_activities2 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDateFinal2=mysqli_query("SELECT * FROM tbl_activities2 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRowFinal2=mysql_num_rows($queryByDateFinal2);
+$dateRowFinal2=mysqli_num_rows($queryByDateFinal2);
 
  
  ?> 
@@ -603,9 +603,9 @@ $dateRowFinal2=mysql_num_rows($queryByDateFinal2);
  
     <td width="25%">
 	<?php
- $queryByDateData2=mysql_query("SELECT * FROM tbl_activities2 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
+ $queryByDateData2=mysqli_query("SELECT * FROM tbl_activities2 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
 
-while($dateRowData2=mysql_fetch_array($queryByDateData2)){
+while($dateRowData2=mysqli_fetch_array($queryByDateData2)){
  ?>
 	<div style="width:98%; padding:6px; border:1px solid #CCCCCC; margin:4px;"><?=date("d-M-Y",strtotime($dateRowData2['target_date']))?> </div>
     <?php
@@ -623,8 +623,8 @@ while($dateRowData2=mysql_fetch_array($queryByDateData2)){
  
 <tr>
 <?php
-$queryByPriority3=mysql_query("SELECT * FROM tbl_activities3 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
-$priorityData3=mysql_fetch_array($queryByPriority3);
+$queryByPriority3=mysqli_query("SELECT * FROM tbl_activities3 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
+$priorityData3=mysqli_fetch_array($queryByPriority3);
 
 ?>
 <td valign="top"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priorityData3['priority'])){ echo "P4";} else{echo $priorityData3['priority'];}?></span></td>
@@ -633,9 +633,9 @@ $priorityData3=mysql_fetch_array($queryByPriority3);
 
 <td colspan="5"> 
 <?php
-$queryByDate3=mysql_query("SELECT * FROM tbl_activities3 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name ");  
+$queryByDate3=mysqli_query("SELECT * FROM tbl_activities3 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name ");  
 
-$dateRow3=mysql_num_rows($queryByDate3);
+$dateRow3=mysqli_num_rows($queryByDate3);
  ?>
  
  <table width="100%" border="1" style="margin:6px 0px;">
@@ -646,9 +646,9 @@ $dateRow3=mysql_num_rows($queryByDate3);
     <td width="20%"><span class="btn bg-<?php if($dateRow3>0){echo"orange";} else { echo"purple";}?> btn-flat margin" onClick="window.open('view_report_details_by_rd.php?eid=activities3&cid=<?=$_GET['month']?>','','width=1100,height=500,scrollbar=yes');"><i class="fa fa-fw fa-long-arrow-right"></i> <?=$dateRow3?></span>
          <?php
  
-$queryByDateFinal3=mysql_query("SELECT * FROM tbl_activities3 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDateFinal3=mysqli_query("SELECT * FROM tbl_activities3 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRowFinal3=mysql_num_rows($queryByDateFinal3);
+$dateRowFinal3=mysqli_num_rows($queryByDateFinal3);
 
  
  ?> 
@@ -657,9 +657,9 @@ $dateRowFinal3=mysql_num_rows($queryByDateFinal3);
  
     <td width="25%">
 	<?php
- $queryByDateData3=mysql_query("SELECT * FROM tbl_activities3 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
+ $queryByDateData3=mysqli_query("SELECT * FROM tbl_activities3 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
 
-while($dateRowData3=mysql_fetch_array($queryByDateData3)){
+while($dateRowData3=mysqli_fetch_array($queryByDateData3)){
  ?>
 	<div style="width:98%; padding:6px; border:1px solid #CCCCCC; margin:4px;"><?=date("d-M-Y",strtotime($dateRowData3['target_date']))?> </div>
     <?php
@@ -677,8 +677,8 @@ while($dateRowData3=mysql_fetch_array($queryByDateData3)){
  
 <tr>
 <?php
-$queryByPriority4=mysql_query("SELECT * FROM tbl_activities4 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
-$priorityData4=mysql_fetch_array($queryByPriority4);
+$queryByPriority4=mysqli_query("SELECT * FROM tbl_activities4 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
+$priorityData4=mysqli_fetch_array($queryByPriority4);
 
 ?>
 <td valign="top"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priorityData4['priority'])){ echo "P4";} else{echo $priorityData4['priority'];}?></span></td>
@@ -687,9 +687,9 @@ $priorityData4=mysql_fetch_array($queryByPriority4);
 
 <td colspan="5"> 
 <?php
-$queryByDate4=mysql_query("SELECT * FROM tbl_activities4 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDate4=mysqli_query("SELECT * FROM tbl_activities4 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRow4=mysql_num_rows($queryByDate4);
+$dateRow4=mysqli_num_rows($queryByDate4);
  ?>
  
  <table width="100%" border="1" style="margin:6px 0px;">
@@ -701,9 +701,9 @@ $dateRow4=mysql_num_rows($queryByDate4);
     
       <?php
  
-$queryByDateFinal4=mysql_query("SELECT * FROM tbl_activities4 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDateFinal4=mysqli_query("SELECT * FROM tbl_activities4 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRowFinal4=mysql_num_rows($queryByDateFinal4);
+$dateRowFinal4=mysqli_num_rows($queryByDateFinal4);
 
  
  ?> 
@@ -712,9 +712,9 @@ $dateRowFinal4=mysql_num_rows($queryByDateFinal4);
  
     <td width="25%">
 	<?php
- $queryByDateData4=mysql_query("SELECT * FROM tbl_activities4 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
+ $queryByDateData4=mysqli_query("SELECT * FROM tbl_activities4 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
 
-while($dateRowData4=mysql_fetch_array($queryByDateData4)){
+while($dateRowData4=mysqli_fetch_array($queryByDateData4)){
  ?>
 	<div style="width:98%; padding:6px; border:1px solid #CCCCCC; margin:4px;"><?=date("d-M-Y",strtotime($dateRowData4['target_date']))?> </div>
     <?php
@@ -732,8 +732,8 @@ while($dateRowData4=mysql_fetch_array($queryByDateData4)){
  
 <tr>
 <?php
-$queryByPriority5=mysql_query("SELECT * FROM tbl_activities5 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
-$priorityData5=mysql_fetch_array($queryByPriority5);
+$queryByPriority5=mysqli_query("SELECT * FROM tbl_activities5 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
+$priorityData5=mysqli_fetch_array($queryByPriority5);
 
 ?>
 <td valign="top"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priorityData5['priority'])){ echo "P4";} else{echo $priorityData5['priority'];}?></span></td>
@@ -742,9 +742,9 @@ $priorityData5=mysql_fetch_array($queryByPriority5);
 
 <td colspan="5"> 
 <?php
-$queryByDate5=mysql_query("SELECT * FROM tbl_activities5 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDate5=mysqli_query("SELECT * FROM tbl_activities5 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRow5=mysql_num_rows($queryByDate5);
+$dateRow5=mysqli_num_rows($queryByDate5);
  ?>
  
  <table width="100%" border="1" style="margin:6px 0px;">
@@ -756,9 +756,9 @@ $dateRow5=mysql_num_rows($queryByDate5);
     
         <?php
  
-$queryByDateFinal5=mysql_query("SELECT * FROM tbl_activities5 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDateFinal5=mysqli_query("SELECT * FROM tbl_activities5 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRowFinal5=mysql_num_rows($queryByDateFinal5);
+$dateRowFinal5=mysqli_num_rows($queryByDateFinal5);
  
  ?> 
     <span style="float:right; cursor:pointer; font-size:10px; color:#006633;" onClick="window.open('final_report.php?eid=activities5&cid=<?=$_GET['month']?>','','width=1100,height=500,scrollbar=yes');"><i class="fa fa-fw fa-long-arrow-right"></i>View Complete Report<span style="color:#FF0000; border:1px solid #FF0000; padding:0px 5px; border-radius:100px; font-size:12px;"><?=$dateRowFinal5?></span></span>  
@@ -766,9 +766,9 @@ $dateRowFinal5=mysql_num_rows($queryByDateFinal5);
  
     <td width="25%">
 	<?php
- $queryByDateData5=mysql_query("SELECT * FROM tbl_activities5 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
+ $queryByDateData5=mysqli_query("SELECT * FROM tbl_activities5 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
 
-while($dateRowData5=mysql_fetch_array($queryByDateData5)){
+while($dateRowData5=mysqli_fetch_array($queryByDateData5)){
  ?>
 	<div style="width:98%; padding:6px; border:1px solid #CCCCCC; margin:4px;"><?=date("d-M-Y",strtotime($dateRowData5['target_date']))?> </div>
     <?php
@@ -786,8 +786,8 @@ while($dateRowData5=mysql_fetch_array($queryByDateData5)){
  
 <tr>
 <?php
-$queryByPriority6=mysql_query("SELECT * FROM tbl_activities6 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
-$priorityData6=mysql_fetch_array($queryByPriority6);
+$queryByPriority6=mysqli_query("SELECT * FROM tbl_activities6 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
+$priorityData6=mysqli_fetch_array($queryByPriority6);
 
 ?>
 <td valign="top"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priorityData6['priority'])){ echo "P4";} else{echo $priorityData6['priority'];}?></span></td>
@@ -796,9 +796,9 @@ $priorityData6=mysql_fetch_array($queryByPriority6);
 
 <td colspan="5"> 
 <?php
-$queryByDate6=mysql_query("SELECT * FROM tbl_activities6 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDate6=mysqli_query("SELECT * FROM tbl_activities6 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRow6=mysql_num_rows($queryByDate6);
+$dateRow6=mysqli_num_rows($queryByDate6);
  ?>
  
  <table width="100%" border="1" style="margin:6px 0px;">
@@ -811,9 +811,9 @@ $dateRow6=mysql_num_rows($queryByDate6);
     
            <?php
  
-$queryByDateFinal6=mysql_query("SELECT * FROM tbl_activities6 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDateFinal6=mysqli_query("SELECT * FROM tbl_activities6 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRowFinal6=mysql_num_rows($queryByDateFinal6);
+$dateRowFinal6=mysqli_num_rows($queryByDateFinal6);
 
  
  ?> 
@@ -822,9 +822,9 @@ $dateRowFinal6=mysql_num_rows($queryByDateFinal6);
  
     <td width="25%">
 	<?php
- $queryByDateData6=mysql_query("SELECT * FROM tbl_activities6 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
+ $queryByDateData6=mysqli_query("SELECT * FROM tbl_activities6 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
 
-while($dateRowData6=mysql_fetch_array($queryByDateData6)){
+while($dateRowData6=mysqli_fetch_array($queryByDateData6)){
  ?>
 	<div style="width:98%; padding:6px; border:1px solid #CCCCCC; margin:4px;"><?=date("d-M-Y",strtotime($dateRowData6['target_date']))?> </div>
     <?php
@@ -842,8 +842,8 @@ while($dateRowData6=mysql_fetch_array($queryByDateData6)){
  <tr>
  
  <?php
-$queryByPriority7=mysql_query("SELECT * FROM tbl_activities7 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
-$priorityData7=mysql_fetch_array($queryByPriority7);
+$queryByPriority7=mysqli_query("SELECT * FROM tbl_activities7 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
+$priorityData7=mysqli_fetch_array($queryByPriority7);
 
 ?>
 <td valign="top"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priorityData7['priority'])){ echo "P4";} else{echo $priorityData7['priority'];}?></span></td>
@@ -852,9 +852,9 @@ $priorityData7=mysql_fetch_array($queryByPriority7);
 
 <td colspan="5"> 
 <?php
-$queryByDate7=mysql_query("SELECT * FROM tbl_activities7 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDate7=mysqli_query("SELECT * FROM tbl_activities7 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRow7=mysql_num_rows($queryByDate7);
+$dateRow7=mysqli_num_rows($queryByDate7);
  ?>
  
  <table width="100%" border="1" style="margin:6px 0px;">
@@ -865,9 +865,9 @@ $dateRow7=mysql_num_rows($queryByDate7);
     <td width="20%"><span class="btn bg-<?php if($dateRow7>0){echo"orange";} else { echo"purple";}?> btn-flat margin" onClick="window.open('view_report_details_by_rd.php?eid=activities7&cid=<?=$_GET['month']?>','','width=1100,height=500,scrollbar=yes');"><i class="fa fa-fw fa-long-arrow-right"></i> <?=$dateRow7?></span>
             <?php
  
-$queryByDateFinal7=mysql_query("SELECT * FROM tbl_activities7 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDateFinal7=mysqli_query("SELECT * FROM tbl_activities7 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRowFinal7=mysql_num_rows($queryByDateFinal7);
+$dateRowFinal7=mysqli_num_rows($queryByDateFinal7);
 
  
  ?> 
@@ -878,9 +878,9 @@ $dateRowFinal7=mysql_num_rows($queryByDateFinal7);
     <td width="25%">
 	<?php
 
-$queryByDateData7=mysql_query("SELECT * FROM tbl_activities7 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
+$queryByDateData7=mysqli_query("SELECT * FROM tbl_activities7 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
 
-while($dateRowData7=mysql_fetch_array($queryByDateData7)){
+while($dateRowData7=mysqli_fetch_array($queryByDateData7)){
  ?>
 	<div style="width:98%; padding:6px; border:1px solid #CCCCCC; margin:4px;"><?=date("d-M-Y",strtotime($dateRowData7['target_date']))?> </div>
     <?php
@@ -897,17 +897,17 @@ while($dateRowData7=mysql_fetch_array($queryByDateData7)){
 </tr>
 <tr>
 <?php
-$queryByPriority8=mysql_query("SELECT * FROM tbl_activities8 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
-$priorityData8=mysql_fetch_array($queryByPriority8);
+$queryByPriority8=mysqli_query("SELECT * FROM tbl_activities8 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
+$priorityData8=mysqli_fetch_array($queryByPriority8);
 
 ?>
 <td valign="top"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priorityData8['priority'])){ echo "P4";} else{echo $priorityData8['priority'];}?></span></td>
  <td valign="top">SLFs(MSW)</td>
 <td colspan="5"> 
 <?php
-$queryByDate8=mysql_query("SELECT * FROM tbl_activities8 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDate8=mysqli_query("SELECT * FROM tbl_activities8 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRow8=mysql_num_rows($queryByDate8);
+$dateRow8=mysqli_num_rows($queryByDate8);
  ?>
  
  <table width="100%" border="1" style="margin:6px 0px;">
@@ -918,9 +918,9 @@ $dateRow8=mysql_num_rows($queryByDate8);
     <td width="20%"><span class="btn bg-<?php if($dateRow8>0){echo"orange";} else { echo"purple";}?> btn-flat margin" onClick="window.open('view_report_details_by_rd.php?eid=activities8&cid=<?=$_GET['month']?>','','width=1100,height=500,scrollbar=yes');"><i class="fa fa-fw fa-long-arrow-right"></i> <?=$dateRow8?></span>
                 <?php
  
-$queryByDateFinal8=mysql_query("SELECT * FROM tbl_activities8 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDateFinal8=mysqli_query("SELECT * FROM tbl_activities8 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRowFinal8=mysql_num_rows($queryByDateFinal8);
+$dateRowFinal8=mysqli_num_rows($queryByDateFinal8);
 
  
  ?> 
@@ -930,9 +930,9 @@ $dateRowFinal8=mysql_num_rows($queryByDateFinal8);
  
     <td width="25%">
 	<?php
- $queryByDateData8=mysql_query("SELECT * FROM tbl_activities8 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
+ $queryByDateData8=mysqli_query("SELECT * FROM tbl_activities8 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
 
-while($dateRowData8=mysql_fetch_array($queryByDateData8)){
+while($dateRowData8=mysqli_fetch_array($queryByDateData8)){
  ?>
 	<div style="width:98%; padding:6px; border:1px solid #CCCCCC; margin:4px;"><?=date("d-M-Y",strtotime($dateRowData8['target_date']))?> </div>
     <?php
@@ -957,8 +957,8 @@ while($dateRowData8=mysql_fetch_array($queryByDateData8)){
  
 <tr>
 <?php
-$queryByPriority13=mysql_query("SELECT * FROM tbl_activities13 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
-$priorityData13=mysql_fetch_array($queryByPriority13);
+$queryByPriority13=mysqli_query("SELECT * FROM tbl_activities13 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
+$priorityData13=mysqli_fetch_array($queryByPriority13);
 
 ?>
 <td valign="top"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priorityData13['priority'])){ echo "P4";} else{echo $priorityData13['priority'];}?></span></td>
@@ -967,9 +967,9 @@ $priorityData13=mysql_fetch_array($queryByPriority13);
 
 <td colspan="5"> 
 <?php
-$queryByDate13=mysql_query("SELECT * FROM tbl_activities13 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDate13=mysqli_query("SELECT * FROM tbl_activities13 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRow13=mysql_num_rows($queryByDate13);
+$dateRow13=mysqli_num_rows($queryByDate13);
  ?>
  
  <table width="100%" border="1" style="margin:6px 0px;">
@@ -981,9 +981,9 @@ $dateRow13=mysql_num_rows($queryByDate13);
     
         	<?php
  
-$queryByDateFinal13=mysql_query("SELECT * FROM tbl_activities13 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDateFinal13=mysqli_query("SELECT * FROM tbl_activities13 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRowFinal13=mysql_num_rows($queryByDateFinal13);
+$dateRowFinal13=mysqli_num_rows($queryByDateFinal13);
 
  
  ?> 
@@ -992,9 +992,9 @@ $dateRowFinal13=mysql_num_rows($queryByDateFinal13);
  
     <td width="25%">
 	<?php
- $queryByDateData13=mysql_query("SELECT * FROM tbl_activities13 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
+ $queryByDateData13=mysqli_query("SELECT * FROM tbl_activities13 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
 
-while($dateRowData13=mysql_fetch_array($queryByDateData13)){
+while($dateRowData13=mysqli_fetch_array($queryByDateData13)){
  ?>
 	<div style="width:98%; padding:6px; border:1px solid #CCCCCC; margin:4px;"><?=date("d-M-Y",strtotime($dateRowData13['target_date']))?> </div>
     <?php
@@ -1012,8 +1012,8 @@ while($dateRowData13=mysql_fetch_array($queryByDateData13)){
  
 <tr>
 <?php
-$queryByPriority14=mysql_query("SELECT * FROM tbl_activities14 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
-$priorityData14=mysql_fetch_array($queryByPriority14);
+$queryByPriority14=mysqli_query("SELECT * FROM tbl_activities14 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
+$priorityData14=mysqli_fetch_array($queryByPriority14);
 
 ?>
 <td valign="top"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priorityData14['priority'])){ echo "P4";} else{echo $priorityData14['priority'];}?></span></td>
@@ -1022,9 +1022,9 @@ $priorityData14=mysql_fetch_array($queryByPriority14);
 
 <td colspan="5"> 
 <?php
-$queryByDate14=mysql_query("SELECT * FROM tbl_activities14 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDate14=mysqli_query("SELECT * FROM tbl_activities14 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRow14=mysql_num_rows($queryByDate14);
+$dateRow14=mysqli_num_rows($queryByDate14);
  ?>
  
  <table width="100%" border="1" style="margin:6px 0px;">
@@ -1037,9 +1037,9 @@ $dateRow14=mysql_num_rows($queryByDate14);
     
          	<?php
  
-$queryByDateFinal14=mysql_query("SELECT * FROM tbl_activities14 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDateFinal14=mysqli_query("SELECT * FROM tbl_activities14 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRowFinal14=mysql_num_rows($queryByDateFinal14);
+$dateRowFinal14=mysqli_num_rows($queryByDateFinal14);
 
  
  ?> 
@@ -1048,9 +1048,9 @@ $dateRowFinal14=mysql_num_rows($queryByDateFinal14);
 
     <td width="25%">
 	<?php
- $queryByDateData14=mysql_query("SELECT * FROM tbl_activities14 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
+ $queryByDateData14=mysqli_query("SELECT * FROM tbl_activities14 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
 
-while($dateRowData14=mysql_fetch_array($queryByDateData14)){
+while($dateRowData14=mysqli_fetch_array($queryByDateData14)){
  ?>
 	<div style="width:98%; padding:6px; border:1px solid #CCCCCC; margin:4px;"><?=date("d-M-Y",strtotime($dateRowData14['target_date']))?> </div>
     <?php
@@ -1069,8 +1069,8 @@ while($dateRowData14=mysql_fetch_array($queryByDateData14)){
 
 <tr>
 <?php
-$queryByPriority15=mysql_query("SELECT * FROM tbl_activities15 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
-$priorityData15=mysql_fetch_array($queryByPriority15);
+$queryByPriority15=mysqli_query("SELECT * FROM tbl_activities15 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
+$priorityData15=mysqli_fetch_array($queryByPriority15);
 
 ?>
 <td valign="top"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priorityData15['priority'])){ echo "P4";} else{echo $priorityData15['priority'];}?></span></td>
@@ -1079,9 +1079,9 @@ $priorityData15=mysql_fetch_array($queryByPriority15);
 
 <td colspan="5"> 
 <?php
-$queryByDate15=mysql_query("SELECT * FROM tbl_activities15 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDate15=mysqli_query("SELECT * FROM tbl_activities15 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRow15=mysql_num_rows($queryByDate15);
+$dateRow15=mysqli_num_rows($queryByDate15);
  ?>
  
  <table width="100%" border="1" style="margin:6px 0px;">
@@ -1092,9 +1092,9 @@ $dateRow15=mysql_num_rows($queryByDate15);
     <td width="20%"><span class="btn bg-<?php if($dateRow15>0){echo"orange";} else { echo"purple";}?> btn-flat margin" onClick="window.open('view_report_details_by_rd.php?eid=activities15&cid=<?=$_GET['month']?>','','width=1100,height=500,scrollbar=yes');"><i class="fa fa-fw fa-long-arrow-right"></i> <?=$dateRow15?></span>
            	<?php
  
-$queryByDateFinal15=mysql_query("SELECT * FROM tbl_activities15 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDateFinal15=mysqli_query("SELECT * FROM tbl_activities15 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRowFinal15=mysql_num_rows($queryByDateFinal15);
+$dateRowFinal15=mysqli_num_rows($queryByDateFinal15);
  
  ?> 
     <span style="float:right; cursor:pointer; font-size:10px; color:#006633;" onClick="window.open('final_report.php?eid=activities15&cid=<?=$_GET['month']?>','','width=1100,height=500,scrollbar=yes');"><i class="fa fa-fw fa-long-arrow-right"></i>View Complete Report<span style="color:#FF0000; border:1px solid #FF0000; padding:0px 5px; border-radius:100px; font-size:12px;"><?=$dateRowFinal15?></span></span>       
@@ -1103,9 +1103,9 @@ $dateRowFinal15=mysql_num_rows($queryByDateFinal15);
 
     <td width="25%">
 	<?php
- $queryByDateData15=mysql_query("SELECT * FROM tbl_activities15 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
+ $queryByDateData15=mysqli_query("SELECT * FROM tbl_activities15 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
 
-while($dateRowData15=mysql_fetch_array($queryByDateData15)){
+while($dateRowData15=mysqli_fetch_array($queryByDateData15)){
  ?>
 	<div style="width:98%; padding:6px; border:1px solid #CCCCCC; margin:4px;"><?=date("d-M-Y",strtotime($dateRowData15['target_date']))?></div>
     <?php
@@ -1125,8 +1125,8 @@ while($dateRowData15=mysql_fetch_array($queryByDateData15)){
  
 <tr>
 <?php
-$queryByPriority17=mysql_query("SELECT * FROM tbl_activities17 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
-$priorityData17=mysql_fetch_array($queryByPriority17);
+$queryByPriority17=mysqli_query("SELECT * FROM tbl_activities17 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY activities_name");
+$priorityData17=mysqli_fetch_array($queryByPriority17);
 
 ?>
 <td valign="top"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priorityData17['priority'])){ echo "P4";} else{echo $priorityData17['priority'];}?></span></td>
@@ -1135,9 +1135,9 @@ $priorityData17=mysql_fetch_array($queryByPriority17);
 
 <td colspan="5"> 
 <?php
-$queryByDate17=mysql_query("SELECT * FROM tbl_activities17 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDate17=mysqli_query("SELECT * FROM tbl_activities17 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRow17=mysql_num_rows($queryByDate17);
+$dateRow17=mysqli_num_rows($queryByDate17);
  ?>
  
  <table width="100%" border="1" style="margin:6px 0px;">
@@ -1149,9 +1149,9 @@ $dateRow17=mysql_num_rows($queryByDate17);
     
                 	<?php
  
-$queryByDateFinal17=mysql_query("SELECT * FROM tbl_activities17 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
+$queryByDateFinal17=mysqli_query("SELECT * FROM tbl_activities17 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'");  
 
-$dateRowFinal17=mysql_num_rows($queryByDateFinal17);
+$dateRowFinal17=mysqli_num_rows($queryByDateFinal17);
 
  
  ?> 
@@ -1160,9 +1160,9 @@ $dateRowFinal17=mysql_num_rows($queryByDateFinal17);
    
     <td width="25%">
 	<?php
- $queryByDateData17=mysql_query("SELECT * FROM tbl_activities17 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
+ $queryByDateData17=mysqli_query("SELECT * FROM tbl_activities17 where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=1 AND rd_id='".$_SESSION['userId']['board']."' GROUP BY target_date");  
 
-while($dateRowData17=mysql_fetch_array($queryByDateData17)){
+while($dateRowData17=mysqli_fetch_array($queryByDateData17)){
  ?>
 	<div style="width:98%; padding:6px; border:1px solid #CCCCCC; margin:4px;"><?=date("d-M-Y",strtotime($dateRowData17['target_date']))?> </div>
     <?php

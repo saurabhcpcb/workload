@@ -90,13 +90,13 @@ switch ($_GET['eid'])
 <?php
 
 
-$query=mysql_query("select * from $dhTable where id=".$_GET['cid']."");
+$query=mysqli_query("select * from $dhTable where id=".$_GET['cid']."");
 
-$data=mysql_fetch_array($query);
+$data=mysqli_fetch_array($query);
 
 if(isset($_POST['submit']) && $_POST['submit']=="Submit"){
  
-$updateQuery=mysql_query("UPDATE $dhTable SET Unit_Name='".addslashes($_POST['Unit_Name'])."', rd_id='".addslashes($_POST['rd_id12'])."' , priority='".addslashes($_POST['Priority'])."', target_date='".date("Y-m-d",strtotime($_POST['target_date']))."' WHERE  id = '".$_POST['rdid']."'");
+$updateQuery=mysqli_query("UPDATE $dhTable SET Unit_Name='".addslashes($_POST['Unit_Name'])."', rd_id='".addslashes($_POST['rd_id12'])."' , priority='".addslashes($_POST['Priority'])."', target_date='".date("Y-m-d",strtotime($_POST['target_date']))."' WHERE  id = '".$_POST['rdid']."'");
  
 
 if($updateQuery)
@@ -205,8 +205,8 @@ display: none !important;
  
 <td valign="top" align="left"><select name="rd_id12" class="form-control" style="width:40%; float:left;" required>
           
-		   <?php $getQuery12=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); 
-		   while($rd12=mysql_fetch_array($getQuery12)){?>
+		   <?php $getQuery12=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); 
+		   while($rd12=mysqli_fetch_array($getQuery12)){?>
            <option value="<?=$rd12['board']?>"  <?=($rd12['board']==$data['rd_id'])?'selected':''?> ><?=$rd12['board']?></option><?php }?>
            </select></td>
  </tr>

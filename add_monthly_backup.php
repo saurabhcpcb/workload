@@ -13,12 +13,12 @@ if(isset($_POST['submit']) && $_POST['submit']=="Save")
 {
  
 $main="INSERT INTO tbl_activities_main(user_id) VALUES (".$_SESSION['userId']['id'].")";
-$mainQuery=mysql_query($main);
+$mainQuery=mysqli_query($main);
 
 
 if($main){
 
-$id = mysql_insert_id();
+$id = mysqli_insert_id();
 $location="upload/"; 
 /*--------------------------------------------------------------*/
  
@@ -41,7 +41,7 @@ if(!empty($_POST['Unit_Name0'][$i])){
 
 $strquery0="insert into  tbl_activities0(main_id,user_id, activities_name, priority,Unit_Name, rd_id,file,target_date,Proposed_on) values (".$id.",'".$_SESSION['userId']['id']."',
 '".$_POST['activities_id0']."','".$_POST['priority0']."','".$_POST['Unit_Name0'][$i]."','".$_POST['rd_id0'][$i]."','".$fileName0."','".date("Y-m-d",strtotime($_POST['target_date0']))."','".date("Y-m-d H:i:s")."')";
-mysql_query($strquery0);
+mysqli_query($strquery0);
 }
 }
 move_uploaded_file($_FILES['file0']['tmp_name'],$location.$fileName0);
@@ -68,7 +68,7 @@ for($i=0; $i<$countUnit_Name1; $i++)
 if(!empty($_POST['Unit_Name1'][$i])){
 
 $strquery1="insert into  tbl_activities1(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date,Proposed_on) values (".$id.",'".$_SESSION['userId']['id']."','".$_POST['activities_id1']."','".$_POST['priority1']."','".$_POST['Unit_Name1'][$i]."','".$_POST['rd_id1'][$i]."','".$fileName1."','".date("Y-m-d",strtotime($_POST['target_date1']))."','".date("Y-m-d H:i:s")."')";
-mysql_query($strquery1);
+mysqli_query($strquery1);
 }
 }
 move_uploaded_file($_FILES['file1']['tmp_name'],$location.$fileName1);
@@ -96,7 +96,7 @@ for($i=0; $i<$countUnit_Name2; $i++)
 if(!empty($_POST['Unit_Name2'][$i])){
 
 $strquery2="insert into  tbl_activities2(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date,Proposed_on) values (".$id.",'".$_SESSION['userId']['id']."','".$_POST['activities_id2']."','".$_POST['priority2']."','".$_POST['Unit_Name2'][$i]."','".$_POST['rd_id2'][$i]."','".$fileName2."','".date("Y-m-d",strtotime($_POST['target_date2']))."','".date("Y-m-d H:i:s")."')";
-mysql_query($strquery2);
+mysqli_query($strquery2);
 }
 }
 move_uploaded_file($_FILES['file2']['tmp_name'],$location.$fileName2);
@@ -122,7 +122,7 @@ for($i=0; $i<$countUnit_Name3; $i++)
 if(!empty($_POST['Unit_Name3'][$i])){
 
 $strquery3="insert into  tbl_activities3(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date,Proposed_on) values (".$id.",'".$_SESSION['userId']['id']."','".$_POST['activities_id3']."','".$_POST['priority3']."','".$_POST['Unit_Name3'][$i]."','".$_POST['rd_id3'][$i]."','".$fileName3."','".date("Y-m-d",strtotime($_POST['target_date3']))."','".date("Y-m-d H:i:s")."')";
-mysql_query($strquery3);
+mysqli_query($strquery3);
 }
 }
 move_uploaded_file($_FILES['file3']['tmp_name'],$location.$fileName3);
@@ -149,7 +149,7 @@ for($i=0; $i<$countUnit_Name4; $i++)
 if(!empty($_POST['Unit_Name4'][$i])){
 
 $strquery4="insert into  tbl_activities4(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date,Proposed_on) values (".$id.",'".$_SESSION['userId']['id']."','".$_POST['activities_id4']."','".$_POST['priority4']."','".$_POST['Unit_Name4'][$i]."','".$_POST['rd_id4'][$i]."','".$fileName4."','".date("Y-m-d",strtotime($_POST['target_date4']))."','".date("Y-m-d H:i:s")."')";
-mysql_query($strquery4);
+mysqli_query($strquery4);
 }
 }
 move_uploaded_file($_FILES['file4']['tmp_name'],$location.$fileName4);
@@ -176,7 +176,7 @@ for($i=0; $i<$countUnit_Name5; $i++)
 if(!empty($_POST['Unit_Name5'][$i])){
 
 $strquery5="insert into  tbl_activities5(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date,Proposed_on) values (".$id.",'".$_SESSION['userId']['id']."','".$_POST['activities_id5']."','".$_POST['priority5']."','".$_POST['Unit_Name5'][$i]."','".$_POST['rd_id5'][$i]."','".$fileName5."','".date("Y-m-d",strtotime($_POST['target_date5']))."','".date("Y-m-d H:i:s")."')";
-mysql_query($strquery5);
+mysqli_query($strquery5);
 }
 }
 move_uploaded_file($_FILES['file5']['tmp_name'],$location.$fileName5);
@@ -202,7 +202,7 @@ for($i=0; $i<$countUnit_Name6; $i++)
 if(!empty($_POST['Unit_Name6'][$i])){
 
 $strquery6="insert into  tbl_activities6(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date,Proposed_on) values (".$id.",'".$_SESSION['userId']['id']."','".$_POST['activities_id6']."','".$_POST['priority6']."','".$_POST['Unit_Name6'][$i]."','".$_POST['rd_id6'][$i]."','".$fileName6."','".date("Y-m-d",strtotime($_POST['target_date6']))."','".date("Y-m-d H:i:s")."')";
-mysql_query($strquery6);
+mysqli_query($strquery6);
 }
 }
 move_uploaded_file($_FILES['file6']['tmp_name'],$location.$fileName6);
@@ -228,7 +228,7 @@ for($i=0; $i<$countUnit_Name7; $i++)
 if(!empty($_POST['Unit_Name7'][$i])){
 
 $strquery7="insert into  tbl_activities7(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date,Proposed_on) values (".$id.",'".$_SESSION['userId']['id']."','".$_POST['activities_id7']."','".$_POST['priority7']."','".$_POST['Unit_Name7'][$i]."','".$_POST['rd_id7'][$i]."','".$fileName7."','".date("Y-m-d",strtotime($_POST['target_date7']))."','".date("Y-m-d H:i:s")."')";
-mysql_query($strquery7);
+mysqli_query($strquery7);
 }
 }
 move_uploaded_file($_FILES['file7']['tmp_name'],$location.$fileName7);
@@ -254,7 +254,7 @@ for($i=0; $i<$countUnit_Name8; $i++)
 if(!empty($_POST['Unit_Name8'][$i])){
 
 $strquery8="insert into  tbl_activities8(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date,Proposed_on) values (".$id.",'".$_SESSION['userId']['id']."','".$_POST['activities_id8']."','".$_POST['priority8']."','".$_POST['Unit_Name8'][$i]."','".$_POST['rd_id8'][$i]."','".$fileName8."','".date("Y-m-d",strtotime($_POST['target_date8']))."','".date("Y-m-d H:i:s")."')";
-mysql_query($strquery8);
+mysqli_query($strquery8);
 }
 }
 move_uploaded_file($_FILES['file8']['tmp_name'],$location.$fileName8);
@@ -281,7 +281,7 @@ for($i=0; $i<$countUnit_Name9; $i++)
 if(!empty($_POST['Unit_Name9'][$i])){
 
 $strquery9="insert into  tbl_activities9(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date,Proposed_on) values (".$id.",'".$_SESSION['userId']['id']."','".$_POST['activities_id9']."','".$_POST['priority9']."','".$_POST['Unit_Name9'][$i]."','".$_POST['rd_id9'][$i]."','".$fileName9."','".date("Y-m-d",strtotime($_POST['target_date9']))."','".date("Y-m-d H:i:s")."')";
-mysql_query($strquery9);
+mysqli_query($strquery9);
 }
 }
 move_uploaded_file($_FILES['file9']['tmp_name'],$location.$fileName9);
@@ -311,7 +311,7 @@ if(!empty($_POST['Unit_Name10'][$i])){
 
 $strquery10="insert into  tbl_activities10(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date,Proposed_on) values (".$id.",'".$_SESSION['userId']['id']."',
 '".$_POST['activities_id10']."','".$_POST['priority10']."','".$_POST['Unit_Name10'][$i]."','".$_POST['rd_id10'][$i]."','".$fileName10."','".date("Y-m-d",strtotime($_POST['target_date10']))."','".date("Y-m-d H:i:s")."')";
-mysql_query($strquery10);
+mysqli_query($strquery10);
 }
 }
 move_uploaded_file($_FILES['file10']['tmp_name'],$location.$fileName10);
@@ -339,7 +339,7 @@ if(!empty($_POST['Unit_Name11'][$i])){
 
 $strquery11="insert into  tbl_activities11(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date,Proposed_on) values (".$id.",'".$_SESSION['userId']['id']."',
 '".$_POST['activities_id11']."','".$_POST['priority11']."','".$_POST['Unit_Name11'][$i]."','".$_POST['rd_id11'][$i]."','".$fileName11."','".date("Y-m-d",strtotime($_POST['target_date11']))."','".date("Y-m-d H:i:s")."')";
-mysql_query($strquery11);
+mysqli_query($strquery11);
 }
 }
 move_uploaded_file($_FILES['file11']['tmp_name'],$location.$fileName11);
@@ -366,7 +366,7 @@ if(!empty($_POST['Unit_Name12'][$i])){
 
 $strquery12="insert into  tbl_activities12(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date,Proposed_on) values (".$id.",'".$_SESSION['userId']['id']."',
 '".$_POST['activities_id12']."','".$_POST['priority12']."','".$_POST['Unit_Name12'][$i]."','".$_POST['rd_id12'][$i]."','".$fileName12."','".date("Y-m-d",strtotime($_POST['target_date12']))."','".date("Y-m-d H:i:s")."')";
-mysql_query($strquery12);
+mysqli_query($strquery12);
 }
 }
 move_uploaded_file($_FILES['file12']['tmp_name'],$location.$fileName12);
@@ -393,7 +393,7 @@ if(!empty($_POST['Unit_Name13'][$i])){
 
 $strquery13="insert into  tbl_activities13(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date,Proposed_on) values (".$id.",'".$_SESSION['userId']['id']."',
 '".$_POST['activities_id13']."','".$_POST['priority13']."','".$_POST['Unit_Name13'][$i]."','".$_POST['rd_id13'][$i]."','".$fileName13."','".date("Y-m-d",strtotime($_POST['target_date13']))."','".date("Y-m-d H:i:s")."')";
-mysql_query($strquery13);
+mysqli_query($strquery13);
 }
 }
 move_uploaded_file($_FILES['file13']['tmp_name'],$location.$fileName13);
@@ -420,7 +420,7 @@ if(!empty($_POST['Unit_Name14'][$i])){
 
 $strquery14="insert into  tbl_activities14(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date,Proposed_on) values (".$id.",'".$_SESSION['userId']['id']."',
 '".$_POST['activities_id14']."','".$_POST['priority14']."','".$_POST['Unit_Name14'][$i]."','".$_POST['rd_id14'][$i]."','".$fileName14."','".date("Y-m-d",strtotime($_POST['target_date14']))."','".date("Y-m-d H:i:s")."')";
-mysql_query($strquery14);
+mysqli_query($strquery14);
 }
 }
 move_uploaded_file($_FILES['file14']['tmp_name'],$location.$fileName14);
@@ -447,7 +447,7 @@ if(!empty($_POST['Unit_Name15'][$i])){
 
 $strquery15="insert into  tbl_activities15(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date,Proposed_on) values (".$id.",'".$_SESSION['userId']['id']."',
 '".$_POST['activities_id15']."','".$_POST['priority15']."','".$_POST['Unit_Name15'][$i]."','".$_POST['rd_id15'][$i]."','".$fileName15."','".date("Y-m-d",strtotime($_POST['target_date15']))."','".date("Y-m-d H:i:s")."')";
-mysql_query($strquery15);
+mysqli_query($strquery15);
 }
 }
 move_uploaded_file($_FILES['file15']['tmp_name'],$location.$fileName15);
@@ -474,7 +474,7 @@ if(!empty($_POST['Unit_Name16'][$i])){
 
 $strquery16="insert into  tbl_activities16(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date,Proposed_on) values (".$id.",'".$_SESSION['userId']['id']."',
 '".$_POST['activities_id16']."','".$_POST['priority16']."','".$_POST['Unit_Name16'][$i]."','".$_POST['rd_id16'][$i]."','".$fileName16."','".date("Y-m-d",strtotime($_POST['target_date16']))."','".date("Y-m-d H:i:s")."')";
-mysql_query($strquery16);
+mysqli_query($strquery16);
 }
 }
 move_uploaded_file($_FILES['file16']['tmp_name'],$location.$fileName16);
@@ -501,7 +501,7 @@ if(!empty($_POST['Unit_Name17'][$i])){
 
 $strquery17="insert into  tbl_activities17(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date,Proposed_on) values (".$id.",'".$_SESSION['userId']['id']."',
 '".$_POST['activities_id17']."','".$_POST['priority17']."','".$_POST['Unit_Name17'][$i]."','".$_POST['rd_id17'][$i]."','".$fileName17."','".date("Y-m-d",strtotime($_POST['target_date17']))."','".date("Y-m-d H:i:s")."')";
-mysql_query($strquery17);
+mysqli_query($strquery17);
 }
 }
 move_uploaded_file($_FILES['file17']['tmp_name'],$location.$fileName17);
@@ -922,54 +922,54 @@ yearRange: "-100:+0"
 </script>
  
 
-<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton0=$('.add_button0');var wrapper0=$('.field_wrapper0');var fieldHTML0='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name0[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id0[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery0=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd0=mysql_fetch_array($getQuery0)){?><option value="<?=$rd0['board']?>"><?=$rd0['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button0" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton0).click(function(){if(x<maxField){x++;$(wrapper0).append(fieldHTML0)}});$(wrapper0).on('click','.remove_button0',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script> 
+<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton0=$('.add_button0');var wrapper0=$('.field_wrapper0');var fieldHTML0='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name0[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id0[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery0=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd0=mysqli_fetch_array($getQuery0)){?><option value="<?=$rd0['board']?>"><?=$rd0['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button0" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton0).click(function(){if(x<maxField){x++;$(wrapper0).append(fieldHTML0)}});$(wrapper0).on('click','.remove_button0',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script> 
 
 
-<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton1=$('.add_button1');var wrapper1=$('.field_wrapper1');var fieldHTML1='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name1[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id1[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery1=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd1=mysql_fetch_array($getQuery1)){?><option value="<?=$rd1['board']?>"><?=$rd1['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button1" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton1).click(function(){if(x<maxField){x++;$(wrapper1).append(fieldHTML1)}});$(wrapper1).on('click','.remove_button1',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script> 
+<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton1=$('.add_button1');var wrapper1=$('.field_wrapper1');var fieldHTML1='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name1[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id1[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery1=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd1=mysqli_fetch_array($getQuery1)){?><option value="<?=$rd1['board']?>"><?=$rd1['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button1" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton1).click(function(){if(x<maxField){x++;$(wrapper1).append(fieldHTML1)}});$(wrapper1).on('click','.remove_button1',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script> 
 
 
-<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton2=$('.add_button2');var wrapper2=$('.field_wrapper2');var fieldHTML2='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name2[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id2[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery2=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd2=mysql_fetch_array($getQuery2)){?><option value="<?=$rd2['board']?>"><?=$rd2['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button2" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton2).click(function(){if(x<maxField){x++;$(wrapper2).append(fieldHTML2)}});$(wrapper2).on('click','.remove_button2',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script> 
+<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton2=$('.add_button2');var wrapper2=$('.field_wrapper2');var fieldHTML2='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name2[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id2[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery2=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd2=mysqli_fetch_array($getQuery2)){?><option value="<?=$rd2['board']?>"><?=$rd2['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button2" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton2).click(function(){if(x<maxField){x++;$(wrapper2).append(fieldHTML2)}});$(wrapper2).on('click','.remove_button2',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script> 
 
 
-<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton3=$('.add_button3');var wrapper3=$('.field_wrapper3');var fieldHTML3='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name3[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id3[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery3=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd3=mysql_fetch_array($getQuery3)){?><option value="<?=$rd3['board']?>"><?=$rd3['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button3" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton3).click(function(){if(x<maxField){x++;$(wrapper3).append(fieldHTML3)}});$(wrapper3).on('click','.remove_button3',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script> 
+<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton3=$('.add_button3');var wrapper3=$('.field_wrapper3');var fieldHTML3='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name3[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id3[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery3=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd3=mysqli_fetch_array($getQuery3)){?><option value="<?=$rd3['board']?>"><?=$rd3['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button3" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton3).click(function(){if(x<maxField){x++;$(wrapper3).append(fieldHTML3)}});$(wrapper3).on('click','.remove_button3',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script> 
 
-<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton4=$('.add_button4');var wrapper4=$('.field_wrapper4');var fieldHTML4='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name4[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id4[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery4=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd4=mysql_fetch_array($getQuery4)){?><option value="<?=$rd4['board']?>"><?=$rd4['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button4" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton4).click(function(){if(x<maxField){x++;$(wrapper4).append(fieldHTML4)}});$(wrapper4).on('click','.remove_button4',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script> 
-
-
-<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton5=$('.add_button5');var wrapper5=$('.field_wrapper5');var fieldHTML5='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name5[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id5[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery5=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd5=mysql_fetch_array($getQuery5)){?><option value="<?=$rd5['board']?>"><?=$rd5['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button5" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton5).click(function(){if(x<maxField){x++;$(wrapper5).append(fieldHTML5)}});$(wrapper5).on('click','.remove_button5',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script> 
-
-<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton6=$('.add_button6');var wrapper6=$('.field_wrapper6');var fieldHTML6='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name6[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id6[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery6=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd6=mysql_fetch_array($getQuery6)){?><option value="<?=$rd6['board']?>"><?=$rd6['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button6" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton6).click(function(){if(x<maxField){x++;$(wrapper6).append(fieldHTML6)}});$(wrapper6).on('click','.remove_button6',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script> 
-
-<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton7=$('.add_button7');var wrapper7=$('.field_wrapper7');var fieldHTML7='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name7[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id7[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery7=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd7=mysql_fetch_array($getQuery7)){?><option value="<?=$rd7['board']?>"><?=$rd7['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button7" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton7).click(function(){if(x<maxField){x++;$(wrapper7).append(fieldHTML7)}});$(wrapper7).on('click','.remove_button7',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script> 
+<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton4=$('.add_button4');var wrapper4=$('.field_wrapper4');var fieldHTML4='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name4[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id4[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery4=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd4=mysqli_fetch_array($getQuery4)){?><option value="<?=$rd4['board']?>"><?=$rd4['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button4" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton4).click(function(){if(x<maxField){x++;$(wrapper4).append(fieldHTML4)}});$(wrapper4).on('click','.remove_button4',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script> 
 
 
-<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton8=$('.add_button8');var wrapper8=$('.field_wrapper8');var fieldHTML8='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name8[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id8[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery8=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd8=mysql_fetch_array($getQuery8)){?><option value="<?=$rd8['board']?>"><?=$rd8['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button8" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton8).click(function(){if(x<maxField){x++;$(wrapper8).append(fieldHTML8)}});$(wrapper8).on('click','.remove_button8',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script>
+<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton5=$('.add_button5');var wrapper5=$('.field_wrapper5');var fieldHTML5='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name5[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id5[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery5=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd5=mysqli_fetch_array($getQuery5)){?><option value="<?=$rd5['board']?>"><?=$rd5['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button5" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton5).click(function(){if(x<maxField){x++;$(wrapper5).append(fieldHTML5)}});$(wrapper5).on('click','.remove_button5',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script> 
+
+<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton6=$('.add_button6');var wrapper6=$('.field_wrapper6');var fieldHTML6='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name6[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id6[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery6=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd6=mysqli_fetch_array($getQuery6)){?><option value="<?=$rd6['board']?>"><?=$rd6['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button6" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton6).click(function(){if(x<maxField){x++;$(wrapper6).append(fieldHTML6)}});$(wrapper6).on('click','.remove_button6',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script> 
+
+<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton7=$('.add_button7');var wrapper7=$('.field_wrapper7');var fieldHTML7='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name7[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id7[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery7=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd7=mysqli_fetch_array($getQuery7)){?><option value="<?=$rd7['board']?>"><?=$rd7['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button7" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton7).click(function(){if(x<maxField){x++;$(wrapper7).append(fieldHTML7)}});$(wrapper7).on('click','.remove_button7',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script> 
+
+
+<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton8=$('.add_button8');var wrapper8=$('.field_wrapper8');var fieldHTML8='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name8[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id8[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery8=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd8=mysqli_fetch_array($getQuery8)){?><option value="<?=$rd8['board']?>"><?=$rd8['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button8" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton8).click(function(){if(x<maxField){x++;$(wrapper8).append(fieldHTML8)}});$(wrapper8).on('click','.remove_button8',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script>
 
 
 
-<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton9=$('.add_button9');var wrapper9=$('.field_wrapper9');var fieldHTML9='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name9[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id9[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery9=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd9=mysql_fetch_array($getQuery9)){?><option value="<?=$rd9['board']?>"><?=$rd9['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button9" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton9).click(function(){if(x<maxField){x++;$(wrapper9).append(fieldHTML9)}});$(wrapper9).on('click','.remove_button9',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script>
+<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton9=$('.add_button9');var wrapper9=$('.field_wrapper9');var fieldHTML9='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name9[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id9[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery9=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd9=mysqli_fetch_array($getQuery9)){?><option value="<?=$rd9['board']?>"><?=$rd9['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button9" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton9).click(function(){if(x<maxField){x++;$(wrapper9).append(fieldHTML9)}});$(wrapper9).on('click','.remove_button9',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script>
 
 
-<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton10=$('.add_button10');var wrapper10=$('.field_wrapper10');var fieldHTML10='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name10[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id10[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery10=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd10=mysql_fetch_array($getQuery10)){?><option value="<?=$rd10['board']?>"><?=$rd10['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button10" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton10).click(function(){if(x<maxField){x++;$(wrapper10).append(fieldHTML10)}});$(wrapper10).on('click','.remove_button10',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script>
+<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton10=$('.add_button10');var wrapper10=$('.field_wrapper10');var fieldHTML10='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name10[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id10[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery10=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd10=mysqli_fetch_array($getQuery10)){?><option value="<?=$rd10['board']?>"><?=$rd10['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button10" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton10).click(function(){if(x<maxField){x++;$(wrapper10).append(fieldHTML10)}});$(wrapper10).on('click','.remove_button10',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script>
 
 
-<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton11=$('.add_button11');var wrapper11=$('.field_wrapper11');var fieldHTML11='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name11[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id11[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery11=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd11=mysql_fetch_array($getQuery11)){?><option value="<?=$rd11['board']?>"><?=$rd11['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button11" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton11).click(function(){if(x<maxField){x++;$(wrapper11).append(fieldHTML11)}});$(wrapper11).on('click','.remove_button11',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script>
+<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton11=$('.add_button11');var wrapper11=$('.field_wrapper11');var fieldHTML11='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name11[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id11[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery11=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd11=mysqli_fetch_array($getQuery11)){?><option value="<?=$rd11['board']?>"><?=$rd11['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button11" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton11).click(function(){if(x<maxField){x++;$(wrapper11).append(fieldHTML11)}});$(wrapper11).on('click','.remove_button11',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script>
 
 
-<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton12=$('.add_button12');var wrapper12=$('.field_wrapper12');var fieldHTML12='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name12[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id12[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery12=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd12=mysql_fetch_array($getQuery12)){?><option value="<?=$rd12['board']?>"><?=$rd12['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button12" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton12).click(function(){if(x<maxField){x++;$(wrapper12).append(fieldHTML12)}});$(wrapper12).on('click','.remove_button12',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script>
+<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton12=$('.add_button12');var wrapper12=$('.field_wrapper12');var fieldHTML12='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name12[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id12[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery12=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd12=mysqli_fetch_array($getQuery12)){?><option value="<?=$rd12['board']?>"><?=$rd12['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button12" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton12).click(function(){if(x<maxField){x++;$(wrapper12).append(fieldHTML12)}});$(wrapper12).on('click','.remove_button12',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script>
 
-<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton13=$('.add_button13');var wrapper13=$('.field_wrapper13');var fieldHTML13='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name13[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id13[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery13=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd13=mysql_fetch_array($getQuery13)){?><option value="<?=$rd13['board']?>"><?=$rd13['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button13" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton13).click(function(){if(x<maxField){x++;$(wrapper13).append(fieldHTML13)}});$(wrapper13).on('click','.remove_button13',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script>
-
-
-<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton14=$('.add_button14');var wrapper14=$('.field_wrapper14');var fieldHTML14='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name14[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id14[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery14=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd14=mysql_fetch_array($getQuery14)){?><option value="<?=$rd14['board']?>"><?=$rd14['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button14" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton14).click(function(){if(x<maxField){x++;$(wrapper14).append(fieldHTML14)}});$(wrapper14).on('click','.remove_button14',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script>
-
-<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton15=$('.add_button15');var wrapper15=$('.field_wrapper15');var fieldHTML15='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name15[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id15[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery15=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd15=mysql_fetch_array($getQuery15)){?><option value="<?=$rd15['board']?>"><?=$rd15['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button15" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton15).click(function(){if(x<maxField){x++;$(wrapper15).append(fieldHTML15)}});$(wrapper15).on('click','.remove_button15',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script>
+<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton13=$('.add_button13');var wrapper13=$('.field_wrapper13');var fieldHTML13='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name13[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id13[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery13=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd13=mysqli_fetch_array($getQuery13)){?><option value="<?=$rd13['board']?>"><?=$rd13['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button13" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton13).click(function(){if(x<maxField){x++;$(wrapper13).append(fieldHTML13)}});$(wrapper13).on('click','.remove_button13',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script>
 
 
-<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton16=$('.add_button16');var wrapper16=$('.field_wrapper16');var fieldHTML16='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name16[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id16[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery16=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd16=mysql_fetch_array($getQuery16)){?><option value="<?=$rd16['board']?>"><?=$rd16['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button16" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton16).click(function(){if(x<maxField){x++;$(wrapper16).append(fieldHTML16)}});$(wrapper16).on('click','.remove_button16',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script>
+<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton14=$('.add_button14');var wrapper14=$('.field_wrapper14');var fieldHTML14='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name14[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id14[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery14=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd14=mysqli_fetch_array($getQuery14)){?><option value="<?=$rd14['board']?>"><?=$rd14['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button14" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton14).click(function(){if(x<maxField){x++;$(wrapper14).append(fieldHTML14)}});$(wrapper14).on('click','.remove_button14',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script>
+
+<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton15=$('.add_button15');var wrapper15=$('.field_wrapper15');var fieldHTML15='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name15[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id15[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery15=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd15=mysqli_fetch_array($getQuery15)){?><option value="<?=$rd15['board']?>"><?=$rd15['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button15" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton15).click(function(){if(x<maxField){x++;$(wrapper15).append(fieldHTML15)}});$(wrapper15).on('click','.remove_button15',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script>
 
 
-<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton17=$('.add_button17');var wrapper17=$('.field_wrapper17');var fieldHTML17='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name17[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id17[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery17=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd17=mysql_fetch_array($getQuery17)){?><option value="<?=$rd17['board']?>"><?=$rd17['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button17" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton17).click(function(){if(x<maxField){x++;$(wrapper17).append(fieldHTML17)}});$(wrapper17).on('click','.remove_button17',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script>
+<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton16=$('.add_button16');var wrapper16=$('.field_wrapper16');var fieldHTML16='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name16[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id16[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery16=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd16=mysqli_fetch_array($getQuery16)){?><option value="<?=$rd16['board']?>"><?=$rd16['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button16" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton16).click(function(){if(x<maxField){x++;$(wrapper16).append(fieldHTML16)}});$(wrapper16).on('click','.remove_button16',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script>
+
+
+<script type="text/javascript">$(document).ready(function(){var maxField=15;var addButton17=$('.add_button17');var wrapper17=$('.field_wrapper17');var fieldHTML17='<div style="width:100%; float:left; margin:5px 0px;">    <input type="text" name="Unit_Name17[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id17[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery17=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd17=mysqli_fetch_array($getQuery17)){?><option value="<?=$rd17['board']?>"><?=$rd17['board']?></option><?php }?></select><a href="javascript:void(0);" class="remove_button17" title="Remove field"><img src="images/remove-icon.png" style="float:left;"/></a></div>';var x=1;$(addButton17).click(function(){if(x<maxField){x++;$(wrapper17).append(fieldHTML17)}});$(wrapper17).on('click','.remove_button17',function(e){e.preventDefault();$(this).parent('div').remove();x--})});</script>
 
 
 <style type="text/css">
@@ -1081,8 +1081,8 @@ $_SESSION['errors']="";
   </tr>
 <?php 
 
-$getActivitis=mysql_query("select * from tbl_user_activities_list where user_id=".$_SESSION['userId']['id']."");
-while($row=mysql_fetch_array($getActivitis))
+$getActivitis=mysqli_query("select * from tbl_user_activities_list where user_id=".$_SESSION['userId']['id']."");
+while($row=mysqli_fetch_array($getActivitis))
 {
 $dataList[]=$row['activities_id'];
 }
@@ -1104,8 +1104,8 @@ $dataList[]=$row['activities_id'];
 <input type="text" name="Unit_Name0[]" style="width:49%; float:left;" class="form-control" value=""/>
 <select name="rd_id0[]" class="form-control" style="width:49%; margin-left:10px; float:left;">
 <option>Select RD</option>
-<?php $getQuery=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); 
-while($rd=mysql_fetch_array($getQuery)){?>
+<?php $getQuery=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); 
+while($rd=mysqli_fetch_array($getQuery)){?>
 <option value="<?=$rd['board']?>"><?=$rd['board']?></option><?php }?>
 </select>
 
@@ -1137,7 +1137,7 @@ while($rd=mysql_fetch_array($getQuery)){?>
 <input name="priority1" value="P4" type="hidden">
 
 
-<input type="text" name="Unit_Name1[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id1[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery1=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd1=mysql_fetch_array($getQuery1)){?><option value="<?=$rd1['board']?>"><?=$rd1['board']?></option><?php }?></select>
+<input type="text" name="Unit_Name1[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id1[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery1=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd1=mysqli_fetch_array($getQuery1)){?><option value="<?=$rd1['board']?>"><?=$rd1['board']?></option><?php }?></select>
 
 
 </div>
@@ -1167,7 +1167,7 @@ while($rd=mysql_fetch_array($getQuery)){?>
 <input name="priority2" value="P4" type="hidden">
 
 
-<input type="text" name="Unit_Name2[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id2[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery2=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd2=mysql_fetch_array($getQuery2)){?><option value="<?=$rd2['board']?>"><?=$rd2['board']?></option><?php }?></select>
+<input type="text" name="Unit_Name2[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id2[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery2=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd2=mysqli_fetch_array($getQuery2)){?><option value="<?=$rd2['board']?>"><?=$rd2['board']?></option><?php }?></select>
 
 
 </div>
@@ -1196,7 +1196,7 @@ while($rd=mysql_fetch_array($getQuery)){?>
 <input name="activities_id3" value="Monitoring of river/rivulets/drains" type="hidden">
 <input name="priority3" value="P4" type="hidden">
 
-<input type="text" name="Unit_Name3[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id3[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery3=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd3=mysql_fetch_array($getQuery3)){?><option value="<?=$rd3['board']?>"><?=$rd3['board']?></option><?php }?></select>
+<input type="text" name="Unit_Name3[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id3[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery3=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd3=mysqli_fetch_array($getQuery3)){?><option value="<?=$rd3['board']?>"><?=$rd3['board']?></option><?php }?></select>
 
 
 </div>
@@ -1224,7 +1224,7 @@ while($rd=mysql_fetch_array($getQuery)){?>
 <input name="activities_id4" value="CETPs" type="hidden">
 <input name="priority4" value="P4" type="hidden">
 
-<input type="text" name="Unit_Name4[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id4[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery4=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd4=mysql_fetch_array($getQuery4)){?><option value="<?=$rd4['board']?>"><?=$rd4['board']?></option><?php }?></select>
+<input type="text" name="Unit_Name4[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id4[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery4=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd4=mysqli_fetch_array($getQuery4)){?><option value="<?=$rd4['board']?>"><?=$rd4['board']?></option><?php }?></select>
 
 
 </div>
@@ -1252,7 +1252,7 @@ while($rd=mysql_fetch_array($getQuery)){?>
 <input name="activities_id5" value="CHWTSDF" type="hidden">
 <input name="priority5" value="P4" type="hidden">
 
-<input type="text" name="Unit_Name5[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id5[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery5=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd5=mysql_fetch_array($getQuery5)){?><option value="<?=$rd5['board']?>"><?=$rd5['board']?></option><?php }?></select>
+<input type="text" name="Unit_Name5[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id5[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery5=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd5=mysqli_fetch_array($getQuery5)){?><option value="<?=$rd5['board']?>"><?=$rd5['board']?></option><?php }?></select>
 
 
 </div>
@@ -1281,7 +1281,7 @@ while($rd=mysql_fetch_array($getQuery)){?>
 <input name="activities_id6" value="CBMWTF" type="hidden">
 <input name="priority6" value="P4" type="hidden">
 
-<input type="text" name="Unit_Name6[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id6[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery6=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd6=mysql_fetch_array($getQuery6)){?><option value="<?=$rd6['board']?>"><?=$rd6['board']?></option><?php }?></select>
+<input type="text" name="Unit_Name6[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id6[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery6=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd6=mysqli_fetch_array($getQuery6)){?><option value="<?=$rd6['board']?>"><?=$rd6['board']?></option><?php }?></select>
 
 
 </div>
@@ -1309,7 +1309,7 @@ while($rd=mysql_fetch_array($getQuery)){?>
 <input name="activities_id7" value="STPs" type="hidden">
 <input name="priority7" value="P4" type="hidden">
 
-<input type="text" name="Unit_Name7[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id7[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery7=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd7=mysql_fetch_array($getQuery7)){?><option value="<?=$rd7['board']?>"><?=$rd7['board']?></option><?php }?></select>
+<input type="text" name="Unit_Name7[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id7[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery7=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd7=mysqli_fetch_array($getQuery7)){?><option value="<?=$rd7['board']?>"><?=$rd7['board']?></option><?php }?></select>
 
 
 </div>
@@ -1337,7 +1337,7 @@ while($rd=mysql_fetch_array($getQuery)){?>
 <input name="activities_id8" value="SLFs(MSW)" type="hidden">
 <input name="priority8" value="P4" type="hidden">
 
-<input type="text" name="Unit_Name8[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id8[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery8=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd8=mysql_fetch_array($getQuery8)){?><option value="<?=$rd8['board']?>"><?=$rd8['board']?></option><?php }?></select>
+<input type="text" name="Unit_Name8[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id8[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery8=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd8=mysqli_fetch_array($getQuery8)){?><option value="<?=$rd8['board']?>"><?=$rd8['board']?></option><?php }?></select>
 
 
 </div>
@@ -1365,7 +1365,7 @@ while($rd=mysql_fetch_array($getQuery)){?>
 <input name="activities_id9" value="Inspections based on SMS alerts from OCEMS of units" type="hidden">
 <input name="priority9" value="P2" type="hidden">
 
-<input type="text" name="Unit_Name9[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id9[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery9=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd9=mysql_fetch_array($getQuery9)){?><option value="<?=$rd9['board']?>"><?=$rd9['board']?></option><?php }?></select>
+<input type="text" name="Unit_Name9[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id9[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery9=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd9=mysqli_fetch_array($getQuery9)){?><option value="<?=$rd9['board']?>"><?=$rd9['board']?></option><?php }?></select>
 
 
 </div>
@@ -1396,7 +1396,7 @@ while($rd=mysql_fetch_array($getQuery)){?>
 <input name="activities_id10" value="Re-inspections/Follow-up visits of units" type="hidden">
 <input name="priority10" value="P3" type="hidden">
 
-<input type="text" name="Unit_Name10[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id10[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery10=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd10=mysql_fetch_array($getQuery10)){?><option value="<?=$rd10['board']?>"><?=$rd10['board']?></option><?php }?></select>
+<input type="text" name="Unit_Name10[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id10[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery10=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd10=mysqli_fetch_array($getQuery10)){?><option value="<?=$rd10['board']?>"><?=$rd10['board']?></option><?php }?></select>
 
 
 </div>
@@ -1424,7 +1424,7 @@ while($rd=mysql_fetch_array($getQuery)){?>
 <input name="activities_id11" value="Inspections for VIP complaint verification" type="hidden">
 <input name="priority11" value="P1" type="hidden">
 
-<input type="text" name="Unit_Name11[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id11[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery11=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd11=mysql_fetch_array($getQuery11)){?><option value="<?=$rd11['board']?>"><?=$rd11['board']?></option><?php }?></select>
+<input type="text" name="Unit_Name11[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id11[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery11=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd11=mysqli_fetch_array($getQuery11)){?><option value="<?=$rd11['board']?>"><?=$rd11['board']?></option><?php }?></select>
 
 
 </div>
@@ -1452,7 +1452,7 @@ while($rd=mysql_fetch_array($getQuery)){?>
 <input name="activities_id12" value="Inspections related with NGT/court matter" type="hidden">
 <input name="priority12" value="P2" type="hidden">
 
-<input type="text" name="Unit_Name12[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id12[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery12=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd12=mysql_fetch_array($getQuery12)){?><option value="<?=$rd12['board']?>"><?=$rd12['board']?></option><?php }?></select>
+<input type="text" name="Unit_Name12[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id12[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery12=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd12=mysqli_fetch_array($getQuery12)){?><option value="<?=$rd12['board']?>"><?=$rd12['board']?></option><?php }?></select>
 
 
 </div>
@@ -1481,7 +1481,7 @@ while($rd=mysql_fetch_array($getQuery)){?>
 <input name="activities_id13" value="Monitoring for trail run under HWM Rules" type="hidden">
 <input name="priority13" value="P4" type="hidden">
 
-<input type="text" name="Unit_Name13[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id13[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery13=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd13=mysql_fetch_array($getQuery13)){?><option value="<?=$rd13['board']?>"><?=$rd13['board']?></option><?php }?></select>
+<input type="text" name="Unit_Name13[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id13[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery13=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd13=mysqli_fetch_array($getQuery13)){?><option value="<?=$rd13['board']?>"><?=$rd13['board']?></option><?php }?></select>
 
 
 </div>
@@ -1510,7 +1510,7 @@ while($rd=mysql_fetch_array($getQuery)){?>
 <input name="activities_id14" value="Inspections related with import of hazardous & other waste" type="hidden">
 <input name="priority14" value="P4" type="hidden">
 
-<input type="text" name="Unit_Name14[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id14[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery14=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd14=mysql_fetch_array($getQuery14)){?><option value="<?=$rd14['board']?>"><?=$rd14['board']?></option><?php }?></select>
+<input type="text" name="Unit_Name14[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id14[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery14=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd14=mysqli_fetch_array($getQuery14)){?><option value="<?=$rd14['board']?>"><?=$rd14['board']?></option><?php }?></select>
 
 
 </div>
@@ -1539,7 +1539,7 @@ while($rd=mysql_fetch_array($getQuery)){?>
 <input name="activities_id15" value="Meetings/workshops/Training" type="hidden">
 <input name="priority15" value="P4" type="hidden">
 
-<input type="text" name="Unit_Name15[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id15[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery15=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd15=mysql_fetch_array($getQuery15)){?><option value="<?=$rd15['board']?>"><?=$rd15['board']?></option><?php }?></select>
+<input type="text" name="Unit_Name15[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id15[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery15=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd15=mysqli_fetch_array($getQuery15)){?><option value="<?=$rd15['board']?>"><?=$rd15['board']?></option><?php }?></select>
 
 
 </div>
@@ -1567,7 +1567,7 @@ while($rd=mysql_fetch_array($getQuery)){?>
 <input name="activities_id16" value="Inspections for public complaint verification" type="hidden">
 <input name="priority16" value="P3" type="hidden">
 
-<input type="text" name="Unit_Name16[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id16[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery16=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd16=mysql_fetch_array($getQuery16)){?><option value="<?=$rd16['board']?>"><?=$rd16['board']?></option><?php }?></select>
+<input type="text" name="Unit_Name16[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id16[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery16=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd16=mysqli_fetch_array($getQuery16)){?><option value="<?=$rd16['board']?>"><?=$rd16['board']?></option><?php }?></select>
 
 
 </div>
@@ -1595,7 +1595,7 @@ while($rd=mysql_fetch_array($getQuery)){?>
 <input name="activities_id17" value="Inspections for ganga complaint verification" type="hidden">
 <input name="priority17" value="P4" type="hidden">
 
-<input type="text" name="Unit_Name17[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id17[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery17=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd17=mysql_fetch_array($getQuery17)){?><option value="<?=$rd17['board']?>"><?=$rd17['board']?></option><?php }?></select>
+<input type="text" name="Unit_Name17[]" style="width:49%; float:left;" class="form-control" value=""/><select name="rd_id17[]" class="form-control" style="width:49%; margin-left:10px; float:left;"><option>Select RD</option><?php $getQuery17=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); while($rd17=mysqli_fetch_array($getQuery17)){?><option value="<?=$rd17['board']?>"><?=$rd17['board']?></option><?php }?></select>
 
 
 </div>

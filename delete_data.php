@@ -91,7 +91,7 @@ switch ($_GET['eid'])
 
 
  
-$updateQuery=mysql_query("DELETE FROM $dhTable WHERE  id = '".$_GET['cid']."'");
+$updateQuery=mysqli_query("DELETE FROM $dhTable WHERE  id = '".$_GET['cid']."'");
  
 
 if($updateQuery)

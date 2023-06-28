@@ -6,12 +6,12 @@ ini_set('display_errors','0');
 include_once'includes/session.php';
 date_default_timezone_set('Asia/Kolkata');
  
-$mysql_hostname = "localhost";
-$mysql_user ="root";
-$mysql_password = "";
-$mysql_database = "project_management";
-@mysql_connect($mysql_hostname, $mysql_user, $mysql_password)or die("Opps some thing went wrong");
-mysql_select_db($mysql_database) or die("Opps some thing went wrong");
+$mysqli_hostname = "localhost";
+$mysqli_user ="root";
+$mysqli_password = "";
+$mysqli_database = "project_management";
+@mysqli_connect($mysqli_hostname, $mysqli_user, $mysqli_password)or die("Opps some thing went wrong");
+mysqli_select_db($mysqli_database) or die("Opps some thing went wrong");
  
  
 $Officer=$_SESSION['userId']['Officer'];
@@ -165,8 +165,8 @@ $_SESSION['errors']="";
 <?php
 $i=1;
 $query="SELECT * FROM  projects where user_id_1='".$Officer."' OR user_id_2='".$Officer."' ORDER BY  id DESC  ";
-$res=mysql_query($query);
-while($row=mysql_fetch_array($res)){
+$res=mysqli_query($query);
+while($row=mysqli_fetch_array($res)){
 ?> 
                         <tr>
                         <td><?=$i?></td>

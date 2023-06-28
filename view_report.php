@@ -102,7 +102,7 @@ $sqlQuery="UPDATE tbl_activities17 SET priority='".$_POST['type']."'  WHERE  act
 }  
   
 
-if(mysql_query($sqlQuery))
+if(mysqli_query($sqlQuery))
 {
 $_SESSION['messageData']="Activities Update";
 header('location:'.$_SERVER['REQUEST_URI']); 
@@ -115,27 +115,27 @@ if(isset($_POST['submit']) && $_POST['submit']=="Final Allotment")
 $month= date("m", strtotime($_POST['month']));
 $year= date("Y", strtotime($_POST['month']));
  
- $getUserData1=mysql_query("SELECT * FROM tbl_user where board='".$_POST['rd']."'");
-$user1=mysql_fetch_array($getUserData1);  
+ $getUserData1=mysqli_query("SELECT * FROM tbl_user where board='".$_POST['rd']."'");
+$user1=mysqli_fetch_array($getUserData1);  
  
-$updateQuery=mysql_query("UPDATE tbl_activities0 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysql_query("UPDATE tbl_activities1 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."'  AND status=1 AND rd_id='".$_POST['rd']."'");
-mysql_query("UPDATE tbl_activities2 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysql_query("UPDATE tbl_activities3 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysql_query("UPDATE tbl_activities4 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysql_query("UPDATE tbl_activities5 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysql_query("UPDATE tbl_activities6 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysql_query("UPDATE tbl_activities7 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysql_query("UPDATE tbl_activities8 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysql_query("UPDATE tbl_activities9 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysql_query("UPDATE tbl_activities10 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysql_query("UPDATE tbl_activities11 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysql_query("UPDATE tbl_activities12 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysql_query("UPDATE tbl_activities13 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysql_query("UPDATE tbl_activities14 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysql_query("UPDATE tbl_activities15 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysql_query("UPDATE tbl_activities16 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysql_query("UPDATE tbl_activities17 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+$updateQuery=mysqli_query("UPDATE tbl_activities0 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query("UPDATE tbl_activities1 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."'  AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query("UPDATE tbl_activities2 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query("UPDATE tbl_activities3 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query("UPDATE tbl_activities4 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query("UPDATE tbl_activities5 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query("UPDATE tbl_activities6 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query("UPDATE tbl_activities7 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query("UPDATE tbl_activities8 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query("UPDATE tbl_activities9 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query("UPDATE tbl_activities10 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query("UPDATE tbl_activities11 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query("UPDATE tbl_activities12 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query("UPDATE tbl_activities13 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query("UPDATE tbl_activities14 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query("UPDATE tbl_activities15 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query("UPDATE tbl_activities16 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query("UPDATE tbl_activities17 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
 
 
 $_SESSION['success']="Work Allotted Successfully";
@@ -275,8 +275,8 @@ $_SESSION['success']="";
                
            <td width="30%"><select name="rd_id12" class="form-control" style="width:49%; margin-left:10px; float:left;" required>
           
-		   <?php $getQuery12=mysql_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); 
-		   while($rd12=mysql_fetch_array($getQuery12)){?>
+		   <?php $getQuery12=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); 
+		   while($rd12=mysqli_fetch_array($getQuery12)){?>
            <option value="<?=$rd12['board']?>"  <?=($rd12['board']==$_GET['rd_id12'])?'selected':''?> ><?=$rd12['board']?></option><?php }?>
            </select></td>
 
@@ -290,8 +290,8 @@ $_SESSION['success']="";
            </div>
 
            <?php
-		   $getUserData=mysql_query("SELECT * FROM tbl_user where board='".$_GET['rd_id12']."'");
-			$user=mysql_fetch_array($getUserData);  
+		   $getUserData=mysqli_query("SELECT * FROM tbl_user where board='".$_GET['rd_id12']."'");
+			$user=mysqli_fetch_array($getUserData);  
 			 
 		$month= date("m", strtotime($_GET['month']));
 		$year= date("Y", strtotime($_GET['month']));
@@ -320,11 +320,11 @@ $_SESSION['success']="";
             <td><div class="direct-chat-text right">Water quality monitoring stations &amp; no. of inspection during the month</div></td>
             <td>
             <?php
-            $queryByDate=mysql_query("SELECT * FROM tbl_activities0 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=0 AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRow=mysql_num_rows($queryByDate);
+            $queryByDate=mysqli_query("SELECT * FROM tbl_activities0 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=0 AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRow=mysqli_num_rows($queryByDate);
             
-            $queryByDateRd=mysql_query("SELECT * FROM tbl_activities_rd0 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
-            $dateRowRd=mysql_num_rows($queryByDateRd);
+            $queryByDateRd=mysqli_query("SELECT * FROM tbl_activities_rd0 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+            $dateRowRd=mysqli_num_rows($queryByDateRd);
             ?>
             
             
@@ -334,8 +334,8 @@ $_SESSION['success']="";
             </td>
             <td class="marker">
             <?php
-            $queryByDateStatus0=mysql_query("SELECT * FROM tbl_activities0 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRowStatus0=mysql_num_rows($queryByDateStatus0);
+            $queryByDateStatus0=mysqli_query("SELECT * FROM tbl_activities0 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRowStatus0=mysqli_num_rows($queryByDateStatus0);
             ?>
             
             
@@ -346,9 +346,9 @@ $_SESSION['success']="";
             <td class="marker">
             <?php
             
-            $queryByDateFinal0=mysql_query("SELECT * FROM tbl_activities0 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
+            $queryByDateFinal0=mysqli_query("SELECT * FROM tbl_activities0 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
             
-            $dateRowFinal0=mysql_num_rows($queryByDateFinal0);
+            $dateRowFinal0=mysqli_num_rows($queryByDateFinal0);
             
             ?>
             
@@ -358,8 +358,8 @@ $_SESSION['success']="";
             
             </td>
             <?php
-			 $queryByPriority0=mysql_query("SELECT * FROM tbl_activities0 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
-			$priorityData0=mysql_fetch_array($queryByPriority0);
+			 $queryByPriority0=mysqli_query("SELECT * FROM tbl_activities0 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
+			$priorityData0=mysqli_fetch_array($queryByPriority0);
 			   
 			?>
             <td class="markers"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priorityData0['priority'])){ echo "P1";} else{echo $priorityData0['priority'];}?></span><form action="" name="activities0" method="post">
@@ -382,11 +382,11 @@ $_SESSION['success']="";
             <td><div class="direct-chat-text right">Inspections for VIP complaint verification</div></td>
               <td>
             <?php
-            $queryByDate11=mysql_query("SELECT * FROM tbl_activities11 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRow11=mysql_num_rows($queryByDate11);
+            $queryByDate11=mysqli_query("SELECT * FROM tbl_activities11 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRow11=mysqli_num_rows($queryByDate11);
             
-            $queryByDateRd11=mysql_query("SELECT * FROM tbl_activities_rd11 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
-            $dateRowRd11=mysql_num_rows($queryByDateRd11);
+            $queryByDateRd11=mysqli_query("SELECT * FROM tbl_activities_rd11 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+            $dateRowRd11=mysqli_num_rows($queryByDateRd11);
             ?>
             
             
@@ -396,8 +396,8 @@ $_SESSION['success']="";
             </td>
             <td class="marker">
             <?php
-            $queryByDateStatus11=mysql_query("SELECT * FROM tbl_activities11 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRowStatus11=mysql_num_rows($queryByDateStatus11);
+            $queryByDateStatus11=mysqli_query("SELECT * FROM tbl_activities11 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRowStatus11=mysqli_num_rows($queryByDateStatus11);
             ?>
             
             
@@ -408,9 +408,9 @@ $_SESSION['success']="";
             <td class="marker">
             <?php
             
-            $queryByDateFinal11=mysql_query("SELECT * FROM tbl_activities11 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
+            $queryByDateFinal11=mysqli_query("SELECT * FROM tbl_activities11 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
             
-            $dateRowFinal11=mysql_num_rows($queryByDateFinal11);
+            $dateRowFinal11=mysqli_num_rows($queryByDateFinal11);
             
             ?>
             
@@ -421,8 +421,8 @@ $_SESSION['success']="";
             </td>
                <?php
 			 
-			 $queryByPriority11=mysql_query("SELECT * FROM tbl_activities11 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
-			$priorityData11=mysql_fetch_array($queryByPriority11);
+			 $queryByPriority11=mysqli_query("SELECT * FROM tbl_activities11 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
+			$priorityData11=mysqli_fetch_array($queryByPriority11);
 			   
 			?>
 			<td class="markers"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priorityData11['priority'])){ echo "P1";} else{echo $priorityData11['priority'];}?></span>
@@ -447,11 +447,11 @@ $_SESSION['success']="";
             <td><div class="direct-chat-text right">Inspections based on SMS alerts from OCEMS of units</div></td>
              <td>
             <?php
-            $queryByDate9=mysql_query("SELECT * FROM tbl_activities9 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRow9=mysql_num_rows($queryByDate9);
+            $queryByDate9=mysqli_query("SELECT * FROM tbl_activities9 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRow9=mysqli_num_rows($queryByDate9);
             
-            $queryByDateRd9=mysql_query("SELECT * FROM tbl_activities_rd9 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
-            $dateRowRd9=mysql_num_rows($queryByDateRd9);
+            $queryByDateRd9=mysqli_query("SELECT * FROM tbl_activities_rd9 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+            $dateRowRd9=mysqli_num_rows($queryByDateRd9);
             ?>
             
             
@@ -461,8 +461,8 @@ $_SESSION['success']="";
             </td>
             <td class="marker">
             <?php
-            $queryByDateStatus9=mysql_query("SELECT * FROM tbl_activities9 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRowStatus9=mysql_num_rows($queryByDateStatus9);
+            $queryByDateStatus9=mysqli_query("SELECT * FROM tbl_activities9 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRowStatus9=mysqli_num_rows($queryByDateStatus9);
             ?>
             
             
@@ -473,9 +473,9 @@ $_SESSION['success']="";
             <td class="marker">
             <?php
             
-            $queryByDateFinal9=mysql_query("SELECT * FROM tbl_activities9 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
+            $queryByDateFinal9=mysqli_query("SELECT * FROM tbl_activities9 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
             
-            $dateRowFinal9=mysql_num_rows($queryByDateFinal9);
+            $dateRowFinal9=mysqli_num_rows($queryByDateFinal9);
             
             ?>
             
@@ -486,8 +486,8 @@ $_SESSION['success']="";
             </td>
                <?php
 			 
-			 $queryByPriority9=mysql_query("SELECT * FROM tbl_activities9 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
-			$priorityDatal9=mysql_fetch_array($queryByPriority9);
+			 $queryByPriority9=mysqli_query("SELECT * FROM tbl_activities9 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
+			$priorityDatal9=mysqli_fetch_array($queryByPriority9);
 			   
 			?>
 			<td class="markers"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priorityData9['priority'])){ echo "P2";} else{echo $priorityData9['priority'];}?></span>
@@ -512,11 +512,11 @@ $_SESSION['success']="";
             <td><div class="direct-chat-text right">Inspections related with NGT/court matter</div></td>
               <td>
             <?php
-            $queryByDate12=mysql_query("SELECT * FROM tbl_activities12 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRow12=mysql_num_rows($queryByDate12);
+            $queryByDate12=mysqli_query("SELECT * FROM tbl_activities12 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRow12=mysqli_num_rows($queryByDate12);
             
-            $queryByDateRd12=mysql_query("SELECT * FROM tbl_activities_rd12 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
-            $dateRowRd12=mysql_num_rows($queryByDateRd12);
+            $queryByDateRd12=mysqli_query("SELECT * FROM tbl_activities_rd12 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+            $dateRowRd12=mysqli_num_rows($queryByDateRd12);
             ?>
             
             
@@ -526,8 +526,8 @@ $_SESSION['success']="";
             </td>
             <td class="marker">
             <?php
-            $queryByDateStatus12=mysql_query("SELECT * FROM tbl_activities12 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRowStatus12=mysql_num_rows($queryByDateStatus12);
+            $queryByDateStatus12=mysqli_query("SELECT * FROM tbl_activities12 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRowStatus12=mysqli_num_rows($queryByDateStatus12);
             ?>
             
             
@@ -538,9 +538,9 @@ $_SESSION['success']="";
             <td class="marker">
             <?php
             
-            $queryByDateFinal12=mysql_query("SELECT * FROM tbl_activities12 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
+            $queryByDateFinal12=mysqli_query("SELECT * FROM tbl_activities12 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
             
-            $dateRowFinal12=mysql_num_rows($queryByDateFinal12);
+            $dateRowFinal12=mysqli_num_rows($queryByDateFinal12);
             
             ?>
             
@@ -551,8 +551,8 @@ $_SESSION['success']="";
             </td>
              <?php
 			 
-			 $queryByPriority12=mysql_query("SELECT * FROM tbl_activities12 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
-			$priority12=mysql_fetch_array($queryByPriority12);
+			 $queryByPriority12=mysqli_query("SELECT * FROM tbl_activities12 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
+			$priority12=mysqli_fetch_array($queryByPriority12);
 			   
 			?>
 			<td class="markers"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priority12['priority'])){ echo "P2";} else{echo $priority12['priority'];}?></span>
@@ -577,11 +577,11 @@ $_SESSION['success']="";
             <td><div class="direct-chat-text right">Inspections for public complaint verification</div></td>
               <td>
             <?php
-            $queryByDate16=mysql_query("SELECT * FROM tbl_activities16 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRow16=mysql_num_rows($queryByDate16);
+            $queryByDate16=mysqli_query("SELECT * FROM tbl_activities16 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRow16=mysqli_num_rows($queryByDate16);
             
-            $queryByDateRd16=mysql_query("SELECT * FROM tbl_activities_rd16 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
-            $dateRowRd16=mysql_num_rows($queryByDateRd16);
+            $queryByDateRd16=mysqli_query("SELECT * FROM tbl_activities_rd16 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+            $dateRowRd16=mysqli_num_rows($queryByDateRd16);
             ?>
             
             
@@ -591,8 +591,8 @@ $_SESSION['success']="";
             </td>
             <td class="marker">
             <?php
-            $queryByDateStatus16=mysql_query("SELECT * FROM tbl_activities16 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRowStatus16=mysql_num_rows($queryByDateStatus16);
+            $queryByDateStatus16=mysqli_query("SELECT * FROM tbl_activities16 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRowStatus16=mysqli_num_rows($queryByDateStatus16);
             ?>
             
             
@@ -603,9 +603,9 @@ $_SESSION['success']="";
             <td class="marker">
             <?php
             
-            $queryByDateFinal16=mysql_query("SELECT * FROM tbl_activities16 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
+            $queryByDateFinal16=mysqli_query("SELECT * FROM tbl_activities16 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
             
-            $dateRowFinal16=mysql_num_rows($queryByDateFinal16);
+            $dateRowFinal16=mysqli_num_rows($queryByDateFinal16);
             
             ?>
             
@@ -617,8 +617,8 @@ $_SESSION['success']="";
             
                       <?php
 			 
-			 $queryByPriority16=mysql_query("SELECT * FROM tbl_activities16 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
-			$priority16=mysql_fetch_array($queryByPriority16);
+			 $queryByPriority16=mysqli_query("SELECT * FROM tbl_activities16 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
+			$priority16=mysqli_fetch_array($queryByPriority16);
 			   
 			?>
 			<td class="markers"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priority16['priority'])){ echo "P3";} else{echo $priority16['priority'];}?></span>
@@ -643,11 +643,11 @@ $_SESSION['success']="";
             <td><div class="direct-chat-text right">Re-inspections/Follow-up visits of units</div></td>
              <td>
             <?php
-            $queryByDate10=mysql_query("SELECT * FROM tbl_activities10 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRow10=mysql_num_rows($queryByDate10);
+            $queryByDate10=mysqli_query("SELECT * FROM tbl_activities10 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRow10=mysqli_num_rows($queryByDate10);
             
-            $queryByDateRd10=mysql_query("SELECT * FROM tbl_activities_rd10 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
-            $dateRowRd10=mysql_num_rows($queryByDateRd10);
+            $queryByDateRd10=mysqli_query("SELECT * FROM tbl_activities_rd10 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+            $dateRowRd10=mysqli_num_rows($queryByDateRd10);
             ?>
             
             
@@ -657,8 +657,8 @@ $_SESSION['success']="";
             </td>
             <td class="marker">
             <?php
-            $queryByDateStatus10=mysql_query("SELECT * FROM tbl_activities10 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRowStatus10=mysql_num_rows($queryByDateStatus10);
+            $queryByDateStatus10=mysqli_query("SELECT * FROM tbl_activities10 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRowStatus10=mysqli_num_rows($queryByDateStatus10);
             ?>
             
             
@@ -669,9 +669,9 @@ $_SESSION['success']="";
             <td class="marker">
             <?php
             
-            $queryByDateFinal10=mysql_query("SELECT * FROM tbl_activities10 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
+            $queryByDateFinal10=mysqli_query("SELECT * FROM tbl_activities10 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
             
-            $dateRowFinal10=mysql_num_rows($queryByDateFinal10);
+            $dateRowFinal10=mysqli_num_rows($queryByDateFinal10);
             
             ?>
             
@@ -683,8 +683,8 @@ $_SESSION['success']="";
             
                                   <?php
 			 
-			 $queryByPriority10=mysql_query("SELECT * FROM tbl_activities10 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
-			$priority10=mysql_fetch_array($queryByPriority10);
+			 $queryByPriority10=mysqli_query("SELECT * FROM tbl_activities10 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
+			$priority10=mysqli_fetch_array($queryByPriority10);
 			   
 			?>
 			<td class="markers"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priority10['priority'])){ echo "P3";} else{echo $priority10['priority'];}?></span>
@@ -709,11 +709,11 @@ $_SESSION['success']="";
             <td><div class="direct-chat-text right">Ambient air quality monitoring stations &amp; no. of inspection during the month</div></td>
             <td>
             <?php
-            $queryByDate1=mysql_query("SELECT * FROM tbl_activities1 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=0 AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRow1=mysql_num_rows($queryByDate1);
+            $queryByDate1=mysqli_query("SELECT * FROM tbl_activities1 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=0 AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRow1=mysqli_num_rows($queryByDate1);
             
-            $queryByDateRd1=mysql_query("SELECT * FROM tbl_activities_rd1 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
-            $dateRowRd1=mysql_num_rows($queryByDateRd1);
+            $queryByDateRd1=mysqli_query("SELECT * FROM tbl_activities_rd1 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+            $dateRowRd1=mysqli_num_rows($queryByDateRd1);
             ?>
             
             
@@ -723,8 +723,8 @@ $_SESSION['success']="";
             </td>
             <td class="marker">
             <?php
-            $queryByDateStatus1=mysql_query("SELECT * FROM tbl_activities1 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRowStatus1=mysql_num_rows($queryByDateStatus1);
+            $queryByDateStatus1=mysqli_query("SELECT * FROM tbl_activities1 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRowStatus1=mysqli_num_rows($queryByDateStatus1);
             ?>
             
             
@@ -735,9 +735,9 @@ $_SESSION['success']="";
             <td class="marker">
             <?php
             
-            $queryByDateFinal1=mysql_query("SELECT * FROM tbl_activities1 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
+            $queryByDateFinal1=mysqli_query("SELECT * FROM tbl_activities1 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
             
-            $dateRowFinal1=mysql_num_rows($queryByDateFinal1);
+            $dateRowFinal1=mysqli_num_rows($queryByDateFinal1);
             
             ?>
             
@@ -749,8 +749,8 @@ $_SESSION['success']="";
             
                                             <?php
 			 
-			 $queryByPriority1=mysql_query("SELECT * FROM tbl_activities1 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
-			$priority1=mysql_fetch_array($queryByPriority1);
+			 $queryByPriority1=mysqli_query("SELECT * FROM tbl_activities1 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
+			$priority1=mysqli_fetch_array($queryByPriority1);
 			   
 			?>
 			<td class="markers"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priority1['priority'])){ echo "P4";} else{echo $priority1['priority'];}?></span>
@@ -775,11 +775,11 @@ $_SESSION['success']="";
             <td><div class="direct-chat-text right">Inter state river monitoring</div></td>
             <td>
             <?php
-            $queryByDate2=mysql_query("SELECT * FROM tbl_activities2 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRow2=mysql_num_rows($queryByDate2);
+            $queryByDate2=mysqli_query("SELECT * FROM tbl_activities2 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRow2=mysqli_num_rows($queryByDate2);
             
-            $queryByDateRd2=mysql_query("SELECT * FROM tbl_activities_rd2 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
-            $dateRowRd2=mysql_num_rows($queryByDateRd2);
+            $queryByDateRd2=mysqli_query("SELECT * FROM tbl_activities_rd2 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+            $dateRowRd2=mysqli_num_rows($queryByDateRd2);
             ?>
             
             
@@ -789,8 +789,8 @@ $_SESSION['success']="";
             </td>
             <td class="marker">
             <?php
-            $queryByDateStatus2=mysql_query("SELECT * FROM tbl_activities2 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRowStatus2=mysql_num_rows($queryByDateStatus2);
+            $queryByDateStatus2=mysqli_query("SELECT * FROM tbl_activities2 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRowStatus2=mysqli_num_rows($queryByDateStatus2);
             ?>
             
             
@@ -801,9 +801,9 @@ $_SESSION['success']="";
             <td class="marker">
             <?php
             
-            $queryByDateFinal2=mysql_query("SELECT * FROM tbl_activities2 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
+            $queryByDateFinal2=mysqli_query("SELECT * FROM tbl_activities2 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
             
-            $dateRowFinal2=mysql_num_rows($queryByDateFinal2);
+            $dateRowFinal2=mysqli_num_rows($queryByDateFinal2);
             
             ?>
             
@@ -814,8 +814,8 @@ $_SESSION['success']="";
             </td>
 			<?php
             
-            $queryByPriority2=mysql_query("SELECT * FROM tbl_activities2 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
-            $priority2=mysql_fetch_array($queryByPriority2);
+            $queryByPriority2=mysqli_query("SELECT * FROM tbl_activities2 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
+            $priority2=mysqli_fetch_array($queryByPriority2);
             
             ?>
 			<td class="markers"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priority2['priority'])){ echo "P4";} else{echo $priority2['priority'];}?></span>
@@ -840,11 +840,11 @@ $_SESSION['success']="";
             <td><div class="direct-chat-text right">Monitoring of river/rivulets/drains</div></td>
            <td>
             <?php
-            $queryByDate3=mysql_query("SELECT * FROM tbl_activities3 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRow3=mysql_num_rows($queryByDate3);
+            $queryByDate3=mysqli_query("SELECT * FROM tbl_activities3 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRow3=mysqli_num_rows($queryByDate3);
             
-            $queryByDateRd3=mysql_query("SELECT * FROM tbl_activities_rd3 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
-            $dateRowRd3=mysql_num_rows($queryByDateRd3);
+            $queryByDateRd3=mysqli_query("SELECT * FROM tbl_activities_rd3 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+            $dateRowRd3=mysqli_num_rows($queryByDateRd3);
             ?>
             
             
@@ -854,8 +854,8 @@ $_SESSION['success']="";
             </td>
             <td class="marker">
             <?php
-            $queryByDateStatus3=mysql_query("SELECT * FROM tbl_activities3 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRowStatus3=mysql_num_rows($queryByDateStatus3);
+            $queryByDateStatus3=mysqli_query("SELECT * FROM tbl_activities3 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRowStatus3=mysqli_num_rows($queryByDateStatus3);
             ?>
             
             
@@ -866,9 +866,9 @@ $_SESSION['success']="";
             <td class="marker">
             <?php
             
-            $queryByDateFinal3=mysql_query("SELECT * FROM tbl_activities3 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
+            $queryByDateFinal3=mysqli_query("SELECT * FROM tbl_activities3 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
             
-            $dateRowFinal3=mysql_num_rows($queryByDateFinal3);
+            $dateRowFinal3=mysqli_num_rows($queryByDateFinal3);
             
             ?>
             
@@ -879,8 +879,8 @@ $_SESSION['success']="";
             </td>
             <?php
             
-            $queryByPriority3=mysql_query("SELECT * FROM tbl_activities3 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
-            $priority3=mysql_fetch_array($queryByPriority3);
+            $queryByPriority3=mysqli_query("SELECT * FROM tbl_activities3 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
+            $priority3=mysqli_fetch_array($queryByPriority3);
             
             ?>
             
@@ -906,11 +906,11 @@ $_SESSION['success']="";
             <td><div class="direct-chat-text right">CETPs</div></td>
           <td>
             <?php
-            $queryByDate4=mysql_query("SELECT * FROM tbl_activities4 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRow4=mysql_num_rows($queryByDate4);
+            $queryByDate4=mysqli_query("SELECT * FROM tbl_activities4 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRow4=mysqli_num_rows($queryByDate4);
             
-            $queryByDateRd4=mysql_query("SELECT * FROM tbl_activities_rd4 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
-            $dateRowRd4=mysql_num_rows($queryByDateRd4);
+            $queryByDateRd4=mysqli_query("SELECT * FROM tbl_activities_rd4 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+            $dateRowRd4=mysqli_num_rows($queryByDateRd4);
             ?>
             
             
@@ -920,8 +920,8 @@ $_SESSION['success']="";
             </td>
             <td class="marker">
             <?php
-            $queryByDateStatus4=mysql_query("SELECT * FROM tbl_activities4 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRowStatus4=mysql_num_rows($queryByDateStatus4);
+            $queryByDateStatus4=mysqli_query("SELECT * FROM tbl_activities4 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRowStatus4=mysqli_num_rows($queryByDateStatus4);
             ?>
             
             
@@ -932,9 +932,9 @@ $_SESSION['success']="";
             <td class="marker">
             <?php
             
-            $queryByDateFinal4=mysql_query("SELECT * FROM tbl_activities4 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
+            $queryByDateFinal4=mysqli_query("SELECT * FROM tbl_activities4 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
             
-            $dateRowFinal4=mysql_num_rows($queryByDateFinal4);
+            $dateRowFinal4=mysqli_num_rows($queryByDateFinal4);
             
             ?>
             
@@ -946,8 +946,8 @@ $_SESSION['success']="";
             
               <?php
             
-            $queryByPriority4=mysql_query("SELECT * FROM tbl_activities4 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
-            $priority4=mysql_fetch_array($queryByPriority4);
+            $queryByPriority4=mysqli_query("SELECT * FROM tbl_activities4 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
+            $priority4=mysqli_fetch_array($queryByPriority4);
             
             ?>
 			<td class="markers"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priority4['priority'])){ echo "P4";} else{echo $priority4['priority'];}?></span>
@@ -972,11 +972,11 @@ $_SESSION['success']="";
             <td><div class="direct-chat-text right">CHWTSDF</div></td>
             <td>
             <?php
-            $queryByDate5=mysql_query("SELECT * FROM tbl_activities5 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRow5=mysql_num_rows($queryByDate5);
+            $queryByDate5=mysqli_query("SELECT * FROM tbl_activities5 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRow5=mysqli_num_rows($queryByDate5);
             
-            $queryByDateRd5=mysql_query("SELECT * FROM tbl_activities_rd5 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
-            $dateRowRd5=mysql_num_rows($queryByDateRd5);
+            $queryByDateRd5=mysqli_query("SELECT * FROM tbl_activities_rd5 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+            $dateRowRd5=mysqli_num_rows($queryByDateRd5);
             ?>
             
             
@@ -986,8 +986,8 @@ $_SESSION['success']="";
             </td>
             <td class="marker">
             <?php
-            $queryByDateStatus5=mysql_query("SELECT * FROM tbl_activities5 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRowStatus5=mysql_num_rows($queryByDateStatus5);
+            $queryByDateStatus5=mysqli_query("SELECT * FROM tbl_activities5 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRowStatus5=mysqli_num_rows($queryByDateStatus5);
             ?>
             
             
@@ -998,9 +998,9 @@ $_SESSION['success']="";
             <td class="marker">
             <?php
             
-            $queryByDateFinal5=mysql_query("SELECT * FROM tbl_activities5 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
+            $queryByDateFinal5=mysqli_query("SELECT * FROM tbl_activities5 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
             
-            $dateRowFinal5=mysql_num_rows($queryByDateFinal5);
+            $dateRowFinal5=mysqli_num_rows($queryByDateFinal5);
             
             ?>
             
@@ -1012,8 +1012,8 @@ $_SESSION['success']="";
             
                   <?php
             
-            $queryByPriority5=mysql_query("SELECT * FROM tbl_activities5 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
-            $priority5=mysql_fetch_array($queryByPriority5);
+            $queryByPriority5=mysqli_query("SELECT * FROM tbl_activities5 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
+            $priority5=mysqli_fetch_array($queryByPriority5);
             
             ?>
 			<td class="markers"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priority5['priority'])){ echo "P4";} else{echo $priority5['priority'];}?></span>
@@ -1038,11 +1038,11 @@ $_SESSION['success']="";
             <td><div class="direct-chat-text right">CBMWTF</div></td>
               <td>
             <?php
-            $queryByDate6=mysql_query("SELECT * FROM tbl_activities6 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRow6=mysql_num_rows($queryByDate6);
+            $queryByDate6=mysqli_query("SELECT * FROM tbl_activities6 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRow6=mysqli_num_rows($queryByDate6);
             
-            $queryByDateRd6=mysql_query("SELECT * FROM tbl_activities_rd6 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
-            $dateRowRd6=mysql_num_rows($queryByDateRd6);
+            $queryByDateRd6=mysqli_query("SELECT * FROM tbl_activities_rd6 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+            $dateRowRd6=mysqli_num_rows($queryByDateRd6);
             ?>
             
             
@@ -1052,8 +1052,8 @@ $_SESSION['success']="";
             </td>
             <td class="marker">
             <?php
-            $queryByDateStatus6=mysql_query("SELECT * FROM tbl_activities6 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRowStatus6=mysql_num_rows($queryByDateStatus6);
+            $queryByDateStatus6=mysqli_query("SELECT * FROM tbl_activities6 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRowStatus6=mysqli_num_rows($queryByDateStatus6);
             ?>
             
             
@@ -1064,9 +1064,9 @@ $_SESSION['success']="";
             <td class="marker">
             <?php
             
-            $queryByDateFinal6=mysql_query("SELECT * FROM tbl_activities6 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
+            $queryByDateFinal6=mysqli_query("SELECT * FROM tbl_activities6 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
             
-            $dateRowFinal6=mysql_num_rows($queryByDateFinal6);
+            $dateRowFinal6=mysqli_num_rows($queryByDateFinal6);
             
             ?>
             
@@ -1077,8 +1077,8 @@ $_SESSION['success']="";
             </td>
                       <?php
             
-            $queryByPriority6=mysql_query("SELECT * FROM tbl_activities6 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
-            $priority6=mysql_fetch_array($queryByPriority6);
+            $queryByPriority6=mysqli_query("SELECT * FROM tbl_activities6 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
+            $priority6=mysqli_fetch_array($queryByPriority6);
             
             ?>
 			<td class="markers"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priority6['priority'])){ echo "P4";} else{echo $priority6['priority'];}?></span>
@@ -1103,11 +1103,11 @@ $_SESSION['success']="";
             <td><div class="direct-chat-text right">STPs</div></td>
                <td>
             <?php
-            $queryByDate7=mysql_query("SELECT * FROM tbl_activities7 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRow7=mysql_num_rows($queryByDate7);
+            $queryByDate7=mysqli_query("SELECT * FROM tbl_activities7 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRow7=mysqli_num_rows($queryByDate7);
             
-            $queryByDateRd7=mysql_query("SELECT * FROM tbl_activities_rd7 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
-            $dateRowRd7=mysql_num_rows($queryByDateRd7);
+            $queryByDateRd7=mysqli_query("SELECT * FROM tbl_activities_rd7 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+            $dateRowRd7=mysqli_num_rows($queryByDateRd7);
             ?>
             
             
@@ -1117,8 +1117,8 @@ $_SESSION['success']="";
             </td>
             <td class="marker">
             <?php
-            $queryByDateStatus7=mysql_query("SELECT * FROM tbl_activities7 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRowStatus7=mysql_num_rows($queryByDateStatus7);
+            $queryByDateStatus7=mysqli_query("SELECT * FROM tbl_activities7 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRowStatus7=mysqli_num_rows($queryByDateStatus7);
             ?>
             
             
@@ -1129,9 +1129,9 @@ $_SESSION['success']="";
             <td class="marker">
             <?php
             
-            $queryByDateFinal7=mysql_query("SELECT * FROM tbl_activities7 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
+            $queryByDateFinal7=mysqli_query("SELECT * FROM tbl_activities7 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
             
-            $dateRowFinal7=mysql_num_rows($queryByDateFinal7);
+            $dateRowFinal7=mysqli_num_rows($queryByDateFinal7);
             
             ?>
             
@@ -1142,8 +1142,8 @@ $_SESSION['success']="";
             </td>
                                   <?php
             
-            $queryByPriority7=mysql_query("SELECT * FROM tbl_activities7 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
-            $priority7=mysql_fetch_array($queryByPriority7);
+            $queryByPriority7=mysqli_query("SELECT * FROM tbl_activities7 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
+            $priority7=mysqli_fetch_array($queryByPriority7);
             
             ?>
 			<td class="markers"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priority7['priority'])){ echo "P4";} else{echo $priority7['priority'];}?></span>
@@ -1169,11 +1169,11 @@ $_SESSION['success']="";
             <td><div class="direct-chat-text right">SLFs(MSW)</div></td>
                <td>
             <?php
-            $queryByDate8=mysql_query("SELECT * FROM tbl_activities8 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRow8=mysql_num_rows($queryByDate8);
+            $queryByDate8=mysqli_query("SELECT * FROM tbl_activities8 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRow8=mysqli_num_rows($queryByDate8);
             
-            $queryByDateRd8=mysql_query("SELECT * FROM tbl_activities_rd8 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
-            $dateRowRd8=mysql_num_rows($queryByDateRd8);
+            $queryByDateRd8=mysqli_query("SELECT * FROM tbl_activities_rd8 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+            $dateRowRd8=mysqli_num_rows($queryByDateRd8);
             ?>
             
             
@@ -1183,8 +1183,8 @@ $_SESSION['success']="";
             </td>
             <td class="marker">
             <?php
-            $queryByDateStatus8=mysql_query("SELECT * FROM tbl_activities8 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRowStatus8=mysql_num_rows($queryByDateStatus8);
+            $queryByDateStatus8=mysqli_query("SELECT * FROM tbl_activities8 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRowStatus8=mysqli_num_rows($queryByDateStatus8);
             ?>
             
             
@@ -1195,9 +1195,9 @@ $_SESSION['success']="";
             <td class="marker">
             <?php
             
-            $queryByDateFinal8=mysql_query("SELECT * FROM tbl_activities8 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
+            $queryByDateFinal8=mysqli_query("SELECT * FROM tbl_activities8 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
             
-            $dateRowFinal8=mysql_num_rows($queryByDateFinal8);
+            $dateRowFinal8=mysqli_num_rows($queryByDateFinal8);
             
             ?>
             
@@ -1209,8 +1209,8 @@ $_SESSION['success']="";
             
                                             <?php
             
-            $queryByPriority8=mysql_query("SELECT * FROM tbl_activities8 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
-            $priority8=mysql_fetch_array($queryByPriority8);
+            $queryByPriority8=mysqli_query("SELECT * FROM tbl_activities8 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
+            $priority8=mysqli_fetch_array($queryByPriority8);
             
             ?>
 			<td class="markers"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priority8['priority'])){ echo "P4";} else{echo $priority8['priority'];}?></span>
@@ -1244,11 +1244,11 @@ $_SESSION['success']="";
             <td><div class="direct-chat-text right">Monitoring for trail run under HWM Rules</div></td>
           <td>
             <?php
-            $queryByDate13=mysql_query("SELECT * FROM tbl_activities13 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRow13=mysql_num_rows($queryByDate13);
+            $queryByDate13=mysqli_query("SELECT * FROM tbl_activities13 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRow13=mysqli_num_rows($queryByDate13);
             
-            $queryByDateRd13=mysql_query("SELECT * FROM tbl_activities_rd13 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
-            $dateRowRd13=mysql_num_rows($queryByDateRd13);
+            $queryByDateRd13=mysqli_query("SELECT * FROM tbl_activities_rd13 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+            $dateRowRd13=mysqli_num_rows($queryByDateRd13);
             ?>
             
             
@@ -1258,8 +1258,8 @@ $_SESSION['success']="";
             </td>
             <td class="marker">
             <?php
-            $queryByDateStatus13=mysql_query("SELECT * FROM tbl_activities13 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRowStatus13=mysql_num_rows($queryByDateStatus13);
+            $queryByDateStatus13=mysqli_query("SELECT * FROM tbl_activities13 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRowStatus13=mysqli_num_rows($queryByDateStatus13);
             ?>
             
             
@@ -1270,9 +1270,9 @@ $_SESSION['success']="";
             <td class="marker">
             <?php
             
-            $queryByDateFinal13=mysql_query("SELECT * FROM tbl_activities13 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
+            $queryByDateFinal13=mysqli_query("SELECT * FROM tbl_activities13 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
             
-            $dateRowFinal13=mysql_num_rows($queryByDateFinal13);
+            $dateRowFinal13=mysqli_num_rows($queryByDateFinal13);
             
             ?>
             
@@ -1284,8 +1284,8 @@ $_SESSION['success']="";
             
                                                        <?php
             
-            $queryByPriority13=mysql_query("SELECT * FROM tbl_activities13 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
-            $priority13=mysql_fetch_array($queryByPriority13);
+            $queryByPriority13=mysqli_query("SELECT * FROM tbl_activities13 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
+            $priority13=mysqli_fetch_array($queryByPriority13);
             
             ?>
 			<td class="markers"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priority13['priority'])){ echo "P4";} else{echo $priority13['priority'];}?></span>
@@ -1311,11 +1311,11 @@ $_SESSION['success']="";
             <td><div class="direct-chat-text right">Inspections related with import of hazardous & other waste</div></td>
               <td>
             <?php
-            $queryByDate14=mysql_query("SELECT * FROM tbl_activities14 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRow14=mysql_num_rows($queryByDate14);
+            $queryByDate14=mysqli_query("SELECT * FROM tbl_activities14 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRow14=mysqli_num_rows($queryByDate14);
             
-            $queryByDateRd14=mysql_query("SELECT * FROM tbl_activities_rd14 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
-            $dateRowRd14=mysql_num_rows($queryByDateRd14);
+            $queryByDateRd14=mysqli_query("SELECT * FROM tbl_activities_rd14 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+            $dateRowRd14=mysqli_num_rows($queryByDateRd14);
             ?>
             
             
@@ -1325,8 +1325,8 @@ $_SESSION['success']="";
             </td>
             <td class="marker">
             <?php
-            $queryByDateStatus14=mysql_query("SELECT * FROM tbl_activities14 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRowStatus14=mysql_num_rows($queryByDateStatus14);
+            $queryByDateStatus14=mysqli_query("SELECT * FROM tbl_activities14 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRowStatus14=mysqli_num_rows($queryByDateStatus14);
             ?>
             
             
@@ -1337,9 +1337,9 @@ $_SESSION['success']="";
             <td class="marker">
             <?php
             
-            $queryByDateFinal14=mysql_query("SELECT * FROM tbl_activities14 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
+            $queryByDateFinal14=mysqli_query("SELECT * FROM tbl_activities14 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
             
-            $dateRowFinal14=mysql_num_rows($queryByDateFinal14);
+            $dateRowFinal14=mysqli_num_rows($queryByDateFinal14);
             
             ?>
             
@@ -1350,8 +1350,8 @@ $_SESSION['success']="";
             </td>
                                                                  <?php
             
-            $queryByPriority14=mysql_query("SELECT * FROM tbl_activities14 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
-            $priority14=mysql_fetch_array($queryByPriority14);
+            $queryByPriority14=mysqli_query("SELECT * FROM tbl_activities14 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
+            $priority14=mysqli_fetch_array($queryByPriority14);
             
             ?>
 			<td class="markers"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priority14['priority'])){ echo "P4";} else{echo $priority14['priority'];}?></span>
@@ -1377,11 +1377,11 @@ $_SESSION['success']="";
             <td><div class="direct-chat-text right">Meetings/workshops/Training</div></td>
               <td>
             <?php
-            $queryByDate15=mysql_query("SELECT * FROM tbl_activities15 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRow15=mysql_num_rows($queryByDate15);
+            $queryByDate15=mysqli_query("SELECT * FROM tbl_activities15 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRow15=mysqli_num_rows($queryByDate15);
             
-            $queryByDateRd15=mysql_query("SELECT * FROM tbl_activities_rd15 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
-            $dateRowRd15=mysql_num_rows($queryByDateRd15);
+            $queryByDateRd15=mysqli_query("SELECT * FROM tbl_activities_rd15 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+            $dateRowRd15=mysqli_num_rows($queryByDateRd15);
             ?>
             
             
@@ -1391,8 +1391,8 @@ $_SESSION['success']="";
             </td>
             <td class="marker">
             <?php
-            $queryByDateStatus15=mysql_query("SELECT * FROM tbl_activities15 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRowStatus15=mysql_num_rows($queryByDateStatus15);
+            $queryByDateStatus15=mysqli_query("SELECT * FROM tbl_activities15 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRowStatus15=mysqli_num_rows($queryByDateStatus15);
             ?>
             
             
@@ -1403,9 +1403,9 @@ $_SESSION['success']="";
             <td class="marker">
             <?php
             
-            $queryByDateFinal15=mysql_query("SELECT * FROM tbl_activities15 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
+            $queryByDateFinal15=mysqli_query("SELECT * FROM tbl_activities15 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
             
-            $dateRowFinal15=mysql_num_rows($queryByDateFinal15);
+            $dateRowFinal15=mysqli_num_rows($queryByDateFinal15);
             
             ?>
             
@@ -1416,8 +1416,8 @@ $_SESSION['success']="";
             </td>
                                                                              <?php
             
-            $queryByPriority15=mysql_query("SELECT * FROM tbl_activities15 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
-            $priority15=mysql_fetch_array($queryByPriority15);
+            $queryByPriority15=mysqli_query("SELECT * FROM tbl_activities15 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
+            $priority15=mysqli_fetch_array($queryByPriority15);
             
             ?>
 			<td class="markers"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priority15['priority'])){ echo "P4";} else{echo $priority15['priority'];}?></span>
@@ -1446,11 +1446,11 @@ $_SESSION['success']="";
             <td><div class="direct-chat-text right">Inspections for Ganga complaince verification</div></td>
               <td>
             <?php
-            $queryByDate17=mysql_query("SELECT * FROM tbl_activities17 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRow17=mysql_num_rows($queryByDate17);
+            $queryByDate17=mysqli_query("SELECT * FROM tbl_activities17 where YEAR(target_date) = ".$year." AND final_Status=0 AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRow17=mysqli_num_rows($queryByDate17);
             
-            $queryByDateRd17=mysql_query("SELECT * FROM tbl_activities_rd17 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
-            $dateRowRd17=mysql_num_rows($queryByDateRd17);
+            $queryByDateRd17=mysqli_query("SELECT * FROM tbl_activities_rd17 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+            $dateRowRd17=mysqli_num_rows($queryByDateRd17);
             ?>
             
             
@@ -1460,8 +1460,8 @@ $_SESSION['success']="";
             </td>
             <td class="marker">
             <?php
-            $queryByDateStatus17=mysql_query("SELECT * FROM tbl_activities17 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
-            $dateRowStatus17=mysql_num_rows($queryByDateStatus17);
+            $queryByDateStatus17=mysqli_query("SELECT * FROM tbl_activities17 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
+            $dateRowStatus17=mysqli_num_rows($queryByDateStatus17);
             ?>
             
             
@@ -1472,9 +1472,9 @@ $_SESSION['success']="";
             <td class="marker">
             <?php
             
-            $queryByDateFinal17=mysql_query("SELECT * FROM tbl_activities17 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
+            $queryByDateFinal17=mysqli_query("SELECT * FROM tbl_activities17 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
             
-            $dateRowFinal17=mysql_num_rows($queryByDateFinal17);
+            $dateRowFinal17=mysqli_num_rows($queryByDateFinal17);
             
             ?>
             
@@ -1485,8 +1485,8 @@ $_SESSION['success']="";
             </td>
                                                                                   <?php
             
-            $queryByPriority17=mysql_query("SELECT * FROM tbl_activities17 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
-            $priority17=mysql_fetch_array($queryByPriority17);
+            $queryByPriority17=mysqli_query("SELECT * FROM tbl_activities17 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY activities_name ");
+            $priority17=mysqli_fetch_array($queryByPriority17);
             
             ?>
 			<td class="markers"><span style="line-height:34px; font-weight:600; width:40px; float:left;"><?php if(empty($priority17['priority'])){ echo "P4";} else{echo $priority17['priority'];}?></span>
@@ -1517,10 +1517,10 @@ $_SESSION['success']="";
 
 
 <?php
-$OtherActivities=mysql_query("SELECT * FROM  tbl_other_activities where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");
+$OtherActivities=mysqli_query("SELECT * FROM  tbl_other_activities where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");
 
-if(mysql_num_rows($OtherActivities)>0){
-while($OtherResult=mysql_fetch_array($OtherActivities))
+if(mysqli_num_rows($OtherActivities)>0){
+while($OtherResult=mysqli_fetch_array($OtherActivities))
 {
 $OtherResultlist[]=$OtherResult;
 }

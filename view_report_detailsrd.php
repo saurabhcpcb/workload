@@ -5,8 +5,8 @@ date_default_timezone_set('Asia/Kolkata');
 ?>
 <?php
 
-$getUserData=mysql_query("SELECT * FROM tbl_user where board='".$_GET['rd']."'");
-$user=mysql_fetch_array($getUserData);  
+$getUserData=mysqli_query("SELECT * FROM tbl_user where board='".$_GET['rd']."'");
+$user=mysqli_fetch_array($getUserData);  
 
 
 $month= date("m", strtotime($_GET['cid']));
@@ -117,8 +117,8 @@ $dhId="'".implode("','",$_POST['dhId'])."'";
 $rdId="'".implode("','",$_POST['rdId'])."'";
 
  
-$updateQuery=mysql_query("UPDATE $dhTable SET status=1 WHERE id in ($dhId)  AND  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd']."'");
-mysql_query("UPDATE $rdTable SET status=1 WHERE rdid in ($rdId)  AND  month = '".$_GET['cid']."' AND user_id= '".$user['id']."'");
+$updateQuery=mysqli_query("UPDATE $dhTable SET status=1 WHERE id in ($dhId)  AND  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd']."'");
+mysqli_query("UPDATE $rdTable SET status=1 WHERE rdid in ($rdId)  AND  month = '".$_GET['cid']."' AND user_id= '".$user['id']."'");
 
 if($updateQuery)
 {
@@ -202,8 +202,8 @@ display: none !important;
 
 <table width="100%" border="1">
 <?php
-$queryByRd1=mysql_query("SELECT * FROM $rdTable as a,tbl_user as b where a.month='".$_GET['cid']."' AND a.user_id=b.id AND a.user_id= '".$user['id']."' ORDER BY a.rdid ASC ");
-$rdDetails1=mysql_fetch_array($queryByRd1);
+$queryByRd1=mysqli_query("SELECT * FROM $rdTable as a,tbl_user as b where a.month='".$_GET['cid']."' AND a.user_id=b.id AND a.user_id= '".$user['id']."' ORDER BY a.rdid ASC ");
+$rdDetails1=mysqli_fetch_array($queryByRd1);
 ?>
 <tr>
 <td colspan="4"><h4>Units/Activities Proposed by <?=$rdDetails1['board']?></h4></td>
@@ -220,8 +220,8 @@ $rdDetails1=mysql_fetch_array($queryByRd1);
  
  <?php
 $j=1;
-$queryByRd=mysql_query("SELECT * FROM $rdTable as a,tbl_user as b where a.month='".$_GET['cid']."' AND a.user_id=b.id AND a.user_id= '".$user['id']."' ORDER BY a.rdid ASC ");
-while($rdDetails=mysql_fetch_array($queryByRd)){
+$queryByRd=mysqli_query("SELECT * FROM $rdTable as a,tbl_user as b where a.month='".$_GET['cid']."' AND a.user_id=b.id AND a.user_id= '".$user['id']."' ORDER BY a.rdid ASC ");
+while($rdDetails=mysqli_fetch_array($queryByRd)){
 
 ?>
 <tr>

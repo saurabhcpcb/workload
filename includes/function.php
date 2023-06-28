@@ -3,7 +3,7 @@
    function displayPaginationBelow($per_page,$page){
 	   $page_url="?";
     	echo $query = "SELECT COUNT(*) as totalCount FROM tbl_final WHERE 1 $where";
-    	$rec = mysql_fetch_array(mysql_query($query));
+    	$rec = mysqli_fetch_array(mysqli_query($query));
     	$total = $rec['totalCount'];
         $adjacents = "2"; 
 

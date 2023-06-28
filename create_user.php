@@ -14,9 +14,9 @@ if($_POST['process']=="addData" && $_POST['process']!="")
 
  $insetQuery="INSERT INTO tbl_user (username,password,user_type,Officer,board,emailid,phone,Division) VALUES ('".addslashes($_POST['username'])."','".addslashes($_POST['password'])."','".addslashes($_POST['user_type'])."','".addslashes($_POST['Officer'])."','".addslashes($_POST['board'])."','".addslashes($_POST['emailid'])."','".addslashes($_POST['phone'])."','".addslashes($_POST['division'])."')"; 
 
-if(mysql_query($insetQuery)){
+if(mysqli_query($insetQuery)){
 
-$id = mysql_insert_id();
+$id = mysqli_insert_id();
 $activities=$_POST['activities'] ;
 $countActivities = count($activities); 
  
@@ -25,7 +25,7 @@ for($i=0; $i<$countActivities; $i++)
 if(!empty($_POST['activities'][$i])){
 
 $strquery1="insert into  tbl_user_activities_list(user_id,activities_id) values ('".$id."','".$_POST['activities'][$i]."')"; 
-mysql_query($strquery1);
+mysqli_query($strquery1);
 }
 }
 $_SESSION['message']="Added Successfull..";
@@ -181,8 +181,8 @@ $_SESSION['errors']="";
 				   <?php 
 				   
 				  $getdiv="select * from tbl_division ORDER BY division ASC";
-				  $getdivdata=mysql_query($getdiv);
-				while($row3=mysql_fetch_array($getdivdata)){
+				  $getdivdata=mysqli_query($getdiv);
+				while($row3=mysqli_fetch_array($getdivdata)){
 				  ?> 
                     <option value="<?=$row3['division']?>"><?=$row3['division']?></option>
 				<?php }
@@ -213,8 +213,8 @@ $_SESSION['errors']="";
                    <select name="board" class="form-control">
                     <option value="">Select Zone</option>
                  <?php 
-				 $rdQuery=mysql_query("SELECT * FROM tbl_rd ORDER BY RD ASC ");
-				 while($rd=mysql_fetch_array($rdQuery)){
+				 $rdQuery=mysqli_query("SELECT * FROM tbl_rd ORDER BY RD ASC ");
+				 while($rd=mysqli_fetch_array($rdQuery)){
 				 ?>
                    <option  value="<?=$rd['RD']?>"><?=$rd['RD']?></option>
                     
@@ -229,9 +229,9 @@ $_SESSION['errors']="";
                   <div style="padding:6px; border:1px solid #CCCCCC; margin:2px; height:auto; width:100%; float:left;">	
                	<?php
 				$i=1;
-                $activitiesQueryResult=mysql_query("select * from tbl_user_activities  ORDER BY Activities ASC" );
+                $activitiesQueryResult=mysqli_query("select * from tbl_user_activities  ORDER BY Activities ASC" );
                 
-                while($activities=mysql_fetch_array($activitiesQueryResult)){
+                while($activities=mysqli_fetch_array($activitiesQueryResult)){
                 ?> 
                 <div style="padding:6px; border:1px solid #CCCCCC; margin:2px; float:left;">	
                 

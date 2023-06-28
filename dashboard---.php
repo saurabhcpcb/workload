@@ -292,8 +292,8 @@ $year= date("Y", strtotime($_GET['month']));
 
 
 $i=1;
-$rdQuery=mysql_query("SELECT * FROM tbl_rd ORDER BY RD ASC");
-while($rd=mysql_fetch_array($rdQuery)){
+$rdQuery=mysqli_query("SELECT * FROM tbl_rd ORDER BY RD ASC");
+while($rd=mysqli_fetch_array($rdQuery)){
 ?>        
 <h2 class="page-header">
 
@@ -311,39 +311,39 @@ while($rd=mysql_fetch_array($rdQuery)){
 
 </div>
 <?php
-$proposedQuery0=mysql_num_rows(mysql_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
-$proposedQuery1=mysql_num_rows(mysql_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery2=mysql_num_rows(mysql_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery3=mysql_num_rows(mysql_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery4=mysql_num_rows(mysql_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery5=mysql_num_rows(mysql_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery6=mysql_num_rows(mysql_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery7=mysql_num_rows(mysql_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery8=mysql_num_rows(mysql_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
-$proposedQuery9=mysql_num_rows(mysql_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery10=mysql_num_rows(mysql_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery11=mysql_num_rows(mysql_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery12=mysql_num_rows(mysql_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery13=mysql_num_rows(mysql_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery14=mysql_num_rows(mysql_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery15=mysql_num_rows(mysql_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery16=mysql_num_rows(mysql_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery17=mysql_num_rows(mysql_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
 
 $totalProposed=$proposedQuery0+$proposedQuery1+$proposedQuery2+$proposedQuery3+$proposedQuery4+$proposedQuery5+$proposedQuery6+$proposedQuery7+$proposedQuery8+$proposedQuery9+$proposedQuery10+$proposedQuery11+$proposedQuery12+$proposedQuery13+$proposedQuery14+$proposedQuery15+$proposedQuery16+$proposedQuery17;
@@ -351,40 +351,40 @@ $totalProposed=$proposedQuery0+$proposedQuery1+$proposedQuery2+$proposedQuery3+$
 
 
 <?php
-$allotedQuery0=mysql_num_rows(mysql_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
-$allotedQuery1=mysql_num_rows(mysql_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status =1"));
+$allotedQuery0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status =1"));
 
-$allotedQuery2=mysql_num_rows(mysql_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery3=mysql_num_rows(mysql_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery4=mysql_num_rows(mysql_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery5=mysql_num_rows(mysql_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery6=mysql_num_rows(mysql_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery7=mysql_num_rows(mysql_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery8=mysql_num_rows(mysql_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery9=mysql_num_rows(mysql_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery10=mysql_num_rows(mysql_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery11=mysql_num_rows(mysql_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery12=mysql_num_rows(mysql_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery13=mysql_num_rows(mysql_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery14=mysql_num_rows(mysql_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery15=mysql_num_rows(mysql_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery16=mysql_num_rows(mysql_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery17=mysql_num_rows(mysql_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
 
 $totalalloted=$allotedQuery0+$allotedQuery1+$allotedQuery2+$allotedQuery3+$allotedQuery4+$allotedQuery5+$allotedQuery6+$allotedQuery7+$allotedQuery8+$allotedQuery9+$allotedQuery10+$allotedQuery11+$allotedQuery12+$allotedQuery13+$allotedQuery14+$allotedQuery15+$allotedQuery16+$allotedQuery17;
@@ -392,40 +392,40 @@ $totalalloted=$allotedQuery0+$allotedQuery1+$allotedQuery2+$allotedQuery3+$allot
 
 
 <?php
-$completedQuery0=mysql_num_rows(mysql_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
-$completedQuery1=mysql_num_rows(mysql_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status =2"));
+$completedQuery0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status =2"));
 
-$completedQuery2=mysql_num_rows(mysql_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery3=mysql_num_rows(mysql_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery4=mysql_num_rows(mysql_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery5=mysql_num_rows(mysql_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery6=mysql_num_rows(mysql_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery7=mysql_num_rows(mysql_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery8=mysql_num_rows(mysql_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery9=mysql_num_rows(mysql_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery10=mysql_num_rows(mysql_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery11=mysql_num_rows(mysql_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery12=mysql_num_rows(mysql_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery13=mysql_num_rows(mysql_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery14=mysql_num_rows(mysql_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery15=mysql_num_rows(mysql_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery16=mysql_num_rows(mysql_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery17=mysql_num_rows(mysql_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
 
 $totalcompleted=$completedQuery0+$completedQuery1+$completedQuery2+$completedQuery3+$completedQuery4+$completedQuery5+$completedQuery6+$completedQuery7+$completedQuery8+$completedQuery9+$completedQuery10+$completedQuery11+$completedQuery12+$completedQuery13+$completedQuery14+$completedQuery15+$completedQuery16+$completedQuery17;
@@ -457,40 +457,40 @@ $totalcompleted=$completedQuery0+$completedQuery1+$completedQuery2+$completedQue
 
 
 <?php
-$proposedP2Query0=mysql_num_rows(mysql_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
-$proposedP2Query1=mysql_num_rows(mysql_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query2=mysql_num_rows(mysql_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query3=mysql_num_rows(mysql_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query4=mysql_num_rows(mysql_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query5=mysql_num_rows(mysql_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query6=mysql_num_rows(mysql_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query7=mysql_num_rows(mysql_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query8=mysql_num_rows(mysql_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query9=mysql_num_rows(mysql_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query10=mysql_num_rows(mysql_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query11=mysql_num_rows(mysql_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query12=mysql_num_rows(mysql_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query13=mysql_num_rows(mysql_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query14=mysql_num_rows(mysql_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query15=mysql_num_rows(mysql_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query16=mysql_num_rows(mysql_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query17=mysql_num_rows(mysql_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
 
 $totalProposedP2=$proposedP2Query0+$proposedP2Query1+$proposedP2Query2+$proposedP2Query3+$proposedP2Query4+$proposedP2Query5+$proposedP2Query6+$proposedP2Query7+$proposedP2Query8+$proposedP2Query9+$proposedP2Query10+$proposedP2Query11+$proposedP2Query12+$proposedP2Query13+$proposedP2Query14+$proposedP2Query15+$proposedP2Query16+$proposedP2Query17;
@@ -498,40 +498,40 @@ $totalProposedP2=$proposedP2Query0+$proposedP2Query1+$proposedP2Query2+$proposed
 
 
 <?php
-$allotedP2Query0=mysql_num_rows(mysql_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
-$allotedP2Query1=mysql_num_rows(mysql_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status =1"));
+$allotedP2Query0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status =1"));
 
-$allotedP2Query2=mysql_num_rows(mysql_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query3=mysql_num_rows(mysql_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query4=mysql_num_rows(mysql_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query5=mysql_num_rows(mysql_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query6=mysql_num_rows(mysql_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query7=mysql_num_rows(mysql_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query8=mysql_num_rows(mysql_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query9=mysql_num_rows(mysql_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query10=mysql_num_rows(mysql_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query11=mysql_num_rows(mysql_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query12=mysql_num_rows(mysql_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query13=mysql_num_rows(mysql_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query14=mysql_num_rows(mysql_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query15=mysql_num_rows(mysql_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query16=mysql_num_rows(mysql_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query17=mysql_num_rows(mysql_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
 
 $totalallotedP2=$allotedP2Query0+$allotedP2Query1+$allotedP2Query2+$allotedP2Query3+$allotedP2Query4+$allotedP2Query5+$allotedP2Query6+$allotedP2Query7+$allotedP2Query8+$allotedP2Query9+$allotedP2Query10+$allotedP2Query11+$allotedP2Query12+$allotedP2Query13+$allotedP2Query14+$allotedP2Query15+$allotedP2Query16+$allotedP2Query17;
@@ -539,40 +539,40 @@ $totalallotedP2=$allotedP2Query0+$allotedP2Query1+$allotedP2Query2+$allotedP2Que
 
 
 <?php
-$completedP2Query0=mysql_num_rows(mysql_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
-$completedP2Query1=mysql_num_rows(mysql_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status =2"));
+$completedP2Query0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status =2"));
 
-$completedP2Query2=mysql_num_rows(mysql_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query3=mysql_num_rows(mysql_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query4=mysql_num_rows(mysql_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query5=mysql_num_rows(mysql_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query6=mysql_num_rows(mysql_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query7=mysql_num_rows(mysql_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query8=mysql_num_rows(mysql_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query9=mysql_num_rows(mysql_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query10=mysql_num_rows(mysql_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query11=mysql_num_rows(mysql_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query12=mysql_num_rows(mysql_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query13=mysql_num_rows(mysql_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query14=mysql_num_rows(mysql_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query15=mysql_num_rows(mysql_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query16=mysql_num_rows(mysql_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query17=mysql_num_rows(mysql_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
 
 $totalcompletedP2=$completedP2Query0+$completedP2Query1+$completedP2Query2+$completedP2Query3+$completedP2Query4+$completedP2Query5+$completedP2Query6+$completedP2Query7+$completedP2Query8+$completedP2Query9+$completedP2Query10+$completedP2Query11+$completedP2Query12+$completedP2Query13+$completedP2Query14+$completedP2Query15+$completedP2Query16+$completedP2Query17;
@@ -606,40 +606,40 @@ $totalcompletedP2=$completedP2Query0+$completedP2Query1+$completedP2Query2+$comp
 'toolbar=yes,status=yes,scrollbars=yes,resizable=yes,menubar=yes');">P3</span></h3>
 
 <?php
-$proposedP3Query0=mysql_num_rows(mysql_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
-$proposedP3Query1=mysql_num_rows(mysql_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query2=mysql_num_rows(mysql_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query3=mysql_num_rows(mysql_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query4=mysql_num_rows(mysql_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query5=mysql_num_rows(mysql_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query6=mysql_num_rows(mysql_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query7=mysql_num_rows(mysql_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query8=mysql_num_rows(mysql_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query9=mysql_num_rows(mysql_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query10=mysql_num_rows(mysql_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query11=mysql_num_rows(mysql_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query12=mysql_num_rows(mysql_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query13=mysql_num_rows(mysql_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query14=mysql_num_rows(mysql_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query15=mysql_num_rows(mysql_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query16=mysql_num_rows(mysql_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query17=mysql_num_rows(mysql_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
 
 $totalProposedP3=$proposedP3Query0+$proposedP3Query1+$proposedP3Query2+$proposedP3Query3+$proposedP3Query4+$proposedP3Query5+$proposedP3Query6+$proposedP3Query7+$proposedP3Query8+$proposedP3Query9+$proposedP3Query10+$proposedP3Query11+$proposedP3Query12+$proposedP3Query13+$proposedP3Query14+$proposedP3Query15+$proposedP3Query16+$proposedP3Query17;
@@ -647,40 +647,40 @@ $totalProposedP3=$proposedP3Query0+$proposedP3Query1+$proposedP3Query2+$proposed
 
 
 <?php
-$allotedP3Query0=mysql_num_rows(mysql_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
-$allotedP3Query1=mysql_num_rows(mysql_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status =1"));
+$allotedP3Query0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status =1"));
 
-$allotedP3Query2=mysql_num_rows(mysql_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query3=mysql_num_rows(mysql_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query4=mysql_num_rows(mysql_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query5=mysql_num_rows(mysql_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query6=mysql_num_rows(mysql_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query7=mysql_num_rows(mysql_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query8=mysql_num_rows(mysql_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query9=mysql_num_rows(mysql_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query10=mysql_num_rows(mysql_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query11=mysql_num_rows(mysql_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query12=mysql_num_rows(mysql_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query13=mysql_num_rows(mysql_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query14=mysql_num_rows(mysql_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query15=mysql_num_rows(mysql_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query16=mysql_num_rows(mysql_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query17=mysql_num_rows(mysql_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
 
 $totalallotedP3=$allotedP3Query0+$allotedP3Query1+$allotedP3Query2+$allotedP3Query3+$allotedP3Query4+$allotedP3Query5+$allotedP3Query6+$allotedP3Query7+$allotedP3Query8+$allotedP3Query9+$allotedP3Query10+$allotedP3Query11+$allotedP3Query12+$allotedP3Query13+$allotedP3Query14+$allotedP3Query15+$allotedP3Query16+$allotedP3Query17;
@@ -688,40 +688,40 @@ $totalallotedP3=$allotedP3Query0+$allotedP3Query1+$allotedP3Query2+$allotedP3Que
 
 
 <?php
-$completedP3Query0=mysql_num_rows(mysql_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
-$completedP3Query1=mysql_num_rows(mysql_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status =2"));
+$completedP3Query0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status =2"));
 
-$completedP3Query2=mysql_num_rows(mysql_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query3=mysql_num_rows(mysql_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query4=mysql_num_rows(mysql_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query5=mysql_num_rows(mysql_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query6=mysql_num_rows(mysql_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query7=mysql_num_rows(mysql_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query8=mysql_num_rows(mysql_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query9=mysql_num_rows(mysql_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query10=mysql_num_rows(mysql_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query11=mysql_num_rows(mysql_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query12=mysql_num_rows(mysql_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query13=mysql_num_rows(mysql_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query14=mysql_num_rows(mysql_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query15=mysql_num_rows(mysql_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query16=mysql_num_rows(mysql_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query17=mysql_num_rows(mysql_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
 
 $totalcompletedP3=$completedP3Query0+$completedP3Query1+$completedP3Query2+$completedP3Query3+$completedP3Query4+$completedP3Query5+$completedP3Query6+$completedP3Query7+$completedP3Query8+$completedP3Query9+$completedP3Query10+$completedP3Query11+$completedP3Query12+$completedP3Query13+$completedP3Query14+$completedP3Query15+$completedP3Query16+$completedP3Query17;
@@ -758,40 +758,40 @@ $totalcompletedP3=$completedP3Query0+$completedP3Query1+$completedP3Query2+$comp
 'toolbar=yes,status=yes,scrollbars=yes,resizable=yes,menubar=yes');">P4</span></h3>
 
 <?php
-$proposedP4Query0=mysql_num_rows(mysql_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
-$proposedP4Query1=mysql_num_rows(mysql_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query2=mysql_num_rows(mysql_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query3=mysql_num_rows(mysql_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query4=mysql_num_rows(mysql_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query5=mysql_num_rows(mysql_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query6=mysql_num_rows(mysql_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query7=mysql_num_rows(mysql_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query8=mysql_num_rows(mysql_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query9=mysql_num_rows(mysql_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query10=mysql_num_rows(mysql_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query11=mysql_num_rows(mysql_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query12=mysql_num_rows(mysql_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query13=mysql_num_rows(mysql_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query14=mysql_num_rows(mysql_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query15=mysql_num_rows(mysql_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query16=mysql_num_rows(mysql_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query17=mysql_num_rows(mysql_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
 
 $totalProposedP4=$proposedP4Query0+$proposedP4Query1+$proposedP4Query2+$proposedP4Query3+$proposedP4Query4+$proposedP4Query5+$proposedP4Query6+$proposedP4Query7+$proposedP4Query8+$proposedP4Query9+$proposedP4Query10+$proposedP4Query11+$proposedP4Query12+$proposedP4Query13+$proposedP4Query14+$proposedP4Query15+$proposedP4Query16+$proposedP4Query17;
@@ -799,40 +799,40 @@ $totalProposedP4=$proposedP4Query0+$proposedP4Query1+$proposedP4Query2+$proposed
 
 
 <?php
-$allotedP4Query0=mysql_num_rows(mysql_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
-$allotedP4Query1=mysql_num_rows(mysql_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status =1"));
+$allotedP4Query0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status =1"));
 
-$allotedP4Query2=mysql_num_rows(mysql_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query3=mysql_num_rows(mysql_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query4=mysql_num_rows(mysql_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query5=mysql_num_rows(mysql_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query6=mysql_num_rows(mysql_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query7=mysql_num_rows(mysql_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query8=mysql_num_rows(mysql_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query9=mysql_num_rows(mysql_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query10=mysql_num_rows(mysql_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query11=mysql_num_rows(mysql_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query12=mysql_num_rows(mysql_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query13=mysql_num_rows(mysql_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query14=mysql_num_rows(mysql_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query15=mysql_num_rows(mysql_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query16=mysql_num_rows(mysql_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query17=mysql_num_rows(mysql_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
 
 $totalallotedP4=$allotedP4Query0+$allotedP4Query1+$allotedP4Query2+$allotedP4Query3+$allotedP4Query4+$allotedP4Query5+$allotedP4Query6+$allotedP4Query7+$allotedP4Query8+$allotedP4Query9+$allotedP4Query10+$allotedP4Query11+$allotedP4Query12+$allotedP4Query13+$allotedP4Query14+$allotedP4Query15+$allotedP4Query16+$allotedP4Query17;
@@ -840,40 +840,40 @@ $totalallotedP4=$allotedP4Query0+$allotedP4Query1+$allotedP4Query2+$allotedP4Que
 
 
 <?php
-$completedP4Query0=mysql_num_rows(mysql_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
-$completedP4Query1=mysql_num_rows(mysql_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status =2"));
+$completedP4Query0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status =2"));
 
-$completedP4Query2=mysql_num_rows(mysql_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query3=mysql_num_rows(mysql_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query4=mysql_num_rows(mysql_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query5=mysql_num_rows(mysql_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query6=mysql_num_rows(mysql_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query7=mysql_num_rows(mysql_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query8=mysql_num_rows(mysql_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query9=mysql_num_rows(mysql_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query10=mysql_num_rows(mysql_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query11=mysql_num_rows(mysql_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query12=mysql_num_rows(mysql_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query13=mysql_num_rows(mysql_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query14=mysql_num_rows(mysql_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query15=mysql_num_rows(mysql_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query16=mysql_num_rows(mysql_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query17=mysql_num_rows(mysql_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
 
 $totalcompletedP4=$completedP4Query0+$completedP4Query1+$completedP4Query2+$completedP4Query3+$completedP4Query4+$completedP4Query5+$completedP4Query6+$completedP4Query7+$completedP4Query8+$completedP4Query9+$completedP4Query10+$completedP4Query11+$completedP4Query12+$completedP4Query13+$completedP4Query14+$completedP4Query15+$completedP4Query16+$completedP4Query17;
@@ -909,8 +909,8 @@ else
 $month= date("m");
 $year= date("Y");
 $i=1;
-$rdQuery=mysql_query("SELECT * FROM tbl_rd ORDER BY RD ASC");
-while($rd=mysql_fetch_array($rdQuery)){
+$rdQuery=mysqli_query("SELECT * FROM tbl_rd ORDER BY RD ASC");
+while($rd=mysqli_fetch_array($rdQuery)){
  
 ?>        
 <h2 class="page-header"><?=$rd['RD']?></h2>
@@ -927,40 +927,40 @@ while($rd=mysql_fetch_array($rdQuery)){
 
 </div>
 <?php
-$proposedQuery0=mysql_num_rows(mysql_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
-$proposedQuery1=mysql_num_rows(mysql_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery2=mysql_num_rows(mysql_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery3=mysql_num_rows(mysql_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery4=mysql_num_rows(mysql_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery5=mysql_num_rows(mysql_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery6=mysql_num_rows(mysql_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery7=mysql_num_rows(mysql_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery8=mysql_num_rows(mysql_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery9=mysql_num_rows(mysql_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery10=mysql_num_rows(mysql_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery11=mysql_num_rows(mysql_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery12=mysql_num_rows(mysql_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery13=mysql_num_rows(mysql_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery14=mysql_num_rows(mysql_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery15=mysql_num_rows(mysql_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery16=mysql_num_rows(mysql_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
-$proposedQuery17=mysql_num_rows(mysql_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
+$proposedQuery17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 0"));
 
 
 $totalProposed=$proposedQuery0+$proposedQuery1+$proposedQuery2+$proposedQuery3+$proposedQuery4+$proposedQuery5+$proposedQuery6+$proposedQuery7+$proposedQuery8+$proposedQuery9+$proposedQuery10+$proposedQuery11+$proposedQuery12+$proposedQuery13+$proposedQuery14+$proposedQuery15+$proposedQuery16+$proposedQuery17;
@@ -968,40 +968,40 @@ $totalProposed=$proposedQuery0+$proposedQuery1+$proposedQuery2+$proposedQuery3+$
 
 
 <?php
-$allotedQuery0=mysql_num_rows(mysql_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
-$allotedQuery1=mysql_num_rows(mysql_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status =1"));
+$allotedQuery0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status =1"));
 
-$allotedQuery2=mysql_num_rows(mysql_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery3=mysql_num_rows(mysql_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery4=mysql_num_rows(mysql_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery5=mysql_num_rows(mysql_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery6=mysql_num_rows(mysql_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery7=mysql_num_rows(mysql_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery8=mysql_num_rows(mysql_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery9=mysql_num_rows(mysql_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery10=mysql_num_rows(mysql_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery11=mysql_num_rows(mysql_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery12=mysql_num_rows(mysql_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery13=mysql_num_rows(mysql_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery14=mysql_num_rows(mysql_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery15=mysql_num_rows(mysql_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery16=mysql_num_rows(mysql_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
-$allotedQuery17=mysql_num_rows(mysql_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
+$allotedQuery17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 1"));
 
 
 $totalalloted=$allotedQuery0+$allotedQuery1+$allotedQuery2+$allotedQuery3+$allotedQuery4+$allotedQuery5+$allotedQuery6+$allotedQuery7+$allotedQuery8+$allotedQuery9+$allotedQuery10+$allotedQuery11+$allotedQuery12+$allotedQuery13+$allotedQuery14+$allotedQuery15+$allotedQuery16+$allotedQuery17;
@@ -1009,40 +1009,40 @@ $totalalloted=$allotedQuery0+$allotedQuery1+$allotedQuery2+$allotedQuery3+$allot
 
 
 <?php
-$completedQuery0=mysql_num_rows(mysql_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
-$completedQuery1=mysql_num_rows(mysql_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status =2"));
+$completedQuery0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status =2"));
 
-$completedQuery2=mysql_num_rows(mysql_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery3=mysql_num_rows(mysql_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery4=mysql_num_rows(mysql_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery5=mysql_num_rows(mysql_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery6=mysql_num_rows(mysql_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery7=mysql_num_rows(mysql_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery8=mysql_num_rows(mysql_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery9=mysql_num_rows(mysql_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery10=mysql_num_rows(mysql_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery11=mysql_num_rows(mysql_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery12=mysql_num_rows(mysql_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery13=mysql_num_rows(mysql_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery14=mysql_num_rows(mysql_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery15=mysql_num_rows(mysql_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery16=mysql_num_rows(mysql_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
-$completedQuery17=mysql_num_rows(mysql_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
+$completedQuery17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P1' AND final_Status = 2"));
 
 
 $totalcompleted=$completedQuery0+$completedQuery1+$completedQuery2+$completedQuery3+$completedQuery4+$completedQuery5+$completedQuery6+$completedQuery7+$completedQuery8+$completedQuery9+$completedQuery10+$completedQuery11+$completedQuery12+$completedQuery13+$completedQuery14+$completedQuery15+$completedQuery16+$completedQuery17;
@@ -1075,40 +1075,40 @@ $totalcompleted=$completedQuery0+$completedQuery1+$completedQuery2+$completedQue
 
 
 <?php
-$proposedP2Query0=mysql_num_rows(mysql_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
-$proposedP2Query1=mysql_num_rows(mysql_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query2=mysql_num_rows(mysql_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query3=mysql_num_rows(mysql_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query4=mysql_num_rows(mysql_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query5=mysql_num_rows(mysql_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query6=mysql_num_rows(mysql_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query7=mysql_num_rows(mysql_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query8=mysql_num_rows(mysql_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query9=mysql_num_rows(mysql_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query10=mysql_num_rows(mysql_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query11=mysql_num_rows(mysql_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query12=mysql_num_rows(mysql_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query13=mysql_num_rows(mysql_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query14=mysql_num_rows(mysql_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query15=mysql_num_rows(mysql_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query16=mysql_num_rows(mysql_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
-$proposedP2Query17=mysql_num_rows(mysql_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
+$proposedP2Query17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 0"));
 
 
 $totalProposedP2=$proposedP2Query0+$proposedP2Query1+$proposedP2Query2+$proposedP2Query3+$proposedP2Query4+$proposedP2Query5+$proposedP2Query6+$proposedP2Query7+$proposedP2Query8+$proposedP2Query9+$proposedP2Query10+$proposedP2Query11+$proposedP2Query12+$proposedP2Query13+$proposedP2Query14+$proposedP2Query15+$proposedP2Query16+$proposedP2Query17;
@@ -1116,40 +1116,40 @@ $totalProposedP2=$proposedP2Query0+$proposedP2Query1+$proposedP2Query2+$proposed
 
 
 <?php
-$allotedP2Query0=mysql_num_rows(mysql_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
-$allotedP2Query1=mysql_num_rows(mysql_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status =1"));
+$allotedP2Query0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status =1"));
 
-$allotedP2Query2=mysql_num_rows(mysql_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query3=mysql_num_rows(mysql_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query4=mysql_num_rows(mysql_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query5=mysql_num_rows(mysql_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query6=mysql_num_rows(mysql_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query7=mysql_num_rows(mysql_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query8=mysql_num_rows(mysql_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query9=mysql_num_rows(mysql_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query10=mysql_num_rows(mysql_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query11=mysql_num_rows(mysql_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query12=mysql_num_rows(mysql_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query13=mysql_num_rows(mysql_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query14=mysql_num_rows(mysql_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query15=mysql_num_rows(mysql_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query16=mysql_num_rows(mysql_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
-$allotedP2Query17=mysql_num_rows(mysql_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
+$allotedP2Query17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 1"));
 
 
 $totalallotedP2=$allotedP2Query0+$allotedP2Query1+$allotedP2Query2+$allotedP2Query3+$allotedP2Query4+$allotedP2Query5+$allotedP2Query6+$allotedP2Query7+$allotedP2Query8+$allotedP2Query9+$allotedP2Query10+$allotedP2Query11+$allotedP2Query12+$allotedP2Query13+$allotedP2Query14+$allotedP2Query15+$allotedP2Query16+$allotedP2Query17;
@@ -1157,40 +1157,40 @@ $totalallotedP2=$allotedP2Query0+$allotedP2Query1+$allotedP2Query2+$allotedP2Que
 
 
 <?php
-$completedP2Query0=mysql_num_rows(mysql_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
-$completedP2Query1=mysql_num_rows(mysql_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status =2"));
+$completedP2Query0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status =2"));
 
-$completedP2Query2=mysql_num_rows(mysql_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query3=mysql_num_rows(mysql_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query4=mysql_num_rows(mysql_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query5=mysql_num_rows(mysql_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query6=mysql_num_rows(mysql_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query7=mysql_num_rows(mysql_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query8=mysql_num_rows(mysql_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query9=mysql_num_rows(mysql_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query10=mysql_num_rows(mysql_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query11=mysql_num_rows(mysql_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query12=mysql_num_rows(mysql_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query13=mysql_num_rows(mysql_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query14=mysql_num_rows(mysql_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query15=mysql_num_rows(mysql_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query16=mysql_num_rows(mysql_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
-$completedP2Query17=mysql_num_rows(mysql_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
+$completedP2Query17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P2' AND final_Status = 2"));
 
 
 $totalcompletedP2=$completedP2Query0+$completedP2Query1+$completedP2Query2+$completedP2Query3+$completedP2Query4+$completedP2Query5+$completedP2Query6+$completedP2Query7+$completedP2Query8+$completedP2Query9+$completedP2Query10+$completedP2Query11+$completedP2Query12+$completedP2Query13+$completedP2Query14+$completedP2Query15+$completedP2Query16+$completedP2Query17;
@@ -1220,40 +1220,40 @@ $totalcompletedP2=$completedP2Query0+$completedP2Query1+$completedP2Query2+$comp
 <h3 class="widget-user-username"><span onClick="window.open('priority.php?rd=<?=urlencode($rd['RD'])?>&activities=P3&month=<?=date("M-Y")?>','','width=1100,height=500,scrollbar=yes');">P3</span></h3>
 
 <?php
-$proposedP3Query0=mysql_num_rows(mysql_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
-$proposedP3Query1=mysql_num_rows(mysql_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query2=mysql_num_rows(mysql_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query3=mysql_num_rows(mysql_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query4=mysql_num_rows(mysql_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query5=mysql_num_rows(mysql_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query6=mysql_num_rows(mysql_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query7=mysql_num_rows(mysql_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query8=mysql_num_rows(mysql_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query9=mysql_num_rows(mysql_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query10=mysql_num_rows(mysql_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query11=mysql_num_rows(mysql_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query12=mysql_num_rows(mysql_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query13=mysql_num_rows(mysql_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query14=mysql_num_rows(mysql_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query15=mysql_num_rows(mysql_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query16=mysql_num_rows(mysql_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
-$proposedP3Query17=mysql_num_rows(mysql_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
+$proposedP3Query17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 0"));
 
 
 $totalProposedP3=$proposedP3Query0+$proposedP3Query1+$proposedP3Query2+$proposedP3Query3+$proposedP3Query4+$proposedP3Query5+$proposedP3Query6+$proposedP3Query7+$proposedP3Query8+$proposedP3Query9+$proposedP3Query10+$proposedP3Query11+$proposedP3Query12+$proposedP3Query13+$proposedP3Query14+$proposedP3Query15+$proposedP3Query16+$proposedP3Query17;
@@ -1261,40 +1261,40 @@ $totalProposedP3=$proposedP3Query0+$proposedP3Query1+$proposedP3Query2+$proposed
 
 
 <?php
-$allotedP3Query0=mysql_num_rows(mysql_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
-$allotedP3Query1=mysql_num_rows(mysql_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status =1"));
+$allotedP3Query0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status =1"));
 
-$allotedP3Query2=mysql_num_rows(mysql_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query3=mysql_num_rows(mysql_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query4=mysql_num_rows(mysql_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query5=mysql_num_rows(mysql_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query6=mysql_num_rows(mysql_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query7=mysql_num_rows(mysql_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query8=mysql_num_rows(mysql_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query9=mysql_num_rows(mysql_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query10=mysql_num_rows(mysql_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query11=mysql_num_rows(mysql_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query12=mysql_num_rows(mysql_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query13=mysql_num_rows(mysql_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query14=mysql_num_rows(mysql_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query15=mysql_num_rows(mysql_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query16=mysql_num_rows(mysql_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
-$allotedP3Query17=mysql_num_rows(mysql_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
+$allotedP3Query17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 1"));
 
 
 $totalallotedP3=$allotedP3Query0+$allotedP3Query1+$allotedP3Query2+$allotedP3Query3+$allotedP3Query4+$allotedP3Query5+$allotedP3Query6+$allotedP3Query7+$allotedP3Query8+$allotedP3Query9+$allotedP3Query10+$allotedP3Query11+$allotedP3Query12+$allotedP3Query13+$allotedP3Query14+$allotedP3Query15+$allotedP3Query16+$allotedP3Query17;
@@ -1302,40 +1302,40 @@ $totalallotedP3=$allotedP3Query0+$allotedP3Query1+$allotedP3Query2+$allotedP3Que
 
 
 <?php
-$completedP3Query0=mysql_num_rows(mysql_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
-$completedP3Query1=mysql_num_rows(mysql_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status =2"));
+$completedP3Query0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status =2"));
 
-$completedP3Query2=mysql_num_rows(mysql_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query3=mysql_num_rows(mysql_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query4=mysql_num_rows(mysql_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query5=mysql_num_rows(mysql_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query6=mysql_num_rows(mysql_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query7=mysql_num_rows(mysql_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query8=mysql_num_rows(mysql_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query9=mysql_num_rows(mysql_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query10=mysql_num_rows(mysql_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query11=mysql_num_rows(mysql_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query12=mysql_num_rows(mysql_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query13=mysql_num_rows(mysql_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query14=mysql_num_rows(mysql_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query15=mysql_num_rows(mysql_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query16=mysql_num_rows(mysql_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
-$completedP3Query17=mysql_num_rows(mysql_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
+$completedP3Query17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P3' AND final_Status = 2"));
 
 
 $totalcompletedP3=$completedP3Query0+$completedP3Query1+$completedP3Query2+$completedP3Query3+$completedP3Query4+$completedP3Query5+$completedP3Query6+$completedP3Query7+$completedP3Query8+$completedP3Query9+$completedP3Query10+$completedP3Query11+$completedP3Query12+$completedP3Query13+$completedP3Query14+$completedP3Query15+$completedP3Query16+$completedP3Query17;
@@ -1368,40 +1368,40 @@ $totalcompletedP3=$completedP3Query0+$completedP3Query1+$completedP3Query2+$comp
 <h3 class="widget-user-username"><span onClick="window.open('priority.php?rd=<?=urlencode($rd['RD'])?>&activities=P4&month=<?=date("M-Y")?>','','width=1100,height=500,scrollbar=yes');">P4</span></h3>
 
 <?php
-$proposedP4Query0=mysql_num_rows(mysql_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
-$proposedP4Query1=mysql_num_rows(mysql_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query2=mysql_num_rows(mysql_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query3=mysql_num_rows(mysql_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query4=mysql_num_rows(mysql_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query5=mysql_num_rows(mysql_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query6=mysql_num_rows(mysql_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query7=mysql_num_rows(mysql_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query8=mysql_num_rows(mysql_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query9=mysql_num_rows(mysql_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query10=mysql_num_rows(mysql_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query11=mysql_num_rows(mysql_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query12=mysql_num_rows(mysql_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query13=mysql_num_rows(mysql_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query14=mysql_num_rows(mysql_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query15=mysql_num_rows(mysql_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query16=mysql_num_rows(mysql_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
-$proposedP4Query17=mysql_num_rows(mysql_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
+$proposedP4Query17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 0"));
 
 
 $totalProposedP4=$proposedP4Query0+$proposedP4Query1+$proposedP4Query2+$proposedP4Query3+$proposedP4Query4+$proposedP4Query5+$proposedP4Query6+$proposedP4Query7+$proposedP4Query8+$proposedP4Query9+$proposedP4Query10+$proposedP4Query11+$proposedP4Query12+$proposedP4Query13+$proposedP4Query14+$proposedP4Query15+$proposedP4Query16+$proposedP4Query17;
@@ -1409,40 +1409,40 @@ $totalProposedP4=$proposedP4Query0+$proposedP4Query1+$proposedP4Query2+$proposed
 
 
 <?php
-$allotedP4Query0=mysql_num_rows(mysql_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
-$allotedP4Query1=mysql_num_rows(mysql_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status =1"));
+$allotedP4Query0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status =1"));
 
-$allotedP4Query2=mysql_num_rows(mysql_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query3=mysql_num_rows(mysql_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query4=mysql_num_rows(mysql_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query5=mysql_num_rows(mysql_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query6=mysql_num_rows(mysql_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query7=mysql_num_rows(mysql_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query8=mysql_num_rows(mysql_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query9=mysql_num_rows(mysql_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query10=mysql_num_rows(mysql_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query11=mysql_num_rows(mysql_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query12=mysql_num_rows(mysql_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query13=mysql_num_rows(mysql_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query14=mysql_num_rows(mysql_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query15=mysql_num_rows(mysql_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query16=mysql_num_rows(mysql_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
-$allotedP4Query17=mysql_num_rows(mysql_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
+$allotedP4Query17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 1"));
 
 
 $totalallotedP4=$allotedP4Query0+$allotedP4Query1+$allotedP4Query2+$allotedP4Query3+$allotedP4Query4+$allotedP4Query5+$allotedP4Query6+$allotedP4Query7+$allotedP4Query8+$allotedP4Query9+$allotedP4Query10+$allotedP4Query11+$allotedP4Query12+$allotedP4Query13+$allotedP4Query14+$allotedP4Query15+$allotedP4Query16+$allotedP4Query17;
@@ -1450,40 +1450,40 @@ $totalallotedP4=$allotedP4Query0+$allotedP4Query1+$allotedP4Query2+$allotedP4Que
 
 
 <?php
-$completedP4Query0=mysql_num_rows(mysql_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
-$completedP4Query1=mysql_num_rows(mysql_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status =2"));
+$completedP4Query0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status =2"));
 
-$completedP4Query2=mysql_num_rows(mysql_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query3=mysql_num_rows(mysql_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query4=mysql_num_rows(mysql_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query5=mysql_num_rows(mysql_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query6=mysql_num_rows(mysql_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query7=mysql_num_rows(mysql_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query8=mysql_num_rows(mysql_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query9=mysql_num_rows(mysql_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query10=mysql_num_rows(mysql_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query11=mysql_num_rows(mysql_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query12=mysql_num_rows(mysql_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query13=mysql_num_rows(mysql_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query14=mysql_num_rows(mysql_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query15=mysql_num_rows(mysql_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query16=mysql_num_rows(mysql_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
-$completedP4Query17=mysql_num_rows(mysql_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
+$completedP4Query17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  rd_id='".$rd['RD']."' AND priority='P4' AND final_Status = 2"));
 
 
 $totalcompletedP4=$completedP4Query0+$completedP4Query1+$completedP4Query2+$completedP4Query3+$completedP4Query4+$completedP4Query5+$completedP4Query6+$completedP4Query7+$completedP4Query8+$completedP4Query9+$completedP4Query10+$completedP4Query11+$completedP4Query12+$completedP4Query13+$completedP4Query14+$completedP4Query15+$completedP4Query16+$completedP4Query17;
@@ -1544,24 +1544,24 @@ $i++;
  <?php
 $month=date("m"); 
 $year=date("Y"); 
-$TotalAllotedQuery0=mysql_num_rows(mysql_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
-$TotalAllotedQuery1=mysql_num_rows(mysql_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status =0"));
-$TotalAllotedQuery2=mysql_num_rows(mysql_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
-$TotalAllotedQuery3=mysql_num_rows(mysql_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
-$TotalAllotedQuery4=mysql_num_rows(mysql_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
-$TotalAllotedQuery5=mysql_num_rows(mysql_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
-$TotalAllotedQuery6=mysql_num_rows(mysql_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
-$TotalAllotedQuery7=mysql_num_rows(mysql_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
-$TotalAllotedQuery8=mysql_num_rows(mysql_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
-$TotalAllotedQuery9=mysql_num_rows(mysql_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
-$TotalAllotedQuery10=mysql_num_rows(mysql_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
-$TotalAllotedQuery11=mysql_num_rows(mysql_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
-$TotalAllotedQuery12=mysql_num_rows(mysql_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
-$TotalAllotedQuery13=mysql_num_rows(mysql_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
-$TotalAllotedQuery14=mysql_num_rows(mysql_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
-$TotalAllotedQuery15=mysql_num_rows(mysql_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
-$TotalAllotedQuery16=mysql_num_rows(mysql_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
-$TotalAllotedQuery17=mysql_num_rows(mysql_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
+$TotalAllotedQuery0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
+$TotalAllotedQuery1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status =0"));
+$TotalAllotedQuery2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
+$TotalAllotedQuery3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
+$TotalAllotedQuery4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
+$TotalAllotedQuery5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
+$TotalAllotedQuery6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
+$TotalAllotedQuery7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
+$TotalAllotedQuery8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
+$TotalAllotedQuery9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
+$TotalAllotedQuery10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
+$TotalAllotedQuery11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
+$TotalAllotedQuery12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
+$TotalAllotedQuery13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
+$TotalAllotedQuery14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
+$TotalAllotedQuery15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
+$TotalAllotedQuery16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
+$TotalAllotedQuery17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status = 0"));
 
 
 $totalallotedData=$TotalAllotedQuery0+$TotalAllotedQuery1+$TotalAllotedQuery2+$TotalAllotedQuery3+$TotalAllotedQuery4+$TotalAllotedQuery5+$TotalAllotedQuery6+$TotalAllotedQuery7+$TotalAllotedQuery8+$TotalAllotedQuery9+$TotalAllotedQuery10+$TotalAllotedQuery11+$TotalAllotedQuery12+$TotalAllotedQuery13+$TotalAllotedQuery14+$TotalAllotedQuery15+$TotalAllotedQuery16+$TotalAllotedQuery17;
@@ -1646,20 +1646,20 @@ $year= date("Y");
  
  
 <?php
-$proposedQuery0=mysql_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status=0  GROUP BY  activities_name");
-while ($proposed0=mysql_fetch_array($proposedQuery0,MYSQL_ASSOC)){
+$proposedQuery0=mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND final_Status=0  GROUP BY  activities_name");
+while ($proposed0=mysqli_fetch_array($proposedQuery0,mysqli_ASSOC)){
 ?>
 
 <tr><td colspan="8"><h4 style="color:#1155cc; text-decoration:underline; font-weight:600;"><i class="fa fa-fw fa-long-arrow-right"></i><?=$proposed0['activities_name']?> </h4></td></tr> 
 <?php
 $i=1;
-$proposedQuery0=mysql_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed0['activities_name']."' AND final_Status = 0");
-while ($activities0=mysql_fetch_array($proposedQuery0,MYSQL_ASSOC)){
+$proposedQuery0=mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed0['activities_name']."' AND final_Status = 0");
+while ($activities0=mysqli_fetch_array($proposedQuery0,mysqli_ASSOC)){
 
 
-$userQuery1=mysql_query("select * from tbl_user where id=".$activities0['user_id']."");
+$userQuery1=mysqli_query("select * from tbl_user where id=".$activities0['user_id']."");
 
-$userData1=mysql_fetch_array($userQuery1);
+$userData1=mysqli_fetch_array($userQuery1);
  
 ?>
  
@@ -1667,8 +1667,8 @@ $userData1=mysql_fetch_array($userQuery1);
 <tr>
 
 <?php
-$userQuery0=mysql_query("select * from tbl_user where id=".$activities0['user_id']."");
-$userData0=mysql_fetch_array($userQuery0);
+$userQuery0=mysqli_query("select * from tbl_user where id=".$activities0['user_id']."");
+$userData0=mysqli_fetch_array($userQuery0);
 ?>
  
 <td valign="top" align="left"> <?=$userData0['Division']?></td>
@@ -1707,15 +1707,15 @@ $userData0=mysql_fetch_array($userQuery0);
 
 
 <?php
-$proposedQuery1=mysql_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
-while ($proposed1=mysql_fetch_array($proposedQuery1,MYSQL_ASSOC)){
+$proposedQuery1=mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
+while ($proposed1=mysqli_fetch_array($proposedQuery1,mysqli_ASSOC)){
 ?>
 
 <tr><td colspan="8"><h4 style="color:#1155cc; text-decoration:underline; font-weight:600;"><i class="fa fa-fw fa-long-arrow-right"></i><?=$proposed1['activities_name']?> </h4></td></tr> 
 <?php
 $i=1;
-$proposedQuery1=mysql_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed1['activities_name']."' AND final_Status = 0");
-while ($activities1=mysql_fetch_array($proposedQuery1,MYSQL_ASSOC)){
+$proposedQuery1=mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed1['activities_name']."' AND final_Status = 0");
+while ($activities1=mysqli_fetch_array($proposedQuery1,mysqli_ASSOC)){
  
 ?>
 
@@ -1723,8 +1723,8 @@ while ($activities1=mysql_fetch_array($proposedQuery1,MYSQL_ASSOC)){
 <tr>
 
 <?php
-$userQuery1=mysql_query("select * from tbl_user where id=".$activities1['user_id']."");
-$userData1=mysql_fetch_array($userQuery1);
+$userQuery1=mysqli_query("select * from tbl_user where id=".$activities1['user_id']."");
+$userData1=mysqli_fetch_array($userQuery1);
 ?>
  <td valign="top" align="left"> <?=$userData1['Division']?></td>
  <td valign="top" align="left"> <?=$activities1['rd_id']?></td>
@@ -1758,14 +1758,14 @@ $i++;
 
 
 <?php
-$proposedQuery2=mysql_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
-while ($proposed2=mysql_fetch_array($proposedQuery2,MYSQL_ASSOC)){
+$proposedQuery2=mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
+while ($proposed2=mysqli_fetch_array($proposedQuery2,mysqli_ASSOC)){
 ?>
 <tr><td colspan="8"><h4 style="color:#1155cc; text-decoration:underline; font-weight:600;"><i class="fa fa-fw fa-long-arrow-right"></i><?=$proposed2['activities_name']?> </h4></td></tr> 
  <?php
 $i=1;
-$proposedQuery2=mysql_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed2['activities_name']."' AND final_Status = 0");
-while ($activities2=mysql_fetch_array($proposedQuery2,MYSQL_ASSOC)){
+$proposedQuery2=mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed2['activities_name']."' AND final_Status = 0");
+while ($activities2=mysqli_fetch_array($proposedQuery2,mysqli_ASSOC)){
  
 ?>
 
@@ -1773,8 +1773,8 @@ while ($activities2=mysql_fetch_array($proposedQuery2,MYSQL_ASSOC)){
 <tr>
 
 <?php
-$userQuery2=mysql_query("select * from tbl_user where id=".$activities2['user_id']."");
-$userData2=mysql_fetch_array($userQuery2);
+$userQuery2=mysqli_query("select * from tbl_user where id=".$activities2['user_id']."");
+$userData2=mysqli_fetch_array($userQuery2);
 ?>
  <td valign="top" align="left"> <?=$userData2['Division']?></td>
  <td valign="top" align="left"> <?=$activities2['rd_id']?></td>
@@ -1803,8 +1803,8 @@ $userData2=mysql_fetch_array($userQuery2);
 
 
 <?php
-$proposedQuery3=mysql_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
-while ($proposed3=mysql_fetch_array($proposedQuery3,MYSQL_ASSOC)){
+$proposedQuery3=mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
+while ($proposed3=mysqli_fetch_array($proposedQuery3,mysqli_ASSOC)){
 ?>
 
 <tr><td colspan="8"><h4 style="color:#1155cc; text-decoration:underline; font-weight:600;"><i class="fa fa-fw fa-long-arrow-right"></i><?=$proposed3['activities_name']?> </h4></td></tr> 
@@ -1812,8 +1812,8 @@ while ($proposed3=mysql_fetch_array($proposedQuery3,MYSQL_ASSOC)){
 
 <?php
 $i=1;
-$proposedQuery3=mysql_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed3['activities_name']."' AND final_Status = 0");
-while ($activities3=mysql_fetch_array($proposedQuery3,MYSQL_ASSOC)){
+$proposedQuery3=mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed3['activities_name']."' AND final_Status = 0");
+while ($activities3=mysqli_fetch_array($proposedQuery3,mysqli_ASSOC)){
  
 ?>
 
@@ -1821,8 +1821,8 @@ while ($activities3=mysql_fetch_array($proposedQuery3,MYSQL_ASSOC)){
 <tr>
 
 <?php
-$userQuery3=mysql_query("select * from tbl_user where id=".$activities3['user_id']."");
-$userData3=mysql_fetch_array($userQuery3);
+$userQuery3=mysqli_query("select * from tbl_user where id=".$activities3['user_id']."");
+$userData3=mysqli_fetch_array($userQuery3);
 ?>
  
 <td valign="top" align="left"> <?=$userData3['Division']?></td>
@@ -1855,16 +1855,16 @@ $userData3=mysql_fetch_array($userQuery3);
  
  
  <?php
-$proposedQuery4=mysql_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
-while ($proposed4=mysql_fetch_array($proposedQuery4,MYSQL_ASSOC)){
+$proposedQuery4=mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
+while ($proposed4=mysqli_fetch_array($proposedQuery4,mysqli_ASSOC)){
 ?>
 
 <tr><td colspan="8"><h4 style="color:#1155cc; text-decoration:underline; font-weight:600;"><i class="fa fa-fw fa-long-arrow-right"></i><?=$proposed4['activities_name']?> </h4></td></tr> 
  
 <?php
 $i=1;
-$proposedQuery4=mysql_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed4['activities_name']."' AND final_Status = 0");
-while ($activities4=mysql_fetch_array($proposedQuery4,MYSQL_ASSOC)){
+$proposedQuery4=mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed4['activities_name']."' AND final_Status = 0");
+while ($activities4=mysqli_fetch_array($proposedQuery4,mysqli_ASSOC)){
  
 ?>
 
@@ -1872,8 +1872,8 @@ while ($activities4=mysql_fetch_array($proposedQuery4,MYSQL_ASSOC)){
 <tr>
 
 <?php
-$userQuery4=mysql_query("select * from tbl_user where id=".$activities4['user_id']."");
-$userData4=mysql_fetch_array($userQuery4);
+$userQuery4=mysqli_query("select * from tbl_user where id=".$activities4['user_id']."");
+$userData4=mysqli_fetch_array($userQuery4);
 ?>
  
 <td valign="top" align="left"> <?=$userData4['Division']?></td>
@@ -1901,24 +1901,24 @@ $userData4=mysql_fetch_array($userQuery4);
 
 
  <?php
-$proposedQuery5=mysql_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
-while ($proposed5=mysql_fetch_array($proposedQuery5,MYSQL_ASSOC)){
+$proposedQuery5=mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
+while ($proposed5=mysqli_fetch_array($proposedQuery5,mysqli_ASSOC)){
 ?>
 
 <tr><td colspan="8"><h4 style="color:#1155cc; text-decoration:underline; font-weight:600;"><i class="fa fa-fw fa-long-arrow-right"></i><?=$proposed5['activities_name']?> </h4></td></tr> 
 
 <?php
 $i=1;
-$proposedQuery5=mysql_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed5['activities_name']."' AND final_Status = 0");
-while ($activities5=mysql_fetch_array($proposedQuery5,MYSQL_ASSOC)){
+$proposedQuery5=mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed5['activities_name']."' AND final_Status = 0");
+while ($activities5=mysqli_fetch_array($proposedQuery5,mysqli_ASSOC)){
  
 ?>
  
 <tr>
 
 <?php
-$userQuery5=mysql_query("select * from tbl_user where id=".$activities5['user_id']."");
-$userData5=mysql_fetch_array($userQuery5);
+$userQuery5=mysqli_query("select * from tbl_user where id=".$activities5['user_id']."");
+$userData5=mysqli_fetch_array($userQuery5);
 ?>
  
 <td valign="top" align="left"> <?=$userData5['Division']?></td>
@@ -1946,8 +1946,8 @@ $userData5=mysql_fetch_array($userQuery5);
 
 
  <?php
-$proposedQuery6=mysql_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
-while ($proposed6=mysql_fetch_array($proposedQuery6,MYSQL_ASSOC)){
+$proposedQuery6=mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
+while ($proposed6=mysqli_fetch_array($proposedQuery6,mysqli_ASSOC)){
 ?>
 
 <tr><td colspan="8"><h4 style="color:#1155cc; text-decoration:underline; font-weight:600;"><i class="fa fa-fw fa-long-arrow-right"></i><?=$proposed6['activities_name']?> </h4></td></tr> 
@@ -1955,16 +1955,16 @@ while ($proposed6=mysql_fetch_array($proposedQuery6,MYSQL_ASSOC)){
 
 <?php
 $i=1;
-$proposedQuery6=mysql_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed6['activities_name']."' AND final_Status = 0");
-while ($activities6=mysql_fetch_array($proposedQuery6,MYSQL_ASSOC)){
+$proposedQuery6=mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed6['activities_name']."' AND final_Status = 0");
+while ($activities6=mysqli_fetch_array($proposedQuery6,mysqli_ASSOC)){
  
 ?>
  
 <tr>
 
 <?php
-$userQuery6=mysql_query("select * from tbl_user where id=".$activities6['user_id']."");
-$userData6=mysql_fetch_array($userQuery6);
+$userQuery6=mysqli_query("select * from tbl_user where id=".$activities6['user_id']."");
+$userData6=mysqli_fetch_array($userQuery6);
 ?>
  
 <td valign="top" align="left"> <?=$userData6['Division']?></td>
@@ -1991,8 +1991,8 @@ $userData6=mysql_fetch_array($userQuery6);
 
 
  <?php
-$proposedQuery7=mysql_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
-while ($proposed7=mysql_fetch_array($proposedQuery7,MYSQL_ASSOC)){
+$proposedQuery7=mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
+while ($proposed7=mysqli_fetch_array($proposedQuery7,mysqli_ASSOC)){
 ?>
 
 <tr><td colspan="8"><h4 style="color:#1155cc; text-decoration:underline; font-weight:600;"><i class="fa fa-fw fa-long-arrow-right"></i><?=$proposed7['activities_name']?> </h4></td></tr> 
@@ -2000,8 +2000,8 @@ while ($proposed7=mysql_fetch_array($proposedQuery7,MYSQL_ASSOC)){
 
 <?php
 $i=1;
-$proposedQuery7=mysql_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed7['activities_name']."' AND final_Status = 0");
-while ($activities7=mysql_fetch_array($proposedQuery7,MYSQL_ASSOC)){
+$proposedQuery7=mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed7['activities_name']."' AND final_Status = 0");
+while ($activities7=mysqli_fetch_array($proposedQuery7,mysqli_ASSOC)){
  
 ?>
 
@@ -2009,8 +2009,8 @@ while ($activities7=mysql_fetch_array($proposedQuery7,MYSQL_ASSOC)){
 <tr>
  
 <?php
-$userQuery7=mysql_query("select * from tbl_user where id=".$activities7['user_id']."");
-$userData7=mysql_fetch_array($userQuery7);
+$userQuery7=mysqli_query("select * from tbl_user where id=".$activities7['user_id']."");
+$userData7=mysqli_fetch_array($userQuery7);
 ?>
  
 <td valign="top" align="left"> <?=$userData7['Division']?></td>
@@ -2038,8 +2038,8 @@ $userData7=mysql_fetch_array($userQuery7);
 
 
  <?php
-$proposedQuery8=mysql_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
-while ($proposed8=mysql_fetch_array($proposedQuery8,MYSQL_ASSOC)){
+$proposedQuery8=mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
+while ($proposed8=mysqli_fetch_array($proposedQuery8,mysqli_ASSOC)){
 ?>
 
 <tr><td colspan="8"><h4 style="color:#1155cc; text-decoration:underline; font-weight:600;"><i class="fa fa-fw fa-long-arrow-right"></i><?=$proposed8['activities_name']?> </h4></td></tr> 
@@ -2047,16 +2047,16 @@ while ($proposed8=mysql_fetch_array($proposedQuery8,MYSQL_ASSOC)){
 
 <?php
 $i=1;
-$proposedQuery8=mysql_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND activities_name='".$proposed8['activities_name']."'AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."' AND final_Status = 0");
-while ($activities8=mysql_fetch_array($proposedQuery8,MYSQL_ASSOC)){
+$proposedQuery8=mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND activities_name='".$proposed8['activities_name']."'AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."' AND final_Status = 0");
+while ($activities8=mysqli_fetch_array($proposedQuery8,mysqli_ASSOC)){
  
 ?>
  
 <tr>
 
 <?php
-$userQuery8=mysql_query("select * from tbl_user where id=".$activities8['user_id']."");
-$userData8=mysql_fetch_array($userQuery8);
+$userQuery8=mysqli_query("select * from tbl_user where id=".$activities8['user_id']."");
+$userData8=mysqli_fetch_array($userQuery8);
 ?>
  
 <td valign="top" align="left"> <?=$userData8['Division']?></td>
@@ -2086,16 +2086,16 @@ $userData8=mysql_fetch_array($userQuery8);
 
 
  <?php
-$proposedQuery9=mysql_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
-while ($proposed9=mysql_fetch_array($proposedQuery9,MYSQL_ASSOC)){
+$proposedQuery9=mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
+while ($proposed9=mysqli_fetch_array($proposedQuery9,mysqli_ASSOC)){
 ?>
 
 <tr><td colspan="8"><h4 style="color:#1155cc; text-decoration:underline; font-weight:600;"><i class="fa fa-fw fa-long-arrow-right"></i><?=$proposed9['activities_name']?> </h4></td></tr> 
 
 <?php
 $i=1;
-$proposedQuery9=mysql_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed9['activities_name']."' AND final_Status = 0");
-while ($activities9=mysql_fetch_array($proposedQuery9,MYSQL_ASSOC)){
+$proposedQuery9=mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed9['activities_name']."' AND final_Status = 0");
+while ($activities9=mysqli_fetch_array($proposedQuery9,mysqli_ASSOC)){
 
  
 ?>
@@ -2103,8 +2103,8 @@ while ($activities9=mysql_fetch_array($proposedQuery9,MYSQL_ASSOC)){
 <tr>
 
 <?php
-$userQuery9=mysql_query("select * from tbl_user where id=".$activities9['user_id']."");
-$userData9=mysql_fetch_array($userQuery9);
+$userQuery9=mysqli_query("select * from tbl_user where id=".$activities9['user_id']."");
+$userData9=mysqli_fetch_array($userQuery9);
 ?>
  
 <td valign="top" align="left"> <?=$userData9['Division']?></td>
@@ -2133,8 +2133,8 @@ $userData9=mysql_fetch_array($userQuery9);
 
 
  <?php
-$proposedQuery10=mysql_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
-while ($proposed10=mysql_fetch_array($proposedQuery10,MYSQL_ASSOC)){
+$proposedQuery10=mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
+while ($proposed10=mysqli_fetch_array($proposedQuery10,mysqli_ASSOC)){
 ?>
 
 <tr><td colspan="8"><h4 style="color:#1155cc; text-decoration:underline; font-weight:600;"><i class="fa fa-fw fa-long-arrow-right"></i><?=$proposed10['activities_name']?> </h4></td></tr> 
@@ -2142,16 +2142,16 @@ while ($proposed10=mysql_fetch_array($proposedQuery10,MYSQL_ASSOC)){
 
 <?php
 $i=1;
-$proposedQuery10=mysql_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed10['activities_name']."' AND final_Status = 0");
-while ($activities10=mysql_fetch_array($proposedQuery10,MYSQL_ASSOC)){
+$proposedQuery10=mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed10['activities_name']."' AND final_Status = 0");
+while ($activities10=mysqli_fetch_array($proposedQuery10,mysqli_ASSOC)){
 
 ?>
  
 <tr>
 
 <?php
-$userQuery10=mysql_query("select * from tbl_user where id=".$activities10['user_id']."");
-$userData10=mysql_fetch_array($userQuery10);
+$userQuery10=mysqli_query("select * from tbl_user where id=".$activities10['user_id']."");
+$userData10=mysqli_fetch_array($userQuery10);
 ?>
  
 <td valign="top" align="left"> <?=$userData10['Division']?></td>
@@ -2180,8 +2180,8 @@ $userData10=mysql_fetch_array($userQuery10);
 
 
  <?php
-$proposedQuery11=mysql_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
-while ($proposed11=mysql_fetch_array($proposedQuery11,MYSQL_ASSOC)){
+$proposedQuery11=mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
+while ($proposed11=mysqli_fetch_array($proposedQuery11,mysqli_ASSOC)){
 ?>
 
 <tr><td colspan="8"><h4 style="color:#1155cc; text-decoration:underline; font-weight:600;"><i class="fa fa-fw fa-long-arrow-right"></i><?=$proposed11['activities_name']?> </h4></td></tr> 
@@ -2189,16 +2189,16 @@ while ($proposed11=mysql_fetch_array($proposedQuery11,MYSQL_ASSOC)){
 
 <?php
 $i=1;
-$proposedQuery11=mysql_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed11['activities_name']."' AND final_Status = 0");
-while ($activities11=mysql_fetch_array($proposedQuery11,MYSQL_ASSOC)){
+$proposedQuery11=mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed11['activities_name']."' AND final_Status = 0");
+while ($activities11=mysqli_fetch_array($proposedQuery11,mysqli_ASSOC)){
 
 ?>
  
 <tr>
 
 <?php
-$userQuery11=mysql_query("select * from tbl_user where id=".$activities11['user_id']."");
-$userData11=mysql_fetch_array($userQuery11);
+$userQuery11=mysqli_query("select * from tbl_user where id=".$activities11['user_id']."");
+$userData11=mysqli_fetch_array($userQuery11);
 ?>
  
 <td valign="top" align="left"> <?=$userData11['Division']?></td>
@@ -2227,8 +2227,8 @@ $userData11=mysql_fetch_array($userQuery11);
 
 
  <?php
-$proposedQuery12=mysql_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
-while ($proposed12=mysql_fetch_array($proposedQuery12,MYSQL_ASSOC)){
+$proposedQuery12=mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
+while ($proposed12=mysqli_fetch_array($proposedQuery12,mysqli_ASSOC)){
 ?>
 
 <tr><td colspan="8"><h4 style="color:#1155cc; text-decoration:underline; font-weight:600;"><i class="fa fa-fw fa-long-arrow-right"></i><?=$proposed12['activities_name']?> </h4></td></tr> 
@@ -2237,16 +2237,16 @@ while ($proposed12=mysql_fetch_array($proposedQuery12,MYSQL_ASSOC)){
 
 <?php
 $i=1;
-$proposedQuery12=mysql_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed12['activities_name']."' AND final_Status = 0");
-while ($activities12=mysql_fetch_array($proposedQuery12,MYSQL_ASSOC)){
+$proposedQuery12=mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed12['activities_name']."' AND final_Status = 0");
+while ($activities12=mysqli_fetch_array($proposedQuery12,mysqli_ASSOC)){
   
 ?>
  
 <tr>
 
 <?php
-$userQuery12=mysql_query("select * from tbl_user where id=".$activities12['user_id']."");
-$userData12=mysql_fetch_array($userQuery12);
+$userQuery12=mysqli_query("select * from tbl_user where id=".$activities12['user_id']."");
+$userData12=mysqli_fetch_array($userQuery12);
 ?>
  
 <td valign="top" align="left"> <?=$userData12['Division']?></td>
@@ -2275,8 +2275,8 @@ $userData12=mysql_fetch_array($userQuery12);
 
 
  <?php
-$proposedQuery13=mysql_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
-while ($proposed13=mysql_fetch_array($proposedQuery13,MYSQL_ASSOC)){
+$proposedQuery13=mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
+while ($proposed13=mysqli_fetch_array($proposedQuery13,mysqli_ASSOC)){
 ?>
 
 <tr><td colspan="8"><h4 style="color:#1155cc; text-decoration:underline; font-weight:600;"><i class="fa fa-fw fa-long-arrow-right"></i><?=$proposed13['activities_name']?> </h4></td></tr> 
@@ -2285,16 +2285,16 @@ while ($proposed13=mysql_fetch_array($proposedQuery13,MYSQL_ASSOC)){
 
 <?php
 $i=1;
-$proposedQuery13=mysql_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed13['activities_name']."' AND final_Status = 0");
-while ($activities13=mysql_fetch_array($proposedQuery13,MYSQL_ASSOC)){
+$proposedQuery13=mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed13['activities_name']."' AND final_Status = 0");
+while ($activities13=mysqli_fetch_array($proposedQuery13,mysqli_ASSOC)){
  
 ?>
  
 <tr>
 
 <?php
-$userQuery13=mysql_query("select * from tbl_user where id=".$activities13['user_id']."");
-$userData13=mysql_fetch_array($userQuery13);
+$userQuery13=mysqli_query("select * from tbl_user where id=".$activities13['user_id']."");
+$userData13=mysqli_fetch_array($userQuery13);
 ?>
  
 <td valign="top" align="left"> <?=$userData13['Division']?></td>
@@ -2325,26 +2325,26 @@ $userData13=mysql_fetch_array($userQuery13);
 
  <?php
 //echo "select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name"; 
-$proposedQuery14=mysql_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
-while ($proposed14=mysql_fetch_array($proposedQuery14,MYSQL_ASSOC)){
+$proposedQuery14=mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
+while ($proposed14=mysqli_fetch_array($proposedQuery14,mysqli_ASSOC)){
 ?>
 
 <tr><td colspan="8"><h4 style="color:#1155cc; text-decoration:underline; font-weight:600;"><i class="fa fa-fw fa-long-arrow-right"></i><?=$proposed14['activities_name']?> </h4></td></tr> 
 
 <?php
 $i=1;
-$proposedQuery14=mysql_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed14['activities_name']."' AND final_Status = 0");
+$proposedQuery14=mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed14['activities_name']."' AND final_Status = 0");
 
 
-while ($activities14=mysql_fetch_array($proposedQuery14,MYSQL_ASSOC)){
+while ($activities14=mysqli_fetch_array($proposedQuery14,mysqli_ASSOC)){
  
 ?>
  
 <tr>
 
 <?php
-$userQuery14=mysql_query("select * from tbl_user where id=".$activities14['user_id']."");
-$userData14=mysql_fetch_array($userQuery14);
+$userQuery14=mysqli_query("select * from tbl_user where id=".$activities14['user_id']."");
+$userData14=mysqli_fetch_array($userQuery14);
 ?>
  
 <td valign="top" align="left"> <?=$userData14['Division']?></td>
@@ -2373,15 +2373,15 @@ $userData14=mysql_fetch_array($userQuery14);
 
 
 <?php
-$proposedQuery15=mysql_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
-while ($proposed15=mysql_fetch_array($proposedQuery15,MYSQL_ASSOC)){
+$proposedQuery15=mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
+while ($proposed15=mysqli_fetch_array($proposedQuery15,mysqli_ASSOC)){
 ?>
 
 <tr><td colspan="8"><h4 style="color:#1155cc; text-decoration:underline; font-weight:600;"><i class="fa fa-fw fa-long-arrow-right"></i><?=$proposed15['activities_name']?> </h4></td></tr>
 <?php
 $k=1;
-$proposedQuery15=mysql_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed15['activities_name']."' AND final_Status = 0");
-while ($activities15=mysql_fetch_array($proposedQuery15,MYSQL_ASSOC)){
+$proposedQuery15=mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed15['activities_name']."' AND final_Status = 0");
+while ($activities15=mysqli_fetch_array($proposedQuery15,mysqli_ASSOC)){
  
 ?>
  
@@ -2389,8 +2389,8 @@ while ($activities15=mysql_fetch_array($proposedQuery15,MYSQL_ASSOC)){
 <tr>
 
 <?php
-$userQuery15=mysql_query("select * from tbl_user where id=".$activities15['user_id']."");
-$userData15=mysql_fetch_array($userQuery15);
+$userQuery15=mysqli_query("select * from tbl_user where id=".$activities15['user_id']."");
+$userData15=mysqli_fetch_array($userQuery15);
 ?>
 
 <td valign="top" align="left"> <?=$userData15['Division']?></td>
@@ -2423,23 +2423,23 @@ $userData15=mysql_fetch_array($userQuery15);
 
 
 <?php
-$proposedQuery16=mysql_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
-while ($proposed16=mysql_fetch_array($proposedQuery16,MYSQL_ASSOC)){
+$proposedQuery16=mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
+while ($proposed16=mysqli_fetch_array($proposedQuery16,mysqli_ASSOC)){
 ?>
 
 <tr><td colspan="8"><h4 style="color:#1155cc; text-decoration:underline; font-weight:600;"><i class="fa fa-fw fa-long-arrow-right"></i><?=$proposed16['activities_name']?> </h4></td></tr>
 <?php
 $i=1;
-$proposedQuery16=mysql_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed16['activities_name']."' AND final_Status = 0");
-while ($activities16=mysql_fetch_array($proposedQuery16,MYSQL_ASSOC)){
+$proposedQuery16=mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed16['activities_name']."' AND final_Status = 0");
+while ($activities16=mysqli_fetch_array($proposedQuery16,mysqli_ASSOC)){
  
 ?>
  
 <tr>
 
 <?php
-$userQuery16=mysql_query("select * from tbl_user where id=".$activities16['user_id']."");
-$userData16=mysql_fetch_array($userQuery16);
+$userQuery16=mysqli_query("select * from tbl_user where id=".$activities16['user_id']."");
+$userData16=mysqli_fetch_array($userQuery16);
 ?>
  
 <td valign="top" align="left"> <?=$userData16['Division']?></td>
@@ -2468,16 +2468,16 @@ $userData16=mysql_fetch_array($userQuery16);
 
 
 <?php
-$proposedQuery17=mysql_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
-while ($proposed17=mysql_fetch_array($proposedQuery17,MYSQL_ASSOC)){
+$proposedQuery17=mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND final_Status=0  GROUP BY  activities_name");
+while ($proposed17=mysqli_fetch_array($proposedQuery17,mysqli_ASSOC)){
 ?>
 
 <tr><td colspan="8"><h4 style="color:#1155cc; text-decoration:underline; font-weight:600;"><i class="fa fa-fw fa-long-arrow-right"></i><?=$proposed17['activities_name']?> </h4></td></tr>
 
 <?php
 $i=1;
-$proposedQuery17=mysql_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed17['activities_name']."' AND final_Status = 0");
-while ($activities17=mysql_fetch_array($proposedQuery17,MYSQL_ASSOC)){
+$proposedQuery17=mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed17['activities_name']."' AND final_Status = 0");
+while ($activities17=mysqli_fetch_array($proposedQuery17,mysqli_ASSOC)){
  
 ?>
 
@@ -2485,8 +2485,8 @@ while ($activities17=mysql_fetch_array($proposedQuery17,MYSQL_ASSOC)){
 <tr>
  
 <?php
-$userQuery17=mysql_query("select * from tbl_user where id=".$activities17['user_id']."");
-$userData17=mysql_fetch_array($userQuery17);
+$userQuery17=mysqli_query("select * from tbl_user where id=".$activities17['user_id']."");
+$userData17=mysqli_fetch_array($userQuery17);
 ?>
  
 <td valign="top" align="left"> <?=$userData17['Division']?></td>

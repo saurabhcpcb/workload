@@ -98,15 +98,15 @@ switch ($_GET['eid'])
 	break;
 	
 } 
-$getData=mysql_query("SELECT * FROM $dhTable where target_date='".date("Y-m-d", strtotime($_GET['cid']))."' AND rd_id='".$_GET['rd']."'");
-$getQueryResult=mysql_fetch_array($getData);
+$getData=mysqli_query("SELECT * FROM $dhTable where target_date='".date("Y-m-d", strtotime($_GET['cid']))."' AND rd_id='".$_GET['rd']."'");
+$getQueryResult=mysqli_fetch_array($getData);
 ?>
 <?php
 
 
 if(isset($_POST['submit']) && $_POST['submit']=="Save"){
  
- $updateQuery=mysql_query("UPDATE $dhTable SET target_date='".date("Y-m-d", strtotime($_POST['taget']))."' WHERE main_id=".$_POST['id']." AND rd_id='".$_POST['rd']."'");
+ $updateQuery=mysqli_query("UPDATE $dhTable SET target_date='".date("Y-m-d", strtotime($_POST['taget']))."' WHERE main_id=".$_POST['id']." AND rd_id='".$_POST['rd']."'");
 
 if($updateQuery)
 {

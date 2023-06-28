@@ -4,8 +4,8 @@ include('includes/connect.php');
 date_default_timezone_set('Asia/Kolkata');
 ?>
 <?php
-$getUserData=mysql_query("SELECT * FROM tbl_user where board='".$_GET['rd']."'");
-$user=mysql_fetch_array($getUserData);  
+$getUserData=mysqli_query("SELECT * FROM tbl_user where board='".$_GET['rd']."'");
+$user=mysqli_fetch_array($getUserData);  
 
 $month= date("m", strtotime($_GET['cid']));
 $year= date("Y", strtotime($_GET['cid']));
@@ -194,14 +194,14 @@ display: none !important;
 $i=0;
 
 $descriptionQuery="SELECT * FROM $dhTable where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd']."'";
-$getDescriptionQuery=mysql_query($descriptionQuery);
-while ($activities=mysql_fetch_array($getDescriptionQuery,MYSQL_ASSOC)){
+$getDescriptionQuery=mysqli_query($descriptionQuery);
+while ($activities=mysqli_fetch_array($getDescriptionQuery,mysqli_ASSOC)){
  
 ?>
 <tr>
 <?php
-$userQuery=mysql_query("select * from tbl_user where id=".$activities['user_id']."");
-$userData=mysql_fetch_array($userQuery);
+$userQuery=mysqli_query("select * from tbl_user where id=".$activities['user_id']."");
+$userData=mysqli_fetch_array($userQuery);
 ?>
 <td valign="top" align="left"> <?=$userData['Division']?></td>
  <td valign="top" align="left"> 

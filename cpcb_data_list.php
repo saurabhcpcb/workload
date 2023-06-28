@@ -13,12 +13,12 @@ if(isset($_POST['submit']) && $_POST['submit']=="Save")
 {
 
 $main="INSERT INTO tbl_activities_main(user_id) VALUES (".$_SESSION['userId']['id'].")";
-$mainQuery=mysql_query($main);
+$mainQuery=mysqli_query($main);
 
 
 if($main){
 
-$id = mysql_insert_id();
+$id = mysqli_insert_id();
 $location="upload/"; 
 /*--------------------------------------------------------------*/
  
@@ -41,7 +41,7 @@ if(!empty($_POST['Unit_Name0'][$i])){
 
 $strquery0="insert into  tbl_activities0(main_id,user_id, activities_name, priority,Unit_Name, rd_id,file,target_date) values (".$id.",'".$_SESSION['userId']['id']."',
 '".$_POST['activities_id0']."','".$_POST['priority0']."','".$_POST['Unit_Name0'][$i]."','".$_POST['rd_id0'][$i]."','".$fileName0."','".date("Y-m-d",strtotime($_POST['target_date0']))."')";
-mysql_query($strquery0);
+mysqli_query($strquery0);
 }
 }
 move_uploaded_file($_FILES['file0']['tmp_name'],$location.$fileName0);
@@ -68,7 +68,7 @@ for($i=0; $i<$countUnit_Name1; $i++)
 if(!empty($_POST['Unit_Name1'][$i])){
 
 $strquery1="insert into  tbl_activities1(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date) values (".$id.",'".$_SESSION['userId']['id']."','".$_POST['activities_id1']."','".$_POST['priority1']."','".$_POST['Unit_Name1'][$i]."','".$_POST['rd_id1'][$i]."','".$fileName1."','".date("Y-m-d",strtotime($_POST['target_date1']))."')";
-mysql_query($strquery1);
+mysqli_query($strquery1);
 }
 }
 move_uploaded_file($_FILES['file1']['tmp_name'],$location.$fileName1);
@@ -96,7 +96,7 @@ for($i=0; $i<$countUnit_Name2; $i++)
 if(!empty($_POST['Unit_Name2'][$i])){
 
 $strquery2="insert into  tbl_activities2(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date) values (".$id.",'".$_SESSION['userId']['id']."','".$_POST['activities_id2']."','".$_POST['priority2']."','".$_POST['Unit_Name2'][$i]."','".$_POST['rd_id2'][$i]."','".$fileName2."','".date("Y-m-d",strtotime($_POST['target_date2']))."')";
-mysql_query($strquery2);
+mysqli_query($strquery2);
 }
 }
 move_uploaded_file($_FILES['file2']['tmp_name'],$location.$fileName2);
@@ -122,7 +122,7 @@ for($i=0; $i<$countUnit_Name3; $i++)
 if(!empty($_POST['Unit_Name3'][$i])){
 
 $strquery3="insert into  tbl_activities3(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date) values (".$id.",'".$_SESSION['userId']['id']."','".$_POST['activities_id3']."','".$_POST['priority3']."','".$_POST['Unit_Name3'][$i]."','".$_POST['rd_id3'][$i]."','".$fileName3."','".date("Y-m-d",strtotime($_POST['target_date3']))."')";
-mysql_query($strquery3);
+mysqli_query($strquery3);
 }
 }
 move_uploaded_file($_FILES['file3']['tmp_name'],$location.$fileName3);
@@ -149,7 +149,7 @@ for($i=0; $i<$countUnit_Name4; $i++)
 if(!empty($_POST['Unit_Name4'][$i])){
 
 $strquery4="insert into  tbl_activities4(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date) values (".$id.",'".$_SESSION['userId']['id']."','".$_POST['activities_id4']."','".$_POST['priority4']."','".$_POST['Unit_Name4'][$i]."','".$_POST['rd_id4'][$i]."','".$fileName4."','".date("Y-m-d",strtotime($_POST['target_date4']))."')";
-mysql_query($strquery4);
+mysqli_query($strquery4);
 }
 }
 move_uploaded_file($_FILES['file4']['tmp_name'],$location.$fileName4);
@@ -176,7 +176,7 @@ for($i=0; $i<$countUnit_Name5; $i++)
 if(!empty($_POST['Unit_Name5'][$i])){
 
 $strquery5="insert into  tbl_activities5(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date) values (".$id.",'".$_SESSION['userId']['id']."','".$_POST['activities_id5']."','".$_POST['priority5']."','".$_POST['Unit_Name5'][$i]."','".$_POST['rd_id5'][$i]."','".$fileName5."','".date("Y-m-d",strtotime($_POST['target_date5']))."')";
-mysql_query($strquery5);
+mysqli_query($strquery5);
 }
 }
 move_uploaded_file($_FILES['file5']['tmp_name'],$location.$fileName5);
@@ -202,7 +202,7 @@ for($i=0; $i<$countUnit_Name6; $i++)
 if(!empty($_POST['Unit_Name6'][$i])){
 
 $strquery6="insert into  tbl_activities6(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date) values (".$id.",'".$_SESSION['userId']['id']."','".$_POST['activities_id6']."','".$_POST['priority6']."','".$_POST['Unit_Name6'][$i]."','".$_POST['rd_id6'][$i]."','".$fileName6."','".date("Y-m-d",strtotime($_POST['target_date6']))."')";
-mysql_query($strquery6);
+mysqli_query($strquery6);
 }
 }
 move_uploaded_file($_FILES['file6']['tmp_name'],$location.$fileName6);
@@ -228,7 +228,7 @@ for($i=0; $i<$countUnit_Name7; $i++)
 if(!empty($_POST['Unit_Name7'][$i])){
 
 $strquery7="insert into  tbl_activities7(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date) values (".$id.",'".$_SESSION['userId']['id']."','".$_POST['activities_id7']."','".$_POST['priority7']."','".$_POST['Unit_Name7'][$i]."','".$_POST['rd_id7'][$i]."','".$fileName7."','".date("Y-m-d",strtotime($_POST['target_date7']))."')";
-mysql_query($strquery7);
+mysqli_query($strquery7);
 }
 }
 move_uploaded_file($_FILES['file7']['tmp_name'],$location.$fileName7);
@@ -254,7 +254,7 @@ for($i=0; $i<$countUnit_Name8; $i++)
 if(!empty($_POST['Unit_Name8'][$i])){
 
 $strquery8="insert into  tbl_activities8(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date) values (".$id.",'".$_SESSION['userId']['id']."','".$_POST['activities_id8']."','".$_POST['priority8']."','".$_POST['Unit_Name8'][$i]."','".$_POST['rd_id8'][$i]."','".$fileName8."','".date("Y-m-d",strtotime($_POST['target_date8']))."')";
-mysql_query($strquery8);
+mysqli_query($strquery8);
 }
 }
 move_uploaded_file($_FILES['file8']['tmp_name'],$location.$fileName8);
@@ -281,7 +281,7 @@ for($i=0; $i<$countUnit_Name9; $i++)
 if(!empty($_POST['Unit_Name9'][$i])){
 
 $strquery9="insert into  tbl_activities9(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date) values (".$id.",'".$_SESSION['userId']['id']."','".$_POST['activities_id9']."','".$_POST['priority9']."','".$_POST['Unit_Name9'][$i]."','".$_POST['rd_id9'][$i]."','".$fileName9."','".date("Y-m-d",strtotime($_POST['target_date9']))."')";
-mysql_query($strquery9);
+mysqli_query($strquery9);
 }
 }
 move_uploaded_file($_FILES['file9']['tmp_name'],$location.$fileName9);
@@ -311,7 +311,7 @@ if(!empty($_POST['Unit_Name10'][$i])){
 
 $strquery10="insert into  tbl_activities10(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date) values (".$id.",'".$_SESSION['userId']['id']."',
 '".$_POST['activities_id10']."','".$_POST['priority10']."','".$_POST['Unit_Name10'][$i]."','".$_POST['rd_id10'][$i]."','".$fileName10."','".date("Y-m-d",strtotime($_POST['target_date10']))."')";
-mysql_query($strquery10);
+mysqli_query($strquery10);
 }
 }
 move_uploaded_file($_FILES['file10']['tmp_name'],$location.$fileName10);
@@ -339,7 +339,7 @@ if(!empty($_POST['Unit_Name11'][$i])){
 
 $strquery11="insert into  tbl_activities11(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date) values (".$id.",'".$_SESSION['userId']['id']."',
 '".$_POST['activities_id11']."','".$_POST['priority11']."','".$_POST['Unit_Name11'][$i]."','".$_POST['rd_id11'][$i]."','".$fileName11."','".date("Y-m-d",strtotime($_POST['target_date11']))."')";
-mysql_query($strquery11);
+mysqli_query($strquery11);
 }
 }
 move_uploaded_file($_FILES['file11']['tmp_name'],$location.$fileName11);
@@ -366,7 +366,7 @@ if(!empty($_POST['Unit_Name12'][$i])){
 
 $strquery12="insert into  tbl_activities12(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date) values (".$id.",'".$_SESSION['userId']['id']."',
 '".$_POST['activities_id12']."','".$_POST['priority12']."','".$_POST['Unit_Name12'][$i]."','".$_POST['rd_id12'][$i]."','".$fileName12."','".date("Y-m-d",strtotime($_POST['target_date12']))."')";
-mysql_query($strquery12);
+mysqli_query($strquery12);
 }
 }
 move_uploaded_file($_FILES['file12']['tmp_name'],$location.$fileName12);
@@ -393,7 +393,7 @@ if(!empty($_POST['Unit_Name13'][$i])){
 
 $strquery13="insert into  tbl_activities13(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date) values (".$id.",'".$_SESSION['userId']['id']."',
 '".$_POST['activities_id13']."','".$_POST['priority13']."','".$_POST['Unit_Name13'][$i]."','".$_POST['rd_id13'][$i]."','".$fileName13."','".date("Y-m-d",strtotime($_POST['target_date13']))."')";
-mysql_query($strquery13);
+mysqli_query($strquery13);
 }
 }
 move_uploaded_file($_FILES['file13']['tmp_name'],$location.$fileName13);
@@ -420,7 +420,7 @@ if(!empty($_POST['Unit_Name14'][$i])){
 
 $strquery14="insert into  tbl_activities14(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date) values (".$id.",'".$_SESSION['userId']['id']."',
 '".$_POST['activities_id14']."','".$_POST['priority14']."','".$_POST['Unit_Name14'][$i]."','".$_POST['rd_id14'][$i]."','".$fileName14."','".date("Y-m-d",strtotime($_POST['target_date14']))."')";
-mysql_query($strquery14);
+mysqli_query($strquery14);
 }
 }
 move_uploaded_file($_FILES['file14']['tmp_name'],$location.$fileName14);
@@ -447,7 +447,7 @@ if(!empty($_POST['Unit_Name15'][$i])){
 
 $strquery15="insert into  tbl_activities15(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date) values (".$id.",'".$_SESSION['userId']['id']."',
 '".$_POST['activities_id15']."','".$_POST['priority15']."','".$_POST['Unit_Name15'][$i]."','".$_POST['rd_id15'][$i]."','".$fileName15."','".date("Y-m-d",strtotime($_POST['target_date15']))."')";
-mysql_query($strquery15);
+mysqli_query($strquery15);
 }
 }
 move_uploaded_file($_FILES['file15']['tmp_name'],$location.$fileName15);
@@ -474,7 +474,7 @@ if(!empty($_POST['Unit_Name16'][$i])){
 
 $strquery16="insert into  tbl_activities16(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date) values (".$id.",'".$_SESSION['userId']['id']."',
 '".$_POST['activities_id16']."','".$_POST['priority16']."','".$_POST['Unit_Name16'][$i]."','".$_POST['rd_id16'][$i]."','".$fileName16."','".date("Y-m-d",strtotime($_POST['target_date16']))."')";
-mysql_query($strquery16);
+mysqli_query($strquery16);
 }
 }
 move_uploaded_file($_FILES['file16']['tmp_name'],$location.$fileName16);
@@ -501,7 +501,7 @@ if(!empty($_POST['Unit_Name17'][$i])){
 
 $strquery17="insert into  tbl_activities17(main_id,user_id,activities_name, priority,Unit_Name, rd_id,file,target_date) values (".$id.",'".$_SESSION['userId']['id']."',
 '".$_POST['activities_id17']."','".$_POST['priority17']."','".$_POST['Unit_Name17'][$i]."','".$_POST['rd_id17'][$i]."','".$fileName17."','".date("Y-m-d",strtotime($_POST['target_date17']))."')";
-mysql_query($strquery17);
+mysqli_query($strquery17);
 }
 }
 move_uploaded_file($_FILES['file17']['tmp_name'],$location.$fileName17);
@@ -648,8 +648,8 @@ $_SESSION['errors']="";
                
            <td width="30%"><select name="rd_id12" class="form-control" style="width:49%; margin-left:10px; float:left;" required>
           
-		   <?php $getQuery12=mysql_query("SELECT * FROM tbl_user where user_type='CPCB' ORDER BY board ASC"); 
-		   while($rd12=mysql_fetch_array($getQuery12)){?>
+		   <?php $getQuery12=mysqli_query("SELECT * FROM tbl_user where user_type='CPCB' ORDER BY board ASC"); 
+		   while($rd12=mysqli_fetch_array($getQuery12)){?>
            <option value="<?=$rd12['id']?>"  <?=($rd12['id']==$_GET['rd_id12'])?'selected':''?> ><?=$rd12['Division']?></option><?php }?>
            </select></td>
 
@@ -696,8 +696,8 @@ $_SESSION['errors']="";
   
 <?php 
 $i=1;
-$queryByDateRd=mysql_query("SELECT * FROM tbl_activities0 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
-while($dateRowRd=mysql_fetch_array($queryByDateRd)){
+$queryByDateRd=mysqli_query("SELECT * FROM tbl_activities0 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
+while($dateRowRd=mysqli_fetch_array($queryByDateRd)){
 ?>
   <tr>
     <td><?=$i?></td>
@@ -731,8 +731,8 @@ while($dateRowRd=mysql_fetch_array($queryByDateRd)){
   
 <?php 
 $i=1;
-$queryByDateRd1=mysql_query("SELECT * FROM tbl_activities1 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
-while($dateRowRd1=mysql_fetch_array($queryByDateRd1)){
+$queryByDateRd1=mysqli_query("SELECT * FROM tbl_activities1 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
+while($dateRowRd1=mysqli_fetch_array($queryByDateRd1)){
 ?>
   <tr>
     <td><?=$i?></td>
@@ -765,8 +765,8 @@ while($dateRowRd1=mysql_fetch_array($queryByDateRd1)){
   
 <?php 
 $i=1;
-$queryByDateRd2=mysql_query("SELECT * FROM tbl_activities2 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
-while($dateRowRd2=mysql_fetch_array($queryByDateRd2)){
+$queryByDateRd2=mysqli_query("SELECT * FROM tbl_activities2 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
+while($dateRowRd2=mysqli_fetch_array($queryByDateRd2)){
 ?>
   <tr>
     <td><?=$i?></td>
@@ -799,8 +799,8 @@ while($dateRowRd2=mysql_fetch_array($queryByDateRd2)){
   
 <?php 
 $i=1;
-$queryByDateRd3=mysql_query("SELECT * FROM tbl_activities3 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
-while($dateRowRd3=mysql_fetch_array($queryByDateRd3)){
+$queryByDateRd3=mysqli_query("SELECT * FROM tbl_activities3 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
+while($dateRowRd3=mysqli_fetch_array($queryByDateRd3)){
 ?>
   <tr>
     <td><?=$i?></td>
@@ -833,8 +833,8 @@ while($dateRowRd3=mysql_fetch_array($queryByDateRd3)){
   
 <?php 
 $i=1;
-$queryByDateRd4=mysql_query("SELECT * FROM tbl_activities4 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
-while($dateRowRd4=mysql_fetch_array($queryByDateRd4)){
+$queryByDateRd4=mysqli_query("SELECT * FROM tbl_activities4 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
+while($dateRowRd4=mysqli_fetch_array($queryByDateRd4)){
 ?>
   <tr>
     <td><?=$i?></td>
@@ -867,8 +867,8 @@ while($dateRowRd4=mysql_fetch_array($queryByDateRd4)){
   
 <?php 
 $i=1;
-$queryByDateRd5=mysql_query("SELECT * FROM tbl_activities5 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
-while($dateRowRd5=mysql_fetch_array($queryByDateRd5)){
+$queryByDateRd5=mysqli_query("SELECT * FROM tbl_activities5 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
+while($dateRowRd5=mysqli_fetch_array($queryByDateRd5)){
 ?>
   <tr>
     <td><?=$i?></td>
@@ -901,8 +901,8 @@ while($dateRowRd5=mysql_fetch_array($queryByDateRd5)){
   
 <?php 
 $i=1;
-$queryByDateRd6=mysql_query("SELECT * FROM tbl_activities6 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
-while($dateRowRd6=mysql_fetch_array($queryByDateRd6)){
+$queryByDateRd6=mysqli_query("SELECT * FROM tbl_activities6 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
+while($dateRowRd6=mysqli_fetch_array($queryByDateRd6)){
 ?>
   <tr>
     <td><?=$i?></td>
@@ -935,8 +935,8 @@ while($dateRowRd6=mysql_fetch_array($queryByDateRd6)){
   
 <?php 
 $i=1;
-$queryByDateRd7=mysql_query("SELECT * FROM tbl_activities7 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
-while($dateRowRd7=mysql_fetch_array($queryByDateRd7)){
+$queryByDateRd7=mysqli_query("SELECT * FROM tbl_activities7 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
+while($dateRowRd7=mysqli_fetch_array($queryByDateRd7)){
 ?>
   <tr>
     <td><?=$i?></td>
@@ -969,8 +969,8 @@ while($dateRowRd7=mysql_fetch_array($queryByDateRd7)){
   
 <?php 
 $i=1;
-$queryByDateRd8=mysql_query("SELECT * FROM tbl_activities8 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
-while($dateRowRd8=mysql_fetch_array($queryByDateRd8)){
+$queryByDateRd8=mysqli_query("SELECT * FROM tbl_activities8 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
+while($dateRowRd8=mysqli_fetch_array($queryByDateRd8)){
 ?>
   <tr>
     <td><?=$i?></td>
@@ -1003,8 +1003,8 @@ while($dateRowRd8=mysql_fetch_array($queryByDateRd8)){
   
 <?php 
 $i=1;
-$queryByDateRd9=mysql_query("SELECT * FROM tbl_activities9 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
-while($dateRowRd9=mysql_fetch_array($queryByDateRd9)){
+$queryByDateRd9=mysqli_query("SELECT * FROM tbl_activities9 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
+while($dateRowRd9=mysqli_fetch_array($queryByDateRd9)){
 ?>
   <tr>
     <td><?=$i?></td>
@@ -1037,8 +1037,8 @@ while($dateRowRd9=mysql_fetch_array($queryByDateRd9)){
   
 <?php 
 $i=1;
-$queryByDateRd10=mysql_query("SELECT * FROM tbl_activities10 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
-while($dateRowRd10=mysql_fetch_array($queryByDateRd10)){
+$queryByDateRd10=mysqli_query("SELECT * FROM tbl_activities10 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
+while($dateRowRd10=mysqli_fetch_array($queryByDateRd10)){
 ?>
   <tr>
     <td><?=$i?></td>
@@ -1071,8 +1071,8 @@ while($dateRowRd10=mysql_fetch_array($queryByDateRd10)){
   
 <?php 
 $i=1;
-$queryByDateRd11=mysql_query("SELECT * FROM tbl_activities11 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
-while($dateRowRd11=mysql_fetch_array($queryByDateRd11)){
+$queryByDateRd11=mysqli_query("SELECT * FROM tbl_activities11 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
+while($dateRowRd11=mysqli_fetch_array($queryByDateRd11)){
 ?>
   <tr>
     <td><?=$i?></td>
@@ -1105,8 +1105,8 @@ while($dateRowRd11=mysql_fetch_array($queryByDateRd11)){
   
 <?php 
 $i=1;
-$queryByDateRd12=mysql_query("SELECT * FROM tbl_activities12 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
-while($dateRowRd12=mysql_fetch_array($queryByDateRd12)){
+$queryByDateRd12=mysqli_query("SELECT * FROM tbl_activities12 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
+while($dateRowRd12=mysqli_fetch_array($queryByDateRd12)){
 ?>
   <tr>
     <td><?=$i?></td>
@@ -1139,8 +1139,8 @@ while($dateRowRd12=mysql_fetch_array($queryByDateRd12)){
   
 <?php 
 $i=1;
-$queryByDateRd13=mysql_query("SELECT * FROM tbl_activities13 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
-while($dateRowRd13=mysql_fetch_array($queryByDateRd13)){
+$queryByDateRd13=mysqli_query("SELECT * FROM tbl_activities13 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
+while($dateRowRd13=mysqli_fetch_array($queryByDateRd13)){
 ?>
   <tr>
     <td><?=$i?></td>
@@ -1173,8 +1173,8 @@ while($dateRowRd13=mysql_fetch_array($queryByDateRd13)){
   
 <?php 
 $i=1;
-$queryByDateRd14=mysql_query("SELECT * FROM tbl_activities14 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
-while($dateRowRd14=mysql_fetch_array($queryByDateRd14)){
+$queryByDateRd14=mysqli_query("SELECT * FROM tbl_activities14 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
+while($dateRowRd14=mysqli_fetch_array($queryByDateRd14)){
 ?>
   <tr>
     <td><?=$i?></td>
@@ -1209,8 +1209,8 @@ while($dateRowRd14=mysql_fetch_array($queryByDateRd14)){
 <?php 
 $i=1;
 
-$queryByDateRd15=mysql_query("SELECT * FROM tbl_activities15 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
-while($dateRowRd15=mysql_fetch_array($queryByDateRd15)){
+$queryByDateRd15=mysqli_query("SELECT * FROM tbl_activities15 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
+while($dateRowRd15=mysqli_fetch_array($queryByDateRd15)){
 ?>
   <tr>
     <td><?=$i?></td>
@@ -1243,8 +1243,8 @@ while($dateRowRd15=mysql_fetch_array($queryByDateRd15)){
   
 <?php 
 $i=1;
-$queryByDateRd16=mysql_query("SELECT * FROM tbl_activities16 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
-while($dateRowRd16=mysql_fetch_array($queryByDateRd16)){
+$queryByDateRd16=mysqli_query("SELECT * FROM tbl_activities16 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
+while($dateRowRd16=mysqli_fetch_array($queryByDateRd16)){
 ?>
   <tr>
     <td><?=$i?></td>
@@ -1277,8 +1277,8 @@ while($dateRowRd16=mysql_fetch_array($queryByDateRd16)){
   
 <?php 
 $i=1;
-$queryByDateRd17=mysql_query("SELECT * FROM tbl_activities17 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
-while($dateRowRd17=mysql_fetch_array($queryByDateRd17)){
+$queryByDateRd17=mysqli_query("SELECT * FROM tbl_activities17 where YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND user_id= '".$_GET['rd_id12']."'");  
+while($dateRowRd17=mysqli_fetch_array($queryByDateRd17)){
 ?>
   <tr>
     <td><?=$i?></td>

@@ -142,8 +142,8 @@ $_SESSION['errors']="";
   </tr>
 <?php 
 
-$getActivitis=mysql_query("select * from tbl_user_activities_list where user_id=".$_SESSION['userId']['id']."");
-while($row=mysql_fetch_array($getActivitis))
+$getActivitis=mysqli_query("select * from tbl_user_activities_list where user_id=".$_SESSION['userId']['id']."");
+while($row=mysqli_fetch_array($getActivitis))
 {
 $dataList[]=$row['activities_id'];
 }
@@ -159,8 +159,8 @@ $dataList[]=$row['activities_id'];
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities0=mysql_query("SELECT * FROM  tbl_activities0 where main_id=".$_GET['id']."");
-while($activitiesList0=mysql_fetch_array($activities0)){
+$activities0=mysqli_query("SELECT * FROM  tbl_activities0 where main_id=".$_GET['id']."");
+while($activitiesList0=mysqli_fetch_array($activities0)){
 ?>
 
   <tr>
@@ -174,9 +174,9 @@ while($activitiesList0=mysql_fetch_array($activities0)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile0=mysql_query("SELECT * FROM  tbl_activities0 where main_id=".$_GET['id']."");
-if(mysql_num_rows($activitiesFile0)>0){
-$activitiesFileList0=mysql_fetch_array($activitiesFile0);
+$activitiesFile0=mysqli_query("SELECT * FROM  tbl_activities0 where main_id=".$_GET['id']."");
+if(mysqli_num_rows($activitiesFile0)>0){
+$activitiesFileList0=mysqli_fetch_array($activitiesFile0);
 ?>
   <tr>
       <td width="55%">Upload File : <?php if($activitiesFileList0['file']==""){ echo"No File";} else {?><a href="upload/<?=$activitiesFileList0['file']?>" target="_blank"><?=$activitiesFileList0['file']?></a><?php } ?></td>
@@ -200,8 +200,8 @@ $activitiesFileList0=mysql_fetch_array($activitiesFile0);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities1=mysql_query("SELECT * FROM  tbl_activities1 where main_id=".$_GET['id']."");
-while($activitiesList1=mysql_fetch_array($activities1)){
+$activities1=mysqli_query("SELECT * FROM  tbl_activities1 where main_id=".$_GET['id']."");
+while($activitiesList1=mysqli_fetch_array($activities1)){
 ?>
 
   <tr>
@@ -215,9 +215,9 @@ while($activitiesList1=mysql_fetch_array($activities1)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile1=mysql_query("SELECT * FROM  tbl_activities1 where main_id=".$_GET['id']."");
-if(mysql_num_rows($activitiesFile1)>0){
-$activitiesFileList1=mysql_fetch_array($activitiesFile1);
+$activitiesFile1=mysqli_query("SELECT * FROM  tbl_activities1 where main_id=".$_GET['id']."");
+if(mysqli_num_rows($activitiesFile1)>0){
+$activitiesFileList1=mysqli_fetch_array($activitiesFile1);
 ?>
   <tr>
     <td width="55%">Upload File : <?php if($activitiesFileList1['file']==""){ echo"No File";} else {?><a href="upload/<?=$activitiesFileList1['file']?>" target="_blank"><?=$activitiesFileList1['file']?></a><?php } ?></td>
@@ -240,8 +240,8 @@ $activitiesFileList1=mysql_fetch_array($activitiesFile1);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities2=mysql_query("SELECT * FROM  tbl_activities2 where main_id=".$_GET['id']."");
-while($activitiesList2=mysql_fetch_array($activities2)){
+$activities2=mysqli_query("SELECT * FROM  tbl_activities2 where main_id=".$_GET['id']."");
+while($activitiesList2=mysqli_fetch_array($activities2)){
 ?>
 
   <tr>
@@ -255,9 +255,9 @@ while($activitiesList2=mysql_fetch_array($activities2)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile2=mysql_query("SELECT * FROM  tbl_activities2 where main_id=".$_GET['id']."");
-if(mysql_num_rows($activitiesFile2)>0){
-$activitiesFileList2=mysql_fetch_array($activitiesFile2);
+$activitiesFile2=mysqli_query("SELECT * FROM  tbl_activities2 where main_id=".$_GET['id']."");
+if(mysqli_num_rows($activitiesFile2)>0){
+$activitiesFileList2=mysqli_fetch_array($activitiesFile2);
 ?>
   <tr>
   <td width="55%">Upload File : <?php if($activitiesFileList2['file']==""){ echo"No File";} else {?><a href="upload/<?=$activitiesFileList2['file']?>" target="_blank"><?=$activitiesFileList2['file']?></a><?php } ?></td>
@@ -280,8 +280,8 @@ $activitiesFileList2=mysql_fetch_array($activitiesFile2);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities3=mysql_query("SELECT * FROM  tbl_activities3 where main_id=".$_GET['id']."");
-while($activitiesList3=mysql_fetch_array($activities3)){
+$activities3=mysqli_query("SELECT * FROM  tbl_activities3 where main_id=".$_GET['id']."");
+while($activitiesList3=mysqli_fetch_array($activities3)){
 ?>
 
   <tr>
@@ -295,9 +295,9 @@ while($activitiesList3=mysql_fetch_array($activities3)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile3=mysql_query("SELECT * FROM  tbl_activities3 where main_id=".$_GET['id']."");
-if(mysql_num_rows($activitiesFile3)>0){
-$activitiesFileList3=mysql_fetch_array($activitiesFile3);
+$activitiesFile3=mysqli_query("SELECT * FROM  tbl_activities3 where main_id=".$_GET['id']."");
+if(mysqli_num_rows($activitiesFile3)>0){
+$activitiesFileList3=mysqli_fetch_array($activitiesFile3);
 ?>
   <tr>
   <td width="55%">Upload File : <?php if($activitiesFileList3['file']==""){ echo"No File";} else {?><a href="upload/<?=$activitiesFileList3['file']?>" target="_blank"><?=$activitiesFileList3['file']?></a><?php } ?></td>
@@ -320,8 +320,8 @@ $activitiesFileList3=mysql_fetch_array($activitiesFile3);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities4=mysql_query("SELECT * FROM  tbl_activities4 where main_id=".$_GET['id']."");
-while($activitiesList4=mysql_fetch_array($activities4)){
+$activities4=mysqli_query("SELECT * FROM  tbl_activities4 where main_id=".$_GET['id']."");
+while($activitiesList4=mysqli_fetch_array($activities4)){
 ?>
 
   <tr>
@@ -335,9 +335,9 @@ while($activitiesList4=mysql_fetch_array($activities4)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile4=mysql_query("SELECT * FROM  tbl_activities4 where main_id=".$_GET['id']."");
-if(mysql_num_rows($activitiesFile4)>0){
-$activitiesFileList4=mysql_fetch_array($activitiesFile4);
+$activitiesFile4=mysqli_query("SELECT * FROM  tbl_activities4 where main_id=".$_GET['id']."");
+if(mysqli_num_rows($activitiesFile4)>0){
+$activitiesFileList4=mysqli_fetch_array($activitiesFile4);
 ?>
   <tr>
    <td width="55%">Upload File : <?php if($activitiesFileList4['file']==""){ echo"No File";} else {?><a href="upload/<?=$activitiesFileList4['file']?>" target="_blank"><?=$activitiesFileList4['file']?></a><?php } ?></td>
@@ -360,8 +360,8 @@ $activitiesFileList4=mysql_fetch_array($activitiesFile4);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities5=mysql_query("SELECT * FROM  tbl_activities5 where main_id=".$_GET['id']."");
-while($activitiesList5=mysql_fetch_array($activities5)){
+$activities5=mysqli_query("SELECT * FROM  tbl_activities5 where main_id=".$_GET['id']."");
+while($activitiesList5=mysqli_fetch_array($activities5)){
 ?>
 
   <tr>
@@ -375,9 +375,9 @@ while($activitiesList5=mysql_fetch_array($activities5)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile5=mysql_query("SELECT * FROM  tbl_activities5 where main_id=".$_GET['id']."");
-if(mysql_num_rows($activitiesFile5)>0){
-$activitiesFileList5=mysql_fetch_array($activitiesFile5);
+$activitiesFile5=mysqli_query("SELECT * FROM  tbl_activities5 where main_id=".$_GET['id']."");
+if(mysqli_num_rows($activitiesFile5)>0){
+$activitiesFileList5=mysqli_fetch_array($activitiesFile5);
 ?>
   <tr>
   <td width="55%">Upload File : <?php if($activitiesFileList5['file']==""){ echo"No File";} else {?><a href="upload/<?=$activitiesFileList5['file']?>" target="_blank"><?=$activitiesFileList5['file']?></a><?php } ?></td>
@@ -400,8 +400,8 @@ $activitiesFileList5=mysql_fetch_array($activitiesFile5);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities6=mysql_query("SELECT * FROM  tbl_activities6 where main_id=".$_GET['id']."");
-while($activitiesList6=mysql_fetch_array($activities6)){
+$activities6=mysqli_query("SELECT * FROM  tbl_activities6 where main_id=".$_GET['id']."");
+while($activitiesList6=mysqli_fetch_array($activities6)){
 ?>
 
   <tr>
@@ -415,9 +415,9 @@ while($activitiesList6=mysql_fetch_array($activities6)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile6=mysql_query("SELECT * FROM  tbl_activities6 where main_id=".$_GET['id']."");
-if(mysql_num_rows($activitiesFile6)>0){
-$activitiesFileList6=mysql_fetch_array($activitiesFile6);
+$activitiesFile6=mysqli_query("SELECT * FROM  tbl_activities6 where main_id=".$_GET['id']."");
+if(mysqli_num_rows($activitiesFile6)>0){
+$activitiesFileList6=mysqli_fetch_array($activitiesFile6);
 ?>
   <tr>
   <td width="55%">Upload File : <?php if($activitiesFileList6['file']==""){ echo"No File";} else {?><a href="upload/<?=$activitiesFileList6['file']?>" target="_blank"><?=$activitiesFileList6['file']?></a><?php } ?></td>
@@ -440,8 +440,8 @@ $activitiesFileList6=mysql_fetch_array($activitiesFile6);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities7=mysql_query("SELECT * FROM  tbl_activities7 where main_id=".$_GET['id']."");
-while($activitiesList7=mysql_fetch_array($activities7)){
+$activities7=mysqli_query("SELECT * FROM  tbl_activities7 where main_id=".$_GET['id']."");
+while($activitiesList7=mysqli_fetch_array($activities7)){
 ?>
 
   <tr>
@@ -455,9 +455,9 @@ while($activitiesList7=mysql_fetch_array($activities7)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile7=mysql_query("SELECT * FROM  tbl_activities7 where main_id=".$_GET['id']."");
-if(mysql_num_rows($activitiesFile7)>0){
-$activitiesFileList7=mysql_fetch_array($activitiesFile7);
+$activitiesFile7=mysqli_query("SELECT * FROM  tbl_activities7 where main_id=".$_GET['id']."");
+if(mysqli_num_rows($activitiesFile7)>0){
+$activitiesFileList7=mysqli_fetch_array($activitiesFile7);
 ?>
   <tr>
   <td width="55%">Upload File : <?php if($activitiesFileList7['file']==""){ echo"No File";} else {?><a href="upload/<?=$activitiesFileList7['file']?>" target="_blank"><?=$activitiesFileList7['file']?></a><?php } ?></td>
@@ -480,8 +480,8 @@ $activitiesFileList7=mysql_fetch_array($activitiesFile7);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities8=mysql_query("SELECT * FROM  tbl_activities8 where main_id=".$_GET['id']."");
-while($activitiesList8=mysql_fetch_array($activities8)){
+$activities8=mysqli_query("SELECT * FROM  tbl_activities8 where main_id=".$_GET['id']."");
+while($activitiesList8=mysqli_fetch_array($activities8)){
 ?>
 
   <tr>
@@ -495,9 +495,9 @@ while($activitiesList8=mysql_fetch_array($activities8)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile8=mysql_query("SELECT * FROM  tbl_activities8 where main_id=".$_GET['id']."");
-if(mysql_num_rows($activitiesFile8)>0){
-$activitiesFileList8=mysql_fetch_array($activitiesFile8);
+$activitiesFile8=mysqli_query("SELECT * FROM  tbl_activities8 where main_id=".$_GET['id']."");
+if(mysqli_num_rows($activitiesFile8)>0){
+$activitiesFileList8=mysqli_fetch_array($activitiesFile8);
 ?>
   <tr>
   <td width="55%">Upload File : <?php if($activitiesFileList8['file']==""){ echo"No File";} else {?><a href="upload/<?=$activitiesFileList8['file']?>" target="_blank"><?=$activitiesFileList8['file']?></a><?php } ?></td>
@@ -520,8 +520,8 @@ $activitiesFileList8=mysql_fetch_array($activitiesFile8);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities9=mysql_query("SELECT * FROM  tbl_activities9 where main_id=".$_GET['id']."");
-while($activitiesList9=mysql_fetch_array($activities9)){
+$activities9=mysqli_query("SELECT * FROM  tbl_activities9 where main_id=".$_GET['id']."");
+while($activitiesList9=mysqli_fetch_array($activities9)){
 ?>
 
   <tr>
@@ -535,9 +535,9 @@ while($activitiesList9=mysql_fetch_array($activities9)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile9=mysql_query("SELECT * FROM  tbl_activities9 where main_id=".$_GET['id']."");
-if(mysql_num_rows($activitiesFile9)>0){
-$activitiesFileList9=mysql_fetch_array($activitiesFile9);
+$activitiesFile9=mysqli_query("SELECT * FROM  tbl_activities9 where main_id=".$_GET['id']."");
+if(mysqli_num_rows($activitiesFile9)>0){
+$activitiesFileList9=mysqli_fetch_array($activitiesFile9);
 ?>
   <tr>
   <td width="55%">Upload File : <?php if($activitiesFileList9['file']==""){ echo"No File";} else {?><a href="upload/<?=$activitiesFileList9['file']?>" target="_blank"><?=$activitiesFileList9['file']?></a><?php } ?></td>
@@ -560,8 +560,8 @@ $activitiesFileList9=mysql_fetch_array($activitiesFile9);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities10=mysql_query("SELECT * FROM  tbl_activities10 where main_id=".$_GET['id']."");
-while($activitiesList10=mysql_fetch_array($activities10)){
+$activities10=mysqli_query("SELECT * FROM  tbl_activities10 where main_id=".$_GET['id']."");
+while($activitiesList10=mysqli_fetch_array($activities10)){
 ?>
 
   <tr>
@@ -575,9 +575,9 @@ while($activitiesList10=mysql_fetch_array($activities10)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile10=mysql_query("SELECT * FROM  tbl_activities10 where main_id=".$_GET['id']."");
-if(mysql_num_rows($activitiesFile10)>0){
-$activitiesFileList10=mysql_fetch_array($activitiesFile10);
+$activitiesFile10=mysqli_query("SELECT * FROM  tbl_activities10 where main_id=".$_GET['id']."");
+if(mysqli_num_rows($activitiesFile10)>0){
+$activitiesFileList10=mysqli_fetch_array($activitiesFile10);
 ?>
   <tr>
    <td width="55%">Upload File : <?php if($activitiesFileList10['file']==""){ echo"No File";} else {?><a href="upload/<?=$activitiesFileList10['file']?>" target="_blank"><?=$activitiesFileList10['file']?></a><?php } ?></td>
@@ -600,8 +600,8 @@ $activitiesFileList10=mysql_fetch_array($activitiesFile10);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities11=mysql_query("SELECT * FROM  tbl_activities11 where main_id=".$_GET['id']."");
-while($activitiesList11=mysql_fetch_array($activities11)){
+$activities11=mysqli_query("SELECT * FROM  tbl_activities11 where main_id=".$_GET['id']."");
+while($activitiesList11=mysqli_fetch_array($activities11)){
 ?>
 
   <tr>
@@ -615,9 +615,9 @@ while($activitiesList11=mysql_fetch_array($activities11)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile11=mysql_query("SELECT * FROM  tbl_activities11 where main_id=".$_GET['id']."");
-if(mysql_num_rows($activitiesFile11)>0){
-$activitiesFileList11=mysql_fetch_array($activitiesFile11);
+$activitiesFile11=mysqli_query("SELECT * FROM  tbl_activities11 where main_id=".$_GET['id']."");
+if(mysqli_num_rows($activitiesFile11)>0){
+$activitiesFileList11=mysqli_fetch_array($activitiesFile11);
 ?>
   <tr>
   <td width="55%">Upload File : <?php if($activitiesFileList11['file']==""){ echo"No File";} else {?><a href="upload/<?=$activitiesFileList11['file']?>" target="_blank"><?=$activitiesFileList11['file']?></a><?php } ?></td>
@@ -640,8 +640,8 @@ $activitiesFileList11=mysql_fetch_array($activitiesFile11);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities12=mysql_query("SELECT * FROM  tbl_activities12 where main_id=".$_GET['id']."");
-while($activitiesList12=mysql_fetch_array($activities12)){
+$activities12=mysqli_query("SELECT * FROM  tbl_activities12 where main_id=".$_GET['id']."");
+while($activitiesList12=mysqli_fetch_array($activities12)){
 ?>
 
   <tr>
@@ -655,9 +655,9 @@ while($activitiesList12=mysql_fetch_array($activities12)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile12=mysql_query("SELECT * FROM  tbl_activities12 where main_id=".$_GET['id']."");
-if(mysql_num_rows($activitiesFile12)>0){
-$activitiesFileList12=mysql_fetch_array($activitiesFile12);
+$activitiesFile12=mysqli_query("SELECT * FROM  tbl_activities12 where main_id=".$_GET['id']."");
+if(mysqli_num_rows($activitiesFile12)>0){
+$activitiesFileList12=mysqli_fetch_array($activitiesFile12);
 ?>
   <tr>
   <td width="55%">Upload File : <?php if($activitiesFileList12['file']==""){ echo"No File";} else {?><a href="upload/<?=$activitiesFileList12['file']?>" target="_blank"><?=$activitiesFileList12['file']?></a><?php } ?></td>
@@ -680,8 +680,8 @@ $activitiesFileList12=mysql_fetch_array($activitiesFile12);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities13=mysql_query("SELECT * FROM  tbl_activities13 where main_id=".$_GET['id']."");
-while($activitiesList13=mysql_fetch_array($activities13)){
+$activities13=mysqli_query("SELECT * FROM  tbl_activities13 where main_id=".$_GET['id']."");
+while($activitiesList13=mysqli_fetch_array($activities13)){
 ?>
 
   <tr>
@@ -695,9 +695,9 @@ while($activitiesList13=mysql_fetch_array($activities13)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile13=mysql_query("SELECT * FROM  tbl_activities13 where main_id=".$_GET['id']."");
-if(mysql_num_rows($activitiesFile13)>0){
-$activitiesFileList13=mysql_fetch_array($activitiesFile13);
+$activitiesFile13=mysqli_query("SELECT * FROM  tbl_activities13 where main_id=".$_GET['id']."");
+if(mysqli_num_rows($activitiesFile13)>0){
+$activitiesFileList13=mysqli_fetch_array($activitiesFile13);
 ?>
   <tr>
   <td width="55%">Upload File : <?php if($activitiesFileList13['file']==""){ echo"No File";} else {?><a href="upload/<?=$activitiesFileList13['file']?>" target="_blank"><?=$activitiesFileList13['file']?></a><?php } ?></td>
@@ -720,8 +720,8 @@ $activitiesFileList13=mysql_fetch_array($activitiesFile13);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities14=mysql_query("SELECT * FROM  tbl_activities14 where main_id=".$_GET['id']."");
-while($activitiesList14=mysql_fetch_array($activities14)){
+$activities14=mysqli_query("SELECT * FROM  tbl_activities14 where main_id=".$_GET['id']."");
+while($activitiesList14=mysqli_fetch_array($activities14)){
 ?>
 
   <tr>
@@ -735,9 +735,9 @@ while($activitiesList14=mysql_fetch_array($activities14)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile14=mysql_query("SELECT * FROM  tbl_activities14 where main_id=".$_GET['id']."");
-if(mysql_num_rows($activitiesFile14)>0){
-$activitiesFileList14=mysql_fetch_array($activitiesFile14);
+$activitiesFile14=mysqli_query("SELECT * FROM  tbl_activities14 where main_id=".$_GET['id']."");
+if(mysqli_num_rows($activitiesFile14)>0){
+$activitiesFileList14=mysqli_fetch_array($activitiesFile14);
 ?>
   <tr>
    <td width="55%">Upload File : <?php if($activitiesFileList14['file']==""){ echo"No File";} else {?><a href="upload/<?=$activitiesFileList14['file']?>" target="_blank"><?=$activitiesFileList14['file']?></a><?php } ?></td>
@@ -761,8 +761,8 @@ $activitiesFileList14=mysql_fetch_array($activitiesFile14);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities15=mysql_query("SELECT * FROM  tbl_activities15 where main_id=".$_GET['id']."");
-while($activitiesList15=mysql_fetch_array($activities15)){
+$activities15=mysqli_query("SELECT * FROM  tbl_activities15 where main_id=".$_GET['id']."");
+while($activitiesList15=mysqli_fetch_array($activities15)){
 ?>
 
   <tr>
@@ -776,9 +776,9 @@ while($activitiesList15=mysql_fetch_array($activities15)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile15=mysql_query("SELECT * FROM  tbl_activities15 where main_id=".$_GET['id']."");
-if(mysql_num_rows($activitiesFile15)>0){
-$activitiesFileList15=mysql_fetch_array($activitiesFile15);
+$activitiesFile15=mysqli_query("SELECT * FROM  tbl_activities15 where main_id=".$_GET['id']."");
+if(mysqli_num_rows($activitiesFile15)>0){
+$activitiesFileList15=mysqli_fetch_array($activitiesFile15);
 ?>
   <tr>
    <td width="55%">Upload File : <?php if($activitiesFileList15['file']==""){ echo"No File";} else {?><a href="upload/<?=$activitiesFileList15['file']?>" target="_blank"><?=$activitiesFileList15['file']?></a><?php } ?></td>
@@ -801,8 +801,8 @@ $activitiesFileList15=mysql_fetch_array($activitiesFile15);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities16=mysql_query("SELECT * FROM  tbl_activities16 where main_id=".$_GET['id']."");
-while($activitiesList16=mysql_fetch_array($activities16)){
+$activities16=mysqli_query("SELECT * FROM  tbl_activities16 where main_id=".$_GET['id']."");
+while($activitiesList16=mysqli_fetch_array($activities16)){
 ?>
 
   <tr>
@@ -816,9 +816,9 @@ while($activitiesList16=mysql_fetch_array($activities16)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile16=mysql_query("SELECT * FROM  tbl_activities16 where main_id=".$_GET['id']."");
-if(mysql_num_rows($activitiesFile16)>0){
-$activitiesFileList16=mysql_fetch_array($activitiesFile16);
+$activitiesFile16=mysqli_query("SELECT * FROM  tbl_activities16 where main_id=".$_GET['id']."");
+if(mysqli_num_rows($activitiesFile16)>0){
+$activitiesFileList16=mysqli_fetch_array($activitiesFile16);
 ?>
   <tr>
   <td width="55%">Upload File : <?php if($activitiesFileList16['file']==""){ echo"No File";} else {?><a href="upload/<?=$activitiesFileList16['file']?>" target="_blank"><?=$activitiesFileList16['file']?></a><?php } ?></td>
@@ -841,8 +841,8 @@ $activitiesFileList16=mysql_fetch_array($activitiesFile16);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities17=mysql_query("SELECT * FROM  tbl_activities17 where main_id=".$_GET['id']."");
-while($activitiesList17=mysql_fetch_array($activities17)){
+$activities17=mysqli_query("SELECT * FROM  tbl_activities17 where main_id=".$_GET['id']."");
+while($activitiesList17=mysqli_fetch_array($activities17)){
 ?>
 
   <tr>
@@ -856,10 +856,10 @@ while($activitiesList17=mysql_fetch_array($activities17)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile17=mysql_query("SELECT * FROM  tbl_activities17 where main_id=".$_GET['id']."");
+$activitiesFile17=mysqli_query("SELECT * FROM  tbl_activities17 where main_id=".$_GET['id']."");
 
-if(mysql_num_rows($activitiesFile17)>0){
-$activitiesFileList17=mysql_fetch_array($activitiesFile17);
+if(mysqli_num_rows($activitiesFile17)>0){
+$activitiesFileList17=mysqli_fetch_array($activitiesFile17);
 ?>
   <tr>
    <td width="55%">Upload File : <?php if($activitiesFileList17['file']==""){ echo"No File";} else {?><a href="upload/<?=$activitiesFileList17['file']?>" target="_blank"><?=$activitiesFileList17['file']?></a><?php } ?></td>
