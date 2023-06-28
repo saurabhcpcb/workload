@@ -648,7 +648,7 @@ $_SESSION['errors']="";
                
            <td width="30%"><select name="rd_id12" class="form-control" style="width:49%; margin-left:10px; float:left;" required>
           
-		   <?php $getQuery12=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); 
+		   <?php $getQuery12=mysqli_query($mysqli, " SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); 
 		   while($rd12=mysqli_fetch_array($getQuery12)){?>
            <option value="<?=$rd12['board']?>"  <?=($rd12['board']==$_GET['rd_id12'])?'selected':''?> ><?=$rd12['board']?></option><?php }?>
            </select></td>
@@ -665,7 +665,7 @@ $_SESSION['errors']="";
       <div class="box box-primary">
       <div class="box-body">
 <?php
-$getUserData=mysqli_query("SELECT * FROM tbl_user where board='".$_GET['rd_id12']."'");
+$getUserData=mysqli_query($mysqli, " SELECT * FROM tbl_user where board='".$_GET['rd_id12']."'");
 $user=mysqli_fetch_array($getUserData);  
 ?> 
 
@@ -691,7 +691,7 @@ $user=mysqli_fetch_array($getUserData);
   
 <?php 
 $i=1;
-$queryByDateRd=mysqli_query("SELECT * FROM tbl_activities_rd0 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd0 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 while($dateRowRd=mysqli_fetch_array($queryByDateRd)){
 ?>
   <tr>
@@ -724,7 +724,7 @@ while($dateRowRd=mysqli_fetch_array($queryByDateRd)){
   
 <?php 
 $i=1;
-$queryByDateRd1=mysqli_query("SELECT * FROM tbl_activities_rd1 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd1=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd1 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 while($dateRowRd1=mysqli_fetch_array($queryByDateRd1)){
 ?>
   <tr>
@@ -756,7 +756,7 @@ while($dateRowRd1=mysqli_fetch_array($queryByDateRd1)){
   
 <?php 
 $i=1;
-$queryByDateRd2=mysqli_query("SELECT * FROM tbl_activities_rd2 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd2=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd2 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 while($dateRowRd2=mysqli_fetch_array($queryByDateRd2)){
 ?>
   <tr>
@@ -788,7 +788,7 @@ while($dateRowRd2=mysqli_fetch_array($queryByDateRd2)){
   
 <?php 
 $i=1;
-$queryByDateRd3=mysqli_query("SELECT * FROM tbl_activities_rd3 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd3=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd3 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 while($dateRowRd3=mysqli_fetch_array($queryByDateRd3)){
 ?>
   <tr>
@@ -820,7 +820,7 @@ while($dateRowRd3=mysqli_fetch_array($queryByDateRd3)){
   
 <?php 
 $i=1;
-$queryByDateRd4=mysqli_query("SELECT * FROM tbl_activities_rd4 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd4=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd4 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 while($dateRowRd4=mysqli_fetch_array($queryByDateRd4)){
 ?>
   <tr>
@@ -852,7 +852,7 @@ while($dateRowRd4=mysqli_fetch_array($queryByDateRd4)){
   
 <?php 
 $i=1;
-$queryByDateRd5=mysqli_query("SELECT * FROM tbl_activities_rd5 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd5=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd5 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 while($dateRowRd5=mysqli_fetch_array($queryByDateRd5)){
 ?>
   <tr>
@@ -884,7 +884,7 @@ while($dateRowRd5=mysqli_fetch_array($queryByDateRd5)){
   
 <?php 
 $i=1;
-$queryByDateRd6=mysqli_query("SELECT * FROM tbl_activities_rd6 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd6=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd6 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 while($dateRowRd6=mysqli_fetch_array($queryByDateRd6)){
 ?>
   <tr>
@@ -916,7 +916,7 @@ while($dateRowRd6=mysqli_fetch_array($queryByDateRd6)){
   
 <?php 
 $i=1;
-$queryByDateRd7=mysqli_query("SELECT * FROM tbl_activities_rd7 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd7=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd7 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 while($dateRowRd7=mysqli_fetch_array($queryByDateRd7)){
 ?>
   <tr>
@@ -948,7 +948,7 @@ while($dateRowRd7=mysqli_fetch_array($queryByDateRd7)){
   
 <?php 
 $i=1;
-$queryByDateRd8=mysqli_query("SELECT * FROM tbl_activities_rd8 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd8=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd8 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 while($dateRowRd8=mysqli_fetch_array($queryByDateRd8)){
 ?>
   <tr>
@@ -980,7 +980,7 @@ while($dateRowRd8=mysqli_fetch_array($queryByDateRd8)){
   
 <?php 
 $i=1;
-$queryByDateRd9=mysqli_query("SELECT * FROM tbl_activities_rd9 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd9=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd9 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 while($dateRowRd9=mysqli_fetch_array($queryByDateRd9)){
 ?>
   <tr>
@@ -1012,7 +1012,7 @@ while($dateRowRd9=mysqli_fetch_array($queryByDateRd9)){
   
 <?php 
 $i=1;
-$queryByDateRd10=mysqli_query("SELECT * FROM tbl_activities_rd10 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd10=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd10 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 while($dateRowRd10=mysqli_fetch_array($queryByDateRd10)){
 ?>
   <tr>
@@ -1044,7 +1044,7 @@ while($dateRowRd10=mysqli_fetch_array($queryByDateRd10)){
   
 <?php 
 $i=1;
-$queryByDateRd11=mysqli_query("SELECT * FROM tbl_activities_rd11 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd11=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd11 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 while($dateRowRd11=mysqli_fetch_array($queryByDateRd11)){
 ?>
   <tr>
@@ -1076,7 +1076,7 @@ while($dateRowRd11=mysqli_fetch_array($queryByDateRd11)){
   
 <?php 
 $i=1;
-$queryByDateRd12=mysqli_query("SELECT * FROM tbl_activities_rd12 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd12=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd12 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 while($dateRowRd12=mysqli_fetch_array($queryByDateRd12)){
 ?>
   <tr>
@@ -1108,7 +1108,7 @@ while($dateRowRd12=mysqli_fetch_array($queryByDateRd12)){
   
 <?php 
 $i=1;
-$queryByDateRd13=mysqli_query("SELECT * FROM tbl_activities_rd13 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd13=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd13 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 while($dateRowRd13=mysqli_fetch_array($queryByDateRd13)){
 ?>
   <tr>
@@ -1140,7 +1140,7 @@ while($dateRowRd13=mysqli_fetch_array($queryByDateRd13)){
   
 <?php 
 $i=1;
-$queryByDateRd14=mysqli_query("SELECT * FROM tbl_activities_rd14 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd14=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd14 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 while($dateRowRd14=mysqli_fetch_array($queryByDateRd14)){
 ?>
   <tr>
@@ -1173,7 +1173,7 @@ while($dateRowRd14=mysqli_fetch_array($queryByDateRd14)){
   
 <?php 
 $i=1;
-$queryByDateRd15=mysqli_query("SELECT * FROM tbl_activities_rd15 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd15=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd15 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 while($dateRowRd15=mysqli_fetch_array($queryByDateRd15)){
 ?>
   <tr>
@@ -1205,7 +1205,7 @@ while($dateRowRd15=mysqli_fetch_array($queryByDateRd15)){
   
 <?php 
 $i=1;
-$queryByDateRd16=mysqli_query("SELECT * FROM tbl_activities_rd16 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd16=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd16 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 while($dateRowRd16=mysqli_fetch_array($queryByDateRd16)){
 ?>
   <tr>
@@ -1237,7 +1237,7 @@ while($dateRowRd16=mysqli_fetch_array($queryByDateRd16)){
   
 <?php 
 $i=1;
-$queryByDateRd17=mysqli_query("SELECT * FROM tbl_activities_rd17 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd17=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd17 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 while($dateRowRd17=mysqli_fetch_array($queryByDateRd17)){
 ?>
   <tr>

@@ -7,7 +7,7 @@
  date_default_timezone_set('Asia/Kolkata');
 ?>
 <?php
-$getUserData=mysqli_query("SELECT * FROM tbl_user where board='".$_GET['rd']."'");
+$getUserData=mysqli_query($mysqli, " SELECT * FROM tbl_user where board='".$_GET['rd']."'");
 $user=mysqli_fetch_array($getUserData);  
 
 $month= date("m", strtotime($_GET['cid']));
@@ -205,7 +205,7 @@ while ($activities=mysqli_fetch_array($getDescriptionQuery,mysqli_ASSOC)){
 <tr>
 <td><?=$i?></td>
 <?php
-$userQuery=mysqli_query("select * from tbl_user where id=".$activities['user_id']."");
+$userQuery=mysqli_query($mysqli, " select * from tbl_user where id=".$activities['user_id']."");
 $userData=mysqli_fetch_array($userQuery);
 ?>
 <td valign="top" align="left"> <?=$userData['Division']?></td>

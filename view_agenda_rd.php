@@ -6,7 +6,7 @@ include_once'includes/connect.php';
 include_once'includes/session.php';
 date_default_timezone_set('Asia/Kolkata');
 //echo "select * from tbl_user where username='".$_SESSION['userId']['username']."'";
-$ses_sql1= mysqli_query("select * from tbl_user where username='".$_SESSION['userId']['username']."'");
+$ses_sql1= mysqli_query($mysqli, " select * from tbl_user where username='".$_SESSION['userId']['username']."'");
 $row5 = mysqli_fetch_array($ses_sql1);
 ?>
 

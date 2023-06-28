@@ -5,7 +5,7 @@ ini_set('display_errors','0');
 include_once'includes/connect.php';
 include_once'includes/session.php';
 date_default_timezone_set('Asia/Kolkata');
-$getQuery=mysqli_query("SELECT * FROM tbl_monthly_report WHERE month='".date("M-Y")."' AND monthly_user_id='".$_SESSION['userId']['id']."'");
+$getQuery=mysqli_query($mysqli, " SELECT * FROM tbl_monthly_report WHERE month='".date("M-Y")."' AND monthly_user_id='".$_SESSION['userId']['id']."'");
 
 $data=mysqli_fetch_array($getQuery);
 ?>

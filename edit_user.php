@@ -6,7 +6,7 @@ include_once'includes/connect.php';
 include_once'includes/session.php';
 date_default_timezone_set('Asia/Kolkata');
 
-$getQuery=mysqli_query("select * from tbl_user where id=".$_GET['id']."");
+$getQuery=mysqli_query($mysqli, " select * from tbl_user where id=".$_GET['id']."");
 $user=mysqli_fetch_array($getQuery);
 ?>
 <?php
@@ -218,7 +218,7 @@ $_SESSION['errors']="";
                    <select name="board" class="form-control">
                     <option value="">Select Zone</option>
                  <?php 
-				 $rdQuery=mysqli_query("SELECT * FROM tbl_rd ORDER BY RD ASC ");
+				 $rdQuery=mysqli_query($mysqli, " SELECT * FROM tbl_rd ORDER BY RD ASC ");
 				 while($rd=mysqli_fetch_array($rdQuery)){
 				 ?>
                    <option  value="<?=$rd['RD']?>" <?=($rd['RD']==$user['board'])?'selected':''?> ><?=$rd['RD']?></option>
@@ -233,13 +233,13 @@ $_SESSION['errors']="";
                 
 				<?php
 				$i=1;
-				 $getActivities=mysqli_query("select * from tbl_user_activities_list where user_id=".$_GET['id']."");
+				 $getActivities=mysqli_query($mysqli, " select * from tbl_user_activities_list where user_id=".$_GET['id']."");
 				 while($data=mysqli_fetch_array($getActivities))
 				 {
 				 $dataList[]=$data['activities_id'];
 				 }
 				 
-                $activitiesQueryResult=mysqli_query("select * from tbl_user_activities  ORDER BY Activities ASC" );
+                $activitiesQueryResult=mysqli_query($mysqli, " select * from tbl_user_activities  ORDER BY Activities ASC" );
                 
                 while($activities=mysqli_fetch_array($activitiesQueryResult)){
 				

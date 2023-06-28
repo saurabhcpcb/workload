@@ -109,7 +109,7 @@ switch ($_GET['eid'])
 
 if(isset($_POST['submit']) && $_POST['submit']=="Complete"){
  
-$updateQuery=mysqli_query("UPDATE $dhTable SET final_Status=2, Comment='".addslashes($_POST['Comment'])."',completed_date_by_rd='".date("Y-m-d")."' WHERE id ='".$_POST['postId']."'  AND rd_id='".$_SESSION['userId']['board']."'");
+$updateQuery=mysqli_query($mysqli, " UPDATE $dhTable SET final_Status=2, Comment='".addslashes($_POST['Comment'])."',completed_date_by_rd='".date("Y-m-d")."' WHERE id ='".$_POST['postId']."'  AND rd_id='".$_SESSION['userId']['board']."'");
  
 if($updateQuery)
 {
@@ -131,7 +131,7 @@ if($updateQuery)
 
 if(isset($_POST['submit']) && $_POST['submit']=="Postpone"){
 
-$updateQuery=mysqli_query("UPDATE $dhTable SET Comment='".addslashes($_POST['Comment'])."',Postpone='1', target_date='".date("Y-m-d", strtotime($_POST['target_date']))."',completed_date_by_rd='".date("Y-m-d")."' WHERE id ='".$_POST['postId']."'  AND rd_id='".$_SESSION['userId']['board']."'");
+$updateQuery=mysqli_query($mysqli, " UPDATE $dhTable SET Comment='".addslashes($_POST['Comment'])."',Postpone='1', target_date='".date("Y-m-d", strtotime($_POST['target_date']))."',completed_date_by_rd='".date("Y-m-d")."' WHERE id ='".$_POST['postId']."'  AND rd_id='".$_SESSION['userId']['board']."'");
  
 if($updateQuery)
 {
@@ -328,7 +328,7 @@ $descriptionQuery="SELECT * FROM $dhTable where YEAR(proposed_date_by_ms) = ".$y
 while ($activities=mysqli_fetch_array($getDescriptionQuery,mysqli_ASSOC)){
  
  
-$userData=mysqli_query("select * from tbl_user where id=".$activities['user_id'].""); 
+$userData=mysqli_query($mysqli, " select * from tbl_user where id=".$activities['user_id'].""); 
 
 $user=mysqli_fetch_array($userData);
 ?>

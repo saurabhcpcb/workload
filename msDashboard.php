@@ -78,15 +78,15 @@ include_once'includes/connect.php';
     <!-- Main content -->
     <section class="content">
     <?php
-	$query=mysqli_query("SELECT * FROM tbl_rd ORDER BY  RD ASC ");
+	$query=mysqli_query($mysqli, " SELECT * FROM tbl_rd ORDER BY  RD ASC ");
 	while($row=mysqli_fetch_array($query)){
 	?>
 <?php 
-$rdWiseQuery=mysqli_query("select * from division_inspection where RD_Name ='".$row['RD']."' AND Completed=0");
+$rdWiseQuery=mysqli_query($mysqli, " select * from division_inspection where RD_Name ='".$row['RD']."' AND Completed=0");
 $totalPending=mysqli_num_rows($rdWiseQuery);
 ?>
 <?php 
-$rdWiseQueryCompleted=mysqli_query("select * from division_inspection where RD_Name ='".$row['RD']."' AND Completed=1");
+$rdWiseQueryCompleted=mysqli_query($mysqli, " select * from division_inspection where RD_Name ='".$row['RD']."' AND Completed=1");
 $totalPendingCompleted=mysqli_num_rows($rdWiseQueryCompleted);
 ?>
 

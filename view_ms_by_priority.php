@@ -104,7 +104,7 @@ date_default_timezone_set('Asia/Kolkata');
                
            <td width="30%"><select name="user_id" class="form-control" style="width:49%; margin-left:10px; float:left;" required>
           
-		   <?php $getQuery12=mysqli_query("SELECT * FROM tbl_user where user_type='CPCB' ORDER BY Division ASC"); 
+		   <?php $getQuery12=mysqli_query($mysqli, " SELECT * FROM tbl_user where user_type='CPCB' ORDER BY Division ASC"); 
 		   while($rd12=mysqli_fetch_array($getQuery12)){?>
            <option value="<?=$rd12['id']?>"  <?=($rd12['id']==$_GET['user_id'])?'selected':''?> ><?=$rd12['Division']?></option><?php }?>
            </select></td>
@@ -129,7 +129,7 @@ if(isset($_GET['searchRegionalDirectors']) && $_GET['searchRegionalDirectors']==
 ?>
  
 <?php
-$getUerData=mysqli_query("select * from tbl_user where id=".$_GET['user_id']."");
+$getUerData=mysqli_query($mysqli, " select * from tbl_user where id=".$_GET['user_id']."");
 
 $userData=mysqli_fetch_array($getUerData);
 ?> 
@@ -142,24 +142,24 @@ $month= date("m" ,strtotime($_GET['month']));
 $year= date("Y", strtotime($_GET['month']));
 
 
-$queryByCPCB0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND priority='P1' AND user_id='".$_GET['user_id']."'"));
-$queryByCPCB1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
-$queryByCPCB2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
-$queryByCPCB3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
-$queryByCPCB4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
-$queryByCPCB5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
-$queryByCPCB6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
-$queryByCPCB7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
-$queryByCPCB8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
-$queryByCPCB9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
-$queryByCPCB10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
-$queryByCPCB11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
-$queryByCPCB12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
-$queryByCPCB13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
-$queryByCPCB14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
-$queryByCPCB15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
-$queryByCPCB16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
-$queryByCPCB17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
+$queryByCPCB0=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND priority='P1' AND user_id='".$_GET['user_id']."'"));
+$queryByCPCB1=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
+$queryByCPCB2=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
+$queryByCPCB3=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
+$queryByCPCB4=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
+$queryByCPCB5=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
+$queryByCPCB6=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
+$queryByCPCB7=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
+$queryByCPCB8=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
+$queryByCPCB9=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
+$queryByCPCB10=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
+$queryByCPCB11=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
+$queryByCPCB12=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
+$queryByCPCB13=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
+$queryByCPCB14=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
+$queryByCPCB15=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
+$queryByCPCB16=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
+$queryByCPCB17=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P1' AND user_id='".$_GET['user_id']."'"));
 
 
 $totalqueryByCPCB=$queryByCPCB0+$queryByCPCB1+$queryByCPCB2+$queryByCPCB3+$queryByCPCB4+$queryByCPCB5+$queryByCPCB6+$queryByCPCB7+$queryByCPCB8+$queryByCPCB9+$queryByCPCB10+$queryByCPCB11+$queryByCPCB12+$queryByCPCB13+$queryByCPCB14+$queryByCPCB15+$queryByCPCB16+$queryByCPCB17;
@@ -191,24 +191,24 @@ $totalqueryByCPCB=$queryByCPCB0+$queryByCPCB1+$queryByCPCB2+$queryByCPCB3+$query
         
         <?php
 		
-		$queryP2ByCPCBP0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND priority='P2' AND user_id='".$_GET['user_id']."'"));
-$queryP2ByCPCBP1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
-$queryP2ByCPCBP2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
-$queryP2ByCPCBP3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
-$queryP2ByCPCBP4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
-$queryP2ByCPCBP5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
-$queryP2ByCPCBP6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
-$queryP2ByCPCBP7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
-$queryP2ByCPCBP8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
-$queryP2ByCPCBP9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
-$queryP2ByCPCBP10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
-$queryP2ByCPCBP11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
-$queryP2ByCPCBP12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
-$queryP2ByCPCBP13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
-$queryP2ByCPCBP14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
-$queryP2ByCPCBP15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
-$queryP2ByCPCBP16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
-$queryP2ByCPCBP17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
+		$queryP2ByCPCBP0=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND priority='P2' AND user_id='".$_GET['user_id']."'"));
+$queryP2ByCPCBP1=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
+$queryP2ByCPCBP2=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
+$queryP2ByCPCBP3=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
+$queryP2ByCPCBP4=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
+$queryP2ByCPCBP5=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
+$queryP2ByCPCBP6=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
+$queryP2ByCPCBP7=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
+$queryP2ByCPCBP8=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
+$queryP2ByCPCBP9=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
+$queryP2ByCPCBP10=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
+$queryP2ByCPCBP11=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
+$queryP2ByCPCBP12=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
+$queryP2ByCPCBP13=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
+$queryP2ByCPCBP14=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
+$queryP2ByCPCBP15=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
+$queryP2ByCPCBP16=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
+$queryP2ByCPCBP17=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P2' AND user_id='".$_GET['user_id']."'"));
 
 
 $totalqueryP2ByCPCBP=$queryP2ByCPCBP0+$queryP2ByCPCBP1+$queryP2ByCPCBP2+$queryP2ByCPCBP3+$queryP2ByCPCBP4+$queryP2ByCPCBP5+$queryP2ByCPCBP6+$queryP2ByCPCBP7+$queryP2ByCPCBP8+$queryP2ByCPCBP9+$queryP2ByCPCBP10+$queryP2ByCPCBP11+$queryP2ByCPCBP12+$queryP2ByCPCBP13+$queryP2ByCPCBP14+$queryP2ByCPCBP15+$queryP2ByCPCBP16+$queryP2ByCPCBP17;
@@ -237,24 +237,24 @@ $totalqueryP2ByCPCBP=$queryP2ByCPCBP0+$queryP2ByCPCBP1+$queryP2ByCPCBP2+$queryP2
         
          <?php
 		
-		$queryP3ByCPCBP0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND priority='P3' AND user_id='".$_GET['user_id']."'"));
-$queryP3ByCPCBP1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
-$queryP3ByCPCBP2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
-$queryP3ByCPCBP3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
-$queryP3ByCPCBP4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
-$queryP3ByCPCBP5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
-$queryP3ByCPCBP6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
-$queryP3ByCPCBP7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
-$queryP3ByCPCBP8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
-$queryP3ByCPCBP9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
-$queryP3ByCPCBP10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
-$queryP3ByCPCBP11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
-$queryP3ByCPCBP12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
-$queryP3ByCPCBP13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
-$queryP3ByCPCBP14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
-$queryP3ByCPCBP15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
-$queryP3ByCPCBP16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
-$queryP3ByCPCBP17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
+		$queryP3ByCPCBP0=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND priority='P3' AND user_id='".$_GET['user_id']."'"));
+$queryP3ByCPCBP1=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
+$queryP3ByCPCBP2=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
+$queryP3ByCPCBP3=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
+$queryP3ByCPCBP4=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
+$queryP3ByCPCBP5=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
+$queryP3ByCPCBP6=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
+$queryP3ByCPCBP7=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
+$queryP3ByCPCBP8=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
+$queryP3ByCPCBP9=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
+$queryP3ByCPCBP10=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
+$queryP3ByCPCBP11=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
+$queryP3ByCPCBP12=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
+$queryP3ByCPCBP13=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
+$queryP3ByCPCBP14=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
+$queryP3ByCPCBP15=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
+$queryP3ByCPCBP16=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
+$queryP3ByCPCBP17=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P3' AND user_id='".$_GET['user_id']."'"));
 
 
 $totalqueryP3ByCPCBP=$queryP3ByCPCBP0+$queryP3ByCPCBP1+$queryP3ByCPCBP2+$queryP3ByCPCBP3+$queryP3ByCPCBP4+$queryP3ByCPCBP5+$queryP3ByCPCBP6+$queryP3ByCPCBP7+$queryP3ByCPCBP8+$queryP3ByCPCBP9+$queryP3ByCPCBP10+$queryP3ByCPCBP11+$queryP3ByCPCBP12+$queryP3ByCPCBP13+$queryP3ByCPCBP14+$queryP3ByCPCBP15+$queryP3ByCPCBP16+$queryP3ByCPCBP17;
@@ -282,24 +282,24 @@ $totalqueryP3ByCPCBP=$queryP3ByCPCBP0+$queryP3ByCPCBP1+$queryP3ByCPCBP2+$queryP3
         <div class="col-md-3 col-sm-6 col-xs-12">
         
                  <?php
-$queryP4ByCPCBP0=mysqli_num_rows(mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND priority='P4' AND user_id='".$_GET['user_id']."'"));
-$queryP4ByCPCBP1=mysqli_num_rows(mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
-$queryP4ByCPCBP2=mysqli_num_rows(mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
-$queryP4ByCPCBP3=mysqli_num_rows(mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
-$queryP4ByCPCBP4=mysqli_num_rows(mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
-$queryP4ByCPCBP5=mysqli_num_rows(mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
-$queryP4ByCPCBP6=mysqli_num_rows(mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
-$queryP4ByCPCBP7=mysqli_num_rows(mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
-$queryP4ByCPCBP8=mysqli_num_rows(mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
-$queryP4ByCPCBP9=mysqli_num_rows(mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
-$queryP4ByCPCBP10=mysqli_num_rows(mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
-$queryP4ByCPCBP11=mysqli_num_rows(mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
-$queryP4ByCPCBP12=mysqli_num_rows(mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
-$queryP4ByCPCBP13=mysqli_num_rows(mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
-$queryP4ByCPCBP14=mysqli_num_rows(mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
-$queryP4ByCPCBP15=mysqli_num_rows(mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
-$queryP4ByCPCBP16=mysqli_num_rows(mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
-$queryP4ByCPCBP17=mysqli_num_rows(mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
+$queryP4ByCPCBP0=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND priority='P4' AND user_id='".$_GET['user_id']."'"));
+$queryP4ByCPCBP1=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
+$queryP4ByCPCBP2=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
+$queryP4ByCPCBP3=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
+$queryP4ByCPCBP4=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
+$queryP4ByCPCBP5=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
+$queryP4ByCPCBP6=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
+$queryP4ByCPCBP7=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
+$queryP4ByCPCBP8=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
+$queryP4ByCPCBP9=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
+$queryP4ByCPCBP10=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
+$queryP4ByCPCBP11=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
+$queryP4ByCPCBP12=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
+$queryP4ByCPCBP13=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
+$queryP4ByCPCBP14=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
+$queryP4ByCPCBP15=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
+$queryP4ByCPCBP16=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
+$queryP4ByCPCBP17=mysqli_num_rows(mysqli_query($mysqli, " select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month."  AND priority='P4' AND user_id='".$_GET['user_id']."'"));
 
 
 $totalqueryP4ByCPCBP=$queryP4ByCPCBP0+$queryP4ByCPCBP1+$queryP4ByCPCBP2+$queryP4ByCPCBP3+$queryP4ByCPCBP4+$queryP4ByCPCBP5+$queryP4ByCPCBP6+$queryP4ByCPCBP7+$queryP4ByCPCBP8+$queryP4ByCPCBP9+$queryP4ByCPCBP10+$queryP4ByCPCBP11+$queryP4ByCPCBP12+$queryP4ByCPCBP13+$queryP4ByCPCBP14+$queryP4ByCPCBP15+$queryP4ByCPCBP16+$queryP4ByCPCBP17;

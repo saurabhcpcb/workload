@@ -78,7 +78,7 @@ display: none !important;
 <div class="box box-primary no-print">
 <div class="box-body">
 <?php
-$getUerData=mysqli_query("select * from tbl_user where id=".$_GET['user_id']."");
+$getUerData=mysqli_query($mysqli, " select * from tbl_user where id=".$_GET['user_id']."");
 
 $userData=mysqli_fetch_array($getUerData);
 ?> 
@@ -100,7 +100,7 @@ $userData=mysqli_fetch_array($getUerData);
 
  
 <?php
-$proposedQuery0=mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
+$proposedQuery0=mysqli_query($mysqli, " select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
 while ($proposed0=mysqli_fetch_array($proposedQuery0,mysqli_ASSOC)){
 ?>
 
@@ -108,7 +108,7 @@ while ($proposed0=mysqli_fetch_array($proposedQuery0,mysqli_ASSOC)){
  <?php 
 $i=1;
 
-$proposedQuery0=mysqli_query("select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed0['activities_name']."' AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."'");
+$proposedQuery0=mysqli_query($mysqli, " select * from tbl_activities0 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND activities_name='".$proposed0['activities_name']."' AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."'");
 
 ?>
 <?php
@@ -120,7 +120,7 @@ while ($activities0=mysqli_fetch_array($proposedQuery0,mysqli_ASSOC)){
 
 
 <?php
-$userQuery0=mysqli_query("select * from tbl_user where id=".$activities0['user_id']."");
+$userQuery0=mysqli_query($mysqli, " select * from tbl_user where id=".$activities0['user_id']."");
 $userData0=mysqli_fetch_array($userQuery0);
 ?>
 <td valign="top" align="left"> <?=$i?></td>
@@ -156,14 +156,14 @@ $i++;
 ?>
 
 <?php
-$proposedQuery1=mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
+$proposedQuery1=mysqli_query($mysqli, " select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
 while ($proposed1=mysqli_fetch_array($proposedQuery1,mysqli_ASSOC)){
 ?>
 
 <tr><td valign="top" colspan="6"><h4 style="color:#1155cc; font-weight:600; text-decoration:underline;"><i class="fa fa-fw fa-hand-o-right"></i><?=$proposed1['activities_name']?> </h4></td></tr>  
 <?php
 $j=1;
-$proposedQuery1=mysqli_query("select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' AND activities_name='".$proposed1['activities_name']."'");
+$proposedQuery1=mysqli_query($mysqli, " select * from tbl_activities1 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' AND activities_name='".$proposed1['activities_name']."'");
 
 
 while ($activities1=mysqli_fetch_array($proposedQuery1,mysqli_ASSOC)){
@@ -172,7 +172,7 @@ while ($activities1=mysqli_fetch_array($proposedQuery1,mysqli_ASSOC)){
 <tr>
 <?php
 
-$userQuery1=mysqli_query("select * from tbl_user where id=".$activities1['user_id']."");
+$userQuery1=mysqli_query($mysqli, " select * from tbl_user where id=".$activities1['user_id']."");
 $userData1=mysqli_fetch_array($userQuery1);
 ?>
 <td valign="top" align="left"> <?=$j?></td> 
@@ -203,14 +203,14 @@ echo "date: ". date("d-m-Y", strtotime($activities1['completed_date_by_rd']));
 
 
 <?php
-$proposedQuery2=mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
+$proposedQuery2=mysqli_query($mysqli, " select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
 while ($proposed2=mysqli_fetch_array($proposedQuery2,mysqli_ASSOC)){
 ?>
 
 <tr><td valign="top" colspan="6"><h4 style="color:#1155cc; font-weight:600; text-decoration:underline;"><i class="fa fa-fw fa-hand-o-right"></i><?=$proposed2['activities_name']?> </h4></td></tr> 
 <?php
 $k=1;
-$proposedQuery2=mysqli_query("select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' AND activities_name='".$proposed2['activities_name']."'");
+$proposedQuery2=mysqli_query($mysqli, " select * from tbl_activities2 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' AND activities_name='".$proposed2['activities_name']."'");
 
 
 while ($activities2=mysqli_fetch_array($proposedQuery2,mysqli_ASSOC)){
@@ -219,7 +219,7 @@ while ($activities2=mysqli_fetch_array($proposedQuery2,mysqli_ASSOC)){
 <tr>
 <?php
  
-$userQuery2=mysqli_query("select * from tbl_user where id=".$activities2['user_id']."");
+$userQuery2=mysqli_query($mysqli, " select * from tbl_user where id=".$activities2['user_id']."");
 $userData2=mysqli_fetch_array($userQuery2);
 ?>
 <td valign="top" align="left"> <?=$k?></td> 
@@ -247,7 +247,7 @@ echo "date: ". date("d-m-Y", strtotime($activities2['completed_date_by_rd']));
 
 
 <?php
-$proposedQuery3=mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
+$proposedQuery3=mysqli_query($mysqli, " select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
 while ($proposed3=mysqli_fetch_array($proposedQuery3,mysqli_ASSOC)){
 ?>
 
@@ -255,7 +255,7 @@ while ($proposed3=mysqli_fetch_array($proposedQuery3,mysqli_ASSOC)){
 
 <?php
 $l=1;
-$proposedQuery3=mysqli_query("select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' AND activities_name='".$proposed3['activities_name']."'");
+$proposedQuery3=mysqli_query($mysqli, " select * from tbl_activities3 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' AND activities_name='".$proposed3['activities_name']."'");
 
 
 while ($activities3=mysqli_fetch_array($proposedQuery3,mysqli_ASSOC)){
@@ -264,7 +264,7 @@ while ($activities3=mysqli_fetch_array($proposedQuery3,mysqli_ASSOC)){
 <tr>
 <?php
 
-$userQuery3=mysqli_query("select * from tbl_user where id=".$activities3['user_id']."");
+$userQuery3=mysqli_query($mysqli, " select * from tbl_user where id=".$activities3['user_id']."");
 $userData3=mysqli_fetch_array($userQuery3);
 ?>
 <td valign="top" align="left"> <?=$l?></td> 
@@ -292,14 +292,14 @@ echo "date: ". date("d-m-Y", strtotime($activities3['completed_date_by_rd']));
 
 
 <?php
-$proposedQuery4=mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
+$proposedQuery4=mysqli_query($mysqli, " select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
 while ($proposed4=mysqli_fetch_array($proposedQuery4,mysqli_ASSOC)){
 ?>
 
 <tr><td valign="top" colspan="6"><h4 style="color:#1155cc; font-weight:600; text-decoration:underline;"><i class="fa fa-fw fa-hand-o-right"></i><?=$proposed4['activities_name']?> </h4></td></tr> 
 <?php
 $m=1;
-$proposedQuery4=mysqli_query("select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' AND activities_name='".$proposed4['activities_name']."'");
+$proposedQuery4=mysqli_query($mysqli, " select * from tbl_activities4 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' AND activities_name='".$proposed4['activities_name']."'");
 
 
 while ($activities4=mysqli_fetch_array($proposedQuery4,mysqli_ASSOC)){
@@ -307,7 +307,7 @@ while ($activities4=mysqli_fetch_array($proposedQuery4,mysqli_ASSOC)){
 ?>
 <tr>
 <?php
-$userQuery4=mysqli_query("select * from tbl_user where id=".$activities4['user_id']."");
+$userQuery4=mysqli_query($mysqli, " select * from tbl_user where id=".$activities4['user_id']."");
 $userData4=mysqli_fetch_array($userQuery4);
 ?>
  <td valign="top" align="left"> <?=$m?></td>
@@ -337,7 +337,7 @@ echo "date: ". date("d-m-Y", strtotime($activities4['completed_date_by_rd']));
  
  
 <?php
-$proposedQuery5=mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
+$proposedQuery5=mysqli_query($mysqli, " select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
 while ($proposed5=mysqli_fetch_array($proposedQuery5,mysqli_ASSOC)){
 ?>
 
@@ -345,7 +345,7 @@ while ($proposed5=mysqli_fetch_array($proposedQuery5,mysqli_ASSOC)){
 <?php
 
 $n=1;
-$proposedQuery5=mysqli_query("select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' AND activities_name='".$proposed5['activities_name']."'");
+$proposedQuery5=mysqli_query($mysqli, " select * from tbl_activities5 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' AND activities_name='".$proposed5['activities_name']."'");
 
 
 while ($activities5=mysqli_fetch_array($proposedQuery5,mysqli_ASSOC)){
@@ -353,7 +353,7 @@ while ($activities5=mysqli_fetch_array($proposedQuery5,mysqli_ASSOC)){
 ?>
 <tr>
 <?php
-$userQuery5=mysqli_query("select * from tbl_user where id=".$activities5['user_id']."");
+$userQuery5=mysqli_query($mysqli, " select * from tbl_user where id=".$activities5['user_id']."");
 $userData5=mysqli_fetch_array($userQuery5);
 ?>
 <td valign="top" align="left"> <?=$n?></td> 
@@ -384,14 +384,14 @@ echo "date: ". date("d-m-Y", strtotime($activities5['completed_date_by_rd']));
 
 
 <?php
-$proposedQuery6=mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
+$proposedQuery6=mysqli_query($mysqli, " select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
 while ($proposed6=mysqli_fetch_array($proposedQuery6,mysqli_ASSOC)){
 ?>
 
 <tr><td valign="top" colspan="6"><h4 style="color:#1155cc; font-weight:600; text-decoration:underline;"><i class="fa fa-fw fa-hand-o-right"></i><?=$proposed6['activities_name']?> </h4></td></tr>  
 <?php
 $o=1;
-$proposedQuery6=mysqli_query("select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' AND activities_name='".$proposed6['activities_name']."'");
+$proposedQuery6=mysqli_query($mysqli, " select * from tbl_activities6 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' AND activities_name='".$proposed6['activities_name']."'");
 
 
 while ($activities6=mysqli_fetch_array($proposedQuery6,mysqli_ASSOC)){
@@ -399,7 +399,7 @@ while ($activities6=mysqli_fetch_array($proposedQuery6,mysqli_ASSOC)){
 ?>
 <tr>
 <?php
-$userQuery6=mysqli_query("select * from tbl_user where id=".$activities6['user_id']."");
+$userQuery6=mysqli_query($mysqli, " select * from tbl_user where id=".$activities6['user_id']."");
 $userData6=mysqli_fetch_array($userQuery6);
 ?>
  <td valign="top" align="left"> <?=$o?></td>
@@ -430,7 +430,7 @@ echo "date: ". date("d-m-Y", strtotime($activities6['completed_date_by_rd']));
 
 
 <?php
-$proposedQuery7=mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
+$proposedQuery7=mysqli_query($mysqli, " select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
 while ($proposed7=mysqli_fetch_array($proposedQuery7,mysqli_ASSOC)){
 ?>
 
@@ -438,7 +438,7 @@ while ($proposed7=mysqli_fetch_array($proposedQuery7,mysqli_ASSOC)){
 <?php
 
 $p=1;
-$proposedQuery7=mysqli_query("select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' AND activities_name='".$proposed7['activities_name']."'");
+$proposedQuery7=mysqli_query($mysqli, " select * from tbl_activities7 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' AND activities_name='".$proposed7['activities_name']."'");
 
 
 while ($activities7=mysqli_fetch_array($proposedQuery7,mysqli_ASSOC)){
@@ -446,7 +446,7 @@ while ($activities7=mysqli_fetch_array($proposedQuery7,mysqli_ASSOC)){
 ?>
 <tr>
 <?php
-$userQuery7=mysqli_query("select * from tbl_user where id=".$activities7['user_id']."");
+$userQuery7=mysqli_query($mysqli, " select * from tbl_user where id=".$activities7['user_id']."");
 $userData7=mysqli_fetch_array($userQuery7);
 ?>
  <td valign="top" align="left"> <?=$p?></td>
@@ -477,21 +477,21 @@ echo "date: ". date("d-m-Y", strtotime($activities7['completed_date_by_rd']));
 
 
 <?php
-$proposedQuery8=mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
+$proposedQuery8=mysqli_query($mysqli, " select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
 while ($proposed8=mysqli_fetch_array($proposedQuery8,mysqli_ASSOC)){
 ?>
 
 <tr><td valign="top" colspan="6"><h4 style="color:#1155cc; font-weight:600; text-decoration:underline;"><i class="fa fa-fw fa-hand-o-right"></i><?=$proposed8['activities_name']?> </h4></td></tr> 
 <?php
 $q=1;
-$proposedQuery8=mysqli_query("select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' AND activities_name='".$proposed8['activities_name']."'");
+$proposedQuery8=mysqli_query($mysqli, " select * from tbl_activities8 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' AND activities_name='".$proposed8['activities_name']."'");
 
 while ($activities8=mysqli_fetch_array($proposedQuery8,mysqli_ASSOC)){
  
 ?>
 <tr>
 <?php
-$userQuery8=mysqli_query("select * from tbl_user where id=".$activities8['user_id']."");
+$userQuery8=mysqli_query($mysqli, " select * from tbl_user where id=".$activities8['user_id']."");
 $userData8=mysqli_fetch_array($userQuery8);
 ?>
  <td valign="top" align="left"> <?=$q?></td>
@@ -525,14 +525,14 @@ echo "date: ". date("d-m-Y", strtotime($activities8['completed_date_by_rd']));
 
 
 <?php
-$proposedQuery9=mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
+$proposedQuery9=mysqli_query($mysqli, " select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
 while ($proposed9=mysqli_fetch_array($proposedQuery9,mysqli_ASSOC)){
 ?>
 
 <tr><td valign="top" colspan="6"><h4 style="color:#1155cc; font-weight:600; text-decoration:underline;"><i class="fa fa-fw fa-hand-o-right"></i><?=$proposed9['activities_name']?> </h4></td></tr> 
 <?php
 $r=1;
-$proposedQuery9=mysqli_query("select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."'  AND activities_name='".$proposed9['activities_name']."'");
+$proposedQuery9=mysqli_query($mysqli, " select * from tbl_activities9 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."'  AND activities_name='".$proposed9['activities_name']."'");
 
 
 while ($activities9=mysqli_fetch_array($proposedQuery9,mysqli_ASSOC)){
@@ -540,7 +540,7 @@ while ($activities9=mysqli_fetch_array($proposedQuery9,mysqli_ASSOC)){
 ?>
 <tr>
 <?php
-$userQuery9=mysqli_query("select * from tbl_user where id=".$activities9['user_id']."");
+$userQuery9=mysqli_query($mysqli, " select * from tbl_user where id=".$activities9['user_id']."");
 $userData9=mysqli_fetch_array($userQuery9);
 ?>
 <td valign="top" align="left"> <?=$r?></td> 
@@ -573,7 +573,7 @@ echo "date: ". date("d-m-Y", strtotime($activities9['completed_date_by_rd']));
 
 
 <?php
-$proposedQuery10=mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
+$proposedQuery10=mysqli_query($mysqli, " select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
 while ($proposed10=mysqli_fetch_array($proposedQuery10,mysqli_ASSOC)){
 ?>
 
@@ -581,7 +581,7 @@ while ($proposed10=mysqli_fetch_array($proposedQuery10,mysqli_ASSOC)){
 
 <?php
 $s=1;
-$proposedQuery10=mysqli_query("select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' AND activities_name='".$proposed10['activities_name']."'");
+$proposedQuery10=mysqli_query($mysqli, " select * from tbl_activities10 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' AND activities_name='".$proposed10['activities_name']."'");
 
 
 while ($activities10=mysqli_fetch_array($proposedQuery10,mysqli_ASSOC)){
@@ -589,7 +589,7 @@ while ($activities10=mysqli_fetch_array($proposedQuery10,mysqli_ASSOC)){
 ?>
 <tr>
 <?php
-$userQuery10=mysqli_query("select * from tbl_user where id=".$activities10['user_id']."");
+$userQuery10=mysqli_query($mysqli, " select * from tbl_user where id=".$activities10['user_id']."");
 $userData10=mysqli_fetch_array($userQuery10);
 ?>
  <td valign="top" align="left"> <?=$s?></td>
@@ -621,7 +621,7 @@ echo "date: ". date("d-m-Y", strtotime($activities10['completed_date_by_rd']));
 
 
 <?php
-$proposedQuery11=mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
+$proposedQuery11=mysqli_query($mysqli, " select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
 while ($proposed11=mysqli_fetch_array($proposedQuery11,mysqli_ASSOC)){
 ?>
 
@@ -629,7 +629,7 @@ while ($proposed11=mysqli_fetch_array($proposedQuery11,mysqli_ASSOC)){
 
 <?php
 $t=1;
-$proposedQuery11=mysqli_query("select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' AND activities_name='".$proposed11['activities_name']."'");
+$proposedQuery11=mysqli_query($mysqli, " select * from tbl_activities11 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' AND activities_name='".$proposed11['activities_name']."'");
 
 
 while ($activities11=mysqli_fetch_array($proposedQuery11,mysqli_ASSOC)){
@@ -637,7 +637,7 @@ while ($activities11=mysqli_fetch_array($proposedQuery11,mysqli_ASSOC)){
 ?>
 <tr>
 <?php
-$userQuery11=mysqli_query("select * from tbl_user where id=".$activities11['user_id']."");
+$userQuery11=mysqli_query($mysqli, " select * from tbl_user where id=".$activities11['user_id']."");
 $userData11=mysqli_fetch_array($userQuery11);
 ?>
 <td valign="top" align="left"> <?=$t?></td> 
@@ -671,14 +671,14 @@ echo "date: ". date("d-m-Y", strtotime($activities11['completed_date_by_rd']));
 
 
 <?php
-$proposedQuery12=mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
+$proposedQuery12=mysqli_query($mysqli, " select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
 while ($proposed12=mysqli_fetch_array($proposedQuery12,mysqli_ASSOC)){
 ?>
 
 <tr><td valign="top" colspan="6"><h4 style="color:#1155cc; font-weight:600; text-decoration:underline;"><i class="fa fa-fw fa-hand-o-right"></i><?=$proposed12['activities_name']?> </h4></td></tr> 
 <?php
 $u=1;
-$proposedQuery12=mysqli_query("select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."'  AND activities_name='".$proposed12['activities_name']."'");
+$proposedQuery12=mysqli_query($mysqli, " select * from tbl_activities12 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."'  AND activities_name='".$proposed12['activities_name']."'");
 
 while ($activities12=mysqli_fetch_array($proposedQuery12,mysqli_ASSOC)){
  
@@ -688,7 +688,7 @@ while ($activities12=mysqli_fetch_array($proposedQuery12,mysqli_ASSOC)){
 
 
 
-$userQuery12=mysqli_query("select * from tbl_user where id=".$activities12['user_id']."");
+$userQuery12=mysqli_query($mysqli, " select * from tbl_user where id=".$activities12['user_id']."");
 $userData12=mysqli_fetch_array($userQuery12);
 ?>
  <td valign="top" align="left"> <?=$u?></td>
@@ -720,7 +720,7 @@ echo "date: ". date("d-m-Y", strtotime($activities12['completed_date_by_rd']));
 
 
 <?php
-$proposedQuery13=mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
+$proposedQuery13=mysqli_query($mysqli, " select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
 while ($proposed13=mysqli_fetch_array($proposedQuery13,mysqli_ASSOC)){
 ?>
 
@@ -729,7 +729,7 @@ while ($proposed13=mysqli_fetch_array($proposedQuery13,mysqli_ASSOC)){
 
 <?php
 $v=1;
-$proposedQuery13=mysqli_query("select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' AND activities_name='".$proposed13['activities_name']."'");
+$proposedQuery13=mysqli_query($mysqli, " select * from tbl_activities13 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' AND activities_name='".$proposed13['activities_name']."'");
 
 
 while ($activities13=mysqli_fetch_array($proposedQuery13,mysqli_ASSOC)){
@@ -737,7 +737,7 @@ while ($activities13=mysqli_fetch_array($proposedQuery13,mysqli_ASSOC)){
 ?>
 <tr>
 <?php
-$userQuery13=mysqli_query("select * from tbl_user where id=".$activities13['user_id']."");
+$userQuery13=mysqli_query($mysqli, " select * from tbl_user where id=".$activities13['user_id']."");
 $userData13=mysqli_fetch_array($userQuery13);
 ?>
  <td valign="top" align="left"> <?=$v?></td>
@@ -767,7 +767,7 @@ echo "date: ". date("d-m-Y", strtotime($activities13['completed_date_by_rd']));
 
 
 <?php
-$proposedQuery14=mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
+$proposedQuery14=mysqli_query($mysqli, " select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
 while ($proposed14=mysqli_fetch_array($proposedQuery14,mysqli_ASSOC)){
 ?>
 
@@ -776,7 +776,7 @@ while ($proposed14=mysqli_fetch_array($proposedQuery14,mysqli_ASSOC)){
 
 <?php
 $w=1;
-$proposedQuery14=mysqli_query("select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' AND activities_name='".$proposed14['activities_name']."'");
+$proposedQuery14=mysqli_query($mysqli, " select * from tbl_activities14 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' AND activities_name='".$proposed14['activities_name']."'");
 
 
 while ($activities14=mysqli_fetch_array($proposedQuery14,mysqli_ASSOC)){
@@ -784,7 +784,7 @@ while ($activities14=mysqli_fetch_array($proposedQuery14,mysqli_ASSOC)){
 ?>
 <tr>
 <?php
-$userQuery14=mysqli_query("select * from tbl_user where id=".$activities14['user_id']."");
+$userQuery14=mysqli_query($mysqli, " select * from tbl_user where id=".$activities14['user_id']."");
 $userData14=mysqli_fetch_array($userQuery14);
 ?>
 <td valign="top" align="left"> <?=$w?></td> 
@@ -815,7 +815,7 @@ echo "date: ". date("d-m-Y", strtotime($activities14['completed_date_by_rd']));
 
 
 <?php
-$proposedQuery15=mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
+$proposedQuery15=mysqli_query($mysqli, " select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
 while ($proposed15=mysqli_fetch_array($proposedQuery15,mysqli_ASSOC)){
 ?>
 
@@ -826,7 +826,7 @@ while ($proposed15=mysqli_fetch_array($proposedQuery15,mysqli_ASSOC)){
 
 <?php
 $v=1;
-$proposedQuery15=mysqli_query("select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' AND activities_name='".$proposed15['activities_name']."'");
+$proposedQuery15=mysqli_query($mysqli, " select * from tbl_activities15 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' AND activities_name='".$proposed15['activities_name']."'");
 
 
 while ($activities15=mysqli_fetch_array($proposedQuery15,mysqli_ASSOC)){
@@ -834,7 +834,7 @@ while ($activities15=mysqli_fetch_array($proposedQuery15,mysqli_ASSOC)){
 ?>
 <tr>
 <?php
-$userQuery15=mysqli_query("select * from tbl_user where id=".$activities15['user_id']."");
+$userQuery15=mysqli_query($mysqli, " select * from tbl_user where id=".$activities15['user_id']."");
 $userData15=mysqli_fetch_array($userQuery15);
 ?>
 <td valign="top" align="left"> <?=$v?></td> 
@@ -866,7 +866,7 @@ echo "date: ". date("d-m-Y", strtotime($activities15['completed_date_by_rd']));
 
 
 <?php
-$proposedQuery16=mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
+$proposedQuery16=mysqli_query($mysqli, " select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
 while ($proposed16=mysqli_fetch_array($proposedQuery16,mysqli_ASSOC)){
 ?>
 
@@ -877,7 +877,7 @@ while ($proposed16=mysqli_fetch_array($proposedQuery16,mysqli_ASSOC)){
 
 <?php
 $u=1;
-$proposedQuery16=mysqli_query("select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND 
+$proposedQuery16=mysqli_query($mysqli, " select * from tbl_activities16 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND 
 priority='".$_GET['priority']."' AND activities_name='".$proposed16['activities_name']."'");
 
 while ($activities16=mysqli_fetch_array($proposedQuery16,mysqli_ASSOC)){
@@ -885,7 +885,7 @@ while ($activities16=mysqli_fetch_array($proposedQuery16,mysqli_ASSOC)){
 ?>
 <tr>
 <?php
-$userQuery16=mysqli_query("select * from tbl_user where id=".$activities16['user_id']."");
+$userQuery16=mysqli_query($mysqli, " select * from tbl_user where id=".$activities16['user_id']."");
 $userData16=mysqli_fetch_array($userQuery16);
 ?>
 <td valign="top" align="left"> <?=$u?></td> 
@@ -918,7 +918,7 @@ echo "date: ". date("d-m-Y", strtotime($activities16['completed_date_by_rd']));
 
 
 <?php
-$proposedQuery17=mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
+$proposedQuery17=mysqli_query($mysqli, " select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' GROUP BY  activities_name");
 while ($proposed17=mysqli_fetch_array($proposedQuery17,mysqli_ASSOC)){
 ?>
 
@@ -928,13 +928,13 @@ while ($proposed17=mysqli_fetch_array($proposedQuery17,mysqli_ASSOC)){
 
 <?php
 $z=1;
-$proposedQuery17=mysqli_query("select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' AND activities_name='".$proposed17['activities_name']."'");
+$proposedQuery17=mysqli_query($mysqli, " select * from tbl_activities17 where  YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." AND  user_id='".$_GET['user_id']."' AND priority='".$_GET['priority']."' AND activities_name='".$proposed17['activities_name']."'");
 while ($activities17=mysqli_fetch_array($proposedQuery17,mysqli_ASSOC)){
  
 ?>
 <tr>
 <?php
-$userQuery17=mysqli_query("select * from tbl_user where id=".$activities0['user_id']."");
+$userQuery17=mysqli_query($mysqli, " select * from tbl_user where id=".$activities0['user_id']."");
 $userData17=mysqli_fetch_array($userQuery17);
 ?>
 <td valign="top" align="left"> <?=$z?></td> 

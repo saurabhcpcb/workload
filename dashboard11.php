@@ -226,14 +226,14 @@ padding:6px;  float:left; margin:2px 2px 10px 2px;
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
 <?php 
-$rdQuery=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC ");
+$rdQuery=mysqli_query($mysqli, " SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC ");
 while($zo=mysqli_fetch_array($rdQuery))
 {
 
 $zoList[]=$zo['board'];
 
 
-$activitiesQuery=mysqli_query("SELECT * FROM tbl_user_activities_date_wise where dateMonth ='".$_POST['month']."' AND rd='".$zo['board']."' AND type='".$_POST['Priority']."' GROUP BY Activities");
+$activitiesQuery=mysqli_query($mysqli, " SELECT * FROM tbl_user_activities_date_wise where dateMonth ='".$_POST['month']."' AND rd='".$zo['board']."' AND type='".$_POST['Priority']."' GROUP BY Activities");
 
 while($activitiesListData=mysqli_fetch_array($activitiesQuery))
 {
@@ -246,13 +246,13 @@ $activitiesList[]=$activitiesListData['Activities'];
   
   
   $arrayActvities[]="Water quality monitoring stations & no. of inspection during the month";
-	$activitiesCount=mysqli_query("SELECT count(*) as total FROM tbl_activities0 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities0 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult=mysqli_fetch_array($activitiesCount,mysqli_ASSOC) ;
 	$totalPending[]=$activitiesCountResult['total'];
 	
 	
 	
-	$countComplete=mysqli_query("SELECT count(*) as total FROM tbl_activities0 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities0 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult=mysqli_fetch_array($countComplete,mysqli_ASSOC) ;
 	$totalComplete[]=$countCompleteResult['total'];
   }
@@ -263,13 +263,13 @@ $activitiesList[]=$activitiesListData['Activities'];
   {
   $arrayActvities[]="Ambient air quality monitoring stations & no. of inspection during the month";
   
-	$activitiesCount1=mysqli_query("SELECT count(*) as total FROM tbl_activities1 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount1=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities1 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult1=mysqli_fetch_array($activitiesCount1,mysqli_ASSOC) ;
 	$totalPending1[]=$activitiesCountResult1['total'];
 	
 	
 	
-	$countComplete1=mysqli_query("SELECT count(*) as total FROM tbl_activities1 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete1=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities1 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult1=mysqli_fetch_array($countComplete1,mysqli_ASSOC) ;
 	$totalComplete1[]=$countCompleteResult1['total'];
   }
@@ -279,13 +279,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("Inter state river monitoring", $activitiesList))
   {
   $arrayActvities[]="Inter state river monitoring";
-	$activitiesCount2=mysqli_query("SELECT count(*) as total FROM tbl_activities2 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount2=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities2 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult2=mysqli_fetch_array($activitiesCount2,mysqli_ASSOC) ;
 	$totalPending2[]=$activitiesCountResult2['total'];
 	
 	
 	
-	$countComplete2=mysqli_query("SELECT count(*) as total FROM tbl_activities2 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete2=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities2 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult2=mysqli_fetch_array($countComplete2,mysqli_ASSOC) ;
 	$totalComplete2[]=$countCompleteResult2['total'];
   }
@@ -295,13 +295,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("Monitoring of river/rivulets/drains", $activitiesList))
   {
   $arrayActvities[]="Monitoring of river/rivulets/drains";
-	$activitiesCount3=mysqli_query("SELECT count(*) as total FROM tbl_activities3 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount3=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities3 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult3=mysqli_fetch_array($activitiesCount3,mysqli_ASSOC) ;
 	$totalPending3[]=$activitiesCountResult3['total'];
 	
 	
 	
-	$countComplete3=mysqli_query("SELECT count(*) as total FROM tbl_activities3 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete3=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities3 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult3=mysqli_fetch_array($countComplete3,mysqli_ASSOC) ;
 	$totalComplete3[]=$countCompleteResult3['total'];
   }
@@ -313,13 +313,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("CETPs", $activitiesList))
   {
   $arrayActvities[]="CETPs";
-	$activitiesCount4=mysqli_query("SELECT count(*) as total FROM tbl_activities4 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount4=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities4 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult4=mysqli_fetch_array($activitiesCount4,mysqli_ASSOC) ;
 	$totalPending4[]=$activitiesCountResult4['total'];
 	
 	
 	
-	$countComplete4=mysqli_query("SELECT count(*) as total FROM tbl_activities4 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete4=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities4 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult4=mysqli_fetch_array($countComplete4,mysqli_ASSOC) ;
 	$totalComplete4[]=$countCompleteResult4['total'];
   }
@@ -329,13 +329,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("CHWTSDF", $activitiesList))
   {
   $arrayActvities[]="CHWTSDF";
-	$activitiesCount5=mysqli_query("SELECT count(*) as total FROM tbl_activities5 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount5=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities5 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult5=mysqli_fetch_array($activitiesCount5,mysqli_ASSOC) ;
 	$totalPending5[]=$activitiesCountResult5['total'];
 	
 	
 	
-	$countComplete5=mysqli_query("SELECT count(*) as total FROM tbl_activities5 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete5=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities5 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult5=mysqli_fetch_array($countComplete5,mysqli_ASSOC) ;
 	$totalComplete5[]=$countCompleteResult5['total'];
   }
@@ -345,13 +345,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("CBMWTF", $activitiesList))
   {
   $arrayActvities[]="CBMWTF";
-	$activitiesCount6=mysqli_query("SELECT count(*) as total FROM tbl_activities6 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount6=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities6 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult6=mysqli_fetch_array($activitiesCount6,mysqli_ASSOC) ;
 	$totalPending6[]=$activitiesCountResult6['total'];
 	
 	
 	
-	$countComplete6=mysqli_query("SELECT count(*) as total FROM tbl_activities6 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete6=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities6 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult6=mysqli_fetch_array($countComplete6,mysqli_ASSOC) ;
 	$totalComplete6[]=$countCompleteResult6['total'];
   }
@@ -361,13 +361,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("STPs", $activitiesList))
   {
   $arrayActvities[]="STPs";
-	$activitiesCount7=mysqli_query("SELECT count(*) as total FROM tbl_activities7 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount7=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities7 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult7=mysqli_fetch_array($activitiesCount7,mysqli_ASSOC) ;
 	$totalPending7[]=$activitiesCountResult7['total'];
 	
 	
 	
-	$countComplete7=mysqli_query("SELECT count(*) as total FROM tbl_activities7 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete7=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities7 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult7=mysqli_fetch_array($countComplete7,mysqli_ASSOC) ;
 	$totalComplete7[]=$countCompleteResult7['total'];
   }
@@ -377,13 +377,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("SLFs(MSW)", $activitiesList))
   {
   $arrayActvities[]="SLFs(MSW)";
-	$activitiesCount8=mysqli_query("SELECT count(*) as total FROM tbl_activities8 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount8=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities8 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult8=mysqli_fetch_array($activitiesCount8,mysqli_ASSOC) ;
 	$totalPending8[]=$activitiesCountResult8['total'];
 	
 	
 	
-	$countComplete8=mysqli_query("SELECT count(*) as total FROM tbl_activities8 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete8=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities8 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult8=mysqli_fetch_array($countComplete8,mysqli_ASSOC) ;
 	$totalComplete8[]=$countCompleteResult8['total'];
   }
@@ -393,13 +393,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("Inspections based on SMS alerts from OCEMS of units", $activitiesList))
   {
      $arrayActvities[]="Inspections based on SMS alerts from OCEMS of units";
-	$activitiesCount9=mysqli_query("SELECT count(*) as total FROM tbl_activities9 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount9=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities9 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult9=mysqli_fetch_array($activitiesCount9,mysqli_ASSOC) ;
 	$totalPending9[]=$activitiesCountResult9['total'];
 	
 	
 	
-	$countComplete9=mysqli_query("SELECT count(*) as total FROM tbl_activities9 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete9=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities9 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult9=mysqli_fetch_array($countComplete9,mysqli_ASSOC) ;
 	$totalComplete9[]=$countCompleteResult9['total'];
 	
@@ -413,13 +413,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("Re-inspections/Follow-up visits of units", $activitiesList))
   {
   $arrayActvities[]="Re-inspections/Follow-up visits of units";
-	$activitiesCount10=mysqli_query("SELECT count(*) as totals FROM tbl_activities10 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount10=mysqli_query($mysqli, " SELECT count(*) as totals FROM tbl_activities10 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult10=mysqli_fetch_array($activitiesCount10,mysqli_ASSOC) ;
 	$totalPending10[]=$activitiesCountResult10['totals'];
 	
 	
 	
-	$countComplete10=mysqli_query("SELECT count(*) as totals FROM tbl_activities10 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete10=mysqli_query($mysqli, " SELECT count(*) as totals FROM tbl_activities10 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult10=mysqli_fetch_array($countComplete10,mysqli_ASSOC) ;
 	$totalComplete10[]=$countCompleteResult10['totals'];
   }
@@ -430,13 +430,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("Inspections for VIP complaint verification", $activitiesList))
   {
  $arrayActvities[]="Inspections for VIP complaint verification";
-	$activitiesCount11=mysqli_query("SELECT count(*) as total FROM tbl_activities11 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount11=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities11 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult11=mysqli_fetch_array($activitiesCount11,mysqli_ASSOC) ;
 	$totalPending11[]=$activitiesCountResult11['total'];
 	
 	
 	
-	$countComplete11=mysqli_query("SELECT count(*) as total FROM tbl_activities11 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete11=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities11 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult11=mysqli_fetch_array($countComplete11,mysqli_ASSOC) ;
 	$totalComplete11[]=$countCompleteResult11['total'];
   }
@@ -445,13 +445,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("Inspections related with NGT/court matter", $activitiesList))
   {
   $arrayActvities[]="Inspections related with NGT/court matter";
-	$activitiesCount12=mysqli_query("SELECT count(*) as total FROM tbl_activities12 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount12=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities12 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult12=mysqli_fetch_array($activitiesCount12,mysqli_ASSOC) ;
 	$totalPending12[]=$activitiesCountResult12['total'];
 	
 	
 	
-	$countComplete12=mysqli_query("SELECT count(*) as total FROM tbl_activities12 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete12=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities12 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult12=mysqli_fetch_array($countComplete12,mysqli_ASSOC) ;
 	$totalComplete12[]=$countCompleteResult12['total'];
   }
@@ -461,13 +461,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("Monitoring for trail run under HWM Rules", $activitiesList))
   {
     $arrayActvities[]="Monitoring for trail run under HWM Rules";
-	$activitiesCount13=mysqli_query("SELECT count(*) as total FROM tbl_activities13 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount13=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities13 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult13=mysqli_fetch_array($activitiesCount13,mysqli_ASSOC) ;
 	$totalPending13[]=$activitiesCountResult13['total'];
 	
 	
 	
-	$countComplete13=mysqli_query("SELECT count(*) as total FROM tbl_activities13 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete13=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities13 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult13=mysqli_fetch_array($countComplete13,mysqli_ASSOC) ;
 	$totalComplete13[]=$countCompleteResult13['total'];
   }
@@ -478,13 +478,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("Inspections related with import of hazardous & other waste", $activitiesList))
   {
      $arrayActvities[]="Inspections related with import of hazardous & other waste";
-	$activitiesCount14=mysqli_query("SELECT count(*) as total FROM tbl_activities14 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount14=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities14 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult14=mysqli_fetch_array($activitiesCount14,mysqli_ASSOC) ;
 	$totalPending14[]=$activitiesCountResult14['total'];
 	
 	
 	
-	$countComplete14=mysqli_query("SELECT count(*) as total FROM tbl_activities14 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete14=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities14 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult14=mysqli_fetch_array($countComplete14,mysqli_ASSOC) ;
 	$totalComplete14[]=$countCompleteResult14['total'];
   }
@@ -494,13 +494,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("Meetings/workshops/Training", $activitiesList))
   {
     $arrayActvities[]="Meetings/workshops/Trainingk";
-	$activitiesCount15=mysqli_query("SELECT count(*) as total FROM tbl_activities15 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount15=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities15 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult15=mysqli_fetch_array($activitiesCount15,mysqli_ASSOC) ;
 	$totalPending15[]=$activitiesCountResult15['total'];
 	
 	
 	
-	$countComplete15=mysqli_query("SELECT count(*) as total FROM tbl_activities15 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete15=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities15 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult15=mysqli_fetch_array($countComplete15,mysqli_ASSOC) ;
 	$totalComplete15[]=$countCompleteResult15['total'];
   }
@@ -510,13 +510,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("Inspections for public complaint verification", $activitiesList))
   {
     $arrayActvities[]="Inspections for public complaint verification";
-	$activitiesCount16=mysqli_query("SELECT count(*) as total FROM tbl_activities16 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount16=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities16 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult16=mysqli_fetch_array($activitiesCount16,mysqli_ASSOC) ;
 	$totalPending16[]=$activitiesCountResult16['total'];
 	
 	
 	
-	$countComplete16=mysqli_query("SELECT count(*) as total FROM tbl_activities16 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete16=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities16 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult16=mysqli_fetch_array($countComplete16,mysqli_ASSOC) ;
 	$totalComplete16[]=$countCompleteResult16['total'];
   }
@@ -527,13 +527,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("Inspections for ganga complaint verification", $activitiesList))
   {
     $arrayActvities[]="Inspections for ganga complaint verification";
-	$activitiesCount17=mysqli_query("SELECT count(*) as total FROM tbl_activities17 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount17=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities17 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult17=mysqli_fetch_array($activitiesCount17,mysqli_ASSOC) ;
 	$totalPending17[]=$activitiesCountResult17['total'];
 	
 	
 	
-	$countComplete17=mysqli_query("SELECT count(*) as total FROM tbl_activities17 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete17=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities17 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult17=mysqli_fetch_array($countComplete17,mysqli_ASSOC) ;
 	$totalComplete17[]=$countCompleteResult17['total'];
   }
@@ -968,14 +968,14 @@ data: [<?=$totalPendingData?>]
  
 
 <?php 
-$rdQuery=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC ");
+$rdQuery=mysqli_query($mysqli, " SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC ");
 while($zo=mysqli_fetch_array($rdQuery))
 {
 
 $zoList[]=$zo['board'];
 
 
-$activitiesQuery=mysqli_query("SELECT * FROM tbl_user_activities_date_wise where dateMonth ='".date("M-Y")."' AND rd='".$zo['board']."' AND type='P1' GROUP BY Activities");
+$activitiesQuery=mysqli_query($mysqli, " SELECT * FROM tbl_user_activities_date_wise where dateMonth ='".date("M-Y")."' AND rd='".$zo['board']."' AND type='P1' GROUP BY Activities");
 
 while($activitiesListData=mysqli_fetch_array($activitiesQuery))
 {
@@ -988,13 +988,13 @@ $activitiesList[]=$activitiesListData['Activities'];
   
   
   $arrayActvities[]="Water quality monitoring stations & no. of inspection during the month";
-	$activitiesCount=mysqli_query("SELECT count(*) as total FROM tbl_activities0 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities0 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult=mysqli_fetch_array($activitiesCount,mysqli_ASSOC) ;
 	$totalPending[]=$activitiesCountResult['total'];
 	
 	
 	
-	$countComplete=mysqli_query("SELECT count(*) as total FROM tbl_activities0 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities0 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult=mysqli_fetch_array($countComplete,mysqli_ASSOC) ;
 	$totalComplete[]=$countCompleteResult['total'];
   }
@@ -1005,13 +1005,13 @@ $activitiesList[]=$activitiesListData['Activities'];
   {
   $arrayActvities[]="Ambient air quality monitoring stations & no. of inspection during the month";
   
-	$activitiesCount1=mysqli_query("SELECT count(*) as total FROM tbl_activities1 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount1=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities1 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult1=mysqli_fetch_array($activitiesCount1,mysqli_ASSOC) ;
 	$totalPending1[]=$activitiesCountResult1['total'];
 	
 	
 	
-	$countComplete1=mysqli_query("SELECT count(*) as total FROM tbl_activities1 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete1=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities1 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult1=mysqli_fetch_array($countComplete1,mysqli_ASSOC) ;
 	$totalComplete1[]=$countCompleteResult1['total'];
   }
@@ -1021,13 +1021,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("Inter state river monitoring", $activitiesList))
   {
   $arrayActvities[]="Inter state river monitoring";
-	$activitiesCount2=mysqli_query("SELECT count(*) as total FROM tbl_activities2 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount2=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities2 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult2=mysqli_fetch_array($activitiesCount2,mysqli_ASSOC) ;
 	$totalPending2[]=$activitiesCountResult2['total'];
 	
 	
 	
-	$countComplete2=mysqli_query("SELECT count(*) as total FROM tbl_activities2 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete2=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities2 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult2=mysqli_fetch_array($countComplete2,mysqli_ASSOC) ;
 	$totalComplete2[]=$countCompleteResult2['total'];
   }
@@ -1037,13 +1037,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("Monitoring of river/rivulets/drains", $activitiesList))
   {
   $arrayActvities[]="Monitoring of river/rivulets/drains";
-	$activitiesCount3=mysqli_query("SELECT count(*) as total FROM tbl_activities3 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount3=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities3 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult3=mysqli_fetch_array($activitiesCount3,mysqli_ASSOC) ;
 	$totalPending3[]=$activitiesCountResult3['total'];
 	
 	
 	
-	$countComplete3=mysqli_query("SELECT count(*) as total FROM tbl_activities3 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete3=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities3 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult3=mysqli_fetch_array($countComplete3,mysqli_ASSOC) ;
 	$totalComplete3[]=$countCompleteResult3['total'];
   }
@@ -1055,13 +1055,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("CETPs", $activitiesList))
   {
   $arrayActvities[]="CETPs";
-	$activitiesCount4=mysqli_query("SELECT count(*) as total FROM tbl_activities4 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount4=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities4 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult4=mysqli_fetch_array($activitiesCount4,mysqli_ASSOC) ;
 	$totalPending4[]=$activitiesCountResult4['total'];
 	
 	
 	
-	$countComplete4=mysqli_query("SELECT count(*) as total FROM tbl_activities4 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete4=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities4 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult4=mysqli_fetch_array($countComplete4,mysqli_ASSOC) ;
 	$totalComplete4[]=$countCompleteResult4['total'];
   }
@@ -1071,13 +1071,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("CHWTSDF", $activitiesList))
   {
   $arrayActvities[]="CHWTSDF";
-	$activitiesCount5=mysqli_query("SELECT count(*) as total FROM tbl_activities5 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount5=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities5 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult5=mysqli_fetch_array($activitiesCount5,mysqli_ASSOC) ;
 	$totalPending5[]=$activitiesCountResult5['total'];
 	
 	
 	
-	$countComplete5=mysqli_query("SELECT count(*) as total FROM tbl_activities5 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete5=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities5 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult5=mysqli_fetch_array($countComplete5,mysqli_ASSOC) ;
 	$totalComplete5[]=$countCompleteResult5['total'];
   }
@@ -1087,13 +1087,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("CBMWTF", $activitiesList))
   {
   $arrayActvities[]="CBMWTF";
-	$activitiesCount6=mysqli_query("SELECT count(*) as total FROM tbl_activities6 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount6=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities6 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult6=mysqli_fetch_array($activitiesCount6,mysqli_ASSOC) ;
 	$totalPending6[]=$activitiesCountResult6['total'];
 	
 	
 	
-	$countComplete6=mysqli_query("SELECT count(*) as total FROM tbl_activities6 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete6=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities6 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult6=mysqli_fetch_array($countComplete6,mysqli_ASSOC) ;
 	$totalComplete6[]=$countCompleteResult6['total'];
   }
@@ -1103,13 +1103,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("STPs", $activitiesList))
   {
   $arrayActvities[]="STPs";
-	$activitiesCount7=mysqli_query("SELECT count(*) as total FROM tbl_activities7 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount7=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities7 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult7=mysqli_fetch_array($activitiesCount7,mysqli_ASSOC) ;
 	$totalPending7[]=$activitiesCountResult7['total'];
 	
 	
 	
-	$countComplete7=mysqli_query("SELECT count(*) as total FROM tbl_activities7 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete7=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities7 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult7=mysqli_fetch_array($countComplete7,mysqli_ASSOC) ;
 	$totalComplete7[]=$countCompleteResult7['total'];
   }
@@ -1119,13 +1119,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("SLFs(MSW)", $activitiesList))
   {
   $arrayActvities[]="SLFs(MSW)";
-	$activitiesCount8=mysqli_query("SELECT count(*) as total FROM tbl_activities8 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount8=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities8 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult8=mysqli_fetch_array($activitiesCount8,mysqli_ASSOC) ;
 	$totalPending8[]=$activitiesCountResult8['total'];
 	
 	
 	
-	$countComplete8=mysqli_query("SELECT count(*) as total FROM tbl_activities8 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete8=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities8 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult8=mysqli_fetch_array($countComplete8,mysqli_ASSOC) ;
 	$totalComplete8[]=$countCompleteResult8['total'];
   }
@@ -1135,13 +1135,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("Inspections based on SMS alerts from OCEMS of units", $activitiesList))
   {
      $arrayActvities[]="Inspections based on SMS alerts from OCEMS of units";
-	$activitiesCount9=mysqli_query("SELECT count(*) as total FROM tbl_activities9 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount9=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities9 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult9=mysqli_fetch_array($activitiesCount9,mysqli_ASSOC) ;
 	$totalPending9[]=$activitiesCountResult9['total'];
 	
 	
 	
-	$countComplete9=mysqli_query("SELECT count(*) as total FROM tbl_activities9 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete9=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities9 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult9=mysqli_fetch_array($countComplete9,mysqli_ASSOC) ;
 	$totalComplete9[]=$countCompleteResult9['total'];
 	
@@ -1155,13 +1155,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("Re-inspections/Follow-up visits of units", $activitiesList))
   {
   $arrayActvities[]="Re-inspections/Follow-up visits of units";
-	$activitiesCount10=mysqli_query("SELECT count(*) as totals FROM tbl_activities10 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount10=mysqli_query($mysqli, " SELECT count(*) as totals FROM tbl_activities10 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult10=mysqli_fetch_array($activitiesCount10,mysqli_ASSOC) ;
 	$totalPending10[]=$activitiesCountResult10['totals'];
 	
 	
 	
-	$countComplete10=mysqli_query("SELECT count(*) as totals FROM tbl_activities10 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete10=mysqli_query($mysqli, " SELECT count(*) as totals FROM tbl_activities10 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult10=mysqli_fetch_array($countComplete10,mysqli_ASSOC) ;
 	$totalComplete10[]=$countCompleteResult10['totals'];
   }
@@ -1172,13 +1172,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("Inspections for VIP complaint verification", $activitiesList))
   {
  $arrayActvities[]="Inspections for VIP complaint verification";
-	$activitiesCount11=mysqli_query("SELECT count(*) as total FROM tbl_activities11 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount11=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities11 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult11=mysqli_fetch_array($activitiesCount11,mysqli_ASSOC) ;
 	$totalPending11[]=$activitiesCountResult11['total'];
 	
 	
 	
-	$countComplete11=mysqli_query("SELECT count(*) as total FROM tbl_activities11 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete11=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities11 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult11=mysqli_fetch_array($countComplete11,mysqli_ASSOC) ;
 	$totalComplete11[]=$countCompleteResult11['total'];
   }
@@ -1187,13 +1187,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("Inspections related with NGT/court matter", $activitiesList))
   {
   $arrayActvities[]="Inspections related with NGT/court matter";
-	$activitiesCount12=mysqli_query("SELECT count(*) as total FROM tbl_activities12 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount12=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities12 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult12=mysqli_fetch_array($activitiesCount12,mysqli_ASSOC) ;
 	$totalPending12[]=$activitiesCountResult12['total'];
 	
 	
 	
-	$countComplete12=mysqli_query("SELECT count(*) as total FROM tbl_activities12 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete12=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities12 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult12=mysqli_fetch_array($countComplete12,mysqli_ASSOC) ;
 	$totalComplete12[]=$countCompleteResult12['total'];
   }
@@ -1203,13 +1203,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("Monitoring for trail run under HWM Rules", $activitiesList))
   {
     $arrayActvities[]="Monitoring for trail run under HWM Rules";
-	$activitiesCount13=mysqli_query("SELECT count(*) as total FROM tbl_activities13 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount13=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities13 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult13=mysqli_fetch_array($activitiesCount13,mysqli_ASSOC) ;
 	$totalPending13[]=$activitiesCountResult13['total'];
 	
 	
 	
-	$countComplete13=mysqli_query("SELECT count(*) as total FROM tbl_activities13 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete13=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities13 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult13=mysqli_fetch_array($countComplete13,mysqli_ASSOC) ;
 	$totalComplete13[]=$countCompleteResult13['total'];
   }
@@ -1220,13 +1220,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("Inspections related with import of hazardous & other waste", $activitiesList))
   {
      $arrayActvities[]="Inspections related with import of hazardous & other waste";
-	$activitiesCount14=mysqli_query("SELECT count(*) as total FROM tbl_activities14 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount14=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities14 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult14=mysqli_fetch_array($activitiesCount14,mysqli_ASSOC) ;
 	$totalPending14[]=$activitiesCountResult14['total'];
 	
 	
 	
-	$countComplete14=mysqli_query("SELECT count(*) as total FROM tbl_activities14 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete14=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities14 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult14=mysqli_fetch_array($countComplete14,mysqli_ASSOC) ;
 	$totalComplete14[]=$countCompleteResult14['total'];
   }
@@ -1236,13 +1236,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("Meetings/workshops/Training", $activitiesList))
   {
     $arrayActvities[]="Meetings/workshops/Trainingk";
-	$activitiesCount15=mysqli_query("SELECT count(*) as total FROM tbl_activities15 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount15=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities15 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult15=mysqli_fetch_array($activitiesCount15,mysqli_ASSOC) ;
 	$totalPending15[]=$activitiesCountResult15['total'];
 	
 	
 	
-	$countComplete15=mysqli_query("SELECT count(*) as total FROM tbl_activities15 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete15=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities15 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult15=mysqli_fetch_array($countComplete15,mysqli_ASSOC) ;
 	$totalComplete15[]=$countCompleteResult15['total'];
   }
@@ -1252,13 +1252,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("Inspections for public complaint verification", $activitiesList))
   {
     $arrayActvities[]="Inspections for public complaint verification";
-	$activitiesCount16=mysqli_query("SELECT count(*) as total FROM tbl_activities16 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount16=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities16 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult16=mysqli_fetch_array($activitiesCount16,mysqli_ASSOC) ;
 	$totalPending16[]=$activitiesCountResult16['total'];
 	
 	
 	
-	$countComplete16=mysqli_query("SELECT count(*) as total FROM tbl_activities16 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete16=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities16 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult16=mysqli_fetch_array($countComplete16,mysqli_ASSOC) ;
 	$totalComplete16[]=$countCompleteResult16['total'];
   }
@@ -1269,13 +1269,13 @@ $activitiesList[]=$activitiesListData['Activities'];
 */if (in_array("Inspections for ganga complaint verification", $activitiesList))
   {
     $arrayActvities[]="Inspections for ganga complaint verification";
-	$activitiesCount17=mysqli_query("SELECT count(*) as total FROM tbl_activities17 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
+	$activitiesCount17=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities17 where final_Status in(0,1) AND rd_id='".$zo['board']."'");
 	$activitiesCountResult17=mysqli_fetch_array($activitiesCount17,mysqli_ASSOC) ;
 	$totalPending17[]=$activitiesCountResult17['total'];
 	
 	
 	
-	$countComplete17=mysqli_query("SELECT count(*) as total FROM tbl_activities17 where final_Status=2 AND rd_id='".$zo['board']."'");
+	$countComplete17=mysqli_query($mysqli, " SELECT count(*) as total FROM tbl_activities17 where final_Status=2 AND rd_id='".$zo['board']."'");
 	$countCompleteResult17=mysqli_fetch_array($countComplete17,mysqli_ASSOC) ;
 	$totalComplete17[]=$countCompleteResult17['total'];
   }

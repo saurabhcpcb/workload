@@ -14,7 +14,7 @@ $mysqli_database = "project_management";
 mysqli_select_db($mysqli_database) or die("Opps some thing went wrong");
  
  
-$getQuery=mysqli_query("SELECT * FROM projects where id ='".$_GET['id']."'"); 
+$getQuery=mysqli_query($mysqli, " SELECT * FROM projects where id ='".$_GET['id']."'"); 
 $row=mysqli_fetch_array($getQuery);
 
 
@@ -25,7 +25,7 @@ $row=mysqli_fetch_array($getQuery);
 if($_POST['submit'] && $_POST['submit']=="Submit")
 {
  
-$updateQuery=mysqli_query("UPDATE projects SET Action_Taken='".addslashes($_POST['Action_Taken'])."',Facts_Case='".addslashes($_POST['Facts_Case'])."',Action_Required_Future='".addslashes($_POST['Action_Required_Future'])."',Recieved_Date='".addslashes($_POST['Recieved_Date'])."',status='".addslashes($_POST['status'])."' where id=".$_POST['dataId']."");
+$updateQuery=mysqli_query($mysqli, " UPDATE projects SET Action_Taken='".addslashes($_POST['Action_Taken'])."',Facts_Case='".addslashes($_POST['Facts_Case'])."',Action_Required_Future='".addslashes($_POST['Action_Required_Future'])."',Recieved_Date='".addslashes($_POST['Recieved_Date'])."',status='".addslashes($_POST['status'])."' where id=".$_POST['dataId']."");
 
 if($updateQuery){
 

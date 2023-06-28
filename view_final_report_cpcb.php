@@ -26,48 +26,48 @@ if(isset($_POST['submit']) && $_POST['submit']=="Final Report")
 $month= date("m", strtotime($_POST['month']));
 $year= date("Y", strtotime($_POST['month']));
  
- $getUserData1=mysqli_query("SELECT * FROM tbl_user where board='".$_POST['rd']."'");
+ $getUserData1=mysqli_query($mysqli, " SELECT * FROM tbl_user where board='".$_POST['rd']."'");
 $user1=mysqli_fetch_array($getUserData1);  
  
-$updateQuery=mysqli_query("UPDATE tbl_activities0 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysqli_query("UPDATE tbl_activities1 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."'  AND status=1 AND rd_id='".$_POST['rd']."'");
-mysqli_query("UPDATE tbl_activities2 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysqli_query("UPDATE tbl_activities3 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysqli_query("UPDATE tbl_activities4 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysqli_query("UPDATE tbl_activities5 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysqli_query("UPDATE tbl_activities6 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysqli_query("UPDATE tbl_activities7 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysqli_query("UPDATE tbl_activities8 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysqli_query("UPDATE tbl_activities9 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysqli_query("UPDATE tbl_activities10 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysqli_query("UPDATE tbl_activities11 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysqli_query("UPDATE tbl_activities12 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysqli_query("UPDATE tbl_activities13 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysqli_query("UPDATE tbl_activities14 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysqli_query("UPDATE tbl_activities15 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysqli_query("UPDATE tbl_activities16 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
-mysqli_query("UPDATE tbl_activities17 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+$updateQuery=mysqli_query($mysqli, " UPDATE tbl_activities0 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities1 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."'  AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities2 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities3 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities4 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities5 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities6 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities7 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities8 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities9 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities10 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities11 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities12 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities13 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities14 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities15 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities16 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities17 SET final_Status='1' WHERE YEAR(target_date) = '".$year."' AND MONTH(target_date) = '".$month."' AND status=1 AND rd_id='".$_POST['rd']."'");
 
 
-mysqli_query("UPDATE tbl_activities_rd0 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
-mysqli_query("UPDATE tbl_activities_rd1 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
-mysqli_query("UPDATE tbl_activities_rd2 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
-mysqli_query("UPDATE tbl_activities_rd3 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
-mysqli_query("UPDATE tbl_activities_rd4 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
-mysqli_query("UPDATE tbl_activities_rd5 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities_rd0 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities_rd1 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities_rd2 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities_rd3 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities_rd4 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities_rd5 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
 
-mysqli_query("UPDATE tbl_activities_rd6 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
-mysqli_query("UPDATE tbl_activities_rd7 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
-mysqli_query("UPDATE tbl_activities_rd8 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
-mysqli_query("UPDATE tbl_activities_rd9 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
-mysqli_query("UPDATE tbl_activities_rd10 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
-mysqli_query("UPDATE tbl_activities_rd11 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
-mysqli_query("UPDATE tbl_activities_rd12 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
-mysqli_query("UPDATE tbl_activities_rd13 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
-mysqli_query("UPDATE tbl_activities_rd14 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
-mysqli_query("UPDATE tbl_activities_rd15 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
-mysqli_query("UPDATE tbl_activities_rd16 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
-mysqli_query("UPDATE tbl_activities_rd17 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities_rd6 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities_rd7 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities_rd8 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities_rd9 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities_rd10 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities_rd11 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities_rd12 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities_rd13 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities_rd14 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities_rd15 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities_rd16 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
+mysqli_query($mysqli, " UPDATE tbl_activities_rd17 SET final_Status='1' WHERE month = '".$_POST['month']."'  AND status=1 AND user_id='".$user1['id']."'");
 $_SESSION['success']="Successfull Final Report Generated";
 }
  ?>
@@ -189,7 +189,7 @@ $_SESSION['success']="";
                
            <td width="30%"><select name="rd_id12" class="form-control" style="width:49%; margin-left:10px; float:left;" required>
            <option value="">Select RD</option>
-		   <?php $getQuery12=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); 
+		   <?php $getQuery12=mysqli_query($mysqli, " SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); 
 		   while($rd12=mysqli_fetch_array($getQuery12)){?>
            <option value="<?=$rd12['board']?>"  <?=($rd12['board']==$_GET['rd_id12'])?'selected':''?> ><?=$rd12['board']?></option><?php }?>
            </select></td>
@@ -206,7 +206,7 @@ $_SESSION['success']="";
            <?php
            if(isset($_GET['searchRegionalDirectors'])){
 		   
-			$getUserData=mysqli_query("SELECT * FROM tbl_user where board='".$_GET['rd_id12']."'");
+			$getUserData=mysqli_query($mysqli, " SELECT * FROM tbl_user where board='".$_GET['rd_id12']."'");
 			$user=mysqli_fetch_array($getUserData);  
 			 
 		$month= date("m", strtotime($_GET['month']));
@@ -240,7 +240,7 @@ $_SESSION['success']="";
         
         <?php
 		 
-        $queryP1=mysqli_query("select * from   tbl_user_activities_date_wise where type = 'P1' AND rd='".$_GET['rd_id12']."' AND dateMonth='".$_GET['month']."'");
+        $queryP1=mysqli_query($mysqli, " select * from   tbl_user_activities_date_wise where type = 'P1' AND rd='".$_GET['rd_id12']."' AND dateMonth='".$_GET['month']."'");
         while($p1=mysqli_fetch_array($queryP1))
         {
         $p1List[]=$p1['Activities'];
@@ -257,11 +257,11 @@ $_SESSION['success']="";
 <td colspan="5"> 
 <?php
 
-$queryByDate=mysqli_query("SELECT * FROM tbl_activities0 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+$queryByDate=mysqli_query($mysqli, " SELECT * FROM tbl_activities0 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
 
 $dateRow=mysqli_num_rows($queryByDate);
  
-$queryByDateRd=mysqli_query("SELECT * FROM tbl_activities_rd0 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd0 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 
 $dateRowRd=mysqli_num_rows($queryByDateRd);
  ?>
@@ -274,9 +274,9 @@ $dateRowRd=mysqli_num_rows($queryByDateRd);
     <td width="20%"><span class="<?php if($dateRow+$dateRowRd>0){echo "totalNumbers";} else { echo"totalNumber";}?>" onClick="window.open('view_report_details.php?eid=activities0&cid=<?=$_GET['month']?>&rd=<?=$_GET['rd_id12']?>','','width=718,height=800,scrollbar=0,menubar=0');"><i class="fa fa-fw fa-long-arrow-right"></i> <?=$dateRow+$dateRowRd?></span></td>
     
 <?php
-$queryByDateStatus0=mysqli_query("SELECT * FROM tbl_activities0 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
+$queryByDateStatus0=mysqli_query($mysqli, " SELECT * FROM tbl_activities0 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
 $dateRowStatus0=mysqli_num_rows($queryByDateStatus0);
-$queryByDateRdStatus0=mysqli_query("SELECT * FROM tbl_activities_rd0 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
+$queryByDateRdStatus0=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd0 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
 $dateRowRdStatus0=mysqli_num_rows($queryByDateRdStatus0);
 $total=$dateRowStatus0+$dateRowRdStatus0;
 
@@ -291,11 +291,11 @@ $total=$dateRowStatus0+$dateRowRdStatus0;
 
    <?php
  
-$queryByDateFinal=mysqli_query("SELECT * FROM tbl_activities0 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
+$queryByDateFinal=mysqli_query($mysqli, " SELECT * FROM tbl_activities0 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
 
 $dateRowFinal=mysqli_num_rows($queryByDateFinal);
 
-$queryByDateRdFinal=mysqli_query("SELECT * FROM tbl_activities_rd0 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
+$queryByDateRdFinal=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd0 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
 
 $dateRowRdFinal=mysqli_num_rows($queryByDateRdFinal);
 
@@ -307,7 +307,7 @@ $totalFinal=$dateRowFinal+$dateRowRdFinal;
     <td width="25%">
 	<?php
 
-$queryByDateData=mysqli_query("SELECT * FROM tbl_activities0 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
+$queryByDateData=mysqli_query($mysqli, " SELECT * FROM tbl_activities0 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
 
 while($dateRowData=mysqli_fetch_array($queryByDateData)){
  ?>
@@ -338,7 +338,7 @@ while($dateRowData=mysqli_fetch_array($queryByDateData)){
 </table>
  
  <?php 
- $activitiesFile0=mysqli_query("SELECT * FROM  tbl_activities0 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
+ $activitiesFile0=mysqli_query($mysqli, " SELECT * FROM  tbl_activities0 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
  if(mysqli_num_rows($activitiesFile0)>0){
 while($activitiesFileList0=mysqli_fetch_array($activitiesFile0)){
 ?>
@@ -356,13 +356,13 @@ while($activitiesFileList0=mysqli_fetch_array($activitiesFile0)){
 
 <td colspan="5"> 
 <?php
-$queryByDate1=mysqli_query("SELECT * FROM tbl_activities1 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+$queryByDate1=mysqli_query($mysqli, " SELECT * FROM tbl_activities1 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
 
 $dateRow1=mysqli_num_rows($queryByDate1);
  ?>
   <?php
 
-$queryByDateRd1=mysqli_query("SELECT * FROM tbl_activities_rd1 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd1=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd1 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 
 $dateRowRd1=mysqli_num_rows($queryByDateRd1);
  ?>
@@ -373,9 +373,9 @@ $dateRowRd1=mysqli_num_rows($queryByDateRd1);
  
     <td width="20%"><span class="<?php if($dateRow1+$dateRowRd1>0){echo "totalNumbers";} else { echo"totalNumber";}?>" onClick="window.open('view_report_details.php?eid=activities1&cid=<?=$_GET['month']?>&rd=<?=$_GET['rd_id12']?>','','width=718,height=800,scrollbar=0,menubar=0');"><i class="fa fa-fw fa-long-arrow-right"></i> <?=$dateRow1+$dateRowRd1?></span></td>
     <?php
-$queryByDateStatus1=mysqli_query("SELECT * FROM tbl_activities1 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
+$queryByDateStatus1=mysqli_query($mysqli, " SELECT * FROM tbl_activities1 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
 $dateRowStatus1=mysqli_num_rows($queryByDateStatus1);
-$queryByDateRdStatus1=mysqli_query("SELECT * FROM tbl_activities_rd1 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
+$queryByDateRdStatus1=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd1 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
 $dateRowRdStatus1=mysqli_num_rows($queryByDateRdStatus1);
 $total1=$dateRowStatus1+$dateRowRdStatus1;
 ?>
@@ -385,11 +385,11 @@ $total1=$dateRowStatus1+$dateRowRdStatus1;
 
    <?php
  
-$queryByDateFinal1=mysqli_query("SELECT * FROM tbl_activities1 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND final_Status=2");  
+$queryByDateFinal1=mysqli_query($mysqli, " SELECT * FROM tbl_activities1 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND final_Status=2");  
 
 $dateRowFinal1=mysqli_num_rows($queryByDateFinal1);
 
-$queryByDateRdFinal1=mysqli_query("SELECT * FROM tbl_activities_rd1 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
+$queryByDateRdFinal1=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd1 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
 
 $dateRowRdFinal1=mysqli_num_rows($queryByDateRdFinal1);
 
@@ -400,7 +400,7 @@ $totalFinal1=$dateRowFinal1+$dateRowRdFinal1;
     <td width="25%">
 	<?php
 
-$queryByDateData1=mysqli_query("SELECT * FROM tbl_activities1 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
+$queryByDateData1=mysqli_query($mysqli, " SELECT * FROM tbl_activities1 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
 
 while($dateRowData1=mysqli_fetch_array($queryByDateData1)){
  ?>
@@ -433,7 +433,7 @@ while($dateRowData1=mysqli_fetch_array($queryByDateData1)){
 </table>
  
   <?php 
- $activitiesFile1=mysqli_query("SELECT * FROM  tbl_activities1 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
+ $activitiesFile1=mysqli_query($mysqli, " SELECT * FROM  tbl_activities1 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
  if(mysqli_num_rows($activitiesFile1)>0){
 while($activitiesFileList1=mysqli_fetch_array($activitiesFile1)){
 ?>
@@ -452,13 +452,13 @@ while($activitiesFileList1=mysqli_fetch_array($activitiesFile1)){
 
 <td colspan="5"> 
 <?php
-$queryByDate2=mysqli_query("SELECT * FROM tbl_activities2 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+$queryByDate2=mysqli_query($mysqli, " SELECT * FROM tbl_activities2 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
 
 $dateRow2=mysqli_num_rows($queryByDate2);
  ?>
   <?php
 
-$queryByDateRd2=mysqli_query("SELECT * FROM tbl_activities_rd2 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd2=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd2 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 
 $dateRowRd2=mysqli_num_rows($queryByDateRd2);
  ?>
@@ -469,9 +469,9 @@ $dateRowRd2=mysqli_num_rows($queryByDateRd2);
  
     <td width="20%"><span class="<?php if($dateRow2+$dateRowRd2>0){echo "totalNumbers";} else { echo"totalNumber";}?>" onClick="window.open('view_report_details.php?eid=activities2&cid=<?=$_GET['month']?>&rd=<?=$_GET['rd_id12']?>','','width=718,height=800,scrollbar=0,menubar=0');"><i class="fa fa-fw fa-long-arrow-right"></i> <?=$dateRow2+$dateRowRd2?></span></td>
     <?php
-$queryByDateStatus2=mysqli_query("SELECT * FROM tbl_activities2 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND status=1");  
+$queryByDateStatus2=mysqli_query($mysqli, " SELECT * FROM tbl_activities2 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND status=1");  
 $dateRowStatus2=mysqli_num_rows($queryByDateStatus2);
-$queryByDateRdStatus2=mysqli_query("SELECT * FROM tbl_activities_rd2 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
+$queryByDateRdStatus2=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd2 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
 $dateRowRdStatus2=mysqli_num_rows($queryByDateRdStatus2);
 $total2=$dateRowStatus2+$dateRowRdStatus2;
 ?>
@@ -481,11 +481,11 @@ $total2=$dateRowStatus2+$dateRowRdStatus2;
 
    <?php
  
-$queryByDateFinal2=mysqli_query("SELECT * FROM tbl_activities2 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND final_Status=2");  
+$queryByDateFinal2=mysqli_query($mysqli, " SELECT * FROM tbl_activities2 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND final_Status=2");  
 
 $dateRowFinal2=mysqli_num_rows($queryByDateFinal2);
 
-$queryByDateRdFinal2=mysqli_query("SELECT * FROM tbl_activities_rd2 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
+$queryByDateRdFinal2=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd2 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
 
 $dateRowRdFinal2=mysqli_num_rows($queryByDateRdFinal2);
 
@@ -496,7 +496,7 @@ $totalFinal2=$dateRowFinal2+$dateRowRdFinal2;
     <td width="25%">
 	<?php
 
-$queryByDateData2=mysqli_query("SELECT * FROM tbl_activities2 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
+$queryByDateData2=mysqli_query($mysqli, " SELECT * FROM tbl_activities2 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
 
 while($dateRowData2=mysqli_fetch_array($queryByDateData2)){
  ?>
@@ -529,7 +529,7 @@ while($dateRowData2=mysqli_fetch_array($queryByDateData2)){
 </table>
  
    <?php 
- $activitiesFile2=mysqli_query("SELECT * FROM  tbl_activities2 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
+ $activitiesFile2=mysqli_query($mysqli, " SELECT * FROM  tbl_activities2 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
  if(mysqli_num_rows($activitiesFile2)>0){
 while($activitiesFileList2=mysqli_fetch_array($activitiesFile2)){
 ?>
@@ -548,13 +548,13 @@ while($activitiesFileList2=mysqli_fetch_array($activitiesFile2)){
 
 <td colspan="5"> 
 <?php
-$queryByDate3=mysqli_query("SELECT * FROM tbl_activities3 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+$queryByDate3=mysqli_query($mysqli, " SELECT * FROM tbl_activities3 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
 
 $dateRow3=mysqli_num_rows($queryByDate3);
  ?>
   <?php
 
-$queryByDateRd3=mysqli_query("SELECT * FROM tbl_activities_rd3 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd3=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd3 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 
 $dateRowRd3=mysqli_num_rows($queryByDateRd3);
  ?>
@@ -565,9 +565,9 @@ $dateRowRd3=mysqli_num_rows($queryByDateRd3);
  
     <td width="20%"><span class="<?php if($dateRow3+$dateRowRd3>0){echo "totalNumbers";} else { echo"totalNumber";}?>" onClick="window.open('view_report_details.php?eid=activities3&cid=<?=$_GET['month']?>&rd=<?=$_GET['rd_id12']?>','','width=718,height=800,scrollbar=0,menubar=0');"><i class="fa fa-fw fa-long-arrow-right"></i> <?=$dateRow3+$dateRowRd3?></span></td>
     <?php
-$queryByDateStatus3=mysqli_query("SELECT * FROM tbl_activities3 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
+$queryByDateStatus3=mysqli_query($mysqli, " SELECT * FROM tbl_activities3 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
 $dateRowStatus3=mysqli_num_rows($queryByDateStatus3);
-$queryByDateRdStatus3=mysqli_query("SELECT * FROM tbl_activities_rd3 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
+$queryByDateRdStatus3=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd3 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
 $dateRowRdStatus3=mysqli_num_rows($queryByDateRdStatus3);
 $total3=$dateRowStatus3+$dateRowRdStatus3;
 ?>
@@ -579,11 +579,11 @@ $total3=$dateRowStatus3+$dateRowRdStatus3;
 
 <?php
 
-$queryByDateFinal3=mysqli_query("SELECT * FROM tbl_activities3 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
+$queryByDateFinal3=mysqli_query($mysqli, " SELECT * FROM tbl_activities3 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
 
 $dateRowFinal3=mysqli_num_rows($queryByDateFinal3);
 
-$queryByDateRdFinal3=mysqli_query("SELECT * FROM tbl_activities_rd3 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
+$queryByDateRdFinal3=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd3 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
 
 $dateRowRdFinal3=mysqli_num_rows($queryByDateRdFinal3);
 
@@ -595,7 +595,7 @@ $totalFinal3=$dateRowFinal3+$dateRowRdFinal3;
     <td width="25%">
 	<?php
 
-$queryByDateData3=mysqli_query("SELECT * FROM tbl_activities3 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
+$queryByDateData3=mysqli_query($mysqli, " SELECT * FROM tbl_activities3 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
 
 while($dateRowData3=mysqli_fetch_array($queryByDateData3)){
  ?>
@@ -628,7 +628,7 @@ while($dateRowData3=mysqli_fetch_array($queryByDateData3)){
 </table>
  
    <?php 
- $activitiesFile3=mysqli_query("SELECT * FROM  tbl_activities3 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
+ $activitiesFile3=mysqli_query($mysqli, " SELECT * FROM  tbl_activities3 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
  if(mysqli_num_rows($activitiesFile3)>0){
 while($activitiesFileList3=mysqli_fetch_array($activitiesFile3)){
 ?>
@@ -647,13 +647,13 @@ while($activitiesFileList3=mysqli_fetch_array($activitiesFile3)){
 
 <td colspan="5"> 
 <?php
-$queryByDate4=mysqli_query("SELECT * FROM tbl_activities4 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+$queryByDate4=mysqli_query($mysqli, " SELECT * FROM tbl_activities4 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
 
 $dateRow4=mysqli_num_rows($queryByDate4);
  ?>
   <?php
 
-$queryByDateRd4=mysqli_query("SELECT * FROM tbl_activities_rd4 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd4=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd4 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 
 $dateRowRd4=mysqli_num_rows($queryByDateRd4);
  ?>
@@ -664,9 +664,9 @@ $dateRowRd4=mysqli_num_rows($queryByDateRd4);
  
     <td width="20%"><span class="<?php if($dateRow4+$dateRowRd4>0){echo "totalNumbers";} else { echo"totalNumber";}?>" onClick="window.open('view_report_details.php?eid=activities4&cid=<?=$_GET['month']?>&rd=<?=$_GET['rd_id12']?>','','width=718,height=800,scrollbar=0,menubar=0');"><i class="fa fa-fw fa-long-arrow-right"></i> <?=$dateRow4+$dateRowRd4?></span></td>
     <?php
-$queryByDateStatus4=mysqli_query("SELECT * FROM tbl_activities4 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND status=1");  
+$queryByDateStatus4=mysqli_query($mysqli, " SELECT * FROM tbl_activities4 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND status=1");  
 $dateRowStatus4=mysqli_num_rows($queryByDateStatus4);
-$queryByDateRdStatus4=mysqli_query("SELECT * FROM tbl_activities_rd4 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
+$queryByDateRdStatus4=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd4 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
 $dateRowRdStatus4=mysqli_num_rows($queryByDateRdStatus4);
 $total4=$dateRowStatus4+$dateRowRdStatus4;
 ?>
@@ -676,11 +676,11 @@ $total4=$dateRowStatus4+$dateRowRdStatus4;
 
 <?php
 
-$queryByDateFinal4=mysqli_query("SELECT * FROM tbl_activities4 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND final_Status=2");  
+$queryByDateFinal4=mysqli_query($mysqli, " SELECT * FROM tbl_activities4 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND final_Status=2");  
 
 $dateRowFinal4=mysqli_num_rows($queryByDateFinal4);
 
-$queryByDateRdFinal4=mysqli_query("SELECT * FROM tbl_activities_rd4 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
+$queryByDateRdFinal4=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd4 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
 
 $dateRowRdFinal4=mysqli_num_rows($queryByDateRdFinal4);
 
@@ -692,7 +692,7 @@ $totalFinal4=$dateRowFinal4+$dateRowRdFinal4;
     <td width="25%">
 	<?php
 
-$queryByDateData4=mysqli_query("SELECT * FROM tbl_activities4 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
+$queryByDateData4=mysqli_query($mysqli, " SELECT * FROM tbl_activities4 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
 
 while($dateRowData4=mysqli_fetch_array($queryByDateData4)){
  ?>
@@ -725,7 +725,7 @@ while($dateRowData4=mysqli_fetch_array($queryByDateData4)){
 </table>
  
    <?php 
- $activitiesFile4=mysqli_query("SELECT * FROM  tbl_activities4 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
+ $activitiesFile4=mysqli_query($mysqli, " SELECT * FROM  tbl_activities4 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
  if(mysqli_num_rows($activitiesFile4)>0){
 while($activitiesFileList4=mysqli_fetch_array($activitiesFile4)){
 ?>
@@ -744,13 +744,13 @@ while($activitiesFileList4=mysqli_fetch_array($activitiesFile4)){
 
 <td colspan="5"> 
 <?php
-$queryByDate5=mysqli_query("SELECT * FROM tbl_activities5 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+$queryByDate5=mysqli_query($mysqli, " SELECT * FROM tbl_activities5 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
 
 $dateRow5=mysqli_num_rows($queryByDate5);
  ?>
   <?php
 
-$queryByDateRd5=mysqli_query("SELECT * FROM tbl_activities_rd5 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd5=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd5 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 
 $dateRowRd5=mysqli_num_rows($queryByDateRd5);
  ?>
@@ -767,9 +767,9 @@ $dateRowRd5=mysqli_num_rows($queryByDateRd5);
     
     </td>
     <?php
-$queryByDateStatus5=mysqli_query("SELECT * FROM tbl_activities5 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND status=1");  
+$queryByDateStatus5=mysqli_query($mysqli, " SELECT * FROM tbl_activities5 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND status=1");  
 $dateRowStatus5=mysqli_num_rows($queryByDateStatus5);
-$queryByDateRdStatus5=mysqli_query("SELECT * FROM tbl_activities_rd5 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
+$queryByDateRdStatus5=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd5 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
 $dateRowRdStatus5=mysqli_num_rows($queryByDateRdStatus5);
 $total5=$dateRowStatus5+$dateRowRdStatus5;
 ?>
@@ -778,11 +778,11 @@ $total5=$dateRowStatus5+$dateRowRdStatus5;
 
 <?php
 
-$queryByDateFinal5=mysqli_query("SELECT * FROM tbl_activities5 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
+$queryByDateFinal5=mysqli_query($mysqli, " SELECT * FROM tbl_activities5 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
 
 $dateRowFinal5=mysqli_num_rows($queryByDateFinal5);
 
-$queryByDateRdFinal5=mysqli_query("SELECT * FROM tbl_activities_rd5 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
+$queryByDateRdFinal5=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd5 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
 
 $dateRowRdFinal5=mysqli_num_rows($queryByDateRdFinal5);
 
@@ -793,7 +793,7 @@ $totalFinal5=$dateRowFinal5+$dateRowRdFinal5;
     <td width="25%">
 	<?php
 
-$queryByDateData5=mysqli_query("SELECT * FROM tbl_activities5 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
+$queryByDateData5=mysqli_query($mysqli, " SELECT * FROM tbl_activities5 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
 
 while($dateRowData5=mysqli_fetch_array($queryByDateData5)){
  ?>
@@ -825,7 +825,7 @@ while($dateRowData5=mysqli_fetch_array($queryByDateData5)){
 </table>
  
    <?php 
- $activitiesFile5=mysqli_query("SELECT * FROM  tbl_activities5 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
+ $activitiesFile5=mysqli_query($mysqli, " SELECT * FROM  tbl_activities5 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
  if(mysqli_num_rows($activitiesFile5)>0){
 while($activitiesFileList5=mysqli_fetch_array($activitiesFile5)){
 ?>
@@ -844,13 +844,13 @@ while($activitiesFileList5=mysqli_fetch_array($activitiesFile5)){
 
 <td colspan="5"> 
 <?php
-$queryByDate6=mysqli_query("SELECT * FROM tbl_activities6 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+$queryByDate6=mysqli_query($mysqli, " SELECT * FROM tbl_activities6 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
 
 $dateRow6=mysqli_num_rows($queryByDate6);
  ?>
   <?php
 
-$queryByDateRd6=mysqli_query("SELECT * FROM tbl_activities_rd6 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd6=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd6 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 
 $dateRowRd6=mysqli_num_rows($queryByDateRd6);
  ?>
@@ -861,9 +861,9 @@ $dateRowRd6=mysqli_num_rows($queryByDateRd6);
  
     <td width="20%"><span class="<?php if($dateRow6+$dateRowRd6>0){echo "totalNumbers";} else { echo"totalNumber";}?>" onClick="window.open('view_report_details.php?eid=activities6&cid=<?=$_GET['month']?>&rd=<?=$_GET['rd_id12']?>','','width=718,height=800,scrollbar=0,menubar=0');"><i class="fa fa-fw fa-long-arrow-right"></i> <?=$dateRow6+$dateRowRd6?></span></td>
     <?php
-$queryByDateStatus6=mysqli_query("SELECT * FROM tbl_activities6 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND status=1");  
+$queryByDateStatus6=mysqli_query($mysqli, " SELECT * FROM tbl_activities6 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND status=1");  
 $dateRowStatus6=mysqli_num_rows($queryByDateStatus6);
-$queryByDateRdStatus6=mysqli_query("SELECT * FROM tbl_activities_rd6 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
+$queryByDateRdStatus6=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd6 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
 $dateRowRdStatus6=mysqli_num_rows($queryByDateRdStatus6);
 $total6=$dateRowStatus6+$dateRowRdStatus6;
 ?>
@@ -871,11 +871,11 @@ $total6=$dateRowStatus6+$dateRowRdStatus6;
 
 <?php
 
-$queryByDateFinal6=mysqli_query("SELECT * FROM tbl_activities6 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND final_Status=2");  
+$queryByDateFinal6=mysqli_query($mysqli, " SELECT * FROM tbl_activities6 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND final_Status=2");  
 
 $dateRowFinal6=mysqli_num_rows($queryByDateFinal6);
 
-$queryByDateRdFinal6=mysqli_query("SELECT * FROM tbl_activities_rd6 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
+$queryByDateRdFinal6=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd6 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
 
 $dateRowRdFinal6=mysqli_num_rows($queryByDateRdFinal6);
 
@@ -886,7 +886,7 @@ $totalFinal6=$dateRowFinal6+$dateRowRdFinal6;
     <td width="25%">
 	<?php
 
-$queryByDateData6=mysqli_query("SELECT * FROM tbl_activities6 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
+$queryByDateData6=mysqli_query($mysqli, " SELECT * FROM tbl_activities6 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
 
 while($dateRowData6=mysqli_fetch_array($queryByDateData6)){
  ?>
@@ -918,7 +918,7 @@ while($dateRowData6=mysqli_fetch_array($queryByDateData6)){
 </table>
  
    <?php 
- $activitiesFile6=mysqli_query("SELECT * FROM  tbl_activities6 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
+ $activitiesFile6=mysqli_query($mysqli, " SELECT * FROM  tbl_activities6 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
  if(mysqli_num_rows($activitiesFile6)>0){
 while($activitiesFileList6=mysqli_fetch_array($activitiesFile6)){
 ?>
@@ -937,13 +937,13 @@ while($activitiesFileList6=mysqli_fetch_array($activitiesFile6)){
 
 <td colspan="5"> 
 <?php
-$queryByDate7=mysqli_query("SELECT * FROM tbl_activities7 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+$queryByDate7=mysqli_query($mysqli, " SELECT * FROM tbl_activities7 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
 
 $dateRow7=mysqli_num_rows($queryByDate7);
  ?>
  <?php
 
-$queryByDateRd7=mysqli_query("SELECT * FROM tbl_activities_rd7 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd7=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd7 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 
 $dateRowRd7=mysqli_num_rows($queryByDateRd7);
  ?> 
@@ -954,9 +954,9 @@ $dateRowRd7=mysqli_num_rows($queryByDateRd7);
  
     <td width="20%"><span class="<?php if($dateRow7+$dateRowRd7>0){echo "totalNumbers";} else { echo"totalNumber";}?>" onClick="window.open('view_report_details.php?eid=activities7&cid=<?=$_GET['month']?>&rd=<?=$_GET['rd_id12']?>','','width=718,height=800,scrollbar=0,menubar=0');"><i class="fa fa-fw fa-long-arrow-right"></i> <?=$dateRow7+$dateRowRd7?></span></td>
     <?php
-$queryByDateStatus7=mysqli_query("SELECT * FROM tbl_activities7 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
+$queryByDateStatus7=mysqli_query($mysqli, " SELECT * FROM tbl_activities7 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
 $dateRowStatus7=mysqli_num_rows($queryByDateStatus7);
-$queryByDateRdStatus7=mysqli_query("SELECT * FROM tbl_activities_rd7 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
+$queryByDateRdStatus7=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd7 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
 $dateRowRdStatus7=mysqli_num_rows($queryByDateRdStatus7);
 $total7=$dateRowStatus2+$dateRowRdStatus7;
 ?>
@@ -966,11 +966,11 @@ $total7=$dateRowStatus2+$dateRowRdStatus7;
 
 <?php
 
-$queryByDateFinal7=mysqli_query("SELECT * FROM tbl_activities7 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
+$queryByDateFinal7=mysqli_query($mysqli, " SELECT * FROM tbl_activities7 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND final_Status=2 AND rd_id='".$_GET['rd_id12']."'");  
 
 $dateRowFinal7=mysqli_num_rows($queryByDateFinal7);
 
-$queryByDateRdFinal7=mysqli_query("SELECT * FROM tbl_activities_rd7 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
+$queryByDateRdFinal7=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd7 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
 
 $dateRowRdFinal7=mysqli_num_rows($queryByDateRdFinal7);
 
@@ -982,7 +982,7 @@ $totalFinal7=$dateRowFinal7+$dateRowRdFinal7;
     <td width="25%">
 	<?php
 
-$queryByDateData7=mysqli_query("SELECT * FROM tbl_activities7 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
+$queryByDateData7=mysqli_query($mysqli, " SELECT * FROM tbl_activities7 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
 
 while($dateRowData7=mysqli_fetch_array($queryByDateData7)){
  ?>
@@ -1018,7 +1018,7 @@ while($dateRowData7=mysqli_fetch_array($queryByDateData7)){
 </table>
  
    <?php 
- $activitiesFile7=mysqli_query("SELECT * FROM  tbl_activities7 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
+ $activitiesFile7=mysqli_query($mysqli, " SELECT * FROM  tbl_activities7 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
  if(mysqli_num_rows($activitiesFile7)>0){
 while($activitiesFileList7=mysqli_fetch_array($activitiesFile7)){
 ?>
@@ -1035,13 +1035,13 @@ while($activitiesFileList7=mysqli_fetch_array($activitiesFile7)){
  <td valign="top">SLFs(MSW)</td>
 <td colspan="5"> 
 <?php
-$queryByDate8=mysqli_query("SELECT * FROM tbl_activities8 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+$queryByDate8=mysqli_query($mysqli, " SELECT * FROM tbl_activities8 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
 
 $dateRow8=mysqli_num_rows($queryByDate8);
  ?>
   <?php
 
-$queryByDateRd8=mysqli_query("SELECT * FROM tbl_activities_rd8 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd8=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd8 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 
 $dateRowRd8=mysqli_num_rows($queryByDateRd8);
  ?>
@@ -1052,9 +1052,9 @@ $dateRowRd8=mysqli_num_rows($queryByDateRd8);
  
     <td width="20%"><span class="<?php if($dateRow8+$dateRowRd8>0){echo "totalNumbers";} else { echo"totalNumber";}?>" onClick="window.open('view_report_details.php?eid=activities8&cid=<?=$_GET['month']?>&rd=<?=$_GET['rd_id12']?>','','width=718,height=800,scrollbar=0,menubar=0');"><i class="fa fa-fw fa-long-arrow-right"></i> <?=$dateRow8+$dateRowRd8?></span></td>
     <?php
-$queryByDateStatus8=mysqli_query("SELECT * FROM tbl_activities8 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND status=1");  
+$queryByDateStatus8=mysqli_query($mysqli, " SELECT * FROM tbl_activities8 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND status=1");  
 $dateRowStatus8=mysqli_num_rows($queryByDateStatus8);
-$queryByDateRdStatus8=mysqli_query("SELECT * FROM tbl_activities_rd8 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
+$queryByDateRdStatus8=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd8 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
 $dateRowRdStatus8=mysqli_num_rows($queryByDateRdStatus8);
 $total8=$dateRowStatus8+$dateRowRdStatus8;
 ?>
@@ -1063,11 +1063,11 @@ $total8=$dateRowStatus8+$dateRowRdStatus8;
 
 <?php
 
-$queryByDateFinal8=mysqli_query("SELECT * FROM tbl_activities8 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND final_Status=2");  
+$queryByDateFinal8=mysqli_query($mysqli, " SELECT * FROM tbl_activities8 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND final_Status=2");  
 
 $dateRowFinal8=mysqli_num_rows($queryByDateFinal8);
 
-$queryByDateRdFinal8=mysqli_query("SELECT * FROM tbl_activities_rd8 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
+$queryByDateRdFinal8=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd8 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
 
 $dateRowRdFinal8=mysqli_num_rows($queryByDateRdFinal8);
 
@@ -1078,7 +1078,7 @@ $totalFinal8=$dateRowFinal8+$dateRowRdFinal8;
     <td width="25%">
 	<?php
 
-$queryByDateData8=mysqli_query("SELECT * FROM tbl_activities8 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
+$queryByDateData8=mysqli_query($mysqli, " SELECT * FROM tbl_activities8 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
 
 while($dateRowData8=mysqli_fetch_array($queryByDateData8)){
  ?>
@@ -1111,7 +1111,7 @@ while($dateRowData8=mysqli_fetch_array($queryByDateData8)){
 </table>
  
    <?php 
- $activitiesFile8=mysqli_query("SELECT * FROM  tbl_activities8 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
+ $activitiesFile8=mysqli_query($mysqli, " SELECT * FROM  tbl_activities8 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
  if(mysqli_num_rows($activitiesFile8)>0){
 while($activitiesFileList8=mysqli_fetch_array($activitiesFile8)){
 ?>
@@ -1131,13 +1131,13 @@ while($activitiesFileList8=mysqli_fetch_array($activitiesFile8)){
 
 <td colspan="5"> 
 <?php
-$queryByDate9=mysqli_query("SELECT * FROM tbl_activities9 where YEAR(target_date) = ".$year." AND rd_id='".$_GET['rd_id12']."' AND MONTH(target_date) = ".$month."");  
+$queryByDate9=mysqli_query($mysqli, " SELECT * FROM tbl_activities9 where YEAR(target_date) = ".$year." AND rd_id='".$_GET['rd_id12']."' AND MONTH(target_date) = ".$month."");  
 
 $dateRow9=mysqli_num_rows($queryByDate9);
  ?>
   <?php
 
-$queryByDateRd9=mysqli_query("SELECT * FROM tbl_activities_rd9 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd9=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd9 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 
 $dateRowRd9=mysqli_num_rows($queryByDateRd9);
  ?>
@@ -1148,9 +1148,9 @@ $dateRowRd9=mysqli_num_rows($queryByDateRd9);
  
     <td width="20%"><span class="<?php if($dateRow9+$dateRowRd9>0){echo "totalNumbers";} else { echo"totalNumber";}?>" onClick="window.open('view_report_details.php?eid=activities9&cid=<?=$_GET['month']?>&rd=<?=$_GET['rd_id12']?>','','width=718,height=800,scrollbar=0,menubar=0');"><i class="fa fa-fw fa-long-arrow-right"></i> <?=$dateRow9+$dateRowRd9?></span></td>
    <?php
-$queryByDateStatus9=mysqli_query("SELECT * FROM tbl_activities9 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND status=1");  
+$queryByDateStatus9=mysqli_query($mysqli, " SELECT * FROM tbl_activities9 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND status=1");  
 $dateRowStatus9=mysqli_num_rows($queryByDateStatus9);
-$queryByDateRdStatus9=mysqli_query("SELECT * FROM tbl_activities_rd9 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
+$queryByDateRdStatus9=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd9 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
 $dateRowRdStatus9=mysqli_num_rows($queryByDateRdStatus9);
 
 $total9=$dateRowStatus9+$dateRowRdStatus9;
@@ -1161,11 +1161,11 @@ $total9=$dateRowStatus9+$dateRowRdStatus9;
 
 <?php
 
-$queryByDateFinal9=mysqli_query("SELECT * FROM tbl_activities9 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND final_Status=2");  
+$queryByDateFinal9=mysqli_query($mysqli, " SELECT * FROM tbl_activities9 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND final_Status=2");  
 
 $dateRowFinal9=mysqli_num_rows($queryByDateFinal9);
 
-$queryByDateRdFinal9=mysqli_query("SELECT * FROM tbl_activities_rd9 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
+$queryByDateRdFinal9=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd9 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
 
 $dateRowRdFinal9=mysqli_num_rows($queryByDateRdFinal9);
 
@@ -1176,7 +1176,7 @@ $totalFinal9=$dateRowFinal9+$dateRowRdFinal9;
     <td width="25%">
 	<?php
 
-$queryByDateData9=mysqli_query("SELECT * FROM tbl_activities9 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
+$queryByDateData9=mysqli_query($mysqli, " SELECT * FROM tbl_activities9 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
 
 while($dateRowData9=mysqli_fetch_array($queryByDateData9)){
  ?>
@@ -1209,7 +1209,7 @@ while($dateRowData9=mysqli_fetch_array($queryByDateData9)){
 </table>
  
   <?php 
- $activitiesFile9=mysqli_query("SELECT * FROM  tbl_activities9 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
+ $activitiesFile9=mysqli_query($mysqli, " SELECT * FROM  tbl_activities9 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
  if(mysqli_num_rows($activitiesFile9)>0){
 while($activitiesFileList9=mysqli_fetch_array($activitiesFile9)){
 ?>
@@ -1229,13 +1229,13 @@ while($activitiesFileList9=mysqli_fetch_array($activitiesFile9)){
 
 <td colspan="5"> 
 <?php
-$queryByDate10=mysqli_query("SELECT * FROM tbl_activities10 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+$queryByDate10=mysqli_query($mysqli, " SELECT * FROM tbl_activities10 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
 
 $dateRow10=mysqli_num_rows($queryByDate10);
  ?>
   <?php
 
-$queryByDateRd10=mysqli_query("SELECT * FROM tbl_activities_rd10 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd10=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd10 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 
 $dateRowRd10=mysqli_num_rows($queryByDateRd10);
  ?>
@@ -1246,9 +1246,9 @@ $dateRowRd10=mysqli_num_rows($queryByDateRd10);
  
     <td width="20%"><span class="<?php if($dateRow10+$dateRowRd10>0){echo "totalNumbers";} else { echo"totalNumber";}?>" onClick="window.open('view_report_details.php?eid=activities10&cid=<?=$_GET['month']?>&rd=<?=$_GET['rd_id12']?>','','width=718,height=800,scrollbar=0,menubar=0');"><i class="fa fa-fw fa-long-arrow-right"></i> <?=$dateRow10+$dateRowRd10?></span></td>
     <?php
-$queryByDateStatus10=mysqli_query("SELECT * FROM tbl_activities10 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND status=1");  
+$queryByDateStatus10=mysqli_query($mysqli, " SELECT * FROM tbl_activities10 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND status=1");  
 $dateRowStatus10=mysqli_num_rows($queryByDateStatus10);
-$queryByDateRdStatus10=mysqli_query("SELECT * FROM tbl_activities_rd10 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
+$queryByDateRdStatus10=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd10 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
 $dateRowRdStatus10=mysqli_num_rows($queryByDateRdStatus10);
 
 $total10=$dateRowStatus2+$dateRowRdStatus10;
@@ -1259,11 +1259,11 @@ $total10=$dateRowStatus2+$dateRowRdStatus10;
 
 <?php
 
-$queryByDateFinal10=mysqli_query("SELECT * FROM tbl_activities10 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND final_Status=2");  
+$queryByDateFinal10=mysqli_query($mysqli, " SELECT * FROM tbl_activities10 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND final_Status=2");  
 
 $dateRowFinal10=mysqli_num_rows($queryByDateFinal10);
 
-$queryByDateRdFinal10=mysqli_query("SELECT * FROM tbl_activities_rd10 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
+$queryByDateRdFinal10=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd10 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
 
 $dateRowRdFinal10=mysqli_num_rows($queryByDateRdFinal10);
 
@@ -1275,7 +1275,7 @@ $totalFinal10=$dateRowFinal10+$dateRowRdFinal10;
     <td width="25%">
 	<?php
 
-$queryByDateData10=mysqli_query("SELECT * FROM tbl_activities10 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
+$queryByDateData10=mysqli_query($mysqli, " SELECT * FROM tbl_activities10 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
 
 while($dateRowData10=mysqli_fetch_array($queryByDateData10)){
  ?>
@@ -1307,7 +1307,7 @@ while($dateRowData10=mysqli_fetch_array($queryByDateData10)){
 </table>
  
    <?php 
- $activitiesFile10=mysqli_query("SELECT * FROM  tbl_activities10 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
+ $activitiesFile10=mysqli_query($mysqli, " SELECT * FROM  tbl_activities10 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
  if(mysqli_num_rows($activitiesFile10)>0){
 while($activitiesFileList10=mysqli_fetch_array($activitiesFile10)){
 ?>
@@ -1327,13 +1327,13 @@ while($activitiesFileList10=mysqli_fetch_array($activitiesFile10)){
 
 <td colspan="5"> 
 <?php
-$queryByDate11=mysqli_query("SELECT * FROM tbl_activities11 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+$queryByDate11=mysqli_query($mysqli, " SELECT * FROM tbl_activities11 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
 
 $dateRow11=mysqli_num_rows($queryByDate11);
  ?>
   <?php
 
-$queryByDateRd11=mysqli_query("SELECT * FROM tbl_activities_rd11 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd11=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd11 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 
 $dateRowRd11=mysqli_num_rows($queryByDateRd11);
  ?>
@@ -1344,9 +1344,9 @@ $dateRowRd11=mysqli_num_rows($queryByDateRd11);
  
     <td width="20%"><span class="<?php if($dateRow11+$dateRowRd11>0){echo "totalNumbers";} else { echo"totalNumber";}?>" onClick="window.open('view_report_details.php?eid=activities11&cid=<?=$_GET['month']?>&rd=<?=$_GET['rd_id12']?>','','width=718,height=800,scrollbar=0,menubar=0');"><i class="fa fa-fw fa-long-arrow-right"></i> <?=$dateRow11+$dateRowRd11?></span></td>
     <?php
-$queryByDateStatus11=mysqli_query("SELECT * FROM tbl_activities11 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND status=1");  
+$queryByDateStatus11=mysqli_query($mysqli, " SELECT * FROM tbl_activities11 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND status=1");  
 $dateRowStatus11=mysqli_num_rows($queryByDateStatus11);
-$queryByDateRdStatus11=mysqli_query("SELECT * FROM tbl_activities_rd11 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
+$queryByDateRdStatus11=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd11 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
 $dateRowRdStatus11=mysqli_num_rows($queryByDateRdStatus11);
 $total11=$dateRowStatus11+$dateRowRdStatus11;
 ?>
@@ -1355,11 +1355,11 @@ $total11=$dateRowStatus11+$dateRowRdStatus11;
 
 <?php
 
-$queryByDateFinal11=mysqli_query("SELECT * FROM tbl_activities11 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND final_Status=2");  
+$queryByDateFinal11=mysqli_query($mysqli, " SELECT * FROM tbl_activities11 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND final_Status=2");  
 
 $dateRowFinal11=mysqli_num_rows($queryByDateFinal11);
 
-$queryByDateRdFinal11=mysqli_query("SELECT * FROM tbl_activities_rd11 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
+$queryByDateRdFinal11=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd11 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
 
 $dateRowRdFinal11=mysqli_num_rows($queryByDateRdFinal11);
 
@@ -1371,7 +1371,7 @@ $totalFinal11=$dateRowFinal11+$dateRowRdFinal11;
     <td width="25%">
 	<?php
 
-$queryByDateData11=mysqli_query("SELECT * FROM tbl_activities11 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
+$queryByDateData11=mysqli_query($mysqli, " SELECT * FROM tbl_activities11 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
 
 while($dateRowData11=mysqli_fetch_array($queryByDateData11)){
  ?>
@@ -1403,7 +1403,7 @@ while($dateRowData11=mysqli_fetch_array($queryByDateData11)){
 </table>
  
    <?php 
- $activitiesFile11=mysqli_query("SELECT * FROM  tbl_activities11 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
+ $activitiesFile11=mysqli_query($mysqli, " SELECT * FROM  tbl_activities11 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
  if(mysqli_num_rows($activitiesFile11)>0){
 while($activitiesFileList11=mysqli_fetch_array($activitiesFile11)){
 ?>
@@ -1423,13 +1423,13 @@ while($activitiesFileList11=mysqli_fetch_array($activitiesFile11)){
 
 <td colspan="5"> 
 <?php
-$queryByDate12=mysqli_query("SELECT * FROM tbl_activities12 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+$queryByDate12=mysqli_query($mysqli, " SELECT * FROM tbl_activities12 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
 
 $dateRow12=mysqli_num_rows($queryByDate12);
  ?>
   <?php
 
-$queryByDateRd12=mysqli_query("SELECT * FROM tbl_activities_rd12 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd12=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd12 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 
 $dateRowRd12=mysqli_num_rows($queryByDateRd12);
  ?>
@@ -1440,9 +1440,9 @@ $dateRowRd12=mysqli_num_rows($queryByDateRd12);
  
     <td width="20%"><span class="<?php if($dateRow12+$dateRowRd12>0){echo "totalNumbers";} else { echo"totalNumber";}?>" onClick="window.open('view_report_details.php?eid=activities12&cid=<?=$_GET['month']?>&rd=<?=$_GET['rd_id12']?>','','width=718,height=800,scrollbar=0,menubar=0');"><i class="fa fa-fw fa-long-arrow-right"></i> <?=$dateRow12+$dateRowRd12?></span></td>
     <?php
-$queryByDateStatus12=mysqli_query("SELECT * FROM tbl_activities12 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND status=1");  
+$queryByDateStatus12=mysqli_query($mysqli, " SELECT * FROM tbl_activities12 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND status=1");  
 $dateRowStatus12=mysqli_num_rows($queryByDateStatus12);
-$queryByDateRdStatus12=mysqli_query("SELECT * FROM tbl_activities_rd12 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
+$queryByDateRdStatus12=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd12 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
 $dateRowRdStatus12=mysqli_num_rows($queryByDateRdStatus12);
 $total12=$dateRowStatus12+$dateRowRdStatus12;
 ?>
@@ -1450,11 +1450,11 @@ $total12=$dateRowStatus12+$dateRowRdStatus12;
 
 <?php
 
-$queryByDateFinal12=mysqli_query("SELECT * FROM tbl_activities12 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND final_Status=2");  
+$queryByDateFinal12=mysqli_query($mysqli, " SELECT * FROM tbl_activities12 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND final_Status=2");  
 
 $dateRowFinal12=mysqli_num_rows($queryByDateFinal12);
 
-$queryByDateRdFinal12=mysqli_query("SELECT * FROM tbl_activities_rd12 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
+$queryByDateRdFinal12=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd12 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
 
 $dateRowRdFinal12=mysqli_num_rows($queryByDateRdFinal12);
 
@@ -1465,7 +1465,7 @@ $totalFinal12=$dateRowFinal12+$dateRowRdFinal12;
     <td width="25%">
 	<?php
 
-$queryByDateData12=mysqli_query("SELECT * FROM tbl_activities12 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
+$queryByDateData12=mysqli_query($mysqli, " SELECT * FROM tbl_activities12 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
 
 while($dateRowData12=mysqli_fetch_array($queryByDateData12)){
  ?>
@@ -1498,7 +1498,7 @@ while($dateRowData12=mysqli_fetch_array($queryByDateData12)){
 </table>
  
    <?php 
- $activitiesFile12=mysqli_query("SELECT * FROM  tbl_activities12 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
+ $activitiesFile12=mysqli_query($mysqli, " SELECT * FROM  tbl_activities12 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
  if(mysqli_num_rows($activitiesFile12)>0){
 while($activitiesFileList12=mysqli_fetch_array($activitiesFile12)){
 ?>
@@ -1518,13 +1518,13 @@ while($activitiesFileList12=mysqli_fetch_array($activitiesFile12)){
 
 <td colspan="5"> 
 <?php
-$queryByDate13=mysqli_query("SELECT * FROM tbl_activities13 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+$queryByDate13=mysqli_query($mysqli, " SELECT * FROM tbl_activities13 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
 
 $dateRow13=mysqli_num_rows($queryByDate13);
  ?>
  <?php
 
-$queryByDateRd13=mysqli_query("SELECT * FROM tbl_activities_rd13 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd13=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd13 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 
 $dateRowRd13=mysqli_num_rows($queryByDateRd13);
  ?> 
@@ -1535,9 +1535,9 @@ $dateRowRd13=mysqli_num_rows($queryByDateRd13);
  
     <td width="20%"><span class="<?php if($dateRow13+$dateRowRd13>0){echo "totalNumbers";} else { echo"totalNumber";}?>" onClick="window.open('view_report_details.php?eid=activities13&cid=<?=$_GET['month']?>&rd=<?=$_GET['rd_id12']?>','','width=718,height=800,scrollbar=0,menubar=0');"><i class="fa fa-fw fa-long-arrow-right"></i> <?=$dateRow13+$dateRowRd13?></span></td>
     <?php
-$queryByDateStatus13=mysqli_query("SELECT * FROM tbl_activities13 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND status=1");  
+$queryByDateStatus13=mysqli_query($mysqli, " SELECT * FROM tbl_activities13 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND status=1");  
 $dateRowStatus13=mysqli_num_rows($queryByDateStatus13);
-$queryByDateRdStatus13=mysqli_query("SELECT * FROM tbl_activities_rd13 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
+$queryByDateRdStatus13=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd13 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
 $dateRowRdStatus13=mysqli_num_rows($queryByDateRdStatus13);
 $total13=$dateRowStatus13+$dateRowRdStatus13;
 ?>
@@ -1545,11 +1545,11 @@ $total13=$dateRowStatus13+$dateRowRdStatus13;
 
 <?php
 
-$queryByDateFinal13=mysqli_query("SELECT * FROM tbl_activities13 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND final_Status=2");  
+$queryByDateFinal13=mysqli_query($mysqli, " SELECT * FROM tbl_activities13 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND final_Status=2");  
 
 $dateRowFinal13=mysqli_num_rows($queryByDateFinal13);
 
-$queryByDateRdFinal13=mysqli_query("SELECT * FROM tbl_activities_rd13 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
+$queryByDateRdFinal13=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd13 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
 
 $dateRowRdFinal13=mysqli_num_rows($queryByDateRdFinal13);
 
@@ -1560,7 +1560,7 @@ $totalFinal13=$dateRowFinal13+$dateRowRdFinal13;
     <td width="25%">
 	<?php
 
-$queryByDateData13=mysqli_query("SELECT * FROM tbl_activities13 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
+$queryByDateData13=mysqli_query($mysqli, " SELECT * FROM tbl_activities13 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
 
 while($dateRowData13=mysqli_fetch_array($queryByDateData13)){
  ?>
@@ -1593,7 +1593,7 @@ while($dateRowData13=mysqli_fetch_array($queryByDateData13)){
 </table>
  
    <?php 
- $activitiesFile13=mysqli_query("SELECT * FROM  tbl_activities13 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
+ $activitiesFile13=mysqli_query($mysqli, " SELECT * FROM  tbl_activities13 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
  if(mysqli_num_rows($activitiesFile13)>0){
 while($activitiesFileList13=mysqli_fetch_array($activitiesFile13)){
 ?>
@@ -1613,13 +1613,13 @@ while($activitiesFileList13=mysqli_fetch_array($activitiesFile13)){
 
 <td colspan="5"> 
 <?php
-$queryByDate14=mysqli_query("SELECT * FROM tbl_activities14 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+$queryByDate14=mysqli_query($mysqli, " SELECT * FROM tbl_activities14 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
 
 $dateRow14=mysqli_num_rows($queryByDate14);
  ?>
   <?php
 
-$queryByDateRd14=mysqli_query("SELECT * FROM tbl_activities_rd14 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd14=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd14 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 
 $dateRowRd14=mysqli_num_rows($queryByDateRd14);
  ?>
@@ -1630,9 +1630,9 @@ $dateRowRd14=mysqli_num_rows($queryByDateRd14);
  
     <td width="20%"><span class="<?php if($dateRow14+$dateRowRd14>0){echo "totalNumbers";} else { echo"totalNumber";}?>" onClick="window.open('view_report_details.php?eid=activities14&cid=<?=$_GET['month']?>&rd=<?=$_GET['rd_id12']?>','','width=718,height=800,scrollbar=0,menubar=0');"><i class="fa fa-fw fa-long-arrow-right"></i> <?=$dateRow14+$dateRowRd14?></span></td>
     <?php
-$queryByDateStatus14=mysqli_query("SELECT * FROM tbl_activities14 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND status=1");  
+$queryByDateStatus14=mysqli_query($mysqli, " SELECT * FROM tbl_activities14 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND status=1");  
 $dateRowStatus14=mysqli_num_rows($queryByDateStatus14);
-$queryByDateRdStatus14=mysqli_query("SELECT * FROM tbl_activities_rd14 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
+$queryByDateRdStatus14=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd14 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
 $dateRowRdStatus14=mysqli_num_rows($queryByDateRdStatus14);
 $total14=$dateRowStatus14+$dateRowRdStatus14;
 ?>
@@ -1641,11 +1641,11 @@ $total14=$dateRowStatus14+$dateRowRdStatus14;
 
 <?php
 
-$queryByDateFinal14=mysqli_query("SELECT * FROM tbl_activities14 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND final_Status=2");  
+$queryByDateFinal14=mysqli_query($mysqli, " SELECT * FROM tbl_activities14 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND final_Status=2");  
 
 $dateRowFinal14=mysqli_num_rows($queryByDateFinal14);
 
-$queryByDateRdFinal14=mysqli_query("SELECT * FROM tbl_activities_rd14 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
+$queryByDateRdFinal14=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd14 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
 
 $dateRowRdFinal14=mysqli_num_rows($queryByDateRdFinal14);
 $totalFinal14=$dateRowFinal14+$dateRowRdFinal14;
@@ -1656,7 +1656,7 @@ $totalFinal14=$dateRowFinal14+$dateRowRdFinal14;
     <td width="25%">
 	<?php
 
-$queryByDateData14=mysqli_query("SELECT * FROM tbl_activities14 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
+$queryByDateData14=mysqli_query($mysqli, " SELECT * FROM tbl_activities14 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
 
 while($dateRowData14=mysqli_fetch_array($queryByDateData14)){
  ?>
@@ -1689,7 +1689,7 @@ while($dateRowData14=mysqli_fetch_array($queryByDateData14)){
 </table>
  
    <?php 
- $activitiesFile14=mysqli_query("SELECT * FROM  tbl_activities14 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
+ $activitiesFile14=mysqli_query($mysqli, " SELECT * FROM  tbl_activities14 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
  if(mysqli_num_rows($activitiesFile14)>0){
 while($activitiesFileList14=mysqli_fetch_array($activitiesFile14)){
 ?>
@@ -1709,13 +1709,13 @@ while($activitiesFileList14=mysqli_fetch_array($activitiesFile14)){
 
 <td colspan="5"> 
 <?php
-$queryByDate15=mysqli_query("SELECT * FROM tbl_activities15 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+$queryByDate15=mysqli_query($mysqli, " SELECT * FROM tbl_activities15 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
 
 $dateRow15=mysqli_num_rows($queryByDate15);
  ?>
   <?php
 
-$queryByDateRd15=mysqli_query("SELECT * FROM tbl_activities_rd15 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd15=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd15 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 
 $dateRowRd15=mysqli_num_rows($queryByDateRd15);
  ?>
@@ -1726,9 +1726,9 @@ $dateRowRd15=mysqli_num_rows($queryByDateRd15);
  
     <td width="20%"><span class="<?php if($dateRow15+$dateRowRd15>0){echo "totalNumbers";} else { echo"totalNumber";}?>" onClick="window.open('view_report_details.php?eid=activities15&cid=<?=$_GET['month']?>&rd=<?=$_GET['rd_id12']?>','','width=718,height=800,scrollbar=0,menubar=0');"><i class="fa fa-fw fa-long-arrow-right"></i> <?=$dateRow15+$dateRowRd15?></span></td>
     <?php
-$queryByDateStatus15=mysqli_query("SELECT * FROM tbl_activities15 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
+$queryByDateStatus15=mysqli_query($mysqli, " SELECT * FROM tbl_activities15 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND status=1 AND rd_id='".$_GET['rd_id12']."'");  
 $dateRowStatus15=mysqli_num_rows($queryByDateStatus15);
-$queryByDateRdStatus15=mysqli_query("SELECT * FROM tbl_activities_rd15 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
+$queryByDateRdStatus15=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd15 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
 $dateRowRdStatus15=mysqli_num_rows($queryByDateRdStatus15);
 $total15=$dateRowStatus15+$dateRowRdStatus15;
 ?>
@@ -1737,11 +1737,11 @@ $total15=$dateRowStatus15+$dateRowRdStatus15;
 
 <?php
 
-$queryByDateFinal15=mysqli_query("SELECT * FROM tbl_activities15 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND final_Status=2");  
+$queryByDateFinal15=mysqli_query($mysqli, " SELECT * FROM tbl_activities15 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND final_Status=2");  
 
 $dateRowFinal15=mysqli_num_rows($queryByDateFinal15);
 
-$queryByDateRdFinal15=mysqli_query("SELECT * FROM tbl_activities_rd15 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
+$queryByDateRdFinal15=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd15 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
 
 $dateRowRdFinal15=mysqli_num_rows($queryByDateRdFinal15);
 
@@ -1753,7 +1753,7 @@ $totalFinal15=$dateRowFinal15+$dateRowRdFinal15;
     <td width="25%">
 	<?php
 
-$queryByDateData15=mysqli_query("SELECT * FROM tbl_activities15 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
+$queryByDateData15=mysqli_query($mysqli, " SELECT * FROM tbl_activities15 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
 
 while($dateRowData15=mysqli_fetch_array($queryByDateData15)){
  ?>
@@ -1786,7 +1786,7 @@ while($dateRowData15=mysqli_fetch_array($queryByDateData15)){
 </table>
  
    <?php 
- $activitiesFile15=mysqli_query("SELECT * FROM  tbl_activities15 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
+ $activitiesFile15=mysqli_query($mysqli, " SELECT * FROM  tbl_activities15 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
  if(mysqli_num_rows($activitiesFile15)>0){
 while($activitiesFileList15=mysqli_fetch_array($activitiesFile15)){
 ?>
@@ -1806,13 +1806,13 @@ while($activitiesFileList15=mysqli_fetch_array($activitiesFile15)){
 
 <td colspan="5"> 
 <?php
-$queryByDate16=mysqli_query("SELECT * FROM tbl_activities16 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+$queryByDate16=mysqli_query($mysqli, " SELECT * FROM tbl_activities16 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
 
 $dateRow16=mysqli_num_rows($queryByDate16);
  ?>
   <?php
 
-$queryByDateRd16=mysqli_query("SELECT * FROM tbl_activities_rd16 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd16=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd16 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 
 $dateRowRd16=mysqli_num_rows($queryByDateRd16);
  ?>
@@ -1823,9 +1823,9 @@ $dateRowRd16=mysqli_num_rows($queryByDateRd16);
  
     <td width="20%"><span class="<?php if($dateRow16+$dateRowRd16>0){echo "totalNumbers";} else { echo"totalNumber";}?>" onClick="window.open('view_report_details.php?eid=activities16&cid=<?=$_GET['month']?>&rd=<?=$_GET['rd_id12']?>','','width=718,height=800,scrollbar=0,menubar=0');"><i class="fa fa-fw fa-long-arrow-right"></i> <?=$dateRow16+$dateRowRd16?></span></td>
     <?php
-$queryByDateStatus16=mysqli_query("SELECT * FROM tbl_activities16 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND status=1");  
+$queryByDateStatus16=mysqli_query($mysqli, " SELECT * FROM tbl_activities16 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND status=1");  
 $dateRowStatus16=mysqli_num_rows($queryByDateStatus16);
-$queryByDateRdStatus16=mysqli_query("SELECT * FROM tbl_activities_rd16 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
+$queryByDateRdStatus16=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd16 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
 $dateRowRdStatus16=mysqli_num_rows($queryByDateRdStatus16);
 $total16=$dateRowStatus16+$dateRowRdStatus16;
 ?>
@@ -1834,11 +1834,11 @@ $total16=$dateRowStatus16+$dateRowRdStatus16;
 
 <?php
 
-$queryByDateFinal16=mysqli_query("SELECT * FROM tbl_activities16 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND final_Status=2");  
+$queryByDateFinal16=mysqli_query($mysqli, " SELECT * FROM tbl_activities16 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND final_Status=2");  
 
 $dateRowFinal16=mysqli_num_rows($queryByDateFinal16);
 
-$queryByDateRdFinal16=mysqli_query("SELECT * FROM tbl_activities_rd16 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
+$queryByDateRdFinal16=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd16 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
 
 $dateRowRdFinal16=mysqli_num_rows($queryByDateRdFinal16);
 
@@ -1849,7 +1849,7 @@ $totalFinal16=$dateRowFinal16+$dateRowRdFinal16;
     <td width="25%">
 	<?php
 
-$queryByDateData16=mysqli_query("SELECT * FROM tbl_activities16 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
+$queryByDateData16=mysqli_query($mysqli, " SELECT * FROM tbl_activities16 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
 
 while($dateRowData16=mysqli_fetch_array($queryByDateData16)){
  ?>
@@ -1886,7 +1886,7 @@ while($dateRowData16=mysqli_fetch_array($queryByDateData16)){
 </table>
  
    <?php 
- $activitiesFile16=mysqli_query("SELECT * FROM  tbl_activities16 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
+ $activitiesFile16=mysqli_query($mysqli, " SELECT * FROM  tbl_activities16 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
  if(mysqli_num_rows($activitiesFile16)>0){
 while($activitiesFileList16=mysqli_fetch_array($activitiesFile16)){
 ?>
@@ -1906,13 +1906,13 @@ while($activitiesFileList16=mysqli_fetch_array($activitiesFile16)){
 
 <td colspan="5"> 
 <?php
-$queryByDate17=mysqli_query("SELECT * FROM tbl_activities17 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
+$queryByDate17=mysqli_query($mysqli, " SELECT * FROM tbl_activities17 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."'");  
 
 $dateRow17=mysqli_num_rows($queryByDate17);
  ?>
   <?php
 
-$queryByDateRd17=mysqli_query("SELECT * FROM tbl_activities_rd17 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
+$queryByDateRd17=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd17 where month = '".$_GET['month']."' AND user_id= '".$user['id']."'");  
 
 $dateRowRd17=mysqli_num_rows($queryByDateRd17);
  ?>
@@ -1923,9 +1923,9 @@ $dateRowRd17=mysqli_num_rows($queryByDateRd17);
  
     <td width="20%"><span class="<?php if($dateRow17+$dateRowRd17>0){echo "totalNumbers";} else { echo"totalNumber";}?>" onClick="window.open('view_report_details.php?eid=activities17&cid=<?=$_GET['month']?>&rd=<?=$_GET['rd_id12']?>','','width=718,height=800,scrollbar=0,menubar=0');"><i class="fa fa-fw fa-long-arrow-right"></i> <?=$dateRow17+$dateRowRd17?></span></td>
     <?php
-$queryByDateStatus17=mysqli_query("SELECT * FROM tbl_activities17 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND status=1");  
+$queryByDateStatus17=mysqli_query($mysqli, " SELECT * FROM tbl_activities17 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND status=1");  
 $dateRowStatus17=mysqli_num_rows($queryByDateStatus17);
-$queryByDateRdStatus17=mysqli_query("SELECT * FROM tbl_activities_rd17 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
+$queryByDateRdStatus17=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd17 where month = '".$_GET['month']."'  AND status=1 AND user_id= '".$user['id']."'");  
 $dateRowRdStatus17=mysqli_num_rows($queryByDateRdStatus17);
 $total17=$dateRowStatus17+$dateRowRdStatus17;
 ?>
@@ -1935,11 +1935,11 @@ $total17=$dateRowStatus17+$dateRowRdStatus17;
 
 <?php
 
-$queryByDateFinal17=mysqli_query("SELECT * FROM tbl_activities17 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND final_Status=2");  
+$queryByDateFinal17=mysqli_query($mysqli, " SELECT * FROM tbl_activities17 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' AND final_Status=2");  
 
 $dateRowFinal17=mysqli_num_rows($queryByDateFinal17);
 
-$queryByDateRdFinal17=mysqli_query("SELECT * FROM tbl_activities_rd17 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
+$queryByDateRdFinal17=mysqli_query($mysqli, " SELECT * FROM tbl_activities_rd17 where month = '".$_GET['month']."' AND final_Status=2 AND user_id= '".$user['id']."'");  
 
 $dateRowRdFinal17=mysqli_num_rows($queryByDateRdFinal17);
 
@@ -1950,7 +1950,7 @@ $totalFinal17=$dateRowFinal17+$dateRowRdFinal17;
     <td width="25%">
 	<?php
 
-$queryByDateData17=mysqli_query("SELECT * FROM tbl_activities17 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
+$queryByDateData17=mysqli_query($mysqli, " SELECT * FROM tbl_activities17 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd_id12']."' GROUP BY target_date");  
 
 while($dateRowData17=mysqli_fetch_array($queryByDateData17)){
  ?>
@@ -1983,7 +1983,7 @@ while($dateRowData17=mysqli_fetch_array($queryByDateData17)){
 </table>
  
    <?php 
- $activitiesFile17=mysqli_query("SELECT * FROM  tbl_activities17 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
+ $activitiesFile17=mysqli_query($mysqli, " SELECT * FROM  tbl_activities17 where YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_GET['rd_id12']."' GROUP BY main_id");
  if(mysqli_num_rows($activitiesFile17)>0){
 while($activitiesFileList17=mysqli_fetch_array($activitiesFile17)){
 ?>

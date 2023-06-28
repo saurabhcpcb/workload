@@ -935,40 +935,40 @@ default:
                               <?php
   
  
-$checkQuery=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd0 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery=mysqli_num_rows(mysqli_query($mysqli, " select * from  tbl_activities_rd0 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
-$checkQuery1=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd1 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
-$checkQuery2=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd2 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery1=mysqli_num_rows(mysqli_query($mysqli, " select * from  tbl_activities_rd1 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery2=mysqli_num_rows(mysqli_query($mysqli, " select * from  tbl_activities_rd2 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
-$checkQuery3=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd3 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery3=mysqli_num_rows(mysqli_query($mysqli, " select * from  tbl_activities_rd3 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
-$checkQuery4=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd4 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery4=mysqli_num_rows(mysqli_query($mysqli, " select * from  tbl_activities_rd4 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
 
-$checkQuery5=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd5 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery5=mysqli_num_rows(mysqli_query($mysqli, " select * from  tbl_activities_rd5 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
-$checkQuery6=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd6 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery6=mysqli_num_rows(mysqli_query($mysqli, " select * from  tbl_activities_rd6 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
-$checkQuery7=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd7 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery7=mysqli_num_rows(mysqli_query($mysqli, " select * from  tbl_activities_rd7 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
-$checkQuery8=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd8 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery8=mysqli_num_rows(mysqli_query($mysqli, " select * from  tbl_activities_rd8 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
-$checkQuery9=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd9 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery9=mysqli_num_rows(mysqli_query($mysqli, " select * from  tbl_activities_rd9 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
-$checkQuery10=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd10 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery10=mysqli_num_rows(mysqli_query($mysqli, " select * from  tbl_activities_rd10 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
-$checkQuery11=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd11 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery11=mysqli_num_rows(mysqli_query($mysqli, " select * from  tbl_activities_rd11 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
-$checkQuery12=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd12 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery12=mysqli_num_rows(mysqli_query($mysqli, " select * from  tbl_activities_rd12 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
-$checkQuery13=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd13 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery13=mysqli_num_rows(mysqli_query($mysqli, " select * from  tbl_activities_rd13 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
-$checkQuery14=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd14 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery14=mysqli_num_rows(mysqli_query($mysqli, " select * from  tbl_activities_rd14 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
-$checkQuery15=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd15 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery15=mysqli_num_rows(mysqli_query($mysqli, " select * from  tbl_activities_rd15 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
-$checkQuery16=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd16 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
-$checkQuery17=mysqli_num_rows(mysqli_query("select * from  tbl_activities_rd17 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery16=mysqli_num_rows(mysqli_query($mysqli, " select * from  tbl_activities_rd16 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
+$checkQuery17=mysqli_num_rows(mysqli_query($mysqli, " select * from  tbl_activities_rd17 where user_id='".$_SESSION['userId']['id']."' and month='".date("M-Y")."'"));
 
 if($checkQuery > 0 ||  $checkQuery1 > 0 ||  $checkQuery2 > 0 ||  $checkQuery3 > 0 ||  $checkQuery4 > 0 ||  $checkQuery5 > 0||  $checkQuery6 > 0||  $checkQuery7 > 0||  $checkQuery8 > 0||  $checkQuery9 > 0||  $checkQuery10 > 0||  $checkQuery11 > 0||  $checkQuery12 > 0||  $checkQuery13 > 0 ||  $checkQuery14 > 0 ||  $checkQuery15 > 0 ||  $checkQuery16 > 0 ||  $checkQuery17 > 0){
 

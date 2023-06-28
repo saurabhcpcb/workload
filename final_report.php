@@ -115,7 +115,7 @@ $dhId="'".implode("','",$_POST['dhId'])."'";
 $rdId="'".implode("','",$_POST['rdId'])."'";
 
  
-$updateQuery=mysqli_query("UPDATE $dhTable SET final_Status=2 WHERE id in ($dhId)  AND  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_SESSION['userId']['board']."'");
+$updateQuery=mysqli_query($mysqli, " UPDATE $dhTable SET final_Status=2 WHERE id in ($dhId)  AND  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month."  AND rd_id='".$_SESSION['userId']['board']."'");
 
 if($updateQuery)
 {
@@ -220,7 +220,7 @@ $i=1;
 
 $descriptionQuery="SELECT * FROM $dhTable where YEAR(proposed_date_by_ms) = ".$year." AND MONTH(proposed_date_by_ms) = ".$month." AND final_Status=2 AND rd_id='".$_SESSION['userId']['board']."'";$getDescriptionQuery=mysqli_query($descriptionQuery);
 while ($activities=mysqli_fetch_array($getDescriptionQuery,mysqli_ASSOC)){
- $userData=mysqli_query("select * from tbl_user where id=".$activities['user_id'].""); 
+ $userData=mysqli_query($mysqli, " select * from tbl_user where id=".$activities['user_id'].""); 
 
 $user=mysqli_fetch_array($userData);
 ?>

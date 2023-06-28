@@ -14,7 +14,7 @@ $mysqli_database = "project_management";
 mysqli_select_db($mysqli_database) or die("Opps some thing went wrong");
  
  
-$getQuery=mysqli_query("SELECT * FROM projects where id ='".$_GET['id']."'"); 
+$getQuery=mysqli_query($mysqli, " SELECT * FROM projects where id ='".$_GET['id']."'"); 
 $row=mysqli_fetch_array($getQuery);
 
 

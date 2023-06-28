@@ -5,7 +5,7 @@ date_default_timezone_set('Asia/Kolkata');
 ?>
 <?php
 
-$getUserData=mysqli_query("SELECT * FROM tbl_user where board='".$_GET['rd']."'");
+$getUserData=mysqli_query($mysqli, " SELECT * FROM tbl_user where board='".$_GET['rd']."'");
 $user=mysqli_fetch_array($getUserData);  
 
 
@@ -117,8 +117,8 @@ $dhId="'".implode("','",$_POST['dhId'])."'";
 $rdId="'".implode("','",$_POST['rdId'])."'";
 
  
-$updateQuery=mysqli_query("UPDATE $dhTable SET status=1 WHERE id in ($dhId)  AND  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd']."'");
-mysqli_query("UPDATE $rdTable SET status=1 WHERE rdid in ($rdId)  AND  month = '".$_GET['cid']."' AND user_id= '".$user['id']."'");
+$updateQuery=mysqli_query($mysqli, " UPDATE $dhTable SET status=1 WHERE id in ($dhId)  AND  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd']."'");
+mysqli_query($mysqli, " UPDATE $rdTable SET status=1 WHERE rdid in ($rdId)  AND  month = '".$_GET['cid']."' AND user_id= '".$user['id']."'");
 
 if($updateQuery)
 {
@@ -202,7 +202,7 @@ display: none !important;
 
 <table width="100%" border="1">
 <?php
-$queryByRd1=mysqli_query("SELECT * FROM $rdTable as a,tbl_user as b where a.month='".$_GET['cid']."' AND a.user_id=b.id AND a.user_id= '".$user['id']."' ORDER BY a.rdid ASC ");
+$queryByRd1=mysqli_query($mysqli, " SELECT * FROM $rdTable as a,tbl_user as b where a.month='".$_GET['cid']."' AND a.user_id=b.id AND a.user_id= '".$user['id']."' ORDER BY a.rdid ASC ");
 $rdDetails1=mysqli_fetch_array($queryByRd1);
 ?>
 <tr>
@@ -220,7 +220,7 @@ $rdDetails1=mysqli_fetch_array($queryByRd1);
  
  <?php
 $j=1;
-$queryByRd=mysqli_query("SELECT * FROM $rdTable as a,tbl_user as b where a.month='".$_GET['cid']."' AND a.user_id=b.id AND a.user_id= '".$user['id']."' ORDER BY a.rdid ASC ");
+$queryByRd=mysqli_query($mysqli, " SELECT * FROM $rdTable as a,tbl_user as b where a.month='".$_GET['cid']."' AND a.user_id=b.id AND a.user_id= '".$user['id']."' ORDER BY a.rdid ASC ");
 while($rdDetails=mysqli_fetch_array($queryByRd)){
 
 ?>

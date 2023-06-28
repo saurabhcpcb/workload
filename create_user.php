@@ -213,7 +213,7 @@ $_SESSION['errors']="";
                    <select name="board" class="form-control">
                     <option value="">Select Zone</option>
                  <?php 
-				 $rdQuery=mysqli_query("SELECT * FROM tbl_rd ORDER BY RD ASC ");
+				 $rdQuery=mysqli_query($mysqli, " SELECT * FROM tbl_rd ORDER BY RD ASC ");
 				 while($rd=mysqli_fetch_array($rdQuery)){
 				 ?>
                    <option  value="<?=$rd['RD']?>"><?=$rd['RD']?></option>
@@ -229,7 +229,7 @@ $_SESSION['errors']="";
                   <div style="padding:6px; border:1px solid #CCCCCC; margin:2px; height:auto; width:100%; float:left;">	
                	<?php
 				$i=1;
-                $activitiesQueryResult=mysqli_query("select * from tbl_user_activities  ORDER BY Activities ASC" );
+                $activitiesQueryResult=mysqli_query($mysqli, " select * from tbl_user_activities  ORDER BY Activities ASC" );
                 
                 while($activities=mysqli_fetch_array($activitiesQueryResult)){
                 ?> 

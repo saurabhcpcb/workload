@@ -5,7 +5,7 @@ date_default_timezone_set('Asia/Kolkata');
 ?>
 <?php
 
-$getUserData=mysqli_query("SELECT * FROM tbl_user where board='".$_GET['rd']."'");
+$getUserData=mysqli_query($mysqli, " SELECT * FROM tbl_user where board='".$_GET['rd']."'");
 $user=mysqli_fetch_array($getUserData);  
 
 

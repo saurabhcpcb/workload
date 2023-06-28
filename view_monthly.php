@@ -142,7 +142,7 @@ $_SESSION['errors']="";
   </tr>
 <?php 
 
-$getActivitis=mysqli_query("select * from tbl_user_activities_list where user_id=".$_SESSION['userId']['id']."");
+$getActivitis=mysqli_query($mysqli, " select * from tbl_user_activities_list where user_id=".$_SESSION['userId']['id']."");
 while($row=mysqli_fetch_array($getActivitis))
 {
 $dataList[]=$row['activities_id'];
@@ -159,7 +159,7 @@ $dataList[]=$row['activities_id'];
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities0=mysqli_query("SELECT * FROM  tbl_activities0 where main_id=".$_GET['id']."");
+$activities0=mysqli_query($mysqli, " SELECT * FROM  tbl_activities0 where main_id=".$_GET['id']."");
 while($activitiesList0=mysqli_fetch_array($activities0)){
 ?>
 
@@ -174,7 +174,7 @@ while($activitiesList0=mysqli_fetch_array($activities0)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile0=mysqli_query("SELECT * FROM  tbl_activities0 where main_id=".$_GET['id']."");
+$activitiesFile0=mysqli_query($mysqli, " SELECT * FROM  tbl_activities0 where main_id=".$_GET['id']."");
 if(mysqli_num_rows($activitiesFile0)>0){
 $activitiesFileList0=mysqli_fetch_array($activitiesFile0);
 ?>
@@ -200,7 +200,7 @@ $activitiesFileList0=mysqli_fetch_array($activitiesFile0);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities1=mysqli_query("SELECT * FROM  tbl_activities1 where main_id=".$_GET['id']."");
+$activities1=mysqli_query($mysqli, " SELECT * FROM  tbl_activities1 where main_id=".$_GET['id']."");
 while($activitiesList1=mysqli_fetch_array($activities1)){
 ?>
 
@@ -215,7 +215,7 @@ while($activitiesList1=mysqli_fetch_array($activities1)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile1=mysqli_query("SELECT * FROM  tbl_activities1 where main_id=".$_GET['id']."");
+$activitiesFile1=mysqli_query($mysqli, " SELECT * FROM  tbl_activities1 where main_id=".$_GET['id']."");
 if(mysqli_num_rows($activitiesFile1)>0){
 $activitiesFileList1=mysqli_fetch_array($activitiesFile1);
 ?>
@@ -240,7 +240,7 @@ $activitiesFileList1=mysqli_fetch_array($activitiesFile1);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities2=mysqli_query("SELECT * FROM  tbl_activities2 where main_id=".$_GET['id']."");
+$activities2=mysqli_query($mysqli, " SELECT * FROM  tbl_activities2 where main_id=".$_GET['id']."");
 while($activitiesList2=mysqli_fetch_array($activities2)){
 ?>
 
@@ -255,7 +255,7 @@ while($activitiesList2=mysqli_fetch_array($activities2)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile2=mysqli_query("SELECT * FROM  tbl_activities2 where main_id=".$_GET['id']."");
+$activitiesFile2=mysqli_query($mysqli, " SELECT * FROM  tbl_activities2 where main_id=".$_GET['id']."");
 if(mysqli_num_rows($activitiesFile2)>0){
 $activitiesFileList2=mysqli_fetch_array($activitiesFile2);
 ?>
@@ -280,7 +280,7 @@ $activitiesFileList2=mysqli_fetch_array($activitiesFile2);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities3=mysqli_query("SELECT * FROM  tbl_activities3 where main_id=".$_GET['id']."");
+$activities3=mysqli_query($mysqli, " SELECT * FROM  tbl_activities3 where main_id=".$_GET['id']."");
 while($activitiesList3=mysqli_fetch_array($activities3)){
 ?>
 
@@ -295,7 +295,7 @@ while($activitiesList3=mysqli_fetch_array($activities3)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile3=mysqli_query("SELECT * FROM  tbl_activities3 where main_id=".$_GET['id']."");
+$activitiesFile3=mysqli_query($mysqli, " SELECT * FROM  tbl_activities3 where main_id=".$_GET['id']."");
 if(mysqli_num_rows($activitiesFile3)>0){
 $activitiesFileList3=mysqli_fetch_array($activitiesFile3);
 ?>
@@ -320,7 +320,7 @@ $activitiesFileList3=mysqli_fetch_array($activitiesFile3);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities4=mysqli_query("SELECT * FROM  tbl_activities4 where main_id=".$_GET['id']."");
+$activities4=mysqli_query($mysqli, " SELECT * FROM  tbl_activities4 where main_id=".$_GET['id']."");
 while($activitiesList4=mysqli_fetch_array($activities4)){
 ?>
 
@@ -335,7 +335,7 @@ while($activitiesList4=mysqli_fetch_array($activities4)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile4=mysqli_query("SELECT * FROM  tbl_activities4 where main_id=".$_GET['id']."");
+$activitiesFile4=mysqli_query($mysqli, " SELECT * FROM  tbl_activities4 where main_id=".$_GET['id']."");
 if(mysqli_num_rows($activitiesFile4)>0){
 $activitiesFileList4=mysqli_fetch_array($activitiesFile4);
 ?>
@@ -360,7 +360,7 @@ $activitiesFileList4=mysqli_fetch_array($activitiesFile4);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities5=mysqli_query("SELECT * FROM  tbl_activities5 where main_id=".$_GET['id']."");
+$activities5=mysqli_query($mysqli, " SELECT * FROM  tbl_activities5 where main_id=".$_GET['id']."");
 while($activitiesList5=mysqli_fetch_array($activities5)){
 ?>
 
@@ -375,7 +375,7 @@ while($activitiesList5=mysqli_fetch_array($activities5)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile5=mysqli_query("SELECT * FROM  tbl_activities5 where main_id=".$_GET['id']."");
+$activitiesFile5=mysqli_query($mysqli, " SELECT * FROM  tbl_activities5 where main_id=".$_GET['id']."");
 if(mysqli_num_rows($activitiesFile5)>0){
 $activitiesFileList5=mysqli_fetch_array($activitiesFile5);
 ?>
@@ -400,7 +400,7 @@ $activitiesFileList5=mysqli_fetch_array($activitiesFile5);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities6=mysqli_query("SELECT * FROM  tbl_activities6 where main_id=".$_GET['id']."");
+$activities6=mysqli_query($mysqli, " SELECT * FROM  tbl_activities6 where main_id=".$_GET['id']."");
 while($activitiesList6=mysqli_fetch_array($activities6)){
 ?>
 
@@ -415,7 +415,7 @@ while($activitiesList6=mysqli_fetch_array($activities6)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile6=mysqli_query("SELECT * FROM  tbl_activities6 where main_id=".$_GET['id']."");
+$activitiesFile6=mysqli_query($mysqli, " SELECT * FROM  tbl_activities6 where main_id=".$_GET['id']."");
 if(mysqli_num_rows($activitiesFile6)>0){
 $activitiesFileList6=mysqli_fetch_array($activitiesFile6);
 ?>
@@ -440,7 +440,7 @@ $activitiesFileList6=mysqli_fetch_array($activitiesFile6);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities7=mysqli_query("SELECT * FROM  tbl_activities7 where main_id=".$_GET['id']."");
+$activities7=mysqli_query($mysqli, " SELECT * FROM  tbl_activities7 where main_id=".$_GET['id']."");
 while($activitiesList7=mysqli_fetch_array($activities7)){
 ?>
 
@@ -455,7 +455,7 @@ while($activitiesList7=mysqli_fetch_array($activities7)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile7=mysqli_query("SELECT * FROM  tbl_activities7 where main_id=".$_GET['id']."");
+$activitiesFile7=mysqli_query($mysqli, " SELECT * FROM  tbl_activities7 where main_id=".$_GET['id']."");
 if(mysqli_num_rows($activitiesFile7)>0){
 $activitiesFileList7=mysqli_fetch_array($activitiesFile7);
 ?>
@@ -480,7 +480,7 @@ $activitiesFileList7=mysqli_fetch_array($activitiesFile7);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities8=mysqli_query("SELECT * FROM  tbl_activities8 where main_id=".$_GET['id']."");
+$activities8=mysqli_query($mysqli, " SELECT * FROM  tbl_activities8 where main_id=".$_GET['id']."");
 while($activitiesList8=mysqli_fetch_array($activities8)){
 ?>
 
@@ -495,7 +495,7 @@ while($activitiesList8=mysqli_fetch_array($activities8)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile8=mysqli_query("SELECT * FROM  tbl_activities8 where main_id=".$_GET['id']."");
+$activitiesFile8=mysqli_query($mysqli, " SELECT * FROM  tbl_activities8 where main_id=".$_GET['id']."");
 if(mysqli_num_rows($activitiesFile8)>0){
 $activitiesFileList8=mysqli_fetch_array($activitiesFile8);
 ?>
@@ -520,7 +520,7 @@ $activitiesFileList8=mysqli_fetch_array($activitiesFile8);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities9=mysqli_query("SELECT * FROM  tbl_activities9 where main_id=".$_GET['id']."");
+$activities9=mysqli_query($mysqli, " SELECT * FROM  tbl_activities9 where main_id=".$_GET['id']."");
 while($activitiesList9=mysqli_fetch_array($activities9)){
 ?>
 
@@ -535,7 +535,7 @@ while($activitiesList9=mysqli_fetch_array($activities9)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile9=mysqli_query("SELECT * FROM  tbl_activities9 where main_id=".$_GET['id']."");
+$activitiesFile9=mysqli_query($mysqli, " SELECT * FROM  tbl_activities9 where main_id=".$_GET['id']."");
 if(mysqli_num_rows($activitiesFile9)>0){
 $activitiesFileList9=mysqli_fetch_array($activitiesFile9);
 ?>
@@ -560,7 +560,7 @@ $activitiesFileList9=mysqli_fetch_array($activitiesFile9);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities10=mysqli_query("SELECT * FROM  tbl_activities10 where main_id=".$_GET['id']."");
+$activities10=mysqli_query($mysqli, " SELECT * FROM  tbl_activities10 where main_id=".$_GET['id']."");
 while($activitiesList10=mysqli_fetch_array($activities10)){
 ?>
 
@@ -575,7 +575,7 @@ while($activitiesList10=mysqli_fetch_array($activities10)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile10=mysqli_query("SELECT * FROM  tbl_activities10 where main_id=".$_GET['id']."");
+$activitiesFile10=mysqli_query($mysqli, " SELECT * FROM  tbl_activities10 where main_id=".$_GET['id']."");
 if(mysqli_num_rows($activitiesFile10)>0){
 $activitiesFileList10=mysqli_fetch_array($activitiesFile10);
 ?>
@@ -600,7 +600,7 @@ $activitiesFileList10=mysqli_fetch_array($activitiesFile10);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities11=mysqli_query("SELECT * FROM  tbl_activities11 where main_id=".$_GET['id']."");
+$activities11=mysqli_query($mysqli, " SELECT * FROM  tbl_activities11 where main_id=".$_GET['id']."");
 while($activitiesList11=mysqli_fetch_array($activities11)){
 ?>
 
@@ -615,7 +615,7 @@ while($activitiesList11=mysqli_fetch_array($activities11)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile11=mysqli_query("SELECT * FROM  tbl_activities11 where main_id=".$_GET['id']."");
+$activitiesFile11=mysqli_query($mysqli, " SELECT * FROM  tbl_activities11 where main_id=".$_GET['id']."");
 if(mysqli_num_rows($activitiesFile11)>0){
 $activitiesFileList11=mysqli_fetch_array($activitiesFile11);
 ?>
@@ -640,7 +640,7 @@ $activitiesFileList11=mysqli_fetch_array($activitiesFile11);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities12=mysqli_query("SELECT * FROM  tbl_activities12 where main_id=".$_GET['id']."");
+$activities12=mysqli_query($mysqli, " SELECT * FROM  tbl_activities12 where main_id=".$_GET['id']."");
 while($activitiesList12=mysqli_fetch_array($activities12)){
 ?>
 
@@ -655,7 +655,7 @@ while($activitiesList12=mysqli_fetch_array($activities12)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile12=mysqli_query("SELECT * FROM  tbl_activities12 where main_id=".$_GET['id']."");
+$activitiesFile12=mysqli_query($mysqli, " SELECT * FROM  tbl_activities12 where main_id=".$_GET['id']."");
 if(mysqli_num_rows($activitiesFile12)>0){
 $activitiesFileList12=mysqli_fetch_array($activitiesFile12);
 ?>
@@ -680,7 +680,7 @@ $activitiesFileList12=mysqli_fetch_array($activitiesFile12);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities13=mysqli_query("SELECT * FROM  tbl_activities13 where main_id=".$_GET['id']."");
+$activities13=mysqli_query($mysqli, " SELECT * FROM  tbl_activities13 where main_id=".$_GET['id']."");
 while($activitiesList13=mysqli_fetch_array($activities13)){
 ?>
 
@@ -695,7 +695,7 @@ while($activitiesList13=mysqli_fetch_array($activities13)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile13=mysqli_query("SELECT * FROM  tbl_activities13 where main_id=".$_GET['id']."");
+$activitiesFile13=mysqli_query($mysqli, " SELECT * FROM  tbl_activities13 where main_id=".$_GET['id']."");
 if(mysqli_num_rows($activitiesFile13)>0){
 $activitiesFileList13=mysqli_fetch_array($activitiesFile13);
 ?>
@@ -720,7 +720,7 @@ $activitiesFileList13=mysqli_fetch_array($activitiesFile13);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities14=mysqli_query("SELECT * FROM  tbl_activities14 where main_id=".$_GET['id']."");
+$activities14=mysqli_query($mysqli, " SELECT * FROM  tbl_activities14 where main_id=".$_GET['id']."");
 while($activitiesList14=mysqli_fetch_array($activities14)){
 ?>
 
@@ -735,7 +735,7 @@ while($activitiesList14=mysqli_fetch_array($activities14)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile14=mysqli_query("SELECT * FROM  tbl_activities14 where main_id=".$_GET['id']."");
+$activitiesFile14=mysqli_query($mysqli, " SELECT * FROM  tbl_activities14 where main_id=".$_GET['id']."");
 if(mysqli_num_rows($activitiesFile14)>0){
 $activitiesFileList14=mysqli_fetch_array($activitiesFile14);
 ?>
@@ -761,7 +761,7 @@ $activitiesFileList14=mysqli_fetch_array($activitiesFile14);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities15=mysqli_query("SELECT * FROM  tbl_activities15 where main_id=".$_GET['id']."");
+$activities15=mysqli_query($mysqli, " SELECT * FROM  tbl_activities15 where main_id=".$_GET['id']."");
 while($activitiesList15=mysqli_fetch_array($activities15)){
 ?>
 
@@ -776,7 +776,7 @@ while($activitiesList15=mysqli_fetch_array($activities15)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile15=mysqli_query("SELECT * FROM  tbl_activities15 where main_id=".$_GET['id']."");
+$activitiesFile15=mysqli_query($mysqli, " SELECT * FROM  tbl_activities15 where main_id=".$_GET['id']."");
 if(mysqli_num_rows($activitiesFile15)>0){
 $activitiesFileList15=mysqli_fetch_array($activitiesFile15);
 ?>
@@ -801,7 +801,7 @@ $activitiesFileList15=mysqli_fetch_array($activitiesFile15);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities16=mysqli_query("SELECT * FROM  tbl_activities16 where main_id=".$_GET['id']."");
+$activities16=mysqli_query($mysqli, " SELECT * FROM  tbl_activities16 where main_id=".$_GET['id']."");
 while($activitiesList16=mysqli_fetch_array($activities16)){
 ?>
 
@@ -816,7 +816,7 @@ while($activitiesList16=mysqli_fetch_array($activities16)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile16=mysqli_query("SELECT * FROM  tbl_activities16 where main_id=".$_GET['id']."");
+$activitiesFile16=mysqli_query($mysqli, " SELECT * FROM  tbl_activities16 where main_id=".$_GET['id']."");
 if(mysqli_num_rows($activitiesFile16)>0){
 $activitiesFileList16=mysqli_fetch_array($activitiesFile16);
 ?>
@@ -841,7 +841,7 @@ $activitiesFileList16=mysqli_fetch_array($activitiesFile16);
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities17=mysqli_query("SELECT * FROM  tbl_activities17 where main_id=".$_GET['id']."");
+$activities17=mysqli_query($mysqli, " SELECT * FROM  tbl_activities17 where main_id=".$_GET['id']."");
 while($activitiesList17=mysqli_fetch_array($activities17)){
 ?>
 
@@ -856,7 +856,7 @@ while($activitiesList17=mysqli_fetch_array($activities17)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile17=mysqli_query("SELECT * FROM  tbl_activities17 where main_id=".$_GET['id']."");
+$activitiesFile17=mysqli_query($mysqli, " SELECT * FROM  tbl_activities17 where main_id=".$_GET['id']."");
 
 if(mysqli_num_rows($activitiesFile17)>0){
 $activitiesFileList17=mysqli_fetch_array($activitiesFile17);

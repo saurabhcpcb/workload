@@ -94,41 +94,41 @@ display: none !important;
  <?php 
 $i=0;
 
-$proposedQuery0=mysqli_query("select * from tbl_activities0 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."' GROUP BY  activities_name");
-$proposedQuery1=mysqli_query("select * from tbl_activities1 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."' GROUP BY  activities_name");
+$proposedQuery0=mysqli_query($mysqli, " select * from tbl_activities0 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."' GROUP BY  activities_name");
+$proposedQuery1=mysqli_query($mysqli, " select * from tbl_activities1 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."' GROUP BY  activities_name");
 
-$proposedQuery2=mysqli_query("select * from tbl_activities2 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
+$proposedQuery2=mysqli_query($mysqli, " select * from tbl_activities2 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
 
-$proposedQuery3=mysqli_query("select * from tbl_activities3 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
+$proposedQuery3=mysqli_query($mysqli, " select * from tbl_activities3 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
 
-$proposedQuery4=mysqli_query("select * from tbl_activities4 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
+$proposedQuery4=mysqli_query($mysqli, " select * from tbl_activities4 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
 
-$proposedQuery5=mysqli_query("select * from tbl_activities5 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
+$proposedQuery5=mysqli_query($mysqli, " select * from tbl_activities5 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
 
-$proposedQuery6=mysqli_query("select * from tbl_activities6 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."' GROUP BY  activities_name");
+$proposedQuery6=mysqli_query($mysqli, " select * from tbl_activities6 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."' GROUP BY  activities_name");
 
-$proposedQuery7=mysqli_query("select * from tbl_activities7 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
+$proposedQuery7=mysqli_query($mysqli, " select * from tbl_activities7 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
 
-$proposedQuery8=mysqli_query("select * from tbl_activities8 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
+$proposedQuery8=mysqli_query($mysqli, " select * from tbl_activities8 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
 
-$proposedQuery9=mysqli_query("select * from tbl_activities9 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
+$proposedQuery9=mysqli_query($mysqli, " select * from tbl_activities9 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
 
-$proposedQuery10=mysqli_query("select * from tbl_activities10 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
+$proposedQuery10=mysqli_query($mysqli, " select * from tbl_activities10 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
 
-$proposedQuery11=mysqli_query("select * from tbl_activities11 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
+$proposedQuery11=mysqli_query($mysqli, " select * from tbl_activities11 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
 
-$proposedQuery12=mysqli_query("select * from tbl_activities12 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
+$proposedQuery12=mysqli_query($mysqli, " select * from tbl_activities12 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
 
-$proposedQuery13=mysqli_query("select * from tbl_activities13 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
+$proposedQuery13=mysqli_query($mysqli, " select * from tbl_activities13 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
 
-$proposedQuery14=mysqli_query("select * from tbl_activities14 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
+$proposedQuery14=mysqli_query($mysqli, " select * from tbl_activities14 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
 
-$proposedQuery15=mysqli_query("select * from tbl_activities15 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
+$proposedQuery15=mysqli_query($mysqli, " select * from tbl_activities15 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
 
-$proposedQuery16=mysqli_query("select * from tbl_activities16 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND 
+$proposedQuery16=mysqli_query($mysqli, " select * from tbl_activities16 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND 
 priority='".$_GET['activities']."'  GROUP BY  activities_name");
 
-$proposedQuery17=mysqli_query("select * from tbl_activities17 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
+$proposedQuery17=mysqli_query($mysqli, " select * from tbl_activities17 where  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND  rd_id='".$_GET['rd']."' AND priority='".$_GET['activities']."'  GROUP BY  activities_name");
 ?>
 <?php
 

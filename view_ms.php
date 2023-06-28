@@ -122,7 +122,7 @@ date_default_timezone_set('Asia/Kolkata');
                
            <td width="30%"><select name="user_id" class="form-control" style="width:49%; margin-left:10px; float:left;" required>
           
-		   <?php $getQuery12=mysqli_query("SELECT * FROM tbl_user where user_type='CPCB' ORDER BY Division ASC"); 
+		   <?php $getQuery12=mysqli_query($mysqli, " SELECT * FROM tbl_user where user_type='CPCB' ORDER BY Division ASC"); 
 		   while($rd12=mysqli_fetch_array($getQuery12)){?>
            <option value="<?=$rd12['id']?>"  <?=($rd12['id']==$_POST['user_id'])?'selected':''?> ><?=$rd12['Division']?></option><?php }?>
            </select></td>
@@ -149,7 +149,7 @@ $year= date("Y", strtotime($_POST['month']));
   
   <h4 align="left" style="font-weight:600; color:#1155cc; text-transform:capitalize; text-decoration:underline;">Month : <?=date("M-Y", strtotime($_GET['month']))?>, 
   <?php
-  $getQuery=mysqli_query("SELECT * FROM tbl_user where  id=".$_POST['user_id'].""); 
+  $getQuery=mysqli_query($mysqli, " SELECT * FROM tbl_user where  id=".$_POST['user_id'].""); 
   $rd=mysqli_fetch_array($getQuery);
   ?>
   
@@ -166,7 +166,7 @@ $year= date("Y", strtotime($_POST['month']));
   </tr>
 <?php 
 
-$getActivitis=mysqli_query("select * from tbl_user_activities_list where user_id=".$_POST['user_id']."");
+$getActivitis=mysqli_query($mysqli, " select * from tbl_user_activities_list where user_id=".$_POST['user_id']."");
 while($row=mysqli_fetch_array($getActivitis))
 {
 $dataList[]=$row['activities_id'];
@@ -181,7 +181,7 @@ $dataList[]=$row['activities_id'];
 
 <td colspan="5"> 
 <?php
-$queryByDate=mysqli_query("SELECT * FROM tbl_activities0 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate=mysqli_query($mysqli, " SELECT * FROM tbl_activities0 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
 
 while($dateRow=mysqli_fetch_array($queryByDate)){
 ?>
@@ -190,7 +190,7 @@ while($dateRow=mysqli_fetch_array($queryByDate)){
 $i=1;
 
 
-$activities0=mysqli_query("SELECT * FROM  tbl_activities0 where user_id=".$_POST['user_id']." AND main_id=".$dateRow['main_id']."");
+$activities0=mysqli_query($mysqli, " SELECT * FROM  tbl_activities0 where user_id=".$_POST['user_id']." AND main_id=".$dateRow['main_id']."");
 while($activitiesList0=mysqli_fetch_array($activities0)){
 ?>
 
@@ -213,7 +213,7 @@ while($activitiesList0=mysqli_fetch_array($activities0)){
 </table>
 <table width="100%" border="1" style="margin:6px 0px;">
 <?php
-$activitiesFile0=mysqli_query("SELECT * FROM  tbl_activities0 where user_id=".$_POST['user_id']." AND main_id=".$dateRow['main_id']."");
+$activitiesFile0=mysqli_query($mysqli, " SELECT * FROM  tbl_activities0 where user_id=".$_POST['user_id']." AND main_id=".$dateRow['main_id']."");
 $activitiesFileList0=mysqli_fetch_array($activitiesFile0);
 ?>
   <tr>
@@ -235,14 +235,14 @@ $activitiesFileList0=mysqli_fetch_array($activitiesFile0);
 
 <td colspan="5">
 <?php
-$queryByDate1=mysqli_query("SELECT * FROM tbl_activities1 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate1=mysqli_query($mysqli, " SELECT * FROM tbl_activities1 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
 
 while($dateRow1=mysqli_fetch_array($queryByDate1)){
 ?> 
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities1=mysqli_query("SELECT * FROM  tbl_activities1 where user_id=".$_POST['user_id']." AND main_id=".$dateRow1['main_id']."");
+$activities1=mysqli_query($mysqli, " SELECT * FROM  tbl_activities1 where user_id=".$_POST['user_id']." AND main_id=".$dateRow1['main_id']."");
 while($activitiesList1=mysqli_fetch_array($activities1)){
 ?>
 
@@ -265,7 +265,7 @@ while($activitiesList1=mysqli_fetch_array($activities1)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile1=mysqli_query("SELECT * FROM  tbl_activities1 where user_id=".$_POST['user_id']." AND main_id=".$dateRow1['main_id']."");
+$activitiesFile1=mysqli_query($mysqli, " SELECT * FROM  tbl_activities1 where user_id=".$_POST['user_id']." AND main_id=".$dateRow1['main_id']."");
 $activitiesFileList1=mysqli_fetch_array($activitiesFile1);
 ?>
   <tr>
@@ -287,14 +287,14 @@ $activitiesFileList1=mysqli_fetch_array($activitiesFile1);
 
 <td colspan="5">
 <?php
-$queryByDate2=mysqli_query("SELECT * FROM tbl_activities2 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate2=mysqli_query($mysqli, " SELECT * FROM tbl_activities2 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
 
 while($dateRow2=mysqli_fetch_array($queryByDate2)){
 ?> 
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities2=mysqli_query("SELECT * FROM  tbl_activities2 where user_id=".$_POST['user_id']." AND main_id=".$dateRow2['main_id']."");
+$activities2=mysqli_query($mysqli, " SELECT * FROM  tbl_activities2 where user_id=".$_POST['user_id']." AND main_id=".$dateRow2['main_id']."");
 while($activitiesList2=mysqli_fetch_array($activities2)){
 ?>
 
@@ -317,7 +317,7 @@ while($activitiesList2=mysqli_fetch_array($activities2)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile2=mysqli_query("SELECT * FROM  tbl_activities2 where user_id=".$_POST['user_id']." AND main_id=".$dateRow2['main_id']."");
+$activitiesFile2=mysqli_query($mysqli, " SELECT * FROM  tbl_activities2 where user_id=".$_POST['user_id']." AND main_id=".$dateRow2['main_id']."");
 $activitiesFileList2=mysqli_fetch_array($activitiesFile2);
 ?>
   <tr>
@@ -338,14 +338,14 @@ $activitiesFileList2=mysqli_fetch_array($activitiesFile2);
 
 <td colspan="5"> 
 <?php
-$queryByDate3=mysqli_query("SELECT * FROM tbl_activities3 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate3=mysqli_query($mysqli, " SELECT * FROM tbl_activities3 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
 
 while($dateRow3=mysqli_fetch_array($queryByDate3)){
 ?>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities3=mysqli_query("SELECT * FROM  tbl_activities3 where user_id=".$_POST['user_id']." AND  main_id=".$dateRow3['main_id']."");
+$activities3=mysqli_query($mysqli, " SELECT * FROM  tbl_activities3 where user_id=".$_POST['user_id']." AND  main_id=".$dateRow3['main_id']."");
 while($activitiesList3=mysqli_fetch_array($activities3)){
 ?>
 
@@ -368,7 +368,7 @@ while($activitiesList3=mysqli_fetch_array($activities3)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile3=mysqli_query("SELECT * FROM  tbl_activities3 where user_id=".$_POST['user_id']." AND  main_id=".$dateRow3['main_id']."");
+$activitiesFile3=mysqli_query($mysqli, " SELECT * FROM  tbl_activities3 where user_id=".$_POST['user_id']." AND  main_id=".$dateRow3['main_id']."");
 $activitiesFileList3=mysqli_fetch_array($activitiesFile3);
 ?>
   <tr>
@@ -390,14 +390,14 @@ $activitiesFileList3=mysqli_fetch_array($activitiesFile3);
 
 <td colspan="5"> 
 <?php
-$queryByDate4=mysqli_query("SELECT * FROM tbl_activities4 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate4=mysqli_query($mysqli, " SELECT * FROM tbl_activities4 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
 
 while($dateRow4=mysqli_fetch_array($queryByDate4)){
 ?>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities4=mysqli_query("SELECT * FROM  tbl_activities4 where user_id=".$_POST['user_id']." AND main_id=".$dateRow4['main_id']."");
+$activities4=mysqli_query($mysqli, " SELECT * FROM  tbl_activities4 where user_id=".$_POST['user_id']." AND main_id=".$dateRow4['main_id']."");
 while($activitiesList4=mysqli_fetch_array($activities4)){
 ?>
 
@@ -418,7 +418,7 @@ while($activitiesList4=mysqli_fetch_array($activities4)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile4=mysqli_query("SELECT * FROM  tbl_activities4 where user_id=".$_POST['user_id']." AND main_id=".$dateRow4['main_id']."");
+$activitiesFile4=mysqli_query($mysqli, " SELECT * FROM  tbl_activities4 where user_id=".$_POST['user_id']." AND main_id=".$dateRow4['main_id']."");
 $activitiesFileList4=mysqli_fetch_array($activitiesFile4);
 ?>
   <tr>
@@ -439,14 +439,14 @@ $activitiesFileList4=mysqli_fetch_array($activitiesFile4);
 
 <td colspan="5"> 
 <?php
-$queryByDate5=mysqli_query("SELECT * FROM tbl_activities5 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate5=mysqli_query($mysqli, " SELECT * FROM tbl_activities5 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
 
 while($dateRow5=mysqli_fetch_array($queryByDate5)){
 ?>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities5=mysqli_query("SELECT * FROM  tbl_activities5 where user_id=".$_POST['user_id']." AND main_id=".$dateRow5['main_id']."");
+$activities5=mysqli_query($mysqli, " SELECT * FROM  tbl_activities5 where user_id=".$_POST['user_id']." AND main_id=".$dateRow5['main_id']."");
 while($activitiesList5=mysqli_fetch_array($activities5)){
 ?>
 
@@ -469,7 +469,7 @@ while($activitiesList5=mysqli_fetch_array($activities5)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile5=mysqli_query("SELECT * FROM  tbl_activities5 where user_id=".$_POST['user_id']." AND main_id=".$dateRow5['main_id']."");
+$activitiesFile5=mysqli_query($mysqli, " SELECT * FROM  tbl_activities5 where user_id=".$_POST['user_id']." AND main_id=".$dateRow5['main_id']."");
 $activitiesFileList5=mysqli_fetch_array($activitiesFile5);
 ?>
   <tr>
@@ -490,14 +490,14 @@ $activitiesFileList5=mysqli_fetch_array($activitiesFile5);
 
 <td colspan="5">
 <?php
-$queryByDate6=mysqli_query("SELECT * FROM tbl_activities6 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate6=mysqli_query($mysqli, " SELECT * FROM tbl_activities6 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
 
 while($dateRow6=mysqli_fetch_array($queryByDate6)){
 ?> 
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities6=mysqli_query("SELECT * FROM  tbl_activities6 where user_id=".$_POST['user_id']." AND main_id=".$dateRow6['main_id']."");
+$activities6=mysqli_query($mysqli, " SELECT * FROM  tbl_activities6 where user_id=".$_POST['user_id']." AND main_id=".$dateRow6['main_id']."");
 while($activitiesList6=mysqli_fetch_array($activities6)){
 ?>
 
@@ -520,7 +520,7 @@ while($activitiesList6=mysqli_fetch_array($activities6)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile6=mysqli_query("SELECT * FROM  tbl_activities6 where user_id=".$_POST['user_id']." AND main_id=".$dateRow6['main_id']."");
+$activitiesFile6=mysqli_query($mysqli, " SELECT * FROM  tbl_activities6 where user_id=".$_POST['user_id']." AND main_id=".$dateRow6['main_id']."");
 $activitiesFileList6=mysqli_fetch_array($activitiesFile6);
 ?>
   <tr>
@@ -542,14 +542,14 @@ $activitiesFileList6=mysqli_fetch_array($activitiesFile6);
 
 <td colspan="5"> 
 <?php
-$queryByDate7=mysqli_query("SELECT * FROM tbl_activities7 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate7=mysqli_query($mysqli, " SELECT * FROM tbl_activities7 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
 
 while($dateRow7=mysqli_fetch_array($queryByDate7)){
 ?>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities7=mysqli_query("SELECT * FROM  tbl_activities7 where  user_id=".$_POST['user_id']." AND main_id=".$dateRow7['main_id']."");
+$activities7=mysqli_query($mysqli, " SELECT * FROM  tbl_activities7 where  user_id=".$_POST['user_id']." AND main_id=".$dateRow7['main_id']."");
 while($activitiesList7=mysqli_fetch_array($activities7)){
 ?>
 
@@ -571,7 +571,7 @@ while($activitiesList7=mysqli_fetch_array($activities7)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile7=mysqli_query("SELECT * FROM  tbl_activities7 where user_id=".$_POST['user_id']." AND main_id=".$dateRow7['main_id']."");
+$activitiesFile7=mysqli_query($mysqli, " SELECT * FROM  tbl_activities7 where user_id=".$_POST['user_id']." AND main_id=".$dateRow7['main_id']."");
 $activitiesFileList7=mysqli_fetch_array($activitiesFile7);
 ?>
   <tr>
@@ -593,14 +593,14 @@ $activitiesFileList7=mysqli_fetch_array($activitiesFile7);
 
 <td colspan="5"> 
 <?php
-$queryByDate8=mysqli_query("SELECT * FROM tbl_activities8 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate8=mysqli_query($mysqli, " SELECT * FROM tbl_activities8 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
 
 while($dateRow8=mysqli_fetch_array($queryByDate8)){
 ?>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities8=mysqli_query("SELECT * FROM  tbl_activities8 where user_id=".$_POST['user_id']." AND main_id=".$dateRow8['main_id']."");
+$activities8=mysqli_query($mysqli, " SELECT * FROM  tbl_activities8 where user_id=".$_POST['user_id']." AND main_id=".$dateRow8['main_id']."");
 while($activitiesList8=mysqli_fetch_array($activities8)){
 ?>
 
@@ -623,7 +623,7 @@ while($activitiesList8=mysqli_fetch_array($activities8)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile8=mysqli_query("SELECT * FROM  tbl_activities8 where user_id=".$_POST['user_id']." AND main_id=".$dateRow8['main_id']."");
+$activitiesFile8=mysqli_query($mysqli, " SELECT * FROM  tbl_activities8 where user_id=".$_POST['user_id']." AND main_id=".$dateRow8['main_id']."");
 $activitiesFileList8=mysqli_fetch_array($activitiesFile8);
 ?>
   <tr>
@@ -645,14 +645,14 @@ $activitiesFileList8=mysqli_fetch_array($activitiesFile8);
 
 <td colspan="5"> 
 <?php
-$queryByDate9=mysqli_query("SELECT * FROM tbl_activities9 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate9=mysqli_query($mysqli, " SELECT * FROM tbl_activities9 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
 
 while($dateRow9=mysqli_fetch_array($queryByDate9)){
 ?>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities9=mysqli_query("SELECT * FROM  tbl_activities9 where user_id=".$_POST['user_id']." AND main_id=".$dateRow9['main_id']."");
+$activities9=mysqli_query($mysqli, " SELECT * FROM  tbl_activities9 where user_id=".$_POST['user_id']." AND main_id=".$dateRow9['main_id']."");
 while($activitiesList9=mysqli_fetch_array($activities9)){
 ?>
 
@@ -675,7 +675,7 @@ while($activitiesList9=mysqli_fetch_array($activities9)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile9=mysqli_query("SELECT * FROM  tbl_activities9 where user_id=".$_POST['user_id']." AND main_id=".$dateRow9['main_id']."");
+$activitiesFile9=mysqli_query($mysqli, " SELECT * FROM  tbl_activities9 where user_id=".$_POST['user_id']." AND main_id=".$dateRow9['main_id']."");
 $activitiesFileList9=mysqli_fetch_array($activitiesFile9);
 ?>
   <tr>
@@ -697,14 +697,14 @@ $activitiesFileList9=mysqli_fetch_array($activitiesFile9);
 
 <td colspan="5"> 
 <?php
-$queryByDate10=mysqli_query("SELECT * FROM tbl_activities10 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate10=mysqli_query($mysqli, " SELECT * FROM tbl_activities10 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
 
 while($dateRow10=mysqli_fetch_array($queryByDate10)){
 ?>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities10=mysqli_query("SELECT * FROM  tbl_activities10 where user_id=".$_POST['user_id']." AND main_id=".$dateRow10['main_id']."");
+$activities10=mysqli_query($mysqli, " SELECT * FROM  tbl_activities10 where user_id=".$_POST['user_id']." AND main_id=".$dateRow10['main_id']."");
 while($activitiesList10=mysqli_fetch_array($activities10)){
 ?>
 
@@ -726,7 +726,7 @@ while($activitiesList10=mysqli_fetch_array($activities10)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile10=mysqli_query("SELECT * FROM  tbl_activities10 where user_id=".$_POST['user_id']." AND main_id=".$dateRow10['main_id']."");
+$activitiesFile10=mysqli_query($mysqli, " SELECT * FROM  tbl_activities10 where user_id=".$_POST['user_id']." AND main_id=".$dateRow10['main_id']."");
 $activitiesFileList10=mysqli_fetch_array($activitiesFile10);
 ?>
   <tr>
@@ -748,14 +748,14 @@ $activitiesFileList10=mysqli_fetch_array($activitiesFile10);
 
 <td colspan="5"> 
 <?php
-$queryByDate11=mysqli_query("SELECT * FROM tbl_activities11 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate11=mysqli_query($mysqli, " SELECT * FROM tbl_activities11 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
 
 while($dateRow11=mysqli_fetch_array($queryByDate11)){
 ?>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities11=mysqli_query("SELECT * FROM  tbl_activities11 where user_id=".$_POST['user_id']." AND main_id=".$dateRow11['main_id']."");
+$activities11=mysqli_query($mysqli, " SELECT * FROM  tbl_activities11 where user_id=".$_POST['user_id']." AND main_id=".$dateRow11['main_id']."");
 while($activitiesList11=mysqli_fetch_array($activities11)){
 ?>
 
@@ -774,7 +774,7 @@ while($activitiesList11=mysqli_fetch_array($activities11)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile11=mysqli_query("SELECT * FROM  tbl_activities11 where user_id=".$_POST['user_id']." AND main_id=".$dateRow11['main_id']."");
+$activitiesFile11=mysqli_query($mysqli, " SELECT * FROM  tbl_activities11 where user_id=".$_POST['user_id']." AND main_id=".$dateRow11['main_id']."");
 $activitiesFileList11=mysqli_fetch_array($activitiesFile11);
 ?>
   <tr>
@@ -795,14 +795,14 @@ $activitiesFileList11=mysqli_fetch_array($activitiesFile11);
 
 <td colspan="5">
 <?php
-$queryByDate12=mysqli_query("SELECT * FROM tbl_activities12 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate12=mysqli_query($mysqli, " SELECT * FROM tbl_activities12 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
 
 while($dateRow12=mysqli_fetch_array($queryByDate12)){
 ?> 
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities12=mysqli_query("SELECT * FROM  tbl_activities12 where user_id=".$_POST['user_id']." AND main_id=".$dateRow12['main_id']."");
+$activities12=mysqli_query($mysqli, " SELECT * FROM  tbl_activities12 where user_id=".$_POST['user_id']." AND main_id=".$dateRow12['main_id']."");
 while($activitiesList12=mysqli_fetch_array($activities12)){
 ?>
 
@@ -825,7 +825,7 @@ while($activitiesList12=mysqli_fetch_array($activities12)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile12=mysqli_query("SELECT * FROM  tbl_activities12 where user_id=".$_POST['user_id']." AND main_id=".$dateRow12['main_id']."");
+$activitiesFile12=mysqli_query($mysqli, " SELECT * FROM  tbl_activities12 where user_id=".$_POST['user_id']." AND main_id=".$dateRow12['main_id']."");
 $activitiesFileList12=mysqli_fetch_array($activitiesFile12);
 ?>
   <tr>
@@ -846,14 +846,14 @@ $activitiesFileList12=mysqli_fetch_array($activitiesFile12);
 
 <td colspan="5"> 
 <?php
-$queryByDate13=mysqli_query("SELECT * FROM tbl_activities13 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate13=mysqli_query($mysqli, " SELECT * FROM tbl_activities13 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
 
 while($dateRow13=mysqli_fetch_array($queryByDate13)){
 ?>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities13=mysqli_query("SELECT * FROM  tbl_activities13 where user_id=".$_POST['user_id']." AND main_id=".$dateRow13['main_id']."");
+$activities13=mysqli_query($mysqli, " SELECT * FROM  tbl_activities13 where user_id=".$_POST['user_id']." AND main_id=".$dateRow13['main_id']."");
 while($activitiesList13=mysqli_fetch_array($activities13)){
 ?>
 
@@ -878,7 +878,7 @@ while($activitiesList13=mysqli_fetch_array($activities13)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile13=mysqli_query("SELECT * FROM  tbl_activities13 where user_id=".$_POST['user_id']." AND main_id=".$dateRow13['main_id']."");
+$activitiesFile13=mysqli_query($mysqli, " SELECT * FROM  tbl_activities13 where user_id=".$_POST['user_id']." AND main_id=".$dateRow13['main_id']."");
 $activitiesFileList13=mysqli_fetch_array($activitiesFile13);
 ?>
   <tr>
@@ -900,14 +900,14 @@ $activitiesFileList13=mysqli_fetch_array($activitiesFile13);
 
 <td colspan="5"> 
 <?php
-$queryByDate14=mysqli_query("SELECT * FROM tbl_activities14 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate14=mysqli_query($mysqli, " SELECT * FROM tbl_activities14 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
 
 while($dateRow14=mysqli_fetch_array($queryByDate14)){
 ?>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities14=mysqli_query("SELECT * FROM  tbl_activities14 where user_id=".$_POST['user_id']." AND main_id=".$dateRow14['main_id']."");
+$activities14=mysqli_query($mysqli, " SELECT * FROM  tbl_activities14 where user_id=".$_POST['user_id']." AND main_id=".$dateRow14['main_id']."");
 while($activitiesList14=mysqli_fetch_array($activities14)){
 ?>
 
@@ -931,7 +931,7 @@ while($activitiesList14=mysqli_fetch_array($activities14)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile14=mysqli_query("SELECT * FROM  tbl_activities14 where user_id=".$_POST['user_id']." AND main_id=".$dateRow14['main_id']."");
+$activitiesFile14=mysqli_query($mysqli, " SELECT * FROM  tbl_activities14 where user_id=".$_POST['user_id']." AND main_id=".$dateRow14['main_id']."");
 $activitiesFileList14=mysqli_fetch_array($activitiesFile14);
 ?>
   <tr>
@@ -954,14 +954,14 @@ $activitiesFileList14=mysqli_fetch_array($activitiesFile14);
 
 <td colspan="5"> 
 <?php
-$queryByDate15=mysqli_query("SELECT * FROM tbl_activities15 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate15=mysqli_query($mysqli, " SELECT * FROM tbl_activities15 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
 
 while($dateRow15=mysqli_fetch_array($queryByDate15)){
 ?>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities15=mysqli_query("SELECT * FROM  tbl_activities15 where user_id=".$_POST['user_id']." AND main_id=".$dateRow15['main_id']."");
+$activities15=mysqli_query($mysqli, " SELECT * FROM  tbl_activities15 where user_id=".$_POST['user_id']." AND main_id=".$dateRow15['main_id']."");
 while($activitiesList15=mysqli_fetch_array($activities15)){
 ?>
 
@@ -989,7 +989,7 @@ while($activitiesList15=mysqli_fetch_array($activities15)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile15=mysqli_query("SELECT * FROM  tbl_activities15 where user_id=".$_POST['user_id']." AND main_id=".$dateRow15['main_id']."");
+$activitiesFile15=mysqli_query($mysqli, " SELECT * FROM  tbl_activities15 where user_id=".$_POST['user_id']." AND main_id=".$dateRow15['main_id']."");
 $activitiesFileList15=mysqli_fetch_array($activitiesFile15);
 ?>
   <tr>
@@ -1011,14 +1011,14 @@ $activitiesFileList15=mysqli_fetch_array($activitiesFile15);
 
 <td colspan="5"> 
 <?php
-$queryByDate16=mysqli_query("SELECT * FROM tbl_activities16 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate16=mysqli_query($mysqli, " SELECT * FROM tbl_activities16 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
 
 while($dateRow16=mysqli_fetch_array($queryByDate16)){
 ?>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities16=mysqli_query("SELECT * FROM  tbl_activities16 where user_id=".$_POST['user_id']." AND main_id=".$dateRow16['main_id']."");
+$activities16=mysqli_query($mysqli, " SELECT * FROM  tbl_activities16 where user_id=".$_POST['user_id']." AND main_id=".$dateRow16['main_id']."");
 while($activitiesList16=mysqli_fetch_array($activities16)){
 ?>
 
@@ -1041,7 +1041,7 @@ while($activitiesList16=mysqli_fetch_array($activities16)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile16=mysqli_query("SELECT * FROM  tbl_activities16 where user_id=".$_POST['user_id']." AND main_id=".$dateRow16['main_id']."");
+$activitiesFile16=mysqli_query($mysqli, " SELECT * FROM  tbl_activities16 where user_id=".$_POST['user_id']." AND main_id=".$dateRow16['main_id']."");
 $activitiesFileList16=mysqli_fetch_array($activitiesFile16);
 ?>
   <tr>
@@ -1063,14 +1063,14 @@ $activitiesFileList16=mysqli_fetch_array($activitiesFile16);
 
 <td colspan="5"> 
 <?php
-$queryByDate17=mysqli_query("SELECT * FROM tbl_activities17 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
+$queryByDate17=mysqli_query($mysqli, " SELECT * FROM tbl_activities17 where user_id=".$_POST['user_id']." AND YEAR(Proposed_on) = ".$year." AND MONTH(Proposed_on) = ".$month." GROUP BY main_id ORDER BY main_id DESC");  
 
 while($dateRow17=mysqli_fetch_array($queryByDate17)){
 ?>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
 $i=1;
-$activities17=mysqli_query("SELECT * FROM  tbl_activities17 where user_id=".$_POST['user_id']." AND main_id=".$dateRow17['main_id']."");
+$activities17=mysqli_query($mysqli, " SELECT * FROM  tbl_activities17 where user_id=".$_POST['user_id']." AND main_id=".$dateRow17['main_id']."");
 while($activitiesList17=mysqli_fetch_array($activities17)){
 ?>
 
@@ -1096,7 +1096,7 @@ while($activitiesList17=mysqli_fetch_array($activities17)){
 </table>
 <table width="100%" border="1" style="margin:2px 0px;">
 <?php
-$activitiesFile17=mysqli_query("SELECT * FROM  tbl_activities17 where user_id=".$_POST['user_id']." AND main_id=".$dateRow17['main_id']."");
+$activitiesFile17=mysqli_query($mysqli, " SELECT * FROM  tbl_activities17 where user_id=".$_POST['user_id']." AND main_id=".$dateRow17['main_id']."");
 $activitiesFileList17=mysqli_fetch_array($activitiesFile17);
 ?>
   <tr>

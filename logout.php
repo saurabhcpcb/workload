@@ -5,7 +5,7 @@ include_once'includes/connect.php';
  
 if($_SESSION['message']=="changeStatus")
 {
-mysqli_query("update tbl_user set web_status=1 where id=".$_SESSION['userId']['id']."");
+mysqli_query($mysqli, " update tbl_user set web_status=1 where id=".$_SESSION['userId']['id']."");
 session_destroy();
 unset($_SESSION['admin']['first_name']);
 

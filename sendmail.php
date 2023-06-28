@@ -8,7 +8,7 @@ date_default_timezone_set('Asia/Kolkata');
 ?>
 
 <?php
-$query=mysqli_query("select * from tbl_inspection_list as i,tbl_schedule as s where i.id=s.inspection_list_id AND i.id=".$_POST['scheduleId']."");
+$query=mysqli_query($mysqli, " select * from tbl_inspection_list as i,tbl_schedule as s where i.id=s.inspection_list_id AND i.id=".$_POST['scheduleId']."");
 
 $row=mysqli_fetch_array($query);
 /*echo"<pre>";
@@ -82,7 +82,7 @@ box-shadow: 0pt 2px 3px rgba(105, 108, 109, 0.7), 0px 0px 4px 5px rgba(208, 223,
 				$mailer-> IsHTML(true); 
 				if($mailer->Send())
 				{
-    $update=mysqli_query("update tbl_inspection_list set send_mail_status=1 where id=".$row['id']."");
+    $update=mysqli_query($mysqli, " update tbl_inspection_list set send_mail_status=1 where id=".$row['id']."");
 	$_SESSION['message']="Message send successfull.";
 	header('location:view_random_number.php');
 				}

@@ -216,7 +216,7 @@ display: none !important;
 
 <td valign="top" align="left"><select name="rd_id12" class="form-control" style="width:40%; float:left;" required>
 
-<?php $getQuery12=mysqli_query("SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); 
+<?php $getQuery12=mysqli_query($mysqli, " SELECT * FROM tbl_user where user_type='SPCB' ORDER BY board ASC"); 
 while($rd12=mysqli_fetch_array($getQuery12)){?>
 <option value="<?=$rd12['board']?>"  <?=($rd12['board']==$_POST['rd_id12'])?'selected':''?> ><?=$rd12['board']?></option><?php }?>
 </select></td>

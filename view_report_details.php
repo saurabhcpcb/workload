@@ -114,7 +114,7 @@ $dhId=count($_POST['dhId']);
 for($i=0;$i<$dhId;$i++){
 if(!empty($_POST['dhId'][$i])){
  
-$updateQuery=mysqli_query("UPDATE $dhTable SET status=1, priority='".$_POST['type'][$i]."',target_date='".date("Y-m-d", strtotime($_POST['target_date'][$i]))."' WHERE id ='".$_POST['dhId'][$i]."'  AND  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd']."'");
+$updateQuery=mysqli_query($mysqli, " UPDATE $dhTable SET status=1, priority='".$_POST['type'][$i]."',target_date='".date("Y-m-d", strtotime($_POST['target_date'][$i]))."' WHERE id ='".$_POST['dhId'][$i]."'  AND  YEAR(target_date) = ".$year." AND MONTH(target_date) = ".$month." AND rd_id='".$_GET['rd']."'");
 
 }
 }
@@ -319,7 +319,7 @@ while ($activities=mysqli_fetch_array($getDescriptionQuery,mysqli_ASSOC)){
 </td>
 <td>
 <?php
-$userQuery1=mysqli_query("select * from tbl_user where id=".$activities['user_id']."");
+$userQuery1=mysqli_query($mysqli, " select * from tbl_user where id=".$activities['user_id']."");
 
 $userData1=mysqli_fetch_array($userQuery1); 
 
